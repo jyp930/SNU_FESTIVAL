@@ -4,14 +4,16 @@ module.exports = {
         "node": true,
     },
     "extends": [
-        "airbnb"
+        "airbnb",
     ],
+    "parser": "babel-eslint",
     "rules": {
         "react/jsx-filename-extension": 0,
         "import/no-unresolved": 0,
         "import/no-extraneous-dependencies": 0,
         "comma-dangle": 1,
         "no-unused-vars": 1,
+        "react/no-array-index-key": 1,
     },
     // "settings": {
     //     "import/resolver": {
