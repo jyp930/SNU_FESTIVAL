@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from '@/temp/Button';
 
 const Title = styled.div`
   font-size: 120px;
@@ -12,6 +13,7 @@ function App() {
       <Title>
         Hello World!
       </Title>
+      <Button />
       <iframe
         title="hi"
         width="560"
