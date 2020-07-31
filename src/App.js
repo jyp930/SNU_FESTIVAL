@@ -13,16 +13,8 @@ function App() {
       <Title>
         Hello World!
       </Title>
+
       <Button />
-      <iframe
-        title="hi"
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/M0GP1Dn42m8"
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
     </div>
   );
 }
