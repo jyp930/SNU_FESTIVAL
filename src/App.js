@@ -10,7 +10,7 @@ import { GA_TRACKING_KEY } from '@/config';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           { routes.map((route) => (
