@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-primes
       - name: Install Dependencies
         run: yarn install
       - name: Build
