@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Title>
-        Hello World!!!!
+        Hello World
       </Title>
       <Button />
     </div>
