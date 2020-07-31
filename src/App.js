@@ -9,6 +9,7 @@ import UserAnalytics from '@/UserAnalytics';
 import { GA_TRACKING_KEY } from '@/config';
 
 function App() {
+  console.log(process.env);
   return (
     <Router basename="/">
       <Suspense fallback={<div>Loading...</div>}>
