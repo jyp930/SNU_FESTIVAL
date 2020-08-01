@@ -13,18 +13,9 @@ module.exports = {
         "import/no-unresolved": 0,
         "import/no-extraneous-dependencies": 0,
         "arrow-parens": 0,
+        "import/prefer-default-export": 0,
         "comma-dangle": 1,
         "no-unused-vars": 1,
         "react/no-array-index-key": 1,
     },
-    // "settings": {
-    //     "import/resolver": {
-    //         alias: {
-    //             map: [
-    //                 ['/src', '@'],
-    //             ],
-    //             extensions: ['.js', '.json']
-    //         }
-    //     }
-    // }
 };
