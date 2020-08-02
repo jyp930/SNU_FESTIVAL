@@ -12,10 +12,9 @@
 
 ## Sites
 
+- github repository: https://github.com/jyp930/SNU_FESTIVAL
 - Firebase Console: https://console.firebase.google.com/u/1/project/snu-festival/overview
 - Google Analytics: https://analytics.google.com/analytics/web/?authuser=1#/report-home/a174141117w241680622p225333700
-
-
 
 ## Available Scripts
 
