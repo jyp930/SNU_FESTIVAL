@@ -1,47 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technical Stack
+
+### `CRA`
+### `Craco`
+### `ESLint`
+### `Storybook`
+### `Hygen`
+### `styled-components`
+### `Firebase-hosting`
+### `Google Analytics`
+### `git flow`
+
+## Sites
+
+- Firebase Console: https://console.firebase.google.com/u/1/project/snu-festival/overview
+- Google Analytics: https://analytics.google.com/analytics/web/?authuser=1#/report-home/a174141117w241680622p225333700
+
+
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+로컬 서버: [http://localhost:3000](http://localhost:3000)
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+build 폴더 생성
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `firebase deploy`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+수동 배포가 필요할 때 명령어 입력
 
-### `yarn eject`
+github action 에 설정을 해두어서 master branch 에 push 하면 자동 배포됨.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `yarn storybook`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+storybook 실행: [http://localhost:9009](http://localhost:9009)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `hygen components container/foundation/page [componentName]`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+hygen 을 이용하여 skeleton code 자동 생성
 
 ### Code Splitting
 
@@ -58,11 +56,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ma
 ### Advanced Configuration
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
