@@ -46,13 +46,13 @@ jobs:
         name: Deploy to Firebase Production
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting:snu-festival
+          args: deploy --only hosting:production
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       - if: github.ref == 'refs/heads/develop'
-        name: Deploy to Firebase Production
+        name: Deploy to Firebase Staging
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting:snu-festival-staging
+          args: deploy --only hosting:staging
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
