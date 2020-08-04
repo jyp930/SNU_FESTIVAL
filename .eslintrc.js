@@ -17,5 +17,6 @@ module.exports = {
         "comma-dangle": 1,
         "no-unused-vars": 1,
         "react/no-array-index-key": 1,
+        "react/prop-types" : 1,
     },
 };
