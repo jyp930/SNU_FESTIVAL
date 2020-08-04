@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "snu-festival"
+    "snu-festival": "snu-festival"
   },
   "targets": {
     "snu-festival": {
