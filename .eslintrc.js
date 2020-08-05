@@ -18,5 +18,6 @@ module.exports = {
         "no-unused-vars": 1,
         "react/no-array-index-key": 1,
         "react/prop-types" : 1,
+        "import/no-named-default": 1,
     },
 };
