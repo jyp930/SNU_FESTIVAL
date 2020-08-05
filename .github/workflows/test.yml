@@ -1,7 +1,7 @@
 name: Testing Feature branches
 on:
   push:
-    except:
+    branches-ignore: 
       - master
       - develop
 jobs:
