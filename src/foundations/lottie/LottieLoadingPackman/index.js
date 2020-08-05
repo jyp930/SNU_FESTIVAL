@@ -1,6 +1,6 @@
 import React from 'react';
 import LottieFrame from '@/foundations/lottie/LottieFrame';
-import { default as loadingPacManJson } from '@/static/image/lottie/loading-pacman.json';
+import loadingPacManJson from '@/static/image/lottie/loading-pacman.json';
 
 function LottieLoadingPacMan() {
   return (
