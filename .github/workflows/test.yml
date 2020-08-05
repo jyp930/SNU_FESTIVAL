@@ -1,0 +1,33 @@
+name: Testing Feature branches
+on:
+  push:
+    except:
+      - master
+      - develop
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-primes
+      - name: Install Dependencies
+        run: yarn install
+      - name: Create .env file
+        run: |
+          touch .env
+          echo REACT_APP_GA_TRACKING_ID=${{ secrets.REACT_APP_GA_TRACKING_ID }} >> .env
+      - name: Build
+        run: yarn build
+        env:
+          CI: false
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: build
+          path: build
