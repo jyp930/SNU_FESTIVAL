@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - develop
 
 jobs:
   build:
@@ -24,6 +25,8 @@ jobs:
           echo REACT_APP_GA_TRACKING_ID=${{ secrets.REACT_APP_GA_TRACKING_ID }} >> .env
       - name: Build
         run: yarn build
+        env:
+          CI: false
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
@@ -41,9 +44,17 @@ jobs:
         with:
           name: build
           path: build
-      - name: Deploy to Firebase
+      - if: github.ref == 'refs/heads/master'
+        name: Deploy to Firebase Production
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting
+          args: deploy --only hosting:production
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - if: github.ref == 'refs/heads/develop'
+        name: Deploy to Firebase Staging
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:staging
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
