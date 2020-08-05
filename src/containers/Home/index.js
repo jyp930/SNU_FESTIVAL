@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+import { Parallax } from 'react-spring/renderprops-addons';
 import Section1 from '@/containers/Section1';
 import Section2 from '@/containers/Section2';
 import Section3 from '@/containers/Section3';
@@ -10,7 +10,7 @@ function Home() {
   const [parallax, setParallax] = useState();
 
   return (
-    <Parallax ref={ref => (setParallax(ref))} pages={3}>
+    <Parallax ref={ref => setParallax(ref)} pages={3}>
       <Section1 parallax={parallax} url={url} />
       <Section2 parallax={parallax} url={url} />
       <Section3 parallax={parallax} url={url} />

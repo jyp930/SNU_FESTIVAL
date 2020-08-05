@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import * as S from './styles';
 
@@ -21,5 +22,10 @@ function Section1({ parallax, url }) {
 export default Section1;
 
 Section1.propTypes = {
+  parallax: PropTypes.objectOf(PropTypes.any),
+  url: PropTypes.func.isRequired,
+};
 
+Section1.defaultProps = {
+  parallax: null, // TODO: 특정 prop 이 null 이면 return null; 하는 HOC 만들기
 };

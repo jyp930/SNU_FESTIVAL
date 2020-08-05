@@ -1,5 +1,6 @@
 import React from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+import PropTypes from 'prop-types';
+import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import * as S from './styles';
 
 function Section3({ parallax, url }) {
@@ -46,5 +47,10 @@ function Section3({ parallax, url }) {
 export default Section3;
 
 Section3.propTypes = {
+  parallax: PropTypes.objectOf(PropTypes.any),
+  url: PropTypes.func.isRequired,
+};
 
+Section3.defaultProps = {
+  parallax: null,
 };
