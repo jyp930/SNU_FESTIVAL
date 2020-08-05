@@ -25,6 +25,8 @@ jobs:
           echo REACT_APP_GA_TRACKING_ID=${{ secrets.REACT_APP_GA_TRACKING_ID }} >> .env
       - name: Build
         run: yarn build
+        env:
+          CI: false
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
