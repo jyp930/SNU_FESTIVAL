@@ -2,6 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    // TODO: font
+    font-family: 'Montserrat', 'NanumSquare', sans-serif;
   }
 `;
