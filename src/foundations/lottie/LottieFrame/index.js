@@ -26,7 +26,7 @@ function LottieFrame({ animationJson, width, height }) {
 export default LottieFrame;
 
 LottieFrame.propTypes = {
-  animationJson: PropTypes.objectOf(PropTypes.object).isRequired,
+  animationJson: PropTypes.objectOf(PropTypes.any).isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
 };
