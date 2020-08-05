@@ -1,4 +1,7 @@
 {
+  "projects": {
+    "snu-festival": "snu-festival"
+  },
   "targets": {
     "snu-festival": {
       "hosting": {
@@ -10,5 +13,5 @@
         ]
       }
     }
-  }
+  },
 }
