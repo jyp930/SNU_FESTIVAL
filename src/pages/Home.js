@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeContainer from '@/containers/Home/index';
+import HomeContainer from '@/containers/home/Home';
 
 function Home() {
   return (
