@@ -20,9 +20,9 @@ function PromoteVideo({ parallax, offset }) {
         onClick={() => parallax.scrollTo(offset + 1)}
       >
         <S.SoundButton onClick={setVideoSound}>소리</S.SoundButton>
-        <video autoPlay loop muted style={{ width: '100%', height: '100%', objectFit: 'cover' }} id="bluemingVideo">
+        <S.Video id="bluemingVideo" autoPlay loop muted>
           <source src={bluemingVideo} type="video/mp4" />
-        </video>
+        </S.Video>
       </ParallaxLayer>
     </S.StyledPromoteVideo>
   );
