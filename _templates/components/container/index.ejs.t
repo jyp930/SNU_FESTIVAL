@@ -2,6 +2,7 @@
 to: src/containers/<%= h.changeCase.pascalCase(name) %>/index.js
 ---
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as S from './styles';
 
 function <%= h.changeCase.pascalCase(name) %>() {

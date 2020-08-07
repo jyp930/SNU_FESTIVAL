@@ -6,6 +6,7 @@ import { GA_TRACKING_KEY } from '@/config';
 import { GlobalStyle } from '@/static/style';
 
 import LottieLoadingPacMan from '@/foundations/lottie/LottieLoadingPackman';
+import Lottie404 from '@/foundations/lottie/Lottie404';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             { routes.map((route) => (
               <Route exact key={route.path} path={route.path} component={route.component} />
             )) }
+            <Route component={Lottie404} />
           </Switch>
         </Suspense>
 
