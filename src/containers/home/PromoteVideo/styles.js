@@ -28,7 +28,7 @@ export const StyledPromoteVideo = styled.div`
 
 `;
 
-export const MainLabel = styled.p`
+export const CenterLabel = styled.p`
   ${BottomPosition};
   ${PreventDrag};
   bottom: 50%;

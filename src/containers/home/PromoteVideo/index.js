@@ -6,7 +6,7 @@ import Video from '@/foundations/Video';
 import LoopKeyFrame from '@/foundations/spring/LoopKeyFrame';
 import * as S from './styles';
 
-const mainLabel = (
+const centerLabel = (
   <span>
     2020 SNU FESTIVAL
     <br />
@@ -27,7 +27,7 @@ function PromoteVideo({ parallax, offset }) {
         offset={offset}
         speed={0.1}
       >
-        <S.MainLabel>{mainLabel}</S.MainLabel>
+        <S.CenterLabel>{centerLabel}</S.CenterLabel>
 
         <S.ArrowDownButton>
           <button onClick={scrollDown}>아래로</button>
