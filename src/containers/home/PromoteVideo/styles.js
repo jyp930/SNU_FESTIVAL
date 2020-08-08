@@ -1,4 +1,7 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
+import { GiSpeaker, GiSpeakerOff } from 'react-icons/all';
+import { palette } from '@/static/style';
 
 const BottomPosition = css`
   position: absolute;
@@ -8,6 +11,17 @@ const BottomPosition = css`
 
 const PreventDrag = css`
   user-select: none;
+`;
+
+const IconStyle = css`
+  color: ${palette.WHITE_NEWTRO};
+  width: 60px;
+  height: 60px;
+  
+  ${media.lessThan('medium')`
+    width: 40px;
+    height: 40px;
+  `};
 `;
 
 export const StyledPromoteVideo = styled.div`
@@ -21,21 +35,27 @@ export const MainLabel = styled.p`
   width: 100%;
   text-align: center;
   
-  color: white;
+  color: ${palette.GRAY_NEWTRO};
   font-size: 30px;
   opacity: 0.8;
 `;
 
-export const SoundButton = styled.button`
+export const SoundButton = styled.div`
   ${BottomPosition};
-  ${PreventDrag};
+  cursor: pointer;
+`;
+
+export const SpeakerIcon = styled(GiSpeaker)`
+  ${IconStyle};
+`;
+
+export const SpeakerOffIcon = styled(GiSpeakerOff)`
+  ${IconStyle};
 `;
 
 export const ArrowDownButton = styled.div`
   ${BottomPosition};
-  ${PreventDrag};
   
-  color: white;
   width: 100%;
   text-align: center;
 `;

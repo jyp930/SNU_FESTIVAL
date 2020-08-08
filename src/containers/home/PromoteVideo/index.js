@@ -30,7 +30,7 @@ function PromoteVideo({ parallax, offset }) {
           <button onClick={scrollDown}>아래로</button>
         </S.ArrowDownButton>
         <S.SoundButton onClick={() => setIsMuted(!isMuted)}>
-          소리
+          { isMuted ? <S.SpeakerOffIcon /> : <S.SpeakerIcon /> }
         </S.SoundButton>
 
         <S.Video id="bluemingVideo" autoPlay loop muted={isMuted}>
