@@ -2,6 +2,8 @@ import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import bluemingVideo from '@/static/image/video/blueming.mp4';
+import Video from '@/foundations/Video';
+import LoopKeyFrame from '@/foundations/spring/LoopKeyFrame';
 import * as S from './styles';
 
 const mainLabel = (
@@ -26,16 +28,25 @@ function PromoteVideo({ parallax, offset }) {
         speed={0.1}
       >
         <S.MainLabel>{mainLabel}</S.MainLabel>
+
         <S.ArrowDownButton>
           <button onClick={scrollDown}>아래로</button>
         </S.ArrowDownButton>
+
         <S.SoundButton onClick={() => setIsMuted(!isMuted)}>
-          { isMuted ? <S.SpeakerOffIcon /> : <S.SpeakerIcon /> }
+          <LoopKeyFrame
+            start={{ opacity: 0.6 }}
+            end={{ opacity: 1 }}
+            delay={1000}
+          >
+            { isMuted ? <S.SpeakerOffIcon /> : <S.SpeakerIcon /> }
+          </LoopKeyFrame>
         </S.SoundButton>
 
-        <S.Video id="bluemingVideo" autoPlay loop muted={isMuted}>
-          <source src={bluemingVideo} type="video/mp4" />
-        </S.Video>
+        <Video
+          video={bluemingVideo}
+          isMuted={isMuted}
+        />
       </ParallaxLayer>
     </S.StyledPromoteVideo>
   );
