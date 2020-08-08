@@ -1,26 +1,39 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import bluemingVideo from '@/static/image/video/blueming.mp4';
 import * as S from './styles';
 
-function PromoteVideo({ parallax, offset }) {
-  const setVideoSound = (clickEvent) => {
-    clickEvent.stopPropagation();
+const mainLabel = (
+  <span>
+    2020 SNU FESTIVAL
+    <br />
+    ON-AIR
+  </span>
+);
 
-    const isMuted = document.getElementById('bluemingVideo').muted;
-    document.getElementById('bluemingVideo').muted = !isMuted;
-  };
+function PromoteVideo({ parallax, offset }) {
+  const [isMuted, setIsMuted] = useState(true);
+
+  const scrollDown = useCallback(() => {
+    parallax.scrollTo(offset + 1);
+  }, [parallax, offset]);
 
   return (
     <S.StyledPromoteVideo>
       <ParallaxLayer
         offset={offset}
         speed={0.1}
-        onClick={() => parallax.scrollTo(offset + 1)}
       >
-        <S.SoundButton onClick={setVideoSound}>소리</S.SoundButton>
-        <S.Video id="bluemingVideo" autoPlay loop muted>
+        <S.MainLabel>{mainLabel}</S.MainLabel>
+        <S.ArrowDownButton>
+          <button onClick={scrollDown}>아래로</button>
+        </S.ArrowDownButton>
+        <S.SoundButton onClick={() => setIsMuted(!isMuted)}>
+          소리
+        </S.SoundButton>
+
+        <S.Video id="bluemingVideo" autoPlay loop muted={isMuted}>
           <source src={bluemingVideo} type="video/mp4" />
         </S.Video>
       </ParallaxLayer>

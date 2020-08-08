@@ -10,7 +10,7 @@ export const Default = () => {
   const [parallax, setParallax] = useState();
 
   return (
-    <Parallax ref={ref => setParallax(ref)} pages={1}>
+    <Parallax ref={ref => setParallax(ref)} pages={1} style={{ top: 0, left: 0 }}>
       <PromoteVideo parallax={parallax} offset={0} />
     </Parallax>
   );
