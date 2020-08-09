@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Section1 from '@/containers/home/Section1';
+import PromoteVideo from '@/containers/home/PromoteVideo';
 import Section2 from '@/containers/home/Section2';
 import Section3 from '@/containers/home/Section3';
 import * as S from './styles';
@@ -11,7 +11,7 @@ function Home() {
 
   return (
     <S.Parallax ref={ref => setParallax(ref)} pages={3}>
-      <Section1 parallax={parallax} url={url} />
+      <PromoteVideo parallax={parallax} offset={0} />
       <Section2 parallax={parallax} url={url} />
       <Section3 parallax={parallax} url={url} />
     </S.Parallax>
