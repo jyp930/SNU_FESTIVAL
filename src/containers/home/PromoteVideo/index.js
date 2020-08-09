@@ -58,7 +58,7 @@ function PromoteVideo({ parallax, offset }) {
           </S.ArrowDownButton>
         </S.ArrowDownButtonWrapper>
 
-        <S.SoundButton onClick={() => setIsMuted(!isMuted)}>
+        <S.SoundButton onClick={() => setIsMuted(state => !state)}>
           <LoopKeyFrame
             start={{ opacity: 0.6 }}
             end={{ opacity: 1 }}
