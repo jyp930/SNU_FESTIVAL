@@ -1,9 +1,10 @@
 import React from 'react';
+import * as S from './styles';
 import PropTypes from 'prop-types';
 import { Keyframes } from 'react-spring/renderprops';
 
 function LoopKeyFrame({
-  children, start, end, duration, delay,
+  children, start, end, duration, delay, customStyle,
 }) {
   const LoopMotion = Keyframes.Spring(async next => {
     while (true) {
@@ -15,9 +16,9 @@ function LoopKeyFrame({
   return (
     <LoopMotion>
       {styles => (
-        <div style={styles}>
+        <S.StyledLoopKeyFrame style={{ ...styles, ...customStyle }}>
           { children }
-        </div>
+        </S.StyledLoopKeyFrame>
       )}
     </LoopMotion>
   );
@@ -28,11 +29,13 @@ LoopKeyFrame.propTypes = {
   children: PropTypes.element.isRequired,
   start: PropTypes.objectOf(PropTypes.any).isRequired,
   end: PropTypes.objectOf(PropTypes.any).isRequired,
+  customStyle: PropTypes.objectOf(PropTypes.any),
   duration: PropTypes.number,
   delay: PropTypes.number,
 };
 
 LoopKeyFrame.defaultProps = {
+  customStyle: {},
   duration: 800,
   delay: 0,
 };

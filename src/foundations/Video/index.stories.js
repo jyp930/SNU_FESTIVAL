@@ -1,8 +1,9 @@
 import React from 'react';
+import bluemingVideo from '@/static/image/video/blueming.mp4';
 import Video from './index';
 
 export default {
   title: 'foundations/Video',
 };
 
-export const Default = () => <Video />;
+export const Default = () => <Video video={bluemingVideo} />;

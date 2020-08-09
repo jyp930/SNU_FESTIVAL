@@ -11,6 +11,6 @@ export const Default = () => (
     end={{ opacity: 1 }}
     duration={500}
   >
-    Hello
+    <span>Hello</span>
   </LoopKeyFrame>
 );

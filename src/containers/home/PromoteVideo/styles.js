@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
-import { GiSpeaker, GiSpeakerOff } from 'react-icons/all';
+import { GiSpeaker, GiSpeakerOff, IoIosArrowDown } from 'react-icons/all';
 import { palette } from '@/static/style';
+import { ResponsiveIconStyle, ResponsiveTextStyle } from '@/static/style/responsive';
+
+const ResponsiveIconStyleWithColor = css`
+  ${ResponsiveIconStyle};
+  color: ${palette.WHITE_NEWTRO};
+`;
 
 const BottomPosition = css`
   position: absolute;
@@ -11,17 +16,6 @@ const BottomPosition = css`
 
 const PreventDrag = css`
   user-select: none;
-`;
-
-const IconStyle = css`
-  color: ${palette.WHITE_NEWTRO};
-  width: 60px;
-  height: 60px;
-  
-  ${media.lessThan('medium')`
-    width: 40px;
-    height: 40px;
-  `};
 `;
 
 export const StyledPromoteVideo = styled.div`
@@ -46,16 +40,30 @@ export const SoundButton = styled.div`
 `;
 
 export const SpeakerIcon = styled(GiSpeaker)`
-  ${IconStyle};
+  ${ResponsiveIconStyleWithColor};
 `;
 
 export const SpeakerOffIcon = styled(GiSpeakerOff)`
-  ${IconStyle};
+  ${ResponsiveIconStyleWithColor};
+`;
+
+export const ArrowDownIcon = styled(IoIosArrowDown)`
+  ${ResponsiveIconStyleWithColor};
+`;
+
+export const ArrowDownButtonWrapper = styled.div`
+  ${BottomPosition};
+  display: flex;
+
+  width: 100%;
 `;
 
 export const ArrowDownButton = styled.div`
-  ${BottomPosition};
+  margin: 0 auto;
+
+  ${PreventDrag};
+  cursor: pointer;
   
-  width: 100%;
-  text-align: center;
+  ${ResponsiveTextStyle};
+  color: ${palette.WHITE_NEWTRO};
 `;

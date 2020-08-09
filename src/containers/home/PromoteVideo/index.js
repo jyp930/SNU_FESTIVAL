@@ -6,13 +6,27 @@ import Video from '@/foundations/Video';
 import LoopKeyFrame from '@/foundations/spring/LoopKeyFrame';
 import * as S from './styles';
 
-const centerLabel = (
+const centerContent = (
   <span>
     2020 SNU FESTIVAL
     <br />
     ON-AIR
   </span>
 );
+
+const ArrowDownContent = (
+  <>
+    <div>축제 구경하기</div>
+    <div><S.ArrowDownIcon /></div>
+  </>
+);
+
+const ArrowDownStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+};
 
 function PromoteVideo({ parallax, offset }) {
   const [isMuted, setIsMuted] = useState(true);
@@ -27,11 +41,22 @@ function PromoteVideo({ parallax, offset }) {
         offset={offset}
         speed={0.1}
       >
-        <S.CenterLabel>{centerLabel}</S.CenterLabel>
+        <S.CenterLabel>
+          {centerContent}
+        </S.CenterLabel>
 
-        <S.ArrowDownButton>
-          <button onClick={scrollDown}>아래로</button>
-        </S.ArrowDownButton>
+        <S.ArrowDownButtonWrapper>
+          <S.ArrowDownButton onClick={scrollDown}>
+            <LoopKeyFrame
+              start={{ transform: 'translate3d(0, 0, 0)' }}
+              end={{ transform: 'translate3d(0, -10px, 0)' }}
+              duration={500}
+              customStyle={ArrowDownStyle}
+            >
+              { ArrowDownContent }
+            </LoopKeyFrame>
+          </S.ArrowDownButton>
+        </S.ArrowDownButtonWrapper>
 
         <S.SoundButton onClick={() => setIsMuted(!isMuted)}>
           <LoopKeyFrame
