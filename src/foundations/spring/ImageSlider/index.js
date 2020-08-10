@@ -23,7 +23,7 @@ function ImageSlider({ images, customStyle, duration }) {
     }, 2000 + duration);
 
     return () => clearInterval(nextSlide);
-  }, [showNextImage, toggleImage]);
+  }, [showNextImage, toggleImage, duration]);
 
   return (
     images.map((image, index) => (

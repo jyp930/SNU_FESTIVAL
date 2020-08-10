@@ -19,12 +19,12 @@ export const ResponsiveTextStyle = css`
   `};
 `;
 
-export const ResponsiveImageStyle = css`
+export const ResponsiveFlexItemStyle = css`
   width: 40vw;
   height: 40vw;
   
   ${media.lessThan('medium')`
-    width: 40vh;
-    height: 40vh;
+    width: 47vh;
+    height: 47vh;
   `};
 `;

@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { ResponsiveImageStyle } from '@/static/style/responsive';
+import { ResponsiveFlexItemStyle } from '@/static/style/responsive';
+import { palette } from '@/static/style';
 
 export const StyledNewtroCompetitionImage = styled.div`
- 
+
 `;
 
-export const FlexibleContainer = styled.div`
+export const FlexContainer = styled.div`
   width: 100%;
   height: 100%;
 
@@ -14,11 +15,73 @@ export const FlexibleContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   
+  background-color: ${palette.WHITE_NEWTRO};
+
   ${media.lessThan('medium')`
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: center;
   `};
 `;
 
-export const ImageItem = styled.div`
-  ${ResponsiveImageStyle};
+export const ImageFlexItem = styled.div`
+  ${ResponsiveFlexItemStyle};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextFlexItem = styled.div`
+  ${ResponsiveFlexItemStyle};
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+  ${media.lessThan('medium')`
+    justify-content: center;
+  `};
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  ${media.lessThan('medium')`
+    align-items: center;
+  `};
+`;
+
+export const Title = styled.p`
+  font-size: 50px;
+  font-weight: bold;
+  color: ${palette.BLACK_NEWTRO};
+  
+  margin: 0 0 30px;
+  
+  ${media.lessThan('medium')`
+    font-size: 35px;
+  `};
+`;
+
+export const Description = styled.p`
+  font-size: 20px;
+  color: ${palette.BROWN_NEWTRO};
+  
+  margin: 0 0 20px;
+  
+  ${media.lessThan('medium')`
+    font-size: 15px;
+  `};
+`;
+
+export const Supplement = styled.p`
+  font-size: 15px;
+  color: ${palette.BROWN20_NEWTRO};
+
+  margin: 0;
+  
+  ${media.lessThan('medium')`
+    font-size: 15px;
+  `};
 `;
