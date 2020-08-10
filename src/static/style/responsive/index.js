@@ -18,3 +18,13 @@ export const ResponsiveTextStyle = css`
     font-size: 12px;
   `};
 `;
+
+export const ResponsiveImageStyle = css`
+  width: 40vw;
+  height: 40vw;
+  
+  ${media.lessThan('medium')`
+    width: 40vh;
+    height: 40vh;
+  `};
+`;
