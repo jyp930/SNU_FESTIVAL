@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import PromoteVideo from '@/containers/home/PromoteVideo';
-import NewtroCompetitionImage from '@/containers/home/NewtroCompetitionImage';
-import Section2 from '@/containers/home/Section2';
+import PromoteVideo from '@C/home/PromoteVideo';
+import NewtroCompetitionImage from '@C/home/NewtroCompetitionImage';
+import Section2 from '@C/home/Section2';
 import * as S from './styles';
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { GiSpeaker, GiSpeakerOff, IoIosArrowDown } from 'react-icons/all';
-import { palette } from '@/static/style';
-import { ResponsiveIconStyle, ResponsiveTextStyle } from '@/static/style/responsive';
+import { palette } from '@S/index';
+import { ResponsiveIconStyle, ResponsiveTextStyle } from '@S/responsive';
 
 const ResponsiveIconStyleWithColor = css`
   ${ResponsiveIconStyle};

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { ResponsiveFlexItemStyle } from '@/static/style/responsive';
-import { palette } from '@/static/style';
+import { ResponsiveFlexItemStyle } from '@S/responsive';
+import { palette } from '@S/index';
 
 export const StyledNewtroCompetitionImage = styled.div`
 

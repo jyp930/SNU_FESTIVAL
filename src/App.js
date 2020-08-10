@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from '@/routes';
 import GaAnalytics from '@/UserAnalytics';
 import { GA_TRACKING_KEY } from '@/config';
-import { GlobalStyle } from '@/static/style';
+import { GlobalStyle } from '@S/index';
 
-import LottieLoadingPacMan from '@/foundations/lottie/LottieLoadingPackman';
-import Lottie404 from '@/foundations/lottie/Lottie404';
+import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
+import Lottie404 from '@F/lottie/Lottie404';
 
 function App() {
   return (

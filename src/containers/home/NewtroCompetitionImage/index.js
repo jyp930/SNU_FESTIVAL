@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
-import ImageSlider from '@/foundations/spring/ImageSlider';
-import IU1 from '@/static/image/jpeg/IU1.jpeg';
-import IU4 from '@/static/image/jpeg/IU4.jpeg';
-import IU5 from '@/static/image/jpeg/IU5.jpeg';
-import IU2 from '@/static/image/jpeg/IU2.jpeg';
-import IU3 from '@/static/image/jpeg/IU3.jpeg';
-import IU6 from '@/static/image/jpeg/IU6.jpeg';
-import IU7 from '@/static/image/jpeg/IU7.jpeg';
+import ImageSlider from '@F/spring/ImageSlider';
+import IU1 from '@I/jpeg/IU1.jpeg';
+import IU4 from '@I/jpeg/IU4.jpeg';
+import IU5 from '@I/jpeg/IU5.jpeg';
+import IU2 from '@I/jpeg/IU2.jpeg';
+import IU3 from '@I/jpeg/IU3.jpeg';
+import IU6 from '@I/jpeg/IU6.jpeg';
+import IU7 from '@I/jpeg/IU7.jpeg';
 import * as S from './styles';
 
 const newtroCompetitionText = (
