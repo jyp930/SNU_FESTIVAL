@@ -1,5 +1,5 @@
 import React from 'react';
-import bluemingVideo from '@/static/image/video/blueming.mp4';
+import bluemingVideo from '@I/video/blueming.mp4';
 import Video from './index';
 
 export default {

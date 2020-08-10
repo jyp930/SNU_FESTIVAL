@@ -1,5 +1,5 @@
 import React from 'react';
-import notFoundPageJson from '@/static/image/lottie/404.json';
+import notFoundPageJson from '@I/lottie/404.json';
 import LottieFrame from './index';
 
 export default {

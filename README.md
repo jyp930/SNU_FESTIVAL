@@ -6,6 +6,7 @@
 ### `Storybook`
 ### `Hygen`
 ### `styled-components`
+### `styled-media-query`
 ### `Firebase-hosting`
 ### `Google Analytics`
 ### `git flow`
@@ -30,7 +31,10 @@ build 폴더 생성
 
 수동 배포가 필요할 때 명령어 입력
 
-github action 에 설정을 해두어서 master branch 에 push 하면 자동 배포됨.
+github action 에 설정을 해두어서 [develop, master] branch 에 push 하면 자동 배포됨.
+
+- develop branch: [https://snu-festival-staging.web.app](https://snu-festival-staging.web.app)
+- master branch: [https://snu-festival.web.app](https://snu-festival.web.app)
 
 ### `yarn storybook`
 

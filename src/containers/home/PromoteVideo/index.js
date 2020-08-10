@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
-import bluemingVideo from '@/static/image/video/blueming.mp4';
-import Video from '@/foundations/Video';
-import LoopKeyFrame from '@/foundations/spring/LoopKeyFrame';
+import bluemingVideo from '@I/video/blueming.mp4';
+import Video from '@F/Video';
+import LoopKeyFrame from '@F/spring/LoopKeyFrame';
 import * as S from './styles';
 
 const centerContent = (
@@ -58,7 +58,7 @@ function PromoteVideo({ parallax, offset }) {
           </S.ArrowDownButton>
         </S.ArrowDownButtonWrapper>
 
-        <S.SoundButton onClick={() => setIsMuted(!isMuted)}>
+        <S.SoundButton onClick={() => setIsMuted(state => !state)}>
           <LoopKeyFrame
             start={{ opacity: 0.6 }}
             end={{ opacity: 1 }}
