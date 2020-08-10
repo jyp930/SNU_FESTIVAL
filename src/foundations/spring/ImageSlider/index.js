@@ -4,7 +4,7 @@ import { Transition } from 'react-spring/renderprops-universal';
 import { config } from 'react-spring';
 import * as S from './styles';
 
-function ImageSlider({ images, customStyle }) {
+function ImageSlider({ images, customStyle, duration }) {
   const [imageIndex, setImageIndex] = useState(0);
   const [toggleImage, setToggleImage] = useState(false);
 
@@ -20,7 +20,7 @@ function ImageSlider({ images, customStyle }) {
   useEffect(() => {
     const nextSlide = setInterval(() => {
       showNextImage();
-    }, 2000);
+    }, 2000 + duration);
 
     return () => clearInterval(nextSlide);
   }, [showNextImage, toggleImage]);
@@ -34,7 +34,7 @@ function ImageSlider({ images, customStyle }) {
           from={{ position: 'relative', opacity: 0 }}
           enter={{ opacity: 1 }}
           leave={{ opacity: 0 }}
-          config={config.molasses}
+          config={{ duration, ...config.molasses }}
           key={image}
         >
           {item => props => (
@@ -52,8 +52,10 @@ export default ImageSlider;
 ImageSlider.propTypes = {
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
   customStyle: PropTypes.objectOf(PropTypes.any),
+  duration: PropTypes.number,
 };
 
 ImageSlider.defaultProps = {
   customStyle: {},
+  duration: 800,
 };

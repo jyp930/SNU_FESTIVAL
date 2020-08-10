@@ -20,9 +20,7 @@ function NewtroCompetitionImage({ parallax, offset }) {
       >
         <S.FlexibleContainer>
           <S.ImageItem>
-            <ImageSlider
-              images={[IU1, IU4, IU5, IU2, IU3, IU6, IU7]}
-            />
+            문구
           </S.ImageItem>
           <S.ImageItem>
             <ImageSlider
