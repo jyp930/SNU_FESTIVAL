@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import mascot from '@/static/image/svg/mascot-pink.svg';
 import * as S from './styles';
 
 function Header() {
@@ -12,38 +13,57 @@ function Header() {
     setMenuIsOpened(!menuIsOpened);
   }
 
-  return (
+  const headerBar = (
     <S.StyledHeader>
-      <div>
-        그냥 로고
-      </div>
+      <S.Logo opened={menuIsOpened} onClick={() => history.push('/')}>
+        <img src={mascot} alt="mascot" width={15} height={15} />
+        SNU-FESTIVAL
+      </S.Logo>
       <S.MenuButton onClick={() => setMenuIsOpened(!menuIsOpened)}>
         <S.MenuButtonBar opened={menuIsOpened} />
         <S.MenuButtonBar opened={menuIsOpened} />
         <S.MenuButtonBar opened={menuIsOpened} />
       </S.MenuButton>
-      { menuIsOpened
-        && (
-        <S.OpenedMenu>
-          <S.StyledHeader>
-            <div>
-              그냥 로고
-            </div>
-            <S.MenuButton onClick={() => setMenuIsOpened(!menuIsOpened)}>
-              <S.MenuButtonBar opened={menuIsOpened} />
-              <S.MenuButtonBar opened={menuIsOpened} />
-              <S.MenuButtonBar opened={menuIsOpened} />
-            </S.MenuButton>
-          </S.StyledHeader>
-          메뉴열림
-          <button type="button" onClick={() => handleClickChangeUrl('/')}>
-            Go Home
-          </button>
-          <button type="button" onClick={() => handleClickChangeUrl('/activity')}>
-            Go Activity
-          </button>
-        </S.OpenedMenu>
-        )}
+    </S.StyledHeader>
+  );
+
+  const openedMenu = (
+    <S.OpenedMenu>
+      <S.StyledHeader>
+        <S.Logo opened={menuIsOpened} onClick={() => handleClickChangeUrl('/')}>
+          <img src={mascot} alt="mascot" width={15} height={15} />
+          SNU-FESTIVAL
+        </S.Logo>
+        <S.MenuButton onClick={() => setMenuIsOpened(!menuIsOpened)}>
+          <S.MenuButtonBar opened={menuIsOpened} />
+          <S.MenuButtonBar opened={menuIsOpened} />
+          <S.MenuButtonBar opened={menuIsOpened} />
+        </S.MenuButton>
+      </S.StyledHeader>
+      <S.NaviButton onClick={() => handleClickChangeUrl('/')}>
+        Home
+      </S.NaviButton>
+      <S.NaviButton onClick={() => handleClickChangeUrl('/activity')}>
+        Activity
+      </S.NaviButton>
+      <S.NaviButton onClick={() => handleClickChangeUrl('/performance')}>
+        Performance
+      </S.NaviButton>
+      <S.NaviButton onClick={() => handleClickChangeUrl('/event')}>
+        Event
+      </S.NaviButton>
+      <S.NaviButton onClick={() => handleClickChangeUrl('/goods')}>
+        Goods
+      </S.NaviButton>
+      <S.NaviButton onClick={() => handleClickChangeUrl('/introduction')}>
+        Introduction
+      </S.NaviButton>
+    </S.OpenedMenu>
+  );
+
+  return (
+    <S.StyledHeader>
+      { menuIsOpened ? openedMenu : headerBar }
     </S.StyledHeader>
   );
 }
