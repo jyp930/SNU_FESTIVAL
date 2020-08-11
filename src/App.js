@@ -3,15 +3,16 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from '@/routes';
 import GaAnalytics from '@/UserAnalytics';
 import { GA_TRACKING_KEY } from '@/config';
-import { GlobalStyle } from '@/static/style';
-import Header from '@/foundations/Header';
-import LottieLoadingPacMan from '@/foundations/lottie/LottieLoadingPackman';
-import Lottie404 from '@/foundations/lottie/Lottie404';
+import { GlobalStyle } from '@S/index';
+import Header from '@F/Header';
+import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
+import Lottie404 from '@F/lottie/Lottie404';
 
 function App() {
   return (
     <>
       <GlobalStyle />
+
       <Router>
         <Suspense fallback={<LottieLoadingPacMan />}>
           <Header />
@@ -22,6 +23,7 @@ function App() {
             <Route component={Lottie404} />
           </Switch>
         </Suspense>
+
         { GA_TRACKING_KEY && <GaAnalytics /> }
       </Router>
     </>

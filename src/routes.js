@@ -2,6 +2,10 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/Home'));
 const Activity = lazy(() => import('@/pages/Activity'));
+const Performance = lazy(() => import('@/pages/Performance'));
+const Event = lazy(() => import('@/pages/Event'));
+const Goods = lazy(() => import('@/pages/Goods'));
+const Introduction = lazy(() => import('@/pages/Introduction'));
 
 const routes = [
   {
@@ -11,6 +15,22 @@ const routes = [
   {
     path: '/activity',
     component: Activity,
+  },
+  {
+    path: '/performance',
+    component: Performance,
+  },
+  {
+    path: '/event',
+    component: Event,
+  },
+  {
+    path: '/goods',
+    component: Goods,
+  },
+  {
+    path: '/introduction',
+    component: Introduction,
   },
 ];
 export default routes;

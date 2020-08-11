@@ -1,6 +1,6 @@
 import React from 'react';
-import LottieFrame from '@/foundations/lottie/LottieFrame';
-import notFoundPageJson from '@/static/image/lottie/404.json';
+import LottieFrame from '@F/lottie/LottieFrame';
+import notFoundPageJson from '@I/lottie/404.json';
 import * as S from './styles';
 
 const redShoesPartOne = [
