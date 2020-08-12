@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import mascot from '@/static/image/svg/mascot-pink.svg';
+import mascot from '@I/svg/mascot-pink.svg';
 import * as S from './styles';
 
 function Header() {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   const history = useHistory();
 
-  function handleClickChangeUrl(route) {
+  function changeUrl(route) {
     history.push(route);
     setMenuIsOpened(!menuIsOpened);
   }
@@ -30,7 +30,7 @@ function Header() {
   const openedMenu = (
     <S.OpenedMenu>
       <S.StyledHeader>
-        <S.Logo opened={menuIsOpened} onClick={() => handleClickChangeUrl('/')}>
+        <S.Logo opened={menuIsOpened} onClick={() => changeUrl('/')}>
           <img src={mascot} alt="mascot" width={15} height={15} />
           SNU-FESTIVAL
         </S.Logo>
@@ -40,22 +40,22 @@ function Header() {
           <S.MenuButtonBar opened={menuIsOpened} />
         </S.MenuButton>
       </S.StyledHeader>
-      <S.NaviButton onClick={() => handleClickChangeUrl('/')}>
+      <S.NaviButton onClick={() => changeUrl('/')}>
         Home
       </S.NaviButton>
-      <S.NaviButton onClick={() => handleClickChangeUrl('/activity')}>
+      <S.NaviButton onClick={() => changeUrl('/activity')}>
         Activity
       </S.NaviButton>
-      <S.NaviButton onClick={() => handleClickChangeUrl('/performance')}>
+      <S.NaviButton onClick={() => changeUrl('/performance')}>
         Performance
       </S.NaviButton>
-      <S.NaviButton onClick={() => handleClickChangeUrl('/event')}>
+      <S.NaviButton onClick={() => changeUrl('/event')}>
         Event
       </S.NaviButton>
-      <S.NaviButton onClick={() => handleClickChangeUrl('/goods')}>
+      <S.NaviButton onClick={() => changeUrl('/goods')}>
         Goods
       </S.NaviButton>
-      <S.NaviButton onClick={() => handleClickChangeUrl('/introduction')}>
+      <S.NaviButton onClick={() => changeUrl('/introduction')}>
         Introduction
       </S.NaviButton>
     </S.OpenedMenu>

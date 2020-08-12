@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-import { palette } from '@/static/style';
+import { palette } from '@S/index';
+
+const zIndex = {
+  base: 1,
+  header: 9999,
+};
 
 export const StyledHeader = styled.div`
   display: flex;
@@ -7,17 +12,16 @@ export const StyledHeader = styled.div`
   align-items: center;
   position: fixed;
   top: 0px;
-  left: 20px;
-  right: 20px;
-  z-index: 100;
-  width: 100pv;
+  left: 0px;
+  right: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: ${zIndex.header};
   height: auto;
   flex-direction: row;
 `;
 
 export const Logo = styled.div`
-  display: flex;
-  flex-flow: row;
   cursor: pointer;
   color: ${props => (props.opened ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
 `;
@@ -25,13 +29,11 @@ export const Logo = styled.div`
 export const MenuButton = styled.div`
   display: inline-block;
   cursor: pointer;
-  z-index: 9998;
 `;
 
 export const MenuButtonBar = styled.div`
   width: 35px;
   height: 5px;
-  z-index: 9999;
   background-color: ${props => (props.opened ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
   margin: 6px 0;
 `;
@@ -43,10 +45,10 @@ export const OpenedMenu = styled.div`
   align-items: center;
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 9998;
+  width: 100vw;
+  height: 100vh;
+  z-index: ${zIndex.header};
   background-color: ${palette.GRAY_NEWTRO};
   opacity: 80%;
 `;
