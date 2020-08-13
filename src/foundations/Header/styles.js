@@ -44,10 +44,12 @@ export const OpenedMenu = styled.div`
   height: 100vh;
   z-index: ${zIndex.header};
   background-color: ${palette.GRAY_NEWTRO};
-  opacity: 80%;
+  opacity: 0.9;
 `;
 
-export const NaviButton = styled.h2`
+export const NaviButton = styled.p`
+  margin: 20px 0;
+  font-size: 2rem;
   color: ${palette.BLACK_NEWTRO};
   cursor: pointer;
 `;

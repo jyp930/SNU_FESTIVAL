@@ -53,35 +53,23 @@ export const TextContainer = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: 50px;
+  font-size: 3rem;
   font-weight: bold;
   color: ${palette.BLACK_NEWTRO};
   
   margin: 0 0 30px;
-  
-  ${media.lessThan('medium')`
-    font-size: 35px;
-  `};
 `;
 
 export const Description = styled.p`
-  font-size: 20px;
+  font-size: 1.5rem;
   color: ${palette.BROWN_NEWTRO};
   
   margin: 0 0 20px;
-  
-  ${media.lessThan('medium')`
-    font-size: 15px;
-  `};
 `;
 
 export const Supplement = styled.p`
-  font-size: 15px;
+  font-size: 1rem;
   color: ${palette.BROWN20_NEWTRO};
 
   margin: 0;
-  
-  ${media.lessThan('medium')`
-    font-size: 15px;
-  `};
 `;

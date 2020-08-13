@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { GiSpeaker, GiSpeakerOff, IoIosArrowDown } from 'react-icons/all';
 import { palette } from '@S/index';
-import { ResponsiveIconStyle, ResponsiveTextStyle } from '@S/responsive';
+import { ResponsiveIconStyle } from '@S/responsive';
 
 const ResponsiveIconStyleWithColor = css`
   ${ResponsiveIconStyle};
@@ -30,7 +30,7 @@ export const CenterLabel = styled.p`
   text-align: center;
   
   color: ${palette.GRAY_NEWTRO};
-  font-size: 30px;
+  font-size: 2.5rem;
   opacity: 0.8;
 `;
 
@@ -64,6 +64,6 @@ export const ArrowDownButton = styled.div`
   ${PreventDrag};
   cursor: pointer;
   
-  ${ResponsiveTextStyle};
+  font-size: 1rem;
   color: ${palette.WHITE_NEWTRO};
 `;

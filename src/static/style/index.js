@@ -1,6 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
+import media from 'styled-media-query';
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 16px;
+    
+    ${media.lessThan('medium')`
+       font-size: 12px;
+    `};
+  }
+
   body {
     font-family: 'Montserrat', 'NanumSquare', sans-serif;
   }
