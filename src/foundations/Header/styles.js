@@ -1,21 +1,15 @@
 import styled from 'styled-components';
-import { palette } from '@S/index';
-
-const zIndex = {
-  base: 1,
-  header: 9999,
-};
+import { palette, zIndex } from '@S/index';
 
 export const StyledHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
   z-index: ${zIndex.header};
   height: auto;
   flex-direction: row;

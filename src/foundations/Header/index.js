@@ -41,22 +41,22 @@ function Header() {
         </S.MenuButton>
       </S.StyledHeader>
       <S.NaviButton onClick={() => changeUrl('/')}>
-        Home
+        메인
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/activity')}>
-        Activity
+        행사
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/performance')}>
-        Performance
+        공연
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/event')}>
-        Event
+        이벤트
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/goods')}>
-        Goods
+        기념품
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/introduction')}>
-        Introduction
+        소개
       </S.NaviButton>
     </S.OpenedMenu>
   );

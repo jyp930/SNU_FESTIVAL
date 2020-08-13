@@ -29,3 +29,8 @@ export const palette = {
 
   BLACK_NEWTRO: '#1c0b01',
 };
+
+export const zIndex = {
+  base: 1,
+  header: 9999,
+};
