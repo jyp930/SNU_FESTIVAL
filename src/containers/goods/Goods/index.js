@@ -15,7 +15,7 @@ function Goods() {
       data-sal-delay="2300"
       data-sal-easing="ease-out-back"
     >
-      event
+      goods
     </div>
   );
 }

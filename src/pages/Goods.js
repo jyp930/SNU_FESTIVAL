@@ -1,10 +1,9 @@
 import React from 'react';
+import GoodsContainer from '@C/goods/Goods';
 
 function Goods() {
   return (
-    <div>
-      Goods
-    </div>
+    <GoodsContainer />
   );
 }
 export default Goods;
