@@ -41,7 +41,7 @@ function Header() {
         </S.MenuButton>
       </S.StyledHeader>
       <S.NaviButton onClick={() => changeUrl('/')}>
-        메인
+        메인 화면
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/activity')}>
         행사
@@ -53,10 +53,10 @@ function Header() {
         이벤트
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/goods')}>
-        기념품
+        굿즈
       </S.NaviButton>
       <S.NaviButton onClick={() => changeUrl('/introduction')}>
-        소개
+        축제 소개
       </S.NaviButton>
     </S.OpenedMenu>
   );
