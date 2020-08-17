@@ -17,7 +17,7 @@ const newtroCompetitionText = (
     <S.Description>
       설명설명 블라블라
       <br />
-      설명설명 블라블라 설명설명 블라블라
+      클릭시 다음으로 블라블라 설명설명 블라블라
     </S.Description>
     <S.Supplement>응모 사진 중 5개 작품 선정</S.Supplement>
   </S.TextContainer>

@@ -19,3 +19,9 @@ export const Card = styled.div`
     box-shadow: 0 30px 100px -10px rgba(0, 0, 0, 0.4);
   }
 `;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;

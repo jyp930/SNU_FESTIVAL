@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { Spring, config } from 'react-spring/renderprops-universal';
 import * as S from './styles';
 
-function SingleCard() {
+function SingleCard({ image }) {
   const [xys, setXys] = useState([0, 0, 1]);
   const calc = useCallback((x, y) => (
-    [-(y - window.innerHeight / 1.5) / 60, (x - window.innerWidth / 1.5) / 60, 1.1]),
+    [-(y - window.innerHeight / 1.75) / 80, (x - window.innerWidth / 1.5) / 80, 1.1]),
   []);
   const trans = useCallback((x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`,
     []);
@@ -23,7 +23,7 @@ function SingleCard() {
           onMouseLeave={() => setXys([0, 0, 1])}
           style={{ ...props, transform: trans(...xys) }}
         >
-          IMAGE
+          <S.Image src={image} alt="" />
         </S.Card>
       )}
     </Spring>

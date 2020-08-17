@@ -43,3 +43,34 @@ export const TextFlexItem = styled.div`
     justify-content: center;
   `};
 `;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  ${media.lessThan('medium')`
+    align-items: center;
+  `};
+`;
+
+export const Title = styled.p`
+  font-size: 3rem;
+  font-weight: bold;
+  color: ${palette.BLACK_NEWTRO};
+  
+  margin: 0 0 30px;
+`;
+
+export const Description = styled.p`
+  font-size: 1.5rem;
+  color: ${palette.BROWN_NEWTRO};
+  
+  margin: 0 0 20px;
+`;
+
+export const Supplement = styled.p`
+  font-size: 1rem;
+  color: ${palette.BROWN20_NEWTRO};
+
+  margin: 0;
+`;
