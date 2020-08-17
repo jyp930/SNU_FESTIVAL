@@ -6,7 +6,7 @@ export default {
 };
 
 export const Default = () => (
-  <div style={{ margin: 100 }}>
+  <div style={{ margin: 100, height: 400, width: 400 }}>
     <SingleCard />
   </div>
 );

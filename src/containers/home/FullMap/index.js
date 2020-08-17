@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
+import SingleCard from '@F/spring/SingleCard';
 import * as S from './styles';
 
 function FullMap({ parallax, offset }) {
@@ -10,7 +11,14 @@ function FullMap({ parallax, offset }) {
         offset={offset}
         speed={0.5}
       >
-        FullMapContainer
+        <S.FlexContainer>
+          <S.TextFlexItem>
+            지도 설명~~~
+          </S.TextFlexItem>
+          <S.ImageFlexItem>
+            <SingleCard />
+          </S.ImageFlexItem>
+        </S.FlexContainer>
       </ParallaxLayer>
     </S.StyledFullMap>
   );

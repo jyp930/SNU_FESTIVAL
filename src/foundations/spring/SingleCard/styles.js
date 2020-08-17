@@ -5,9 +5,9 @@ export const StyledSingleCard = styled.div`
 
 `;
 
-export const Test = styled.div`
-  width: 440px;
-  height: 440px;
+export const Card = styled.div`
+  width: 100%;
+  height: 100%;
   background-color: ${palette.ORANGE_NEWTRO};
   border: 15px solid ${palette.WHITE_NEWTRO};
 
