@@ -32,5 +32,5 @@ function SingleCard({ image }) {
 export default SingleCard;
 
 SingleCard.propTypes = {
-
+  image: PropTypes.string.isRequired,
 };

@@ -23,9 +23,11 @@ const newtroCompetitionText = (
   </S.TextContainer>
 );
 
-function NewtroCompetitionImage({ parallax, offset }) {
+function NewtroCompetitionImage({ offset, scrollDown }) {
   return (
-    <S.StyledNewtroCompetitionImage>
+    <S.StyledNewtroCompetitionImage
+      onClick={() => scrollDown(offset)}
+    >
       <ParallaxLayer
         offset={offset}
         speed={0.5}
@@ -47,10 +49,10 @@ function NewtroCompetitionImage({ parallax, offset }) {
 export default NewtroCompetitionImage;
 
 NewtroCompetitionImage.propTypes = {
-  parallax: PropTypes.objectOf(PropTypes.any),
   offset: PropTypes.number.isRequired,
+  scrollDown: PropTypes.func,
 };
 
 NewtroCompetitionImage.defaultProps = {
-  parallax: null,
+  scrollDown: () => {},
 };

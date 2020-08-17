@@ -17,9 +17,11 @@ const mainMapText = (
   </S.TextContainer>
 );
 
-function FullMap({ parallax, offset }) {
+function FullMap({ offset, scrollDown }) {
   return (
-    <S.StyledFullMap>
+    <S.StyledFullMap
+      onClick={() => scrollDown(offset)}
+    >
       <ParallaxLayer
         offset={offset}
         speed={0.5}
@@ -41,10 +43,10 @@ function FullMap({ parallax, offset }) {
 export default FullMap;
 
 FullMap.propTypes = {
-  parallax: PropTypes.objectOf(PropTypes.any),
   offset: PropTypes.number.isRequired,
+  scrollDown: PropTypes.func,
 };
 
 FullMap.defaultProps = {
-  parallax: null,
+  scrollDown: () => {},
 };

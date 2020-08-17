@@ -7,7 +7,6 @@ export const StyledFullMap = styled.div`
 
 `;
 
-// TODO: CSS 중복 처리
 export const FlexContainer = styled.div`
   width: 100%;
   height: 100%;
