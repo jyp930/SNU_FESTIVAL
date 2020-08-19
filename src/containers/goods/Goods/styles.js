@@ -25,11 +25,16 @@ export const BackgroundImage = styled.div`
 `;
 
 export const GoodsMainImage = styled.img`
-  width: 30vw;
-  height: 30vh; 
+  width: 25vw;
+  height: 25vh; 
   z-index: ${zIndex.base};
 `;
 
 export const GoodsImage = styled.img`
-  
+  position: fixed;
+  top: ${props => props.top};
+  left: ${props => props.left};
+  width: 10vw;
+  // height:10vh;
+  z-index: ${zIndex.base};
 `;
