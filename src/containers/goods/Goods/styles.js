@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { palette, zIndex } from '@S/index';
+import { zIndex } from '@S/index';
 import IU3 from '@I/jpeg/IU3.jpeg';
 
 export const StyledGoods = styled.div`
@@ -28,13 +28,5 @@ export const GoodsMainImage = styled.img`
   width: 25vw;
   height: 25vh; 
   z-index: ${zIndex.base};
-`;
-
-export const GoodsImage = styled.img`
-  position: fixed;
-  top: ${props => props.top};
-  left: ${props => props.left};
-  width: 10vw;
-  // height:10vh;
-  z-index: ${zIndex.base};
+  cursor: pointer;
 `;
