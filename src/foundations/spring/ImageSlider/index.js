@@ -12,7 +12,9 @@ function ImageSlider({ images, customStyle, duration }) {
     setImageIndex(state => (state + 1) % images.length);
   }, [images]);
 
-  const nextImageByClick = useCallback(() => {
+  const nextImageByClick = useCallback((e) => {
+    e.stopPropagation(); // parallax 의 scroll 동작을 막는다.
+
     showNextImage();
     setToggleImage(state => !state);
   }, [showNextImage]);

@@ -17,15 +17,17 @@ const newtroCompetitionText = (
     <S.Description>
       설명설명 블라블라
       <br />
-      설명설명 블라블라 설명설명 블라블라
+      클릭시 다음으로 블라블라 설명설명 블라블라
     </S.Description>
     <S.Supplement>응모 사진 중 5개 작품 선정</S.Supplement>
   </S.TextContainer>
 );
 
-function NewtroCompetitionImage({ parallax, offset }) {
+function NewtroCompetitionImage({ offset, scrollDown }) {
   return (
-    <S.StyledNewtroCompetitionImage>
+    <S.StyledNewtroCompetitionImage
+      onClick={() => scrollDown(offset)}
+    >
       <ParallaxLayer
         offset={offset}
         speed={0.5}
@@ -47,10 +49,10 @@ function NewtroCompetitionImage({ parallax, offset }) {
 export default NewtroCompetitionImage;
 
 NewtroCompetitionImage.propTypes = {
-  parallax: PropTypes.objectOf(PropTypes.any),
   offset: PropTypes.number.isRequired,
+  scrollDown: PropTypes.func,
 };
 
 NewtroCompetitionImage.defaultProps = {
-  parallax: null,
+  scrollDown: () => {},
 };

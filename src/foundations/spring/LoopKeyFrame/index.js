@@ -1,7 +1,7 @@
 import React from 'react';
-import * as S from './styles';
 import PropTypes from 'prop-types';
 import { Keyframes } from 'react-spring/renderprops';
+import * as S from './styles';
 
 function LoopKeyFrame({
   children, start, end, duration, delay, customStyle,

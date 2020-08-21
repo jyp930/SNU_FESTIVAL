@@ -28,12 +28,8 @@ const ArrowDownStyle = {
   justifyContent: 'center',
 };
 
-function PromoteVideo({ parallax, offset }) {
+function PromoteVideo({ offset, scrollDown }) {
   const [isMuted, setIsMuted] = useState(true);
-
-  const scrollDown = useCallback(() => {
-    parallax.scrollTo(offset + 1);
-  }, [parallax, offset]);
 
   return (
     <S.StyledPromoteVideo>
@@ -46,7 +42,9 @@ function PromoteVideo({ parallax, offset }) {
         </S.CenterLabel>
 
         <S.ArrowDownButtonWrapper>
-          <S.ArrowDownButton onClick={scrollDown}>
+          <S.ArrowDownButton
+            onClick={() => scrollDown(offset)}
+          >
             <LoopKeyFrame
               start={{ transform: 'translate3d(0, 0, 0)' }}
               end={{ transform: 'translate3d(0, -10px, 0)' }}
@@ -58,7 +56,9 @@ function PromoteVideo({ parallax, offset }) {
           </S.ArrowDownButton>
         </S.ArrowDownButtonWrapper>
 
-        <S.SoundButton onClick={() => setIsMuted(state => !state)}>
+        <S.SoundButton
+          onClick={() => setIsMuted(state => !state)}
+        >
           <LoopKeyFrame
             start={{ opacity: 0.6 }}
             end={{ opacity: 1 }}
@@ -79,10 +79,10 @@ function PromoteVideo({ parallax, offset }) {
 export default PromoteVideo;
 
 PromoteVideo.propTypes = {
-  parallax: PropTypes.objectOf(PropTypes.any),
   offset: PropTypes.number.isRequired,
+  scrollDown: PropTypes.func,
 };
 
 PromoteVideo.defaultProps = {
-  parallax: null,
+  scrollDown: () => {},
 };
