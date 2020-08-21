@@ -4,6 +4,9 @@ import ReactGA from 'react-ga';
 import App from '@/App';
 import { GA_TRACKING_KEY } from '@/config';
 
+/** css import */
+import 'sal.js/dist/sal.css';
+
 ReactGA.initialize(GA_TRACKING_KEY);
 
 ReactDOM.render(
