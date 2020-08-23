@@ -11,7 +11,7 @@ import Lottie404 from '@F/lottie/Lottie404';
 function App() {
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle /
 
       <Router>
         <Suspense fallback={<LottieLoadingPacMan />}>
