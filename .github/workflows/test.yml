@@ -26,8 +26,8 @@ jobs:
         run: yarn build
         env:
           CI: false
-
-      - uses: 8398a7/action-slack@v3
+      - name: Slack Notification
+        uses: 8398a7/action-slack@v3
         with:
           status: custom
           fields: workflow,ref,repo,author,message,commit,action,eventName
