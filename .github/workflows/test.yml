@@ -34,7 +34,9 @@ jobs:
 
   notification:
     name: Slack Notification
+    runs-on: ubuntu-latest
     steps:
+      - name: slack noti for github-action
       - uses: 8398a7/action-slack@v3
         with:
           status: custom
