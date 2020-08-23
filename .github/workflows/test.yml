@@ -30,14 +30,14 @@ jobs:
       - uses: 8398a7/action-slack@v3
         with:
           status: custom
-          fields: repo,author,message,commit,action,eventName
+          fields: workflow,ref,repo,author,message,commit,action,eventName
           custom_payload: |
             {
               username: 'action-slack',
               icon_emoji: ':octocat:',
               attachments: [{
                 color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                text: `BUILD\n${process.env.AS_WORKFLOW}\n(${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@${process.env.AS_REF} by ${process.env.AS_AUTHOR} ${{ job.status }}.toUpperCase()`,
+                text: `BUILD\n${process.env.AS_WORKFLOW}\n(${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@${process.env.AS_REF} by ${process.env.AS_AUTHOR} ${${{ job.status }}.toUpperCase()}`,
               }]
             }
         env:
