@@ -49,7 +49,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        if: '${{ job.status }}' !== 'success'
+        if: ${{ job.status === 'success' }}
 
   deploy:
     name: Deploy
