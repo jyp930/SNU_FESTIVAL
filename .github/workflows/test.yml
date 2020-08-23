@@ -26,16 +26,7 @@ jobs:
         run: yarn build
         env:
           CI: false
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: build
-          path: build
 
-  notification:
-    name: Slack Notification
-    runs-on: ubuntu-latest
-    steps:
       - name: slack noti for github-action
         uses: 8398a7/action-slack@v3
         with:
