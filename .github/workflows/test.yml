@@ -37,7 +37,7 @@ jobs:
               icon_emoji: ':octocat:',
               attachments: [{
                 color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
-                text: `BUILD\n${process.env.AS_WORKFLOW}\n(${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@${process.env.AS_REF} by ${process.env.AS_AUTHOR} (${{ job.status }}).toUpperCase()`,
+                text: `BUILD\n${process.env.AS_WORKFLOW}\n(${process.env.AS_COMMIT}) of ${process.env.AS_REPO}@${process.env.AS_REF} by ${process.env.AS_AUTHOR}\n${{ job.status }}`,
               }]
             }
         env:
