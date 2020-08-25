@@ -46,7 +46,7 @@ export const OpenedMenu = styled.div`
   height: 100vh;
   z-index: ${zIndex.header};
   background-color: ${palette.GRAY_NEWTRO};
-  opacity: 0.9;
+  opacity: 0.91;
 `;
 
 export const NaviButton = styled.p`
@@ -54,4 +54,10 @@ export const NaviButton = styled.p`
   font-size: 2rem;
   color: ${palette.BLACK_NEWTRO};
   cursor: pointer;
+  text-shadow: 1px 1px 2px grey;
+  &:hover {
+    transition: 700ms;
+    transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+    font-size: 3rem;
+  }
 `;
