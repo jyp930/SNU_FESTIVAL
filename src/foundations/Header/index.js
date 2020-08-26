@@ -22,7 +22,9 @@ function Header() {
       data-sal-delay={delay}
       onClick={() => changeUrl(url)}
     >
-      {page}
+      <S.NaviText>
+        {page}
+      </S.NaviText>
     </S.NaviButton>
   );
 
