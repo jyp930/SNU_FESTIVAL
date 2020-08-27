@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import mascot from '@I/svg/mascot/mascot-basic.svg';
@@ -9,12 +9,12 @@ function Header() {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   const history = useHistory();
 
-  const changeUrl = (route) => {
+  const changeUrl = useCallback((route) => {
     history.push(route);
-    setMenuIsOpened(!menuIsOpened);
-  };
+    setMenuIsOpened(false);
+  }, [history]);
 
-  const NaviButton = (page, url, delay) => (
+  const NaviButton = useCallback((page, url, delay) => (
     <S.NaviButton
       data-sal="slide-up"
       data-sal-easing="ease-out-back"
@@ -26,12 +26,7 @@ function Header() {
         {page}
       </S.NaviText>
     </S.NaviButton>
-  );
-
-  useEffect(() => {
-    sal(
-    );
-  }, [menuIsOpened]);
+  ), [changeUrl]);
 
   const headerBar = (
     <S.StyledHeader>
@@ -46,6 +41,10 @@ function Header() {
       </S.MenuButton>
     </S.StyledHeader>
   );
+
+  useEffect(() => {
+    sal();
+  }, [menuIsOpened]);
 
   const openedMenu = (
     <div
