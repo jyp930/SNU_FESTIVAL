@@ -6,15 +6,15 @@ function GoodsImage({
   img, delay, top, left,
 }) {
   return (
-    <S.ImageWrapper top={top} left={left}>
-      <S.StyledGoodsImage
-        data-sal="fade"
-        data-sal-duration="2000"
-        data-sal-delay={delay}
-        data-sal-easing="ease-out-back"
-        src={img}
-        alt={img}
-      />
+    <S.ImageWrapper
+      top={top}
+      left={left}
+      data-sal="fade"
+      data-sal-duration="2000"
+      data-sal-delay={delay}
+      data-sal-easing="ease-out-back"
+    >
+      <S.StyledGoodsImage src={img} alt={img} />
     </S.ImageWrapper>
   );
 }
