@@ -16,6 +16,7 @@ module.exports = {
         "import/prefer-default-export": 0,
         "jsx-a11y/media-has-caption": 0,
         "react/button-has-type": 0,
+        "no-use-before-define": 0,
         "comma-dangle": 1,
         "no-unused-vars": 1,
         "react/no-array-index-key": 1,

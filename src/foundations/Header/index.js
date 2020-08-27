@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import mascot from '@I/svg/mascot-pink.svg';
+import mascot from '@I/svg/mascot/mascot-basic.svg';
 import sal from 'sal.js';
 import * as S from './styles';
 
