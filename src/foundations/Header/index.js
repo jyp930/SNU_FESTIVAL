@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import mascot from '@I/svg/mascot-pink.svg';
@@ -9,15 +9,24 @@ function Header() {
   const [menuIsOpened, setMenuIsOpened] = useState(false);
   const history = useHistory();
 
-  function changeUrl(route) {
+  const changeUrl = useCallback((route) => {
     history.push(route);
-    setMenuIsOpened(!menuIsOpened);
-  }
+    setMenuIsOpened(false);
+  }, [history]);
 
-  useEffect(() => {
-    sal(
-    );
-  }, [menuIsOpened]);
+  const NaviButton = useCallback((page, url, delay) => (
+    <S.NaviButton
+      data-sal="slide-up"
+      data-sal-easing="ease-out-back"
+      data-sal-duration="1000"
+      data-sal-delay={delay}
+      onClick={() => changeUrl(url)}
+    >
+      <S.NaviText>
+        {page}
+      </S.NaviText>
+    </S.NaviButton>
+  ), [changeUrl]);
 
   const headerBar = (
     <S.StyledHeader>
@@ -33,74 +42,37 @@ function Header() {
     </S.StyledHeader>
   );
 
+  useEffect(() => {
+    sal();
+  }, [menuIsOpened]);
+
   const openedMenu = (
-    <S.OpenedMenu onClick={() => setMenuIsOpened(!menuIsOpened)}>
-      <S.StyledHeader>
-        <S.Logo opened={menuIsOpened} onClick={() => changeUrl('/')}>
-          <img src={mascot} alt="mascot" width={28} height={28} />
-          <div
-            data-sal="fade"
-            data-sal-easing="ease-out-back"
-            data-sal-duration="1000"
-          >
-            SNU-FESTIVAL
-          </div>
-        </S.Logo>
-      </S.StyledHeader>
-      <S.NaviButton
-        data-sal="slide-up"
-        data-sal-easing="ease-out-back"
-        data-sal-duration="1000"
-        onClick={() => changeUrl('/')}
-      >
-        메인 화면
-      </S.NaviButton>
-      <S.NaviButton
-        data-sal="slide-up"
-        data-sal-easing="ease-out-back"
-        data-sal-duration="1000"
-        data-sal-delay="50"
-        onClick={() => changeUrl('/activity')}
-      >
-        행사
-      </S.NaviButton>
-      <S.NaviButton
-        data-sal="slide-up"
-        data-sal-easing="ease-out-back"
-        data-sal-duration="1000"
-        data-sal-delay="100"
-        onClick={() => changeUrl('/performance')}
-      >
-        공연
-      </S.NaviButton>
-      <S.NaviButton
-        data-sal="slide-up"
-        data-sal-easing="ease-out-back"
-        data-sal-duration="1000"
-        data-sal-delay="150"
-        onClick={() => changeUrl('/event')}
-      >
-        이벤트
-      </S.NaviButton>
-      <S.NaviButton
-        data-sal="slide-up"
-        data-sal-easing="ease-out-back"
-        data-sal-duration="1000"
-        data-sal-delay="200"
-        onClick={() => changeUrl('/goods')}
-      >
-        굿즈
-      </S.NaviButton>
-      <S.NaviButton
-        data-sal="slide-up"
-        data-sal-easing="ease-out-back"
-        data-sal-duration="1000"
-        data-sal-delay="250"
-        onClick={() => changeUrl('/introduction')}
-      >
-        축제 소개
-      </S.NaviButton>
-    </S.OpenedMenu>
+    <div
+      data-sal="fade"
+      data-sal-easing="ease-out-back"
+      data-sal-duration="800"
+    >
+      <S.OpenedMenu onClick={() => setMenuIsOpened(!menuIsOpened)}>
+        <S.StyledHeader>
+          <S.Logo opened={menuIsOpened} onClick={() => changeUrl('/')}>
+            <img src={mascot} alt="mascot" width={28} height={28} />
+            <div
+              data-sal="fade"
+              data-sal-easing="ease-out-back"
+              data-sal-duration="1000"
+            >
+              SNU-FESTIVAL
+            </div>
+          </S.Logo>
+        </S.StyledHeader>
+        {NaviButton('메인화면', '/', 250)}
+        {NaviButton('행사', '/activity', 300)}
+        {NaviButton('공연', '/performance', 350)}
+        {NaviButton('이벤트', '/event', 400)}
+        {NaviButton('굿즈', '/goods', 450)}
+        {NaviButton('축제 소개', '/introduction', 500)}
+      </S.OpenedMenu>
+    </div>
   );
 
   return (
