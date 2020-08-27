@@ -28,13 +28,13 @@ function Goods() {
         src={mascot}
         alt="mascot"
       />
-      <GoodsImage img={IU1} top="11vh" left="11vw" delay={100} />
+      <GoodsImage img={IU1} top="10vh" left="11vw" delay={100} />
       <GoodsImage img={IU2} top="13vh" left="55vw" delay={150} />
       <GoodsImage img={IU3} top="33vh" left="7vw" delay={200} />
       <GoodsImage img={IU4} top="44vh" left="80vw" delay={250} />
       <GoodsImage img={IU5} top="55vh" left="17vw" delay={300} />
       <GoodsImage img={IU6} top="66vh" left="60vw" delay={350} />
-      <GoodsImage img={IU7} top="77vh" left="30vw" delay={400} />
+      <GoodsImage img={IU7} top="70vh" left="30vw" delay={400} />
     </S.StyledGoods>
   );
 }
