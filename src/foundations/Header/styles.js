@@ -49,9 +49,20 @@ export const OpenedMenu = styled.div`
   opacity: 0.9;
 `;
 
-export const NaviButton = styled.p`
+export const NaviButton = styled.div`
+
+`;
+
+export const NaviText = styled.p`
   margin: 20px 0;
   font-size: 2rem;
   color: ${palette.BLACK_NEWTRO};
   cursor: pointer;
+  text-shadow: 1px 1px 2px grey;
+  transition-duration: 1s;
+
+  &:hover {
+    transition-timing-function: cubic-bezier(.175,.885,.32,1);;
+    font-size: 3rem;
+  }
 `;
