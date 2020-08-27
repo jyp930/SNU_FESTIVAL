@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import sal from 'sal.js';
 import GoodsImage from '@C/goods/GoodsImage';
-import mascot from '@I/svg/mascot-pink.svg';
+import mascot from '@I/svg/mascot/mascot-basic.svg';
 import IU1 from '@I/jpeg/IU1.jpeg';
 import IU4 from '@I/jpeg/IU4.jpeg';
 import IU5 from '@I/jpeg/IU5.jpeg';

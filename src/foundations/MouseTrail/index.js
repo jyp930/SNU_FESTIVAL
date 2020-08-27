@@ -51,7 +51,7 @@ function triggerMouseTrail() {
       const n = document.createElement('img');
       n.src = mascots[i];
       n.className = 'mouseTrailElement';
-      n.setAttribute('style', 'position: absolute; height: 36px; width: 36px; border-radius: 3px; pointer-events: none;');
+      n.setAttribute('style', 'position: absolute; height: 36px; width: 36px; pointer-events: none;');
       document.body.appendChild(n);
       return n;
     }());
@@ -63,7 +63,7 @@ function triggerMouseTrail() {
   };
 
   // Creates the Dot objects, populates the dots array
-  for (let i = 0; i < 15; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     const d = new Dot(i);
     dots.push(d);
   }
@@ -77,8 +77,8 @@ function triggerMouseTrail() {
       dot.setX(x);
       dot.setY(y);
       dot.draw();
-      x += (nextDot.x - dot.x) * 0.85;
-      y += (nextDot.y - dot.y) * 0.85;
+      x += (nextDot.x - dot.x) * 0.9;
+      y += (nextDot.y - dot.y) * 0.9;
     });
   }
 
