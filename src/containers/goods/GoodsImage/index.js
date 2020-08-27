@@ -14,7 +14,7 @@ function GoodsImage({
       data-sal-delay={delay}
       data-sal-easing="ease-out-back"
     >
-      <S.StyledGoodsImage src={img} alt={img} />
+      <S.StyledGoodsImage src={img} alt="고릴라리온" />
     </S.ImageWrapper>
   );
 }
@@ -22,7 +22,11 @@ export default GoodsImage;
 
 GoodsImage.propTypes = {
   img: PropTypes.string.isRequired,
-  delay: PropTypes.string.isRequired,
+  delay: PropTypes.number,
   top: PropTypes.string.isRequired,
   left: PropTypes.string.isRequired,
+};
+
+GoodsImage.defaultProps = {
+  delay: 800,
 };

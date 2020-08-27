@@ -10,14 +10,14 @@ export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  width: 20vh;
+  height: 20vh;
   ${media.lessThan('medium')`
     width: 20vw;
     height: 20vw;
   `};
-  ${media.greaterThan('medium')`
-    width: 20vh;
-    height: 20vh;
-  `};
+
   &:hover{
     z-index: ${zIndex.base + 1};
   }
