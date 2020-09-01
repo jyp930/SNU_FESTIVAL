@@ -9,13 +9,15 @@ export const StyledHeader = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  padding: 0 20px;
+  padding: 15px 20px;
   z-index: ${zIndex.header};
   height: auto;
   flex-direction: row;
 `;
 
 export const Logo = styled.div`
+  display: flex;
+  align-items: center;
   cursor: pointer;
   color: ${props => (props.opened ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
 `;
@@ -26,10 +28,10 @@ export const MenuButton = styled.div`
 `;
 
 export const MenuButtonBar = styled.div`
-  width: 35px;
-  height: 5px;
+  width: 28px;
+  height: 4px;
   background-color: ${props => (props.opened ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
-  margin: 6px 0;
+  margin: 4px 0;
 `;
 
 export const OpenedMenu = styled.div`
@@ -47,9 +49,20 @@ export const OpenedMenu = styled.div`
   opacity: 0.9;
 `;
 
-export const NaviButton = styled.p`
+export const NaviButton = styled.div`
+
+`;
+
+export const NaviText = styled.p`
   margin: 20px 0;
   font-size: 2rem;
   color: ${palette.BLACK_NEWTRO};
   cursor: pointer;
+  text-shadow: 1px 1px 2px grey;
+  transition-duration: 1s;
+
+  &:hover {
+    transition-timing-function: cubic-bezier(.175,.885,.32,1);;
+    font-size: 3rem;
+  }
 `;

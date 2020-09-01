@@ -12501,6 +12501,11 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
+sal.js@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/sal.js/-/sal.js-0.7.7.tgz#bbb1967d28bca3c8626dc282d1039ba3854574a9"
+  integrity sha512-uQDKQfxkL+2cim5Ik/viUFk2M6WMbFs0FupTH4hz/ODpg2YD8fmng3r6F9EM7e+D8jFXcH5TP5k+OGwZlRAjog==
+
 sane@^4.0.3:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/sane/-/sane-4.1.0.tgz#ed881fd922733a6c461bc189dc2b6c006f3ffded"
