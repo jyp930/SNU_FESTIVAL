@@ -7,11 +7,13 @@ import { GlobalStyle } from '@S/index';
 import Header from '@F/Header';
 import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
 import Lottie404 from '@F/lottie/Lottie404';
+import MouseTrail from '@F/MouseTrail';
 
 function App() {
   return (
     <>
       <GlobalStyle />
+      <MouseTrail />
 
       <Router>
         <Suspense fallback={<LottieLoadingPacMan />}>
