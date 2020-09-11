@@ -99,3 +99,8 @@ export const Image = styled.img`
   object-fit: contain;
   padding: 20px;
 `;
+
+export const Sal = styled.div`
+  width: auto;
+  height: 100%;
+`;

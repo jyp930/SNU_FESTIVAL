@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import 'antd/dist/antd.css';
 import { MdClose } from 'react-icons/md';
-import PropTypes from 'prop-types';
+import sal from 'sal.js';
 import * as S from './styles';
 
 function ContentsContainer({
   name, description, background, image, active, toggle,
 }) {
+  useEffect(() => {
+    sal();
+  }, [active]);
+
   return (
     <S.StyledContentsContainer
       background={background}
@@ -14,26 +19,36 @@ function ContentsContainer({
       onClick={!active ? toggle : null}
     >
       { active && (
-        <S.DetailWrapper>
-          <S.Circle
-            background={background}
-          />
-          <S.Close>
-            <MdClose
-              type="close"
-              onClick={toggle}
+        <S.Sal
+          data-sal="fade"
+          data-sal-duration="1000"
+        >
+          <S.DetailWrapper>
+            <S.Circle
+              background={background}
             />
-          </S.Close>
-          <S.Text>
-            <S.Name>{name}</S.Name>
-            <S.Description>{description}</S.Description>
-          </S.Text>
-        </S.DetailWrapper>
+            <S.Close>
+              <MdClose
+                type="close"
+                onClick={toggle}
+              />
+            </S.Close>
+            <S.Text>
+              <S.Name>{name}</S.Name>
+              <S.Description>{description}</S.Description>
+            </S.Text>
+          </S.DetailWrapper>
+        </S.Sal>
       )}
       { !active && (
         <S.Default>
-          <S.Image src={image} alt="" />
-          <div>{name}</div>
+          <S.Sal
+            data-sal="slide-up"
+            data-sal-duration="1000"
+          >
+            <S.Image src={image} alt="" />
+            <div>{name}</div>
+          </S.Sal>
         </S.Default>
       )}
     </S.StyledContentsContainer>
