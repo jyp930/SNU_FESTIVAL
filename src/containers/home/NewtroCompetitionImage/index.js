@@ -9,11 +9,16 @@ import IU2 from '@I/jpeg/IU2.jpeg';
 import IU3 from '@I/jpeg/IU3.jpeg';
 import IU6 from '@I/jpeg/IU6.jpeg';
 import IU7 from '@I/jpeg/IU7.jpeg';
+import VisibilitySensor from 'react-visibility-sensor';
 import * as S from './styles';
 
 const newtroCompetitionText = (
   <S.TextContainer>
-    <S.Title>뉴트로 컨셉 공모전</S.Title>
+    <VisibilitySensor>
+      {({ isVisible }) => (isVisible
+        ? <S.Title>뉴트로 컨셉 공모전</S.Title>
+        : <S.Title>Lazy Loading 테스트</S.Title>)}
+    </VisibilitySensor>
     <S.Description>
       설명설명 블라블라
       <br />
