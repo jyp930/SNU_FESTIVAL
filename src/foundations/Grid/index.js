@@ -6,7 +6,6 @@ import * as S from './styles';
 
 const styles = {
   cell: {
-    position: 'absolute',
     willChange: 'transform, width, height, opacity',
   },
 };
@@ -60,7 +59,7 @@ class Grid extends React.Component {
       opacity: this.state.open && !open ? 0 : 1,
       x: open ? this.outerRef.scrollLeft : x,
       y: open ? this.outerRef.scrollTop : y,
-      width: open ? this.state.width : width,
+      width: open ? window.screen.width : (this.state.open ? 0 : width),
       height: open ? this.state.heightOuter : height,
     };
   }
@@ -112,9 +111,11 @@ class Grid extends React.Component {
         client
         innerRef={r => (this.outerRef = r)}
         onResize={this.resizeOuter}
+        id="AAAMeasure"
       >
         {({ measureRef }) => (
-          <S.Outerstyle
+          <S.OuterStyle
+            id="AAOuter"
             ref={measureRef}
             overflow={overflow}
             style={{ ...this.props.style }}
@@ -127,11 +128,12 @@ class Grid extends React.Component {
               client
               innerRef={r => this.innerRef = r}
               onResize={this.resizeInner}
+              id="AAAMeasure"
             >
               {({ measureRef }) => (
-                <S.Innerstyle
+                <S.InnerStyle
+                  id="AAAInner"
                   ref={measureRef}
-                  style={{ height }}
                 >
                   <Transition
                     native
@@ -151,26 +153,24 @@ class Grid extends React.Component {
                       opacity, x, y, width, height,
                     }) => (
                       <animated.div
+                        id="AAAA"
                         style={{
                           ...styles.cell,
                           opacity,
                           width,
+                          margin: 'auto',
                           height,
                           zIndex:
                             lastOpen === c.key || open === c.key ? 1000 : i,
-                          transform: interpolate(
-                            [x, y],
-                            (x, y) => `translate3d(${x}px,${y}px, 0)`,
-                          ),
                         }}
                         children={children(c.object, open === c.key, () => this.toggle(c.key))}
                       />
                     )}
                   </Transition>
-                </S.Innerstyle>
+                </S.InnerStyle>
               )}
             </Measure>
-          </S.Outerstyle>
+          </S.OuterStyle>
         )}
       </Measure>
     );

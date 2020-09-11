@@ -1,7 +1,12 @@
 import styled from 'styled-components';
-import { palette } from '@/static/style';
 import Grid from '@/foundations/Grid';
 
+export const StyledIntroduction = styled.div`
+
+`;
+
 export const StyledGrid = styled(Grid)`
-  flex: 1;
+  display: flex;
+  align-content: center;
+  height: 100vh;
 `;
