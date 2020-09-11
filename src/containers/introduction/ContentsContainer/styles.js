@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledContentsContainer = styled.div`
-  background-image: ${props => props.css};
+  background-image: ${props => props.background};
   cursor: ${props => (!props.active ? 'pointer' : 'auto')}; 
   position: relative;
   background-size: cover;
@@ -19,7 +19,7 @@ export const StyledContentsContainer = styled.div`
   line-height: 10px;
   
   &:hover {
-  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.3);
   }
 }
 `;
@@ -38,17 +38,21 @@ export const Default = styled.div`
 
 export const DetailWrapper = styled.div`
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
+
   background: #ffffffa0;
   color: white;
   padding: 20px;
-  font-weight: 100;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+`;
+
+export const Text = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 `;
 
 export const Name = styled.h1`
@@ -77,14 +81,14 @@ export const Circle = styled.div`
   height: 100px;
   border-radius: 50%;
   box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.2);
-  background: ${props => props.css};
+  background: ${props => props.background};
 `;
 
 export const Close = styled.div`
   position: absolute;
-  top: 30px;
+  top: 60px;
   right: 30px;
-  font-size: 20px;
+  font-size: 30px;
   color: #777777;
   cursor: pointer;
 `;

@@ -8,14 +8,14 @@ import * as S from './styles';
 const styleOfGrid = [
   {
     name: '축제 아카이빙',
-    description: '#a8edea → #fed6e3',
-    css: 'linear-gradient(to top, #a8edea 0%, #fed6e3 100%)',
+    description: '축제 사진, 영상 모아두는 곳',
+    background: 'linear-gradient(to top, #a8edea 0%, #fed6e3 100%)',
     image: cancel,
   },
   {
     name: '역대 축팀장단',
-    description: '#f5f7fa → #c3cfe2',
-    css: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+    description: '역대 축장, 팀장단 모아두는 곳',
+    background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
     image: mascot,
   },
 ];
@@ -24,17 +24,17 @@ function Introduction() {
   return (
     <S.StyledIntroduction>
       <S.StyledGrid
-        id="AAGrid"
         data={styleOfGrid}
         keys={d => d.name}
         columns={2}
         margin={50}
+        heights={500}
         lockScroll={false}
         closeDelay={0}
         config={config.slow}
       >
-        {(styles, active, toggle) => (
-          <ContentsContainer id="AAContainer" {...styles} active={active} toggle={toggle} />
+        {(style, active, toggle) => (
+          <ContentsContainer {...style} active={active} toggle={toggle} />
         )}
       </S.StyledGrid>
     </S.StyledIntroduction>
