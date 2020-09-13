@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Measure from 'react-measure';
 import { Transition, animated } from 'react-spring/renderprops';
@@ -10,14 +10,14 @@ const styles = {
   },
 };
 
-class Grid extends React.Component {
+class Grid extends Component {
   constructor(props) {
     super(props);
     this.state = {
       width: 0,
-      height: 0,
-      open: undefined,
-      lastOpen: undefined,
+      heightOuter: 0,
+      open: false,
+      lastOpen: false,
     };
   }
 
@@ -25,21 +25,12 @@ class Grid extends React.Component {
     this.clicked = false;
   }
 
-  scrollOut = e => {
-    const { lockScroll } = this.props;
-    // const { open } = this.state;
-    if (!lockScroll) {
-      this.state.open && this.toggle(undefined);
-      this.clicked = false;
-    }
-  }
-
   toggle = key => this.setState(
     state => ({
       lastOpen: state.open,
-      open: state.open === key ? undefined : key,
+      open: state.open === key ? false : key,
     }),
-    () => (this.clicked = true),
+    () => { this.clicked = true; },
   )
 
   resize = (width, height, props) => this.setState({
@@ -54,13 +45,14 @@ class Grid extends React.Component {
   update = ({
     key, x, y, width, height,
   }) => {
-    const open = this.state.open === key;
+    const { open, heightOuter } = this.state;
+    const isTargetOpened = open === key;
     return {
-      opacity: this.state.open && !open ? 0 : 1,
-      x: open ? this.outerRef.scrollLeft : x,
-      y: open ? this.outerRef.scrollTop : y,
-      width: open ? window.screen.width : (this.state.open ? 0 : width),
-      height: open ? this.state.heightOuter : height,
+      opacity: open && !isTargetOpened ? 0 : 1,
+      x: isTargetOpened ? this.outerRef.scrollLeft : x,
+      y: isTargetOpened ? this.outerRef.scrollTop : y,
+      width: isTargetOpened ? window.screen.width : (open ? 0 : width),
+      height: isTargetOpened ? heightOuter : height,
     };
   }
 
@@ -69,7 +61,6 @@ class Grid extends React.Component {
       children,
       columns,
       margin,
-      impl,
       config,
       data,
       keys,
@@ -99,37 +90,31 @@ class Grid extends React.Component {
       };
     });
     let overflow;
-    // const overflow = lockScroll ? (open ? 'hidden' : 'auto') : 'auto';
     if (lockScroll) {
       if (open) {
         overflow = 'hidden';
       } else { overflow = 'auto'; }
     } else { overflow = 'auto'; }
-    const height = Math.max(...columnHeights) + margin;
+
     return (
       <Measure
         client
-        innerRef={r => (this.outerRef = r)}
+        innerRef={r => { this.outerRef = r; }}
         onResize={this.resizeOuter}
-        id="AAAMeasure"
       >
         {({ measureRef }) => (
           <S.OuterStyle
-            id="AAOuter"
             ref={measureRef}
             overflow={overflow}
-            style={{ ...this.props.style }}
             {...rest}
           >
             <Measure
               client
-              innerRef={r => this.innerRef = r}
+              innerRef={r => { this.innerRef = r; }}
               onResize={this.resizeInner}
-              id="AAAMeasure"
             >
               {({ measureRef }) => (
                 <S.InnerStyle
-                  id="AAAInner"
                   ref={measureRef}
                 >
                   <Transition
@@ -140,28 +125,27 @@ class Grid extends React.Component {
                     leave={{ opacity: 0 }}
                     enter={this.update}
                     update={this.update}
-                    impl={impl}
                     config={{
                       ...config,
                       delay: this.clicked && !open ? closeDelay : 0,
                     }}
                   >
                     {(c, i) => ({
-                      opacity, x, y, width, height,
+                      opacity, width: width2, height: height2,
                     }) => (
                       <animated.div
-                        id="AAAA"
                         style={{
                           ...styles.cell,
                           opacity,
-                          width,
+                          width: width2,
                           margin: 'auto',
-                          height,
+                          height: height2,
                           zIndex:
                             lastOpen === c.key || open === c.key ? 1000 : i,
                         }}
-                        children={children(c.object, open === c.key, () => this.toggle(c.key))}
-                      />
+                      >
+                        {children(c.object, open === c.key, () => this.toggle(c.key))}
+                      </animated.div>
                     )}
                   </Transition>
                 </S.InnerStyle>
@@ -175,6 +159,7 @@ class Grid extends React.Component {
 } export default Grid;
 
 Grid.propTypes = {
+  children: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   keys: PropTypes.func.isRequired,
   columns: PropTypes.number,
@@ -182,6 +167,7 @@ Grid.propTypes = {
   heights: PropTypes.oneOfType([PropTypes.func, PropTypes.number]),
   lockScroll: PropTypes.bool,
   closeDelay: PropTypes.number,
+  config: PropTypes.objectOf(PropTypes.any),
 };
 
 Grid.defaultProps = {
@@ -190,4 +176,5 @@ Grid.defaultProps = {
   heights: 400,
   lockScroll: false,
   closeDelay: 0,
+  config: {},
 };
