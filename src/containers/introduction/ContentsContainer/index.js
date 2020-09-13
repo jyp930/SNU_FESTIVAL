@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import 'antd/dist/antd.css';
 import { MdClose } from 'react-icons/md';
 import sal from 'sal.js';
 import * as S from './styles';

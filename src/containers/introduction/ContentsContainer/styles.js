@@ -8,11 +8,11 @@ export const StyledContentsContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
-  color: #777777;
-  text-transform: uppercase;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   box-shadow: 0 10px 60px -10px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.5s;
   font-size: 10px;
@@ -31,9 +31,10 @@ export const Default = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  z-index: 1;
   flex-direction: column;
+  
+  padding: 20px;
+  color: #777777;
 `;
 
 export const DetailWrapper = styled.div`
