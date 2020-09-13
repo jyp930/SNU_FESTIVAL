@@ -47,7 +47,6 @@ export const DetailWrapper = styled.div`
 
   background: #ffffffa0;
   color: white;
-  padding: 20px;
 `;
 
 export const Text = styled.div`
@@ -88,20 +87,20 @@ export const Circle = styled.div`
 export const Close = styled.div`
   position: absolute;
   top: 60px;
-  right: 30px;
+  right: 20px;
   font-size: 30px;
   color: #777777;
   cursor: pointer;
 `;
 
 export const Image = styled.img`
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: contain;
   padding: 20px;
 `;
 
 export const Sal = styled.div`
-  width: auto;
+  width: 100%;
   height: 100%;
 `;

@@ -26,7 +26,7 @@ function Introduction() {
       <S.StyledGrid
         data={styleOfGrid}
         keys={d => d.name}
-        columns={2}
+        columns={styleOfGrid.length}
         margin={50}
         heights={500}
         config={config.slow}
