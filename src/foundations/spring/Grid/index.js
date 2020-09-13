@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Measure from 'react-measure';
-import { Transition, animated, interpolate } from 'react-spring/renderprops';
+import { Transition, animated } from 'react-spring/renderprops';
 import * as S from './styles';
 
 const styles = {
@@ -120,9 +120,6 @@ class Grid extends React.Component {
             overflow={overflow}
             style={{ ...this.props.style }}
             {...rest}
-            // onScroll={this.scrollOut}
-            // onWheel={this.scrollOut}
-            // onTouchMove={this.scrollOut}
           >
             <Measure
               client
@@ -177,20 +174,20 @@ class Grid extends React.Component {
   }
 } export default Grid;
 
+Grid.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  keys: PropTypes.func.isRequired,
+  columns: PropTypes.number,
+  margin: PropTypes.number,
+  heights: PropTypes.oneOfType([PropTypes.func, PropTypes.number]),
+  lockScroll: PropTypes.bool,
+  closeDelay: PropTypes.number,
+};
+
 Grid.defaultProps = {
   columns: 3,
   margin: 0,
   heights: 400,
   lockScroll: false,
   closeDelay: 0,
-};
-
-Grid.propTypes = {
-  data: PropTypes.array,
-  keys: PropTypes.func,
-  columns: PropTypes.number,
-  margin: PropTypes.number,
-  heights: PropTypes.oneOfType([PropTypes.func, PropTypes.number]),
-  lockScroll: PropTypes.bool,
-  closeDelay: PropTypes.number,
 };

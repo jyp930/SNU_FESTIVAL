@@ -29,8 +29,6 @@ function Introduction() {
         columns={2}
         margin={50}
         heights={500}
-        lockScroll={false}
-        closeDelay={0}
         config={config.slow}
       >
         {(style, active, toggle) => (
