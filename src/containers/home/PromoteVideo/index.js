@@ -41,20 +41,21 @@ function PromoteVideo({ offset, scrollDown }) {
           {centerContent}
         </S.CenterLabel>
 
-        <S.ArrowDownButtonWrapper>
-          <S.ArrowDownButton
-            onClick={() => scrollDown(offset)}
-          >
-            <LoopKeyFrame
-              start={{ transform: 'translate3d(0, 0, 0)' }}
-              end={{ transform: 'translate3d(0, -10px, 0)' }}
-              duration={500}
-              customStyle={ArrowDownStyle}
-            >
-              { ArrowDownContent }
-            </LoopKeyFrame>
-          </S.ArrowDownButton>
-        </S.ArrowDownButtonWrapper>
+        {/* TODO: 살리기 */}
+        {/*<S.ArrowDownButtonWrapper>*/}
+        {/*  <S.ArrowDownButton*/}
+        {/*    onClick={() => scrollDown(offset)}*/}
+        {/*  >*/}
+        {/*    <LoopKeyFrame*/}
+        {/*      start={{ transform: 'translate3d(0, 0, 0)' }}*/}
+        {/*      end={{ transform: 'translate3d(0, -10px, 0)' }}*/}
+        {/*      duration={500}*/}
+        {/*      customStyle={ArrowDownStyle}*/}
+        {/*    >*/}
+        {/*      { ArrowDownContent }*/}
+        {/*    </LoopKeyFrame>*/}
+        {/*  </S.ArrowDownButton>*/}
+        {/*</S.ArrowDownButtonWrapper>*/}
 
         <S.SoundButton
           onClick={() => setIsMuted(state => !state)}
