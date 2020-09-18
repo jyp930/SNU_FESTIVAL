@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './index';
 
 export default {
-  title: 'foundations/Card',
+  title: 'foundations/card/Card',
 };
 
 export const Default = () => (
