@@ -41,5 +41,7 @@ export const palette = {
 
 export const zIndex = {
   base: 1,
-  header: 9999,
+  header: 100,
+  fullScreen: 1000,
+  mouseTrail: 10000,
 };
