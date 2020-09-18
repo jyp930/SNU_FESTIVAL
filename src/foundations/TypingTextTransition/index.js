@@ -7,7 +7,7 @@ import * as S from './styles';
 
 function TypingTextTransition({ text }) {
   useEffect(() => {
-    TextAnimationTrigor(text);
+    TextAnimationTrigger(text);
   }, []);
 
   return (
@@ -24,7 +24,7 @@ TypingTextTransition.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-function TextAnimationTrigor(Text) {
+function TextAnimationTrigger(Text) {
   const selectSVG = id => {
     const el = document.getElementById(id);
     return new SVGElement(el);
