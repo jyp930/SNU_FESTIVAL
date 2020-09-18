@@ -21,6 +21,7 @@ export const Img = styled.img`
 export const Content = styled.div`
   width: 100%;
   height: 65%;
-
+  
+  box-sizing: border-box;
   padding: 30px 35px;
 `;
