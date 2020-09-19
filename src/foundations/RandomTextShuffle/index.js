@@ -2,28 +2,25 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
-function RandomTextShuffle() {
+function RandomTextShuffle({ text }) {
   useEffect(() => {
     WordShufflerTrigger();
   }, []);
 
   return (
     <S.StyledRandomTextShuffle>
-      <S.HeadLine id="headline">RandomTextShuffle</S.HeadLine>
-      <S.Article id="text">aa;lskdjf;aoijsrna;f kjfh;asjnfal;snfz;lxkn zl/dkf</S.Article>
-      <S.Shuffler id="shuffler">Shuffle</S.Shuffler>
+      <S.Text id="RandomTextShuffle">{text}</S.Text>
     </S.StyledRandomTextShuffle>
   );
 }
 export default RandomTextShuffle;
 
 RandomTextShuffle.propTypes = {
-
+  text: PropTypes.string.isRequired,
 };
 
 function WordShufflerTrigger() {
-  function WordShuffler(holder, opt) {
-    const that = this;
+  function WordShuffler(holderId) {
     let time = 0;
     let now;
     let then = Date.now();
@@ -31,19 +28,14 @@ function WordShufflerTrigger() {
     let delta;
     let currentTimeOffset = 0;
 
-    this.word = null;
     let currentWord = null;
-    this.currentCharacter = 0;
+    let currentCharacter = 0;
     let currentWordLength = 0;
 
     const options = {
       fps: 20,
       timeOffset: 5,
-      textColor: '#eee',
-      fontSize: '50px',
-      useCanvas: false,
-      mixCapital: false,
-      mixSpecialCharacters: false,
+      textColor: '#000',
       needUpdate: true,
       colors: [
         '#f44336', '#e91e63', '#9c27b0',
@@ -56,178 +48,104 @@ function WordShufflerTrigger() {
       ],
     };
 
-    if (typeof opt !== 'undefined') {
-      for (const key in opt) {
-        if (options.hasOwnProperty.call(key)) {
-          options[key] = opt[key];
-        }
-      }
-    }
+    let needUpdate = true;
+    const interval = 1000 / options.fps;
 
-    this.needUpdate = true;
-    this.fps = options.fps;
-    this.interval = 1000 / this.fps;
-    this.timeOffset = options.timeOffset;
-    this.textColor = options.textColor;
-    this.fontSize = options.fontSize;
-    this.mixCapital = options.mixCapital;
-    this.mixSpecialCharacters = options.mixSpecialCharacters;
-    this.colors = options.colors;
-
-    this.useCanvas = options.useCanvas;
-
-    this.chars = [
+    const chars = [
       'A', 'B', 'C', 'D',
       'E', 'F', 'G', 'H',
       'I', 'J', 'K', 'L',
       'M', 'N', 'O', 'P',
       'Q', 'R', 'S', 'T',
       'U', 'V', 'W', 'X',
-      'Y', 'Z',
-    ];
-    this.specialCharacters = [
-      '!', '§', '$', '%',
-      '&', '/', '(', ')',
-      '=', '?', '_', '<',
-      '>', '^', '°', '*',
-      '#', '-', ':', ';', '~',
+      'Y', 'Z', '!', '§',
+      '$', '%', '&', '/',
+      '(', ')', '=', '?',
+      '_', '<', '>', '^',
+      '°', '*', '#', '-',
+      ':', ';', '~',
     ];
 
-    if (this.mixSpecialCharacters) {
-      this.chars = this.chars.concat(this.specialCharacters);
-    }
-
-    this.getRandomColor = function () {
-      const randNum = Math.floor(Math.random() * this.colors.length);
-      return this.colors[randNum];
+    const getRandomColor = () => {
+      const randNum = Math.floor(Math.random() * options.colors.length);
+      return options.colors[randNum];
     };
 
-    // if Canvas
+    const holder = holderId;
 
-    this.position = {
-      x: 0,
-      y: 50,
-    };
-
-    // if DOM
-    if (typeof holder !== 'undefined') {
-      this.holder = holder;
-    }
-
-    if (!this.useCanvas && typeof this.holder === 'undefined') {
-      console.warn('Holder must be defined in DOM Mode. Use Canvas or define Holder');
-    }
-
-    this.getRandCharacter = function (characterToReplace) {
+    const getRandCharacter = (characterToReplace) => {
       if (characterToReplace === ' ') {
         return ' ';
       }
-      const randNum = Math.floor(Math.random() * this.chars.length);
+      const randNum = Math.floor(Math.random() * chars.length);
       const lowChoice = -0.5 + Math.random();
-      const picketCharacter = this.chars[randNum];
-      let chosen = picketCharacter.toLowerCase();
-      if (this.mixCapital) {
-        chosen = lowChoice < 0 ? picketCharacter.toLowerCase() : picketCharacter;
-      }
-      return chosen;
+      const picketCharacter = chars[randNum];
+      return lowChoice < 0 ? picketCharacter.toLowerCase() : picketCharacter;
     };
 
-    this.writeWord = function (Word) {
-      this.word = Word;
-      currentWord = Word.split('');
+    const writeWord = (inputText) => {
+      currentWord = inputText.split('');
       currentWordLength = currentWord.length;
     };
 
-    this.generateSingleCharacter = function (color, character) {
+    const generateSingleCharacter = (color, character) => {
       const span = document.createElement('span');
       span.style.color = color;
       span.innerHTML = character;
       return span;
     };
 
-    this.updateCharacter = function () {
+    const updateCharacter = () => {
       now = Date.now();
       delta = now - then;
 
-      if (delta > this.interval) {
+      if (delta > interval) {
         currentTimeOffset += 1;
 
-        const word = [];
+        const words = [];
 
-        if (currentTimeOffset === this.timeOffset
-          && this.currentCharacter !== currentWordLength) {
-          this.currentCharacter += 1;
+        if (currentTimeOffset === options.timeOffset
+          && currentCharacter !== currentWordLength) {
+          currentCharacter += 1;
           currentTimeOffset = 0;
         }
-        for (let k = 0; k < this.currentCharacter; k += 1) {
-          word.push(currentWord[k]);
+        for (let k = 0; k < currentCharacter; k += 1) {
+          words.push(currentWord[k]);
         }
 
-        for (let i = 0; i < currentWordLength - this.currentCharacter; i++) {
-          word.push(this.getRandCharacter(currentWord[this.currentCharacter + i]));
+        for (let i = 0; i < currentWordLength - currentCharacter; i += 1) {
+          words.push(getRandCharacter(currentWord[currentCharacter + i]));
         }
 
-        if (that.currentCharacter === that.currentWordLength) {
-          that.needUpdate = false;
+        if (currentCharacter === currentWordLength) {
+          needUpdate = false;
         }
-        this.holder.innerHTML = '';
-        word.forEach((w, index) => {
-          let color = null;
-          if (index > that.currentCharacter) {
-            color = that.getRandomColor();
+        holder.innerHTML = '';
+        words.forEach((w, index) => {
+          let color;
+          if (index > currentCharacter) {
+            color = getRandomColor();
           } else {
-            color = that.textColor;
+            color = options.textColor;
           }
-          that.holder.appendChild(that.generateSingleCharacter(color, w));
+          holder.appendChild(generateSingleCharacter(color, w));
         });
 
-        then = now - (delta % this.interval);
+        then = now - (delta % interval);
       }
-    };
-
-    this.restart = function () {
-      this.currentCharacter = 0;
-      this.needUpdate = true;
     };
 
     function update() {
       time += 1;
-      if (that.needUpdate) {
-        that.updateCharacter();
+      if (needUpdate) {
+        updateCharacter();
       }
       requestAnimationFrame(update);
     }
-    console.log(this.holder.innerHTML);
-    this.writeWord(this.holder.innerHTML);
-
-    console.log(currentWord);
+    writeWord(holder.innerHTML);
     update(time);
   }
 
-  const headline = document.getElementById('headline');
-  const text = document.getElementById('text');
-  const shuffler = document.getElementById('shuffler');
-
-  const headText = new WordShuffler(headline, {
-    textColor: '#fff',
-    timeOffset: 18,
-    mixCapital: true,
-    mixSpecialCharacters: true,
-  });
-
-  const pText = new WordShuffler(text, {
-    textColor: '#fff',
-    timeOffset: 2,
-  });
-
-  const buttonText = new WordShuffler(shuffler, {
-    textColor: 'tomato',
-    timeOffset: 10,
-  });
-
-  shuffler.addEventListener('click', () => {
-    headText.restart();
-    pText.restart();
-    buttonText.restart();
-  });
+  const text = document.getElementById('RandomTextShuffle');
+  WordShuffler(text);
 }
