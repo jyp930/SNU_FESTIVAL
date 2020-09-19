@@ -51,7 +51,9 @@ function triggerMouseTrail() {
       const n = document.createElement('img');
       n.src = mascots[i];
       n.className = 'mouseTrailElement';
-      n.setAttribute('style', 'position: absolute; height: 36px; width: 36px; pointer-events: none;');
+      n.setAttribute('style',
+        'position: absolute; height: 36px; width: 36px; pointer-events: none; z-index: 99999;',
+      );
       document.body.appendChild(n);
       return n;
     }());

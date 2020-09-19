@@ -77,7 +77,9 @@ function Header() {
   );
 
   return (
-    <S.StyledHeader>
+    <S.StyledHeader
+      id="Header"
+    >
       { menuIsOpened ? openedMenu : headerBar }
     </S.StyledHeader>
   );

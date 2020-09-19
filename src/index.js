@@ -6,6 +6,7 @@ import { GA_TRACKING_KEY } from '@/config';
 
 /** css import */
 import 'sal.js/dist/sal.css';
+import 'antd/dist/antd.css';
 
 if (GA_TRACKING_KEY) ReactGA.initialize(GA_TRACKING_KEY);
 
