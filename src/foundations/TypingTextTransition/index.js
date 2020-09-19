@@ -70,8 +70,6 @@ function TextAnimationTrigger(Text) {
   const letters = [];
 
   const resizePage = () => {
-    console.log(styledTypingTextTransition.offsetWidth);
-    console.log(styledTypingTextTransition.offsetHeight);
     width = styledTypingTextTransition.offsetWidth;
     height = styledTypingTextTransition.offsetHeight;
     svg.set('height', height);
@@ -112,29 +110,29 @@ function TextAnimationTrigger(Text) {
     TweenLite.to(letter, 0.2, { rotation: 0, ease: Power3.easeInOut, delay: 0.2 });
   };
 
-  const addDecor = (letter, color) => {
+  const addDecoration = (letter, color) => {
     setTimeout(() => {
       const rect = letter.getBoundingClientRect();
       const x0 = letter.offsetLeft + letter.offsetWidth / 2;
       const y0 = textCenter - textSize * 0.5;
       const shade = color.shades[Math.floor(Math.random() * 4)];
-      for (let i = 0; i < 8; i += 1) addTri(x0, y0, shade);
-      for (let i = 0; i < 8; i += 1) addCirc(x0, y0);
+      for (let i = 0; i < 8; i += 1) addTriangle(x0, y0, shade);
+      for (let i = 0; i < 8; i += 1) addCircle(x0, y0);
     }, 150);
   };
 
-  const addDecorOnClick = (letter, color) => {
+  const addDecorationOnClick = (letter, color) => {
     setTimeout(() => {
       const rect = letter.getBoundingClientRect();
       const x0 = letter.offsetLeft + letter.offsetWidth / 2;
       const y0 = textCenter;
       const shade = color.shades[Math.floor(Math.random() * 4)];
-      for (let i = 0; i < 8; i += 1) addTri(x0, y0, shade);
-      for (let i = 0; i < 8; i += 1) addCirc(x0, y0);
+      for (let i = 0; i < 8; i += 1) addTriangle(x0, y0, shade);
+      for (let i = 0; i < 8; i += 1) addCircle(x0, y0);
     }, 150);
   };
 
-  const addTri = (x0, y0, shade) => {
+  const addTriangle = (x0, y0, shade) => {
     const tri = createSVG('polygon');
     const a = Math.random();
     const a2 = a + (-0.2 + Math.random() * 0.4);
@@ -163,7 +161,7 @@ function TextAnimationTrigger(Text) {
     });
   };
 
-  const addCirc = (x0, y0) => {
+  const addCircle = (x0, y0) => {
     const circ = createSVG('circle');
     const a = Math.random();
     const r = textSize * 0.52;
@@ -198,9 +196,9 @@ function TextAnimationTrigger(Text) {
     offscreenText.appendChild(oLetter);
     letters[i] = { offScreen: oLetter, onScreen: letter, char };
     animateLetterIn(letter);
-    addDecor(oLetter, color);
+    addDecoration(oLetter, color);
     letter.addEventListener('click', (() => {
-      addDecorOnClick(oLetter, color);
+      addDecorationOnClick(oLetter, color);
     }));
   };
 
