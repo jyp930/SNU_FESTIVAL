@@ -2,7 +2,7 @@ import React from 'react';
 import TypingTextTransition from './index';
 
 export default {
-  title: 'foundations/TypingTextTransition',
+  title: 'foundations/textAnimation/TypingTextTransition',
 };
 
 export const Default = () => (
