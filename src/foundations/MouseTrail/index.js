@@ -14,6 +14,7 @@ import Mascot12 from '@I/svg/mascot/12.svg';
 import Mascot13 from '@I/svg/mascot/13.svg';
 import Mascot14 from '@I/svg/mascot/14.svg';
 import Mascot15 from '@I/svg/mascot/15.svg';
+import { zIndex } from '@S/index';
 
 const mascots = [
   Mascot1, Mascot2, Mascot3, Mascot4, Mascot5,
@@ -52,8 +53,7 @@ function triggerMouseTrail() {
       n.src = mascots[i];
       n.className = 'mouseTrailElement';
       n.setAttribute('style',
-        'position: absolute; height: 36px; width: 36px; pointer-events: none; z-index: 99999;',
-      );
+        `position: absolute; height: 36px; width: 36px; pointer-events: none; z-index: ${zIndex.mouseTrail}`);
       document.body.appendChild(n);
       return n;
     }());

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { GiSpeaker, GiSpeakerOff, IoIosArrowDown } from 'react-icons/all';
-import { palette } from '@S/index';
+import { palette, zIndex } from '@S/index';
 import { ResponsiveIconStyle } from '@S/responsive';
 
 const ResponsiveIconStyleWithColor = css`
@@ -11,7 +11,7 @@ const ResponsiveIconStyleWithColor = css`
 const BottomPosition = css`
   position: absolute;
   bottom: 0;
-  z-index: 1;
+  z-index: ${zIndex.base};
 `;
 
 const PreventDrag = css`
