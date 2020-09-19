@@ -12,12 +12,17 @@ export const StyledFullScreen = styled.div`
   width: 0;
   height: 0;
   border-radius: 100%;
-  transition: width 0.4s ease-out, height 0.4s ease-out, border-radius 0.8s ease;
+  
+  transform: scale(1.8);
+  transition: all 0.2s ease-out;
 
   ${props => props.isFullScreen && css`
     width: 100vw;
     height: 100vh;
     border-radius: 0;
+    
+    transform: scale(1);
+    transition: width 0.5s ease-out, height 0.5s ease-out, border-radius 0.9s ease, transform 1s ease;
   `};
 `;
 

@@ -14,10 +14,10 @@ function FullScreen({ children, isFullScreen, onCloseFullScreen }) {
     >
       { isFullScreen && (
         <div
-          data-sal="zoom-out"
+          data-sal="slide-down"
           data-sal-easing="ease"
-          data-sal-duration="1000"
-          data-sal-delay="800"
+          data-sal-duration="800"
+          data-sal-delay="1000"
         >
           <S.CloseButton
             onClick={onCloseFullScreen}
