@@ -22,14 +22,10 @@ export const HeaderBar = styled.div`
   justify-content: space-between;
   
   width: 100%;
-  height: 28px;
   padding: 15px 20px;
 `;
 
-export const Logo = styled.div`
-  width: 100%;
-  height: 100%;
-  
+export const Logo = styled.div`  
   display: flex;
   cursor: pointer;
 `;
