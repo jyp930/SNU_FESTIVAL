@@ -2,7 +2,7 @@ import React from 'react';
 import ShadowedText from './index';
 
 export default {
-  title: 'foundations/ShadowedText',
+  title: 'foundations/textAnimation/ShadowedText',
 };
 
 export const Default = () => (
