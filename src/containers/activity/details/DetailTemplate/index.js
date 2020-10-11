@@ -20,7 +20,7 @@ function DetailTemplate({ title, description }) {
               <TypingTextTransition text={title} intervalTime={50} delayTime={1200} />
             </S.Title>
             <S.Description>
-              <Sal delay={800} duration={500} animation="slide-up">
+              <Sal animation="slide-up" delay={800} duration={500}>
                 <>{description}</>
               </Sal>
             </S.Description>

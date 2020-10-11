@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import sal from 'sal.js';
 import * as S from './styles';
 
-function Sal({ children, animation, duration, delay }) {
+function Sal({ children, animation, duration, delay, easing, threshold }) {
   useEffect(() => {
-    sal();
-  }, []);
+    sal({ threshold });
+  }, [threshold]);
 
   return (
     <S.StyledSal
       data-sal={animation}
-      data-sal-easing="ease"
+      data-sal-easing={easing}
       data-sal-duration={duration}
       data-sal-delay={delay}
     >
@@ -23,13 +23,29 @@ export default Sal;
 
 Sal.propTypes = {
   children: PropTypes.element.isRequired,
-  animation: PropTypes.string,
+  animation: PropTypes.oneOf([
+    'fade',
+    'slide-up',
+    'slide-down',
+    'slide-left',
+    'slide-right',
+    'zoom-in',
+    'zoom-out',
+    'flip-up',
+    'flip-down',
+    'flip-left',
+    'flip-right',
+  ]),
+  easing: PropTypes.string,
   duration: PropTypes.number,
   delay: PropTypes.number,
+  threshold: PropTypes.number,
 };
 
 Sal.defaultProps = {
   animation: 'fade',
+  easing: 'ease',
   duration: 0,
   delay: 0,
+  threshold: 0.5,
 };
