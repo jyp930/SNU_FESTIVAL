@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import sal from 'sal.js';
 import * as S from './styles';
 
-function FullScreen({ children, isFullScreen, onCloseFullScreen }) {
+function FullScreen({ children, isFullScreen, onCloseFullScreen, backgroundColor }) {
   useEffect(() => {
     sal();
   }, [isFullScreen]);
@@ -11,6 +11,7 @@ function FullScreen({ children, isFullScreen, onCloseFullScreen }) {
   return (
     <S.StyledFullScreen
       isFullScreen={isFullScreen}
+      backgroundColor={backgroundColor}
     >
       { isFullScreen && (
         <div
@@ -36,8 +37,10 @@ FullScreen.propTypes = {
   children: PropTypes.element,
   isFullScreen: PropTypes.bool.isRequired,
   onCloseFullScreen: PropTypes.func.isRequired,
+  backgroundColor: PropTypes.string,
 };
 
 FullScreen.defaultProps = {
   children: <></>,
+  backgroundColor: 'lightblue',
 };

@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import mascot from '@I/svg/mascot/mascot-basic.svg';
 import sal from 'sal.js';
 import * as S from './styles';
@@ -28,23 +27,42 @@ function Header() {
     </S.NaviButton>
   ), [changeUrl]);
 
-  const headerBar = (
-    <S.StyledHeader>
-      <S.Logo opened={menuIsOpened} onClick={() => history.push('/')}>
-        <img src={mascot} alt="mascot" width={28} height={28} />
-        SNU-FESTIVAL
-      </S.Logo>
-      <S.MenuButton onClick={() => setMenuIsOpened(!menuIsOpened)}>
-        <S.MenuButtonBar opened={menuIsOpened} />
-        <S.MenuButtonBar opened={menuIsOpened} />
-        <S.MenuButtonBar opened={menuIsOpened} />
-      </S.MenuButton>
-    </S.StyledHeader>
+  const Logo = (
+    <S.Logo onClick={() => changeUrl('/')}>
+      <S.LogoImage
+        src={mascot}
+        alt="mascot"
+      />
+      <div
+        data-sal="fade"
+        data-sal-easing="ease-out-back"
+        data-sal-duration="1000"
+      >
+        <S.LogoText
+          opened={menuIsOpened}
+        >
+          SNU-FESTIVAL
+        </S.LogoText>
+      </div>
+    </S.Logo>
   );
 
-  useEffect(() => {
-    sal();
-  }, [menuIsOpened]);
+  const MenuHamburger = (
+    <S.MenuButton onClick={() => setMenuIsOpened(true)}>
+      <S.MenuButtonBar />
+      <S.MenuButtonBar />
+      <S.MenuButtonBar />
+    </S.MenuButton>
+  );
+
+  const HeaderBar = (
+    <S.HeaderBarContainer>
+      <S.HeaderBar>
+        {Logo}
+        {!menuIsOpened && MenuHamburger}
+      </S.HeaderBar>
+    </S.HeaderBarContainer>
+  );
 
   const openedMenu = (
     <div
@@ -52,19 +70,8 @@ function Header() {
       data-sal-easing="ease-out-back"
       data-sal-duration="800"
     >
-      <S.OpenedMenu onClick={() => setMenuIsOpened(!menuIsOpened)}>
-        <S.StyledHeader>
-          <S.Logo opened={menuIsOpened} onClick={() => changeUrl('/')}>
-            <img src={mascot} alt="mascot" width={28} height={28} />
-            <div
-              data-sal="fade"
-              data-sal-easing="ease-out-back"
-              data-sal-duration="1000"
-            >
-              SNU-FESTIVAL
-            </div>
-          </S.Logo>
-        </S.StyledHeader>
+      <S.OpenedMenu onClick={() => setMenuIsOpened(false)}>
+        {HeaderBar}
         {NaviButton('메인화면', '/', 250)}
         {NaviButton('행사', '/activity', 300)}
         {NaviButton('공연', '/performance', 350)}
@@ -76,16 +83,14 @@ function Header() {
     </div>
   );
 
+  useEffect(() => {
+    sal();
+  }, [menuIsOpened]);
+
   return (
-    <S.StyledHeader
-      id="Header"
-    >
-      { menuIsOpened ? openedMenu : headerBar }
+    <S.StyledHeader id="Header">
+      { menuIsOpened ? openedMenu : HeaderBar }
     </S.StyledHeader>
   );
 }
 export default Header;
-
-Header.propTypes = {
-
-};

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import bluemingVideo from '@I/video/blueming.mp4';
+import bluemingPoster from '@I/video/poster/blueming.png';
 import Video from '@F/Video';
 import LoopKeyFrame from '@F/spring/LoopKeyFrame';
 import * as S from './styles';
@@ -71,6 +72,7 @@ function PromoteVideo({ offset, scrollDown }) {
 
         <Video
           video={bluemingVideo}
+          poster={bluemingPoster}
           isMuted={isMuted}
         />
       </ParallaxLayer>

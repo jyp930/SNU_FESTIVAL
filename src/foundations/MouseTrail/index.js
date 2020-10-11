@@ -53,7 +53,7 @@ function triggerMouseTrail() {
       n.src = mascots[i];
       n.className = 'mouseTrailElement';
       n.setAttribute('style',
-        `position: absolute; height: 36px; width: 36px; pointer-events: none; z-index: ${zIndex.mouseTrail}`);
+        `position: absolute; height: 20px; width: 20px; pointer-events: none; z-index: ${zIndex.mouseTrail}`);
       document.body.appendChild(n);
       return n;
     }());

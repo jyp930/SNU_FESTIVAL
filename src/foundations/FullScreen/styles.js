@@ -8,7 +8,7 @@ export const StyledFullScreen = styled.div`
   top: 0;
   left: 0;
   
-  background-color: lightblue;
+  background-color: ${props => props.backgroundColor};
   width: 0;
   height: 0;
   border-radius: 100%;
