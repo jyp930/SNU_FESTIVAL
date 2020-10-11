@@ -5,10 +5,10 @@ import {
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
-function TypingTextTransition({ text }) {
+function TypingTextTransition({ text, intervalTime }) {
   useEffect(() => {
-    TextAnimationTrigger(text);
-  }, []);
+    TextAnimationTrigger(text, intervalTime);
+  }, [text, intervalTime]);
 
   return (
     <S.StyledTypingTextTransition id="StyledTypingTextTransition">
@@ -22,9 +22,14 @@ export default TypingTextTransition;
 
 TypingTextTransition.propTypes = {
   text: PropTypes.string.isRequired,
+  intervalTime: PropTypes.number,
 };
 
-function TextAnimationTrigger(Text) {
+TypingTextTransition.defaultProps = {
+  intervalTime: 300,
+};
+
+function TextAnimationTrigger(Text, intervalTime) {
   const selectSVG = id => {
     const el = document.getElementById(id);
     return new SVGElement(el);
@@ -112,7 +117,6 @@ function TextAnimationTrigger(Text) {
 
   const addDecoration = (letter, color) => {
     setTimeout(() => {
-      const rect = letter.getBoundingClientRect();
       const x0 = letter.offsetLeft + letter.offsetWidth / 2;
       const y0 = textCenter - textSize * 0.5;
       const shade = color.shades[Math.floor(Math.random() * 4)];
@@ -123,7 +127,6 @@ function TextAnimationTrigger(Text) {
 
   const addDecorationOnClick = (letter, color) => {
     setTimeout(() => {
-      const rect = letter.getBoundingClientRect();
       const x0 = letter.offsetLeft + letter.offsetWidth / 2;
       const y0 = textCenter;
       const shade = color.shades[Math.floor(Math.random() * 4)];
@@ -223,7 +226,7 @@ function TextAnimationTrigger(Text) {
         resizeLetters();
         addText(i + 1);
       }
-    }, 300);
+    }, intervalTime);
   };
 
   resizePage();

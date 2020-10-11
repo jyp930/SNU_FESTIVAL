@@ -1,20 +1,19 @@
 import styled from 'styled-components';
+import { zIndex } from '@S/index';
 
 export const StyledTypingTextTransition = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
-  font-family: 'Rubik Mono One', sans-serif;
-  //background-color: #22292C;
 `;
 
 export const Svg = styled.svg`
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   z-index: 0;
 `;
 
@@ -25,10 +24,11 @@ export const Text = styled.p`
   display: block;
   position: absolute;
   margin: 0;
-  z-index: 1;
+  z-index: ${zIndex.base};
+
   span {
-  position: absolute;
-}
+    position: absolute;
+  }
 `;
 
 export const Offscreentext = styled.p`
