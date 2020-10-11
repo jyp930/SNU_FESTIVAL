@@ -12,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Montserrat', 'NanumSquare', sans-serif;
+    
+    & ::selection {
+      background-color: #fddde6;
+      color: white;
+    }
   }
 `;
 
