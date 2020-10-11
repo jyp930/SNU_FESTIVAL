@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { palette } from '@S/index';
 import sal from 'sal.js';
 import FullScreen from '@F/FullScreen';
+import GroupGame from '@C/activity/details/GroupGame';
 import * as S from './styles';
 
 const activityItems = [
-  { title: '단체게임', backgroundColor: palette.YELLOW20_PASTEL, content: <div>1</div> },
+  { title: '단체게임', backgroundColor: palette.YELLOW20_PASTEL, content: <GroupGame /> },
   { title: '미니게임', backgroundColor: palette.YELLOW20_PASTEL, content: <div>2</div> },
   { title: '한밤의 어쿠스틱 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
   { title: '별밤의 일렉트로닉 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
