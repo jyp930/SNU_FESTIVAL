@@ -14,6 +14,7 @@
 ### `styled-components`
 ### `styled-media-query`
 ### `sal.js`
+### `react-spring`
 ### `react-reveal`
 ### `react-slick`
 
