@@ -1,32 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import sal from 'sal.js';
+import Sal from '@F/Sal';
 import * as S from './styles';
 
 function FullScreen({ children, isFullScreen, onCloseFullScreen, backgroundColor }) {
-  useEffect(() => {
-    sal();
-  }, [isFullScreen]);
-
   return (
     <S.StyledFullScreen
       isFullScreen={isFullScreen}
       backgroundColor={backgroundColor}
     >
       { isFullScreen && (
-        <div
-          data-sal="slide-down"
-          data-sal-easing="ease"
-          data-sal-duration="800"
-          data-sal-delay="1000"
+        <Sal
+          animation="slide-down"
+          duration={800}
+          delay={1000}
         >
-          <S.CloseButton
-            onClick={onCloseFullScreen}
-          >
-            <S.CloseIcon />
-          </S.CloseButton>
-          { children }
-        </div>
+          <>
+            <S.CloseButton
+              onClick={onCloseFullScreen}
+            >
+              <S.CloseIcon />
+            </S.CloseButton>
+            { children }
+          </>
+        </Sal>
       )}
     </S.StyledFullScreen>
   );

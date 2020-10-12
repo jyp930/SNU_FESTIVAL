@@ -5,10 +5,10 @@ import {
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
-function TypingTextTransition({ text, intervalTime }) {
+function TypingTextTransition({ text, intervalTime, delayTime }) {
   useEffect(() => {
-    TextAnimationTrigger(text, intervalTime);
-  }, [text, intervalTime]);
+    TextAnimationTrigger(text, intervalTime, delayTime);
+  }, [text, intervalTime, delayTime]);
 
   return (
     <S.StyledTypingTextTransition id="StyledTypingTextTransition">
@@ -23,13 +23,15 @@ export default TypingTextTransition;
 TypingTextTransition.propTypes = {
   text: PropTypes.string.isRequired,
   intervalTime: PropTypes.number,
+  delayTime: PropTypes.number,
 };
 
 TypingTextTransition.defaultProps = {
   intervalTime: 300,
+  delayTime: 0,
 };
 
-function TextAnimationTrigger(Text, intervalTime) {
+function TextAnimationTrigger(Text, intervalTime, delayTime) {
   const selectSVG = id => {
     const el = document.getElementById(id);
     return new SVGElement(el);
@@ -125,10 +127,10 @@ function TextAnimationTrigger(Text, intervalTime) {
     }, 150);
   };
 
-  const addDecorationOnClick = (letter, color) => {
+  const addDecorationOnHover = (letter, color) => {
     setTimeout(() => {
       const x0 = letter.offsetLeft + letter.offsetWidth / 2;
-      const y0 = textCenter;
+      const y0 = textCenter - textSize * 0.1;
       const shade = color.shades[Math.floor(Math.random() * 4)];
       for (let i = 0; i < 8; i += 1) addTriangle(x0, y0, shade);
       for (let i = 0; i < 8; i += 1) addCircle(x0, y0);
@@ -200,8 +202,8 @@ function TextAnimationTrigger(Text, intervalTime) {
     letters[i] = { offScreen: oLetter, onScreen: letter, char };
     animateLetterIn(letter);
     addDecoration(oLetter, color);
-    letter.addEventListener('click', (() => {
-      addDecorationOnClick(oLetter, color);
+    letter.addEventListener('mouseover', (() => {
+      addDecorationOnHover(oLetter, color);
     }));
   };
 
@@ -231,5 +233,5 @@ function TextAnimationTrigger(Text, intervalTime) {
 
   resizePage();
   window.addEventListener('resize', resizePage);
-  addText(0);
+  setTimeout(() => addText(0), delayTime);
 }

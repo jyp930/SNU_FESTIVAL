@@ -16,11 +16,6 @@ export const CardItem = styled.div`
   margin: 1.5rem 0;
 `;
 
-export const Sal = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
 export const ActivityItem = styled.div`
   display: flex;
   align-items: center;
