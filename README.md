@@ -34,6 +34,13 @@
 
 build 폴더 생성
 
+### `yarn analyze`
+
+local build 시 source-map-explorer 를 통해 bundle size 분석 가능
+
+한편 staging, production 배포시에는 GENERATE_SOURCEMAP=false 로 설정해
+source map 을 삭제함
+
 ### `firebase deploy`
 
 수동 배포가 필요할 때 명령어 입력

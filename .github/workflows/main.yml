@@ -24,7 +24,7 @@ jobs:
           touch .env
           echo REACT_APP_GA_TRACKING_ID=${{ secrets.REACT_APP_GA_TRACKING_ID }} >> .env
       - name: Build
-        run: yarn build
+        run: GENERATE_SOURCEMAP=false yarn build
         env:
           CI: false
       - name: Archive Production Artifact

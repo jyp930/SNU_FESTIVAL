@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
 import {
-  TweenLite, Power1, Power2, Power3, Back,
+  gsap, TweenLite, Power1, Power3, Back,
 } from 'gsap';
+import { CSSRulePlugin } from 'gsap/CSSRulePlugin';
+
 import PropTypes from 'prop-types';
 import * as S from './styles';
+
+/** registerPlugin 제거시 배포환경에서 에러 발생 */
+gsap.registerPlugin(CSSRulePlugin);
 
 function TypingTextTransition({ text, intervalTime, delayTime }) {
   useEffect(() => {

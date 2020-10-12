@@ -27,6 +27,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "craco test",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
@@ -61,6 +62,7 @@
     "eslint-plugin-react-hooks": "^4.0.8",
     "hygen": "^6.0.4",
     "prop-types": "^15.7.2",
-    "react-ga": "^3.1.2"
+    "react-ga": "^3.1.2",
+    "source-map-explorer": "^2.5.0"
   }
 }
