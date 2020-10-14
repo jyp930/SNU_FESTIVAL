@@ -25,7 +25,7 @@ function Activity() {
           <S.CardItem key={activityItem.title}>
             <Sal
               threshold={0.2}
-              animation={index % 2 === 0 ? 'slide-left' : 'slide-right'}
+              animation={index % 2 === 0 ? 'flip-left' : 'flip-right'}
               duration={500}
               delay={index * 50}
             >

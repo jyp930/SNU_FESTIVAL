@@ -7,6 +7,7 @@ export const StyledFullScreen = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  overflow-y: scroll;
   
   background-color: ${props => props.backgroundColor};
   width: 0;
@@ -18,7 +19,7 @@ export const StyledFullScreen = styled.div`
 
   ${props => props.isFullScreen && css`
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     border-radius: 0;
     
     transform: scale(1);

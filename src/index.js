@@ -11,9 +11,8 @@ import 'antd/dist/antd.css';
 if (GA_TRACKING_KEY) ReactGA.initialize(GA_TRACKING_KEY);
 
 ReactDOM.render(
-  // TODO: visibility-sensor 에서 오류가 나서 주석처리해 둔 상태. StrictMode 살리기
-  // <React.StrictMode>
-  <App />,
-  // </React.StrictMode>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root'),
 );
