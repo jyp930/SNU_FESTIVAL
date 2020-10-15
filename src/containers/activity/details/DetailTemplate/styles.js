@@ -11,11 +11,7 @@ export const TitleBox = styled.div`
   flex-direction: column;
 
   width: 100%;
-  height: 300px;
-  
-  ${media.lessThan('medium')`
-    height: 200px;
-  `};
+  height: 17rem;
 `;
 
 export const Title = styled.div`
@@ -37,7 +33,7 @@ export const DescriptionText = styled.span`
 export const Pictures = styled.div`
   ${media.greaterThan('medium')`
     display: grid;
-    grid-template-rows: repeat(4, minmax(0, 200px));
+    grid-template-rows: repeat(4, minmax(0, 12rem));
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   `};
@@ -84,6 +80,7 @@ export const Picture = styled.div`
   
   ${media.lessThan('medium')`
     margin: 1rem 0;
+    min-height: 10rem;
   `};
 `;
 

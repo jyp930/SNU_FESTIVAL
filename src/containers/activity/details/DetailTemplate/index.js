@@ -14,14 +14,14 @@ function DetailTemplate({ title, description }) {
   const [isTitleVisible, setIsTitleVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setIsTitleVisible(true), 1000);
+    setTimeout(() => setIsTitleVisible(true), 800);
   });
 
   return (
     <S.StyledDetailTemplate>
-      <S.TitleBox>
-        {isTitleVisible && (
-          <>
+      {isTitleVisible && (
+        <>
+          <S.TitleBox>
             <S.Title>
               <TypingTextTransition text={title} intervalTime={50} delayTime={1200} />
             </S.Title>
@@ -30,23 +30,22 @@ function DetailTemplate({ title, description }) {
                 <S.DescriptionText>{description}</S.DescriptionText>
               </Sal>
             </S.Description>
-          </>
-        )}
-      </S.TitleBox>
-      <S.Pictures>
-        { images.map((image, i) => (
-          <S.Picture key={i}>
-            <Sal
-              threshold={0.2}
-              animation="slide-up"
-              duration={500}
-              delay={100}
-            >
-              <S.Image src={image} alt="IMAGE" />
-            </Sal>
-          </S.Picture>
-        ))}
-      </S.Pictures>
+          </S.TitleBox>
+          <S.Pictures>
+            { images.map((image, index) => (
+              <S.Picture key={index}>
+                <Sal
+                  animation={index % 2 === 0 ? 'flip-up' : 'flip-down'}
+                  duration={1000}
+                  delay={index * 20}
+                >
+                  <S.Image src={image} alt="IMAGE" />
+                </Sal>
+              </S.Picture>
+            ))}
+          </S.Pictures>
+        </>
+      )}
     </S.StyledDetailTemplate>
   );
 }
