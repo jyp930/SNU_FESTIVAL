@@ -7,6 +7,8 @@ import { GA_TRACKING_KEY } from '@/config';
 /** css import */
 import 'sal.js/dist/sal.css';
 import 'antd/dist/antd.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 if (GA_TRACKING_KEY) ReactGA.initialize(GA_TRACKING_KEY);
 
