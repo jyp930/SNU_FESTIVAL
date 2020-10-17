@@ -8,6 +8,7 @@
 ### `Firebase-hosting`
 ### `Google Analytics`
 ### `git flow`
+### `mobX`
 
 ## Css Stack
 

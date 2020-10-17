@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { centerStore } from '@/mobX/center';
 import TypingTextTransition from '@F/textAnimation/TypingTextTransition';
 import Sal from '@F/Sal';
 
@@ -13,9 +14,13 @@ const images = [IU5, IU4, IU1, IU1, IU4, IU5, IU1, IU4, IU5, IU1, IU4, IU5];
 function DetailTemplate({ title, description }) {
   const [isTitleVisible, setIsTitleVisible] = useState(false);
 
+  const setCenterComponent = useCallback((text) => {
+    centerStore.setCenterComponent(<S.CenterText>{text}</S.CenterText>);
+  }, []);
+
   useEffect(() => {
-    setTimeout(() => setIsTitleVisible(true), 800);
-  });
+    setTimeout(() => setIsTitleVisible(true), 1000);
+  }, []);
 
   return (
     <S.StyledDetailTemplate>
@@ -33,7 +38,11 @@ function DetailTemplate({ title, description }) {
           </S.TitleBox>
           <S.Pictures>
             { images.map((image, index) => (
-              <S.Picture key={index}>
+              <S.Picture
+                onMouseEnter={() => setCenterComponent(index)}
+                onMouseLeave={() => setCenterComponent(null)}
+                key={index}
+              >
                 <Sal
                   animation={index % 2 === 0 ? 'flip-up' : 'flip-down'}
                   duration={1000}

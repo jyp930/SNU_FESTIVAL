@@ -90,3 +90,18 @@ export const Image = styled.img`
   
   object-fit: cover;
 `;
+
+export const CenterText = styled.div`
+  width: 100%;
+  height: 100%;
+
+  font-size: 5rem;
+
+  word-break: keep-all;
+  user-select: none;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;

@@ -7,6 +7,11 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
   ],
+  babel: {
+    plugins: [
+      ['@babel/plugin-proposal-decorators', { legacy: true }],
+    ],
+  },
 
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias = {
