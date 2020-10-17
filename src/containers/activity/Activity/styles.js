@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { HoverStyle } from '@S/responsive/mouse';
 
 export const StyledActivity = styled.div`
 
@@ -25,12 +26,9 @@ export const ActivityItem = styled.div`
   height: 100%;
   background-color: ${props => props.backgroundColor};
   
-  transition: all .25s ease;
-  cursor: pointer;
-  
+  ${HoverStyle};
   &:hover {
     box-shadow: 0 0 1rem rgba(33, 33, 33, .3);
-    transform: scale(1.03);
   }
 `;
 
