@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Sal from '@F/Sal';
-import { CenterComponent } from '@/mobX/center';
+import { CenterComponent } from '@/mob-x/center';
 import * as S from './styles';
 
 function FullScreen({

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { centerStore } from '@/mobX/center';
-import TypingTextTransition from '@F/textAnimation/TypingTextTransition';
+import { centerStore } from '@/mob-x/center';
+import TypingTextTransition from '@F/text-animation/TypingTextTransition';
 import Sal from '@F/Sal';
 
 import IU1 from '@I/jpeg/IU1.jpeg';
