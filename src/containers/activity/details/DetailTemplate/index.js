@@ -39,7 +39,7 @@ function DetailTemplate({ title, description }) {
           <S.Pictures>
             { images.map((image, index) => (
               <S.Picture
-                onMouseEnter={() => setCenterComponent(index)}
+                onMouseEnter={() => setCenterComponent(`2020 가을${index} 단체게임`)}
                 onMouseLeave={() => setCenterComponent(null)}
                 key={index}
               >
