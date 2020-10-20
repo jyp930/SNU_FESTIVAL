@@ -1,26 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-
-import IU1 from '@I/jpeg/IU1.jpeg';
-import IU4 from '@I/jpeg/IU4.jpeg';
-import IU5 from '@I/jpeg/IU5.jpeg';
 import * as S from './styles';
 
-const images = [IU1, IU4, IU5];
-
-function CustomPaging() {
+function CustomPaging({ items, initialIndex }) {
   const settings = {
     dots: true,
+    initialSlide: initialIndex,
     customPaging: (index) => (
-      <S.Preview><S.Image src={images[index]} /></S.Preview>
+      <S.Preview><S.Image src={items[index]} /></S.Preview>
     ),
   };
   return (
     <S.StyledCustomPaging>
       <Slider {...settings}>
-        { images.map(image => (
-          <S.Item>
+        { items.map(image => (
+          <S.Item key={image}>
             <S.Image src={image} alt="IMAGE" />
           </S.Item>
         ))}
@@ -31,5 +26,10 @@ function CustomPaging() {
 export default CustomPaging;
 
 CustomPaging.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.any).isRequired,
+  initialIndex: PropTypes.number,
+};
 
+CustomPaging.defaultProps = {
+  initialIndex: 0,
 };

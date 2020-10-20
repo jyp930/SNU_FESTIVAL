@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DetailTemplate from '@C/activity/details/DetailTemplate';
+import DetailTemplate from '@C/activity/details/detail-template/DetailTemplate';
 import * as S from './styles';
 
 function GroupGame() {

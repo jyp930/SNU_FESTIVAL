@@ -2,7 +2,7 @@ import React from 'react';
 import DetailTemplate from './index';
 
 export default {
-  title: 'containers/activity/details/DetailTemplate',
+  title: 'containers/activity/details/detail-template/DetailTemplate',
 };
 
 export const Default = () => (

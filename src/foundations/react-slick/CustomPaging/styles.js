@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { palette } from '@S/index';
+import media from 'styled-media-query';
 
 export const StyledCustomPaging = styled.div`
   width: 30rem;
-  height: 30rem;
-  margin-left: 10rem;
+  height: 100%;
+  margin: auto;
   
   .slick-dots {
     display: flex !important;
@@ -17,9 +18,17 @@ export const StyledCustomPaging = styled.div`
   
   .slick-arrow {
     &:before {
-      color: ${palette.BLACK_NEWTRO}; 
+      color: ${palette.WHITE_NEWTRO}; 
     }
   }
+  
+  ${media.lessThan('medium')`
+    width: 20rem;
+    
+    .slick-dots {
+      display: none !important;
+    }
+  `};
 `;
 
 export const Preview = styled.div`

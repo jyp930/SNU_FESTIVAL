@@ -2,35 +2,7 @@ import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
 import { HoverStyle } from '@S/responsive/mouse';
 
-export const StyledDetailTemplate = styled.div`
-  padding: 3rem 2rem;
-`;
-
-export const TitleBox = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-  height: 17rem;
-`;
-
-export const Title = styled.div`
-  width: 100%;
-  height: 50%;
-  margin: 0;
-  user-select: none;
-`;
-
-export const Description = styled.div`
-  align-self: flex-end;
-  font-size: 1.5rem;
-`;
-
-export const DescriptionText = styled.span`
-  word-break: keep-all;
-`;
-
-export const Pictures = styled.div`
+export const StyledPictureGrid = styled.div`
   ${media.greaterThan('medium')`
     display: grid;
     grid-template-rows: repeat(4, minmax(0, 12rem));
@@ -82,6 +54,10 @@ export const Picture = styled.div`
     margin: 1rem 0;
     min-height: 10rem;
   `};
+  
+  .react-reveal {
+    height: 100%;
+  }
 `;
 
 export const Image = styled.img`
@@ -104,4 +80,8 @@ export const CenterText = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
+  
+  ${media.lessThan('medium')`
+    display: none;
+  `};
 `;
