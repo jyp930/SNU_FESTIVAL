@@ -4,18 +4,18 @@ import Slide from 'react-reveal/Slide';
 import { centerStore } from '@/mob-x/center';
 import * as S from './styles';
 
-function PictureGrid({ images, onClickImage }) {
+function PictureGrid({ items, onClickItem }) {
   const setCenterComponent = useCallback((text) => {
     centerStore.setCenterComponent(<S.CenterText>{text}</S.CenterText>);
   }, []);
 
   return (
     <S.StyledPictureGrid>
-      { images.map((image, index) => (
+      { items.map((item, index) => (
         <S.Picture
-          onMouseEnter={() => setCenterComponent(`2020 가을${index} 단체게임`)}
+          onMouseEnter={() => setCenterComponent(item.description)}
           onMouseLeave={() => setCenterComponent(null)}
-          onClick={() => onClickImage(index)}
+          onClick={() => onClickItem(index)}
           key={index}
         >
           <Slide
@@ -24,7 +24,7 @@ function PictureGrid({ images, onClickImage }) {
             duration={800}
             delay={index * 20}
           >
-            <S.Image src={image} alt="IMAGE" />
+            <S.Image src={item.image} alt="IMAGE" />
           </Slide>
         </S.Picture>
       ))}
@@ -34,6 +34,9 @@ function PictureGrid({ images, onClickImage }) {
 export default PictureGrid;
 
 PictureGrid.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
-  onClickImage: PropTypes.func.isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string,
+    description: PropTypes.string,
+  })).isRequired,
+  onClickItem: PropTypes.func.isRequired,
 };

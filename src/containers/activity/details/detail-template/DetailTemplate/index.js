@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import Title from '@C/activity/details/detail-template/Title';
 import PictureGrid from '@C/activity/details/detail-template/PictureGrid';
 import CustomPaging from '@F/react-slick/CustomPaging';
-import Popup from 'reactjs-popup';
-import * as S from './styles';
+import PopupModal from '@F/PopupModal';
 import Fade from 'react-reveal/Fade';
+import * as S from './styles';
 
-function DetailTemplate({ title, description, images }) {
+function DetailTemplate({ title, description, items }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImageIndex, setModalImageIndex] = useState(0);
+  const [modalInitialIndex, setModalInitialIndex] = useState(0);
 
   const openCarouselModal = useCallback((index) => {
-    setModalImageIndex(index);
+    setModalInitialIndex(index);
     setIsModalOpen(true);
   }, []);
 
@@ -25,20 +25,15 @@ function DetailTemplate({ title, description, images }) {
     <S.StyledDetailTemplate>
       {isVisible && (
         <>
-          <Popup
-            modal
-            open={isModalOpen}
-            onClose={() => setIsModalOpen(false)}
-            contentStyle={{ border: 'none', display: 'flex', justifyContent: 'center', backgroundColor: 'transparent' }}
-          >
+          <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
             <Fade duration={600}>
-              <CustomPaging items={images} initialIndex={modalImageIndex} />
+              <CustomPaging items={items} initialIndex={modalInitialIndex} />
             </Fade>
-          </Popup>
+          </PopupModal>
           <Title title={title} description={description} />
           <PictureGrid
-            images={images}
-            onClickImage={openCarouselModal}
+            items={items}
+            onClickItem={openCarouselModal}
           />
         </>
       )}
@@ -50,5 +45,8 @@ export default DetailTemplate;
 DetailTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string,
+    description: PropTypes.string,
+  })).isRequired,
 };

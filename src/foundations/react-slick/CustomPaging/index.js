@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
+import BasicCard from '@F/card/BasicCard';
 import * as S from './styles';
 
 function CustomPaging({ items, initialIndex }) {
@@ -8,15 +9,19 @@ function CustomPaging({ items, initialIndex }) {
     dots: true,
     initialSlide: initialIndex,
     customPaging: (index) => (
-      <S.Preview><S.Image src={items[index]} /></S.Preview>
+      // eslint-disable-next-line react/prop-types
+      <S.Preview><S.Image src={items[index].image} /></S.Preview>
     ),
   };
   return (
     <S.StyledCustomPaging>
       <Slider {...settings}>
-        { items.map(image => (
-          <S.Item key={image}>
-            <S.Image src={image} alt="IMAGE" />
+        { items.map(item => (
+          <S.Item key={item}>
+            <BasicCard
+              image={item.image}
+              content={<>{item.description}</>}
+            />
           </S.Item>
         ))}
       </Slider>
@@ -26,7 +31,10 @@ function CustomPaging({ items, initialIndex }) {
 export default CustomPaging;
 
 CustomPaging.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.any).isRequired,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string,
+    description: PropTypes.string,
+  })).isRequired,
   initialIndex: PropTypes.number,
 };
 
