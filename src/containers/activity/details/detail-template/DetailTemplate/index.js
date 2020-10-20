@@ -4,15 +4,10 @@ import Title from '@C/activity/details/detail-template/Title';
 import PictureGrid from '@C/activity/details/detail-template/PictureGrid';
 import CustomPaging from '@F/react-slick/CustomPaging';
 import Popup from 'reactjs-popup';
-
-import IU1 from '@I/jpeg/IU1.jpeg';
-import IU4 from '@I/jpeg/IU4.jpeg';
-import IU5 from '@I/jpeg/IU5.jpeg';
 import * as S from './styles';
+import Fade from 'react-reveal/Fade';
 
-const images = [IU5, IU4, IU1, IU1, IU4, IU5, IU1, IU4, IU5, IU1, IU4, IU5];
-
-function DetailTemplate({ title, description }) {
+function DetailTemplate({ title, description, images }) {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImageIndex, setModalImageIndex] = useState(0);
@@ -36,7 +31,9 @@ function DetailTemplate({ title, description }) {
             onClose={() => setIsModalOpen(false)}
             contentStyle={{ border: 'none', display: 'flex', justifyContent: 'center', backgroundColor: 'transparent' }}
           >
-            <CustomPaging items={images} initialIndex={modalImageIndex} />
+            <Fade duration={600}>
+              <CustomPaging items={images} initialIndex={modalImageIndex} />
+            </Fade>
           </Popup>
           <Title title={title} description={description} />
           <PictureGrid
@@ -53,4 +50,5 @@ export default DetailTemplate;
 DetailTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

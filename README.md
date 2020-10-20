@@ -1,6 +1,7 @@
 ## TODO
 - sal.js 를 react-reveal 로 교체
 - react-spring 을 react-reveal 로 교체
+- lottie 삭제
 
 ## Technical Stack
 
