@@ -13,6 +13,7 @@ import 'reactjs-popup/dist/index.css';
 
 if (GA_TRACKING_KEY) ReactGA.initialize(GA_TRACKING_KEY);
 
+// noinspection JSCheckFunctionSignatures
 ReactDOM.render(
   /** LazyLoad library 때문에 strictMode 사용 불가 */
   // <React.StrictMode>
