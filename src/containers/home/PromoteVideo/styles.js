@@ -29,7 +29,7 @@ export const CenterLabel = styled.p`
   width: 100%;
   text-align: center;
   
-  color: ${palette.GRAY_NEWTRO};
+  color: ${palette.WHITE_NEWTRO};
   font-size: 2.5rem;
   opacity: 0.8;
 `;

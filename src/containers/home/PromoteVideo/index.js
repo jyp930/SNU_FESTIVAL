@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
-import bluemingVideo from '@I/video/blueming.mp4';
-import bluemingPoster from '@I/video/poster/blueming.png';
+import tunaVideo from '@I/video/tuna.mp4';
+import tunaPoster from '@I/video/poster/tuna.png';
 import Video from '@F/Video';
 import * as S from './styles';
 
@@ -34,8 +34,8 @@ function PromoteVideo({ offset, scrollDown }) {
         </S.SoundButton>
 
         <Video
-          video={bluemingVideo}
-          poster={bluemingPoster}
+          video={tunaVideo}
+          poster={tunaPoster}
           isMuted={isMuted}
         />
       </ParallaxLayer>
