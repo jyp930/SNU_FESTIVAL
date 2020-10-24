@@ -1,5 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 import { palette, zIndex } from '@S/index';
+import { HoverStyle } from '@S/responsive/mouse';
 
 export const StyledHeader = styled.div`
   position: fixed;
@@ -14,19 +16,27 @@ export const HeaderBarContainer = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: ${zIndex.header + 1};
+  
+  ${props => props.isOpen && css`
+    pointer-events: none;
+  `};
 `;
 
 export const HeaderBar = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  
+  align-items: center;
+
   width: 100%;
+  min-height: 65px;
   padding: 15px 20px;
 `;
 
 export const Logo = styled.div`  
   display: flex;
+  align-items: center;
   cursor: pointer;
 `;
 
@@ -37,21 +47,29 @@ export const LogoImage = styled.img`
 
 export const LogoText = styled.p`
   margin: 0 0 0 5px;
-  font-size: 1rem;
-  color: ${props => (props.opened ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
+  font-size: 1.2rem;
+  
+  transition: 0.5s;
+  color: ${props => (props.isOpen ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
 `;
 
 export const MenuButton = styled.div`
-  width: 28px;
-  height: 28px;
+  --width: 35px;
+  ${media.lessThan('medium')`
+    --width: 28px;
+  `};
+  
+  width: var(--width);
+  height: var(--width);
   cursor: pointer;
+  ${HoverStyle};
 `;
 
 export const MenuButtonBar = styled.div`
   width: 100%;
-  height: 4px;
+  height: calc(var(--width) / 7);
   background-color: ${palette.GRAY_NEWTRO};
-  margin: 4px 0;
+  margin: calc(var(--width) / 7) 0;
 `;
 
 export const OpenedMenu = styled.div`
@@ -65,10 +83,6 @@ export const OpenedMenu = styled.div`
   opacity: 0.9;
 `;
 
-export const NaviButton = styled.div`
-
-`;
-
 export const NaviText = styled.p`
   margin: 20px 0;
   font-size: 2rem;
@@ -78,7 +92,7 @@ export const NaviText = styled.p`
   transition-duration: 1s;
 
   &:hover {
-    transition-timing-function: cubic-bezier(.175,.885,.32,1);;
+    transition-timing-function: cubic-bezier(.175,.885,.32,1);
     font-size: 3rem;
   }
 `;

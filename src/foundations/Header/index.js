@@ -1,30 +1,30 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import mascot from '@I/svg/mascot/mascot-basic.svg';
-import sal from 'sal.js';
+import Fade from 'react-reveal/Fade';
 import * as S from './styles';
 
 function Header() {
-  const [menuIsOpened, setMenuIsOpened] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const history = useHistory();
 
   const changeUrl = useCallback((route) => {
     history.push(route);
-    setMenuIsOpened(false);
+    setMenuIsOpen(false);
   }, [history]);
 
   const NaviButton = useCallback((page, url, delay) => (
-    <S.NaviButton
-      data-sal="slide-up"
-      data-sal-easing="ease-out-back"
-      data-sal-duration="1000"
-      data-sal-delay={delay}
-      onClick={() => changeUrl(url)}
+    <Fade
+      bottom
+      duration={500}
+      delay={delay}
     >
-      <S.NaviText>
+      <S.NaviText
+        onClick={() => changeUrl(url)}
+      >
         {page}
       </S.NaviText>
-    </S.NaviButton>
+    </Fade>
   ), [changeUrl]);
 
   const Logo = (
@@ -33,22 +33,16 @@ function Header() {
         src={mascot}
         alt="mascot"
       />
-      <div
-        data-sal="fade"
-        data-sal-easing="ease-out-back"
-        data-sal-duration="1000"
+      <S.LogoText
+        isOpen={menuIsOpen}
       >
-        <S.LogoText
-          opened={menuIsOpened}
-        >
-          SNU-FESTIVAL
-        </S.LogoText>
-      </div>
+        SNU-FESTIVAL
+      </S.LogoText>
     </S.Logo>
   );
 
   const MenuHamburger = (
-    <S.MenuButton onClick={() => setMenuIsOpened(true)}>
+    <S.MenuButton onClick={() => setMenuIsOpen(true)}>
       <S.MenuButtonBar />
       <S.MenuButtonBar />
       <S.MenuButtonBar />
@@ -56,22 +50,17 @@ function Header() {
   );
 
   const HeaderBar = (
-    <S.HeaderBarContainer>
+    <S.HeaderBarContainer isOpen={menuIsOpen}>
       <S.HeaderBar>
         {Logo}
-        {!menuIsOpened && MenuHamburger}
+        {!menuIsOpen && MenuHamburger}
       </S.HeaderBar>
     </S.HeaderBarContainer>
   );
 
   const openedMenu = (
-    <div
-      data-sal="fade"
-      data-sal-easing="ease-out-back"
-      data-sal-duration="800"
-    >
-      <S.OpenedMenu onClick={() => setMenuIsOpened(false)}>
-        {HeaderBar}
+    <Fade duration={800}>
+      <S.OpenedMenu onClick={() => setMenuIsOpen(false)}>
         {NaviButton('메인화면', '/', 250)}
         {NaviButton('행사', '/activity', 300)}
         {NaviButton('공연', '/performance', 350)}
@@ -80,16 +69,13 @@ function Header() {
         {/* {NaviButton('굿즈', '/goods', 450)} */}
         {NaviButton('축제 소개', '/introduction', 500)}
       </S.OpenedMenu>
-    </div>
+    </Fade>
   );
-
-  useEffect(() => {
-    sal();
-  }, [menuIsOpened]);
 
   return (
     <S.StyledHeader id="Header">
-      { menuIsOpened ? openedMenu : HeaderBar }
+      {HeaderBar}
+      {menuIsOpen && openedMenu}
     </S.StyledHeader>
   );
 }

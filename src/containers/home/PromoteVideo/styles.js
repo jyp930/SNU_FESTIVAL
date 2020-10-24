@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 import { GiSpeaker, GiSpeakerOff, IoIosArrowDown } from 'react-icons/all';
 import { palette, zIndex } from '@S/index';
-import { ResponsiveIconStyle } from '@S/responsive';
 
 const ResponsiveIconStyleWithColor = css`
-  ${ResponsiveIconStyle};
+  width: 4rem;
+  height: 4rem;
   color: ${palette.WHITE_NEWTRO};
 `;
 

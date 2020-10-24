@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import tunaVideo from '@I/video/tuna.mp4';
-import tunaPoster from '@I/video/poster/tuna.png';
+import tunaPoster from '@I/video/poster/tuna.jpg';
 import Video from '@F/Video';
+import Pulse from 'react-reveal/Pulse';
 import * as S from './styles';
 
 const centerContent = (
@@ -30,7 +31,9 @@ function PromoteVideo({ offset, scrollDown }) {
         <S.SoundButton
           onClick={() => setIsMuted(state => !state)}
         >
-          { isMuted ? <S.SpeakerOffIcon /> : <S.SpeakerIcon /> }
+          <Pulse forever>
+            { isMuted ? <S.SpeakerOffIcon /> : <S.SpeakerIcon /> }
+          </Pulse>
         </S.SoundButton>
 
         <Video

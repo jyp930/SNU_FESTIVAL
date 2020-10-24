@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { palette } from '@S/index';
 import FullScreen from '@F/FullScreen';
 import GroupGame from '@C/activity/details/GroupGame';
-import Sal from '@F/Sal';
+import Flip from 'react-reveal/Flip';
 import * as S from './styles';
 
 const activityItems = [
@@ -21,23 +21,24 @@ function Activity() {
   return (
     <S.StyledActivity>
       <S.CardContainer>
-        { activityItems.map((activityItem, index) => (
-          <S.CardItem key={activityItem.title}>
-            <Sal
-              threshold={0.2}
-              animation={index % 2 === 0 ? 'flip-left' : 'flip-right'}
-              duration={500}
-              delay={index * 50}
-            >
-              <S.ActivityItem
-                backgroundColor={activityItem.backgroundColor}
-                onClick={() => setDetailComponent(activityItem.content)}
-              >
-                <S.ActivityTitle>{activityItem.title}</S.ActivityTitle>
-              </S.ActivityItem>
-            </Sal>
-          </S.CardItem>
-        ))}
+        <Flip
+          bottom
+          cascade
+          duration={1000}
+        >
+          <div>
+            { activityItems.map(activityItem => (
+              <S.CardItem key={activityItem.title}>
+                <S.ActivityItem
+                  backgroundColor={activityItem.backgroundColor}
+                  onClick={() => setDetailComponent(activityItem.content)}
+                >
+                  <S.ActivityTitle>{activityItem.title}</S.ActivityTitle>
+                </S.ActivityItem>
+              </S.CardItem>
+            ))}
+          </div>
+        </Flip>
       </S.CardContainer>
       <FullScreen
         isFullScreen={!!detailComponent}

@@ -18,6 +18,9 @@ export const Title = styled.div`
 export const Description = styled.div`
   align-self: flex-end;
   font-size: 1.5rem;
+
+  margin-top: 2rem;
+  text-align: center;
 `;
 
 export const DescriptionText = styled.span`
