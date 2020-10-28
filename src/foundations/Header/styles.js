@@ -32,6 +32,7 @@ export const HeaderBar = styled.div`
   width: 100%;
   min-height: 65px;
   padding: 15px 20px;
+  box-sizing: border-box;
 `;
 
 export const Logo = styled.div`  

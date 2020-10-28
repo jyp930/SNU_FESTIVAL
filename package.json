@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "antd": "^4.5.3",
     "craco-alias": "^2.1.1",
     "gsap": "^3.5.1",
     "mobx": "^6.0.1",
@@ -29,7 +28,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "GENERATE_SOURCEMAP=false craco build",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "craco test",
     "storybook": "start-storybook -p 9009 -s public",
