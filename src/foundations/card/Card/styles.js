@@ -9,7 +9,7 @@ export const StyledCard = styled.div`
   
   background-color: white;
   box-shadow: 0 39px 67px 3px hsla(0, 0%, 67.5%, .3);
-  transition: all .25s ease;
+  transition: transform .25s ease;
   cursor: pointer;
   
   &:hover {

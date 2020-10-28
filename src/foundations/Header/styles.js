@@ -49,7 +49,7 @@ export const LogoText = styled.p`
   margin: 0 0 0 5px;
   font-size: 1.2rem;
   
-  transition: 0.5s;
+  transition: color 0.5s;
   color: ${props => (props.isOpen ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
 `;
 
