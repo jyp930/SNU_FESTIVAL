@@ -7,7 +7,7 @@ export default {
 
 export const Default = () => {
   return (
-    <div style={{ position: 'absolute', bottom: 100, left: 100 }}>
+    <div style={{ position: 'absolute', bottom: 100, left: 500 }}>
       <Footer />
     </div>
   );

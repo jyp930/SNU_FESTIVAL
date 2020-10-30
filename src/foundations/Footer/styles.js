@@ -57,3 +57,31 @@ export const LinkMenu = styled.div`
     }
   }
 `;
+
+export const Info = styled.div`
+  height: 4rem;
+  position: absolute;
+  pointer-events: none;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const InfoText = styled.p`
+  margin: 1px 0;
+  white-space: nowrap;
+  text-align: right;
+  animation-name: slideLeft;
+  animation-duration: ${({ index }) => 0.3 * index}s;
+  animation-fill-mode: forwards;
+
+  @keyframes slideLeft {
+    from { 
+      transform: translateX(-5rem);
+    }
+    to {
+      transform: translateX(-13rem);
+    }
+  }
+`;

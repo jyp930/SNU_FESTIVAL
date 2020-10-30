@@ -6,7 +6,7 @@ import instagram from '@I/svg/icon/instagram.svg';
 import * as S from './styles';
 
 function Footer() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const openNewSite = useCallback((url) => {
     window.open(url, '_blank');
@@ -28,6 +28,11 @@ function Footer() {
           >
             <S.Image src={facebook} alt="facebook" />
           </S.LinkMenu>
+          <S.Info>
+            <S.InfoText index={1}>축제하는 사람들 snufestival@gmail.com</S.InfoText>
+            <S.InfoText index={2}>축하사장 권지현 mail@snu.ac.kr</S.InfoText>
+            <S.InfoText index={3}>개발팀장 박용주 mail@snu.ac.kr</S.InfoText>
+          </S.Info>
         </>
       )}
       <S.ExpandButton
