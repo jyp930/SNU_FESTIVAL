@@ -5,22 +5,26 @@ export const StyledWriteBox = styled.div`
   height: 100%;
   display: flex;
   padding: 0.5rem;
+  flex-direction: column;
 `;
 
 export const IdPassword = styled.div`
   display: flex;
-  flex-direction: column;
 `;
 
 export const InputBox = styled.input`
+  width: 10rem;
   padding: 2px 7px 0;
   margin: 5px;
 `;
 
 export const TextArea = styled.textarea`
-  width: 75%;
   height: 5rem;
   padding: 2px 7px 0;
   margin: 5px;
   resize: none;
+`;
+
+export const Submit = styled.button`
+  align-self: flex-end;
 `;
