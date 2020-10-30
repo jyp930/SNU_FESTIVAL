@@ -19,10 +19,10 @@ function WriteBox() {
   return (
     <S.StyledWriteBox>
       <S.IdPassword>
-        <S.InputBox placeholder="Id" maxLength="20" {...Id} />
-        <S.InputBox placeholder="Password" maxLength="20" {...Password} />
+        <S.InputBox placeholder="익명" maxLength="20" {...Id} />
+        <S.InputBox placeholder="비밀번호" maxLength="20" {...Password} />
       </S.IdPassword>
-      <S.TextArea placeholder="Text" maxLength="400" {...Text} />
+      <S.TextArea placeholder="내용" maxLength="400" {...Text} />
       <S.Submit>등록</S.Submit>
     </S.StyledWriteBox>
   );

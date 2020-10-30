@@ -14,8 +14,18 @@ export const IdPassword = styled.div`
 
 export const InputBox = styled.input`
   width: 10rem;
-  padding: 2px 7px 0;
+  padding: 2px 7px;
   margin: 5px;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #757575;
+  border-radius: 0;
+  outline: 0;
+  transition: border .15s ease-in-out, padding .15s ease-in-out;
+  &:focus{
+    padding: 2px 7px 0px;
+    border-bottom: 3px solid #fddde6;
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -23,8 +33,29 @@ export const TextArea = styled.textarea`
   padding: 2px 7px 0;
   margin: 5px;
   resize: none;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #757575;
+  border-radius: 0;
+  outline: 0;
+  transition: border .15s ease-in-out, padding .15s ease-in-out;
+  &:focus{
+    padding: 2px 7px 0px;
+    border-bottom: 3px solid #fddde6;
+  }
 `;
 
 export const Submit = styled.button`
+  margin: 0 5px;
+  border: 2px solid #fddde6;
+  border-radius: 8px;
+  outline: 0;
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
   align-self: flex-end;
+  transition: .15s;
+  &:hover{
+    background-color: #fddde6;
+  }
 `;
