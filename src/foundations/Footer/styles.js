@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { HoverStyle } from '@S/responsive/mouse';
+import { palette } from '@S/index';
 
 const Menu = css`
   width: 3rem;
@@ -25,6 +26,10 @@ export const StyledFooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
 `;
 
 export const ExpandButton = styled.div`
@@ -75,13 +80,15 @@ export const InfoText = styled.p`
   animation-name: slideLeft;
   animation-duration: ${({ index }) => 0.3 * index}s;
   animation-fill-mode: forwards;
+  
+  color: ${palette.WHITE_NEWTRO};
 
   @keyframes slideLeft {
     from { 
-      transform: translateX(-5rem);
+      transform: translateX(-8rem);
     }
     to {
-      transform: translateX(-13rem);
+      transform: translateX(-12rem);
     }
   }
 `;
