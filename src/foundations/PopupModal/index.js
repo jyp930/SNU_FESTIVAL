@@ -9,7 +9,9 @@ function PopupModal({ isModalOpen, setIsModalOpen, children }) {
       modal
       open={isModalOpen}
       onClose={() => setIsModalOpen(false)}
-      contentStyle={{ border: 'none', display: 'flex', justifyContent: 'center', backgroundColor: 'transparent' }}
+      contentStyle={{
+        border: 'none', display: 'flex', justifyContent: 'center', backgroundColor: 'transparent',
+      }}
     >
       {children}
     </Popup>

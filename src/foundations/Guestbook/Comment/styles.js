@@ -38,11 +38,6 @@ export const Id = styled.div`
   font-size: 0.9rem;
 `;
 
-export const Like = styled.div`
-  margin-right: 1rem;
-  cursor: pointer;
-`;
-
 export const Time = styled.div`
   margin-right: 1rem;
 `;
