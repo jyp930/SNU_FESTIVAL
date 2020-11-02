@@ -12,6 +12,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Montserrat', 'NanumSquare', sans-serif;
+    margin: 0;
+    & ::selection {
+      background-color: #fddde6;
+      color: white;
+    }
   }
 `;
 
@@ -37,9 +42,25 @@ export const palette = {
   WHITE20_NEWTRO: '#efe7ce',
 
   BLACK_NEWTRO: '#1c0b01',
+
+  RED_PASTEL: '#ffb3ba',
+
+  ORANGE_PASTEL: '#ffdfba',
+
+  YELLOW_PASTEL: '#ffffba',
+  YELLOW20_PASTEL: '#ffb400',
+  YELLOW30_PASTEL: '#ff8200',
+  YELLOW40_PASTEL: '#ff7f50',
+  YELLOW50_PASTEL: '#d2691e',
+
+  GREEN_PASTEL: '#baffc9',
+
+  BLUE_PASTEL: '#bae1ff',
 };
 
 export const zIndex = {
   base: 1,
-  header: 9999,
+  header: 50,
+  fullScreen: 100,
+  mouseTrail: 10000,
 };

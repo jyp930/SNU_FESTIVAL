@@ -1,3 +1,8 @@
+## TODO
+- sal.js 를 react-reveal 로 교체
+- react-spring 을 react-reveal 로 교체
+- lottie 삭제
+
 ## Technical Stack
 
 ### `CRA`
@@ -5,11 +10,19 @@
 ### `ESLint`
 ### `Storybook`
 ### `Hygen`
-### `styled-components`
-### `styled-media-query`
 ### `Firebase-hosting`
 ### `Google Analytics`
 ### `git flow`
+### `mobX`
+
+## Css Stack
+
+### `styled-components`
+### `styled-media-query`
+### `sal.js`
+### `react-spring`
+### `react-reveal`
+### `react-slick`
 
 ## Sites
 
@@ -26,6 +39,13 @@
 ### `yarn build`
 
 build 폴더 생성
+
+### `yarn analyze`
+
+local build 시 source-map-explorer 를 통해 bundle size 분석 가능
+
+한편 staging, production 배포시에는 GENERATE_SOURCEMAP=false 로 설정해
+source map 을 삭제함
 
 ### `firebase deploy`
 

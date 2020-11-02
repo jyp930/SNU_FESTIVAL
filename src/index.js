@@ -6,11 +6,15 @@ import { GA_TRACKING_KEY } from '@/config';
 
 /** css import */
 import 'sal.js/dist/sal.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import 'reactjs-popup/dist/index.css';
 
 if (GA_TRACKING_KEY) ReactGA.initialize(GA_TRACKING_KEY);
 
+// noinspection JSCheckFunctionSignatures
 ReactDOM.render(
-  // TODO: visibility-sensor 에서 오류가 나서 주석처리해 둔 상태. StrictMode 살리기
+  /** LazyLoad library 때문에 strictMode 사용 불가 */
   // <React.StrictMode>
   <App />,
   // </React.StrictMode>,
