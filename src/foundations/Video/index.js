@@ -4,7 +4,7 @@ import * as S from './styles';
 
 function Video({ isMuted, video, poster }) {
   return (
-    <S.Video autoPlay loop muted={isMuted} poster={poster}>
+    <S.Video autoPlay playsInline loop muted={isMuted} poster={poster}>
       <source src={video} type="video/mp4" />
     </S.Video>
   );
