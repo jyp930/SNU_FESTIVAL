@@ -11,7 +11,7 @@ const centerContent = (
   <span>
     2020 SNU FESTIVAL
     <br />
-    ON-AIR
+    축 하 사 모 집 중
   </span>
 );
 

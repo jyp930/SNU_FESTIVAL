@@ -1,8 +1,9 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import mascot from '@I/svg/mascot/mascot-basic.svg';
 import facebook from '@I/svg/icon/facebook.svg';
 import instagram from '@I/svg/icon/instagram.svg';
+import { preloadImage } from '@/utils/functions/preload';
 import * as S from './styles';
 
 function Footer() {
@@ -10,6 +11,10 @@ function Footer() {
 
   const openNewSite = useCallback((url) => {
     window.open(url, '_blank');
+  }, []);
+
+  useEffect(() => {
+    [facebook, instagram].map(preloadImage);
   }, []);
 
   return (
