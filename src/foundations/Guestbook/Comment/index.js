@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import PopupModal from '@F/PopupModal';
-import Popup from 'reactjs-popup';
+import DeletePopup from '@F/Guestbook/Comment/DeletePopup';
 import * as S from './styles';
 
 function Comment({ items }) {
@@ -19,28 +18,7 @@ function Comment({ items }) {
 
   return (
     <S.StyledComment>
-      <Popup
-        modal
-        open={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        closeOnDocumentClick={false}
-        contentStyle={{
-          display: 'flex', justifyContent: 'center'
-        }}
-      >
-        <S.DeletePopup>
-          <div>삭제하시겠습니까?</div>
-          <S.InputBox placeholder="비밀번호" maxLength="20" {...Password} />
-          <S.ButtonBox>
-            <button onClick={() => {}}>
-              삭제
-            </button>
-            <button onClick={() => setIsModalOpen(false)}>
-              닫기
-            </button>
-          </S.ButtonBox>
-        </S.DeletePopup>
-      </Popup>
+      <DeletePopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} Password={Password} />
       {items.map((item, index) => (
         <S.CommentThread>
           <S.MainBox>

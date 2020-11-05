@@ -1,4 +1,17 @@
 import styled from 'styled-components';
+import { ToastContainer } from 'react-toastify';
+
+export const StyledContainer = styled(ToastContainer).attrs({
+  className: 'toast-container',
+  toastClassName: 'toast',
+  bodyClassName: 'body',
+  progressClassName: 'progress',
+})`
+  .toast {
+    color: black;
+    text-align: center;
+  }
+`;
 
 export const StyledWriteBox = styled.div`
   width: 100%;
@@ -23,7 +36,7 @@ export const InputBox = styled.input`
   outline: 0;
   transition: border .15s ease-in-out, padding .15s ease-in-out;
   &:focus{
-    padding: 2px 7px 0px;
+    padding: 2px 7px 0;
     border-bottom: 3px solid #fddde6;
   }
 `;
@@ -40,7 +53,7 @@ export const TextArea = styled.textarea`
   outline: 0;
   transition: border .15s ease-in-out, padding .15s ease-in-out;
   &:focus{
-    padding: 2px 7px 0px;
+    padding: 2px 7px 0;
     border-bottom: 3px solid #fddde6;
   }
 `;
