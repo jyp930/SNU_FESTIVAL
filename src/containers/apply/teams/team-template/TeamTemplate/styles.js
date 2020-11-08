@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { palette } from '@S/index';
+import { palette, zIndex } from '@S/index';
+import { HoverStyle } from '@S/responsive/mouse';
 
 export const StyledTeamTemplate = styled.div`
   position: relative;
@@ -10,6 +11,11 @@ export const StyledTeamTemplate = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  ${HoverStyle};  
+  &:hover {
+    z-index: ${zIndex.base};
+  }
   
   ${media.lessThan('large')`
     width: calc(100% / 2);

@@ -39,6 +39,7 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  ${HoverStyle};
 `;
 
 export const LogoImage = styled.img`
