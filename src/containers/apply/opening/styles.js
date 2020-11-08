@@ -5,7 +5,7 @@ import { palette } from '@S/index';
 export const StyledMain = styled.div`
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 65vh;
   
   ${media.lessThan('medium')`
     height: 100vh;
@@ -17,6 +17,7 @@ export const BackgroundImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  user-select: none;
 `;
 
 export const ApplyLinkBox = styled.div`

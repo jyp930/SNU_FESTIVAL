@@ -1,26 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
 
-export const GlobalStyle = createGlobalStyle`
-  html {
-    font-size: 16px;
-    
-    ${media.lessThan('medium')`
-       font-size: 12px;
-    `};
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Montserrat', 'NanumSquare', sans-serif;
-    
-    & ::selection {
-      background-color: #fddde6;
-      color: white;
-    }
-  }
-`;
-
 export const palette = {
   BLUE_NEWTRO: '#094f8c',
   DARK_BLUE_NEWTRO: '#023c7f',
@@ -45,6 +25,7 @@ export const palette = {
   BLACK_NEWTRO: '#1c0b01',
 
   RED_PASTEL: '#ffb3ba',
+  PINK_PASTEL: '#fddde6',
 
   ORANGE_PASTEL: '#ffdfba',
 
@@ -65,3 +46,23 @@ export const zIndex = {
   fullScreen: 100,
   mouseTrail: 10000,
 };
+
+export const GlobalStyle = createGlobalStyle`
+  html {
+    font-size: 16px;
+    
+    ${media.lessThan('medium')`
+       font-size: 12px;
+    `};
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Montserrat', 'NanumSquare', sans-serif;
+    
+    & ::selection {
+      background-color: ${palette.PINK_PASTEL};
+      color: white;
+    }
+  }
+`;
