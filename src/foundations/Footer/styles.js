@@ -77,6 +77,7 @@ export const InfoText = styled.p`
   margin: 1px 0;
   white-space: nowrap;
   text-align: right;
+  font-weight: lighter;
   animation-name: slideLeft;
   animation-duration: ${({ index }) => 0.3 * index}s;
   animation-fill-mode: forwards;

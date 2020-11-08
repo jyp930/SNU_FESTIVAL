@@ -50,6 +50,7 @@ export const EnglishText = styled.p`
 export const KoreanText = styled.p`
   color: ${palette.WHITE_NEWTRO};
   font-size: 2rem;
+  font-weight: lighter;
   margin-top: 10px;
   width: 30rem;
   word-break: keep-all;

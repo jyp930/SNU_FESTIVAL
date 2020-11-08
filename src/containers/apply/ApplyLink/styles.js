@@ -4,7 +4,6 @@ import { palette } from '@S/index';
 export const StyledApplyLink = styled.div`
   width: 100%;
   height: 35vh;
-  background-color: ${palette.PINK_PASTEL};
   
   display: flex;
   flex-direction: column;

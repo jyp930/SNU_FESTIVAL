@@ -28,6 +28,7 @@ export const CenterLabel = styled.p`
   bottom: 50%;
   width: 100%;
   text-align: center;
+  font-weight: lighter;
   
   color: ${palette.WHITE_NEWTRO};
   font-size: 2.5rem;
