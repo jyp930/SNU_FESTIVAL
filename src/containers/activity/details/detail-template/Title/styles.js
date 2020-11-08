@@ -25,4 +25,5 @@ export const Description = styled.div`
 
 export const DescriptionText = styled.span`
   word-break: keep-all;
+  font-weight: lighter;
 `;

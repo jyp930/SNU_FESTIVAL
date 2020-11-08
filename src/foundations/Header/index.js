@@ -36,7 +36,7 @@ function Header() {
       <S.LogoText
         isOpen={menuIsOpen}
       >
-        SNU-FESTIVAL
+        SNU FESTIVAL
       </S.LogoText>
     </S.Logo>
   );
