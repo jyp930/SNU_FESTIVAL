@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { palette, zIndex } from '@S/index';
-import { HoverStyle } from '@S/responsive/mouse';
 
 export const StyledTeamTemplate = styled.div`
   position: relative;
@@ -12,11 +10,9 @@ export const StyledTeamTemplate = styled.div`
   justify-content: center;
   align-items: center;
   
-  ${HoverStyle};  
-  &:hover {
-    z-index: ${zIndex.base};
-  }
-  
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  cursor: pointer;
+
   ${media.lessThan('large')`
     width: calc(100% / 2);
     height: 50vh;
@@ -26,19 +22,6 @@ export const StyledTeamTemplate = styled.div`
     width: 100%;
     height: 50vh;
   `};
-  
-  &:nth-of-type(1) {
-    background-color: ${palette.BLUE_PASTEL};
-  }
-  &:nth-of-type(2) {
-    background-color: ${palette.GREEN_PASTEL};
-  }
-  &:nth-of-type(4) {
-    background-color: mediumpurple;
-  }
-  &:nth-of-type(3) {
-    background-color: ${palette.YELLOW20_PASTEL};
-  }
 `;
 
 export const Name = styled.span`

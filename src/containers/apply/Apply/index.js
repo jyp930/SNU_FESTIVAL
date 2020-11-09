@@ -4,7 +4,10 @@ import * as S from './styles';
 import Opening from '@C/apply/opening';
 import ApplyLink from '@C/apply/ApplyLink';
 import PeopleForSnuFestival from '@C/apply/PeopleForSnuFestival';
-import TeamTemplate from '@C/apply/teams/team-template/TeamTemplate';
+import PeopleForActivity from '@C/apply/teams/PeopleForActivity';
+import PeopleForPerformance from '@C/apply/teams/PeopleForPerformance';
+import PeopleForDesign from '@C/apply/teams/PeopleForDesign';
+import PeopleForPromotion from '@C/apply/teams/PeopleForPromotion';
 
 function Apply() {
   return (
@@ -13,10 +16,10 @@ function Apply() {
       <ApplyLink />
       <PeopleForSnuFestival />
       <S.Teams>
-        <TeamTemplate />
-        <TeamTemplate />
-        <TeamTemplate />
-        <TeamTemplate />
+        <PeopleForPerformance />
+        <PeopleForDesign />
+        <PeopleForActivity />
+        <PeopleForPromotion />
       </S.Teams>
     </S.StyledApply>
   );

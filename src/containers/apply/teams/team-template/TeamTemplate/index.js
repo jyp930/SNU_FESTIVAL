@@ -2,16 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
-function TeamTemplate() {
+function TeamTemplate({ name, core, backgroundColor }) {
   return (
-    <S.StyledTeamTemplate>
-      <S.Name>공연팀</S.Name>
-      <S.Core>가보지 않은 길을 두려워 하지 않습니다.</S.Core>
+    <S.StyledTeamTemplate
+      backgroundColor={backgroundColor}
+    >
+      <S.Name>{ name }</S.Name>
+      <S.Core>{ core }</S.Core>
     </S.StyledTeamTemplate>
   );
 }
 export default TeamTemplate;
 
 TeamTemplate.propTypes = {
-
+  name: PropTypes.string.isRequired,
+  core: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
 };
