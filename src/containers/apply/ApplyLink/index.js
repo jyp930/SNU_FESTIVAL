@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
+import Flash from 'react-reveal/Flash';
 
 function ApplyLink() {
   const openApplyGoogleForm = useCallback(() => {
@@ -12,7 +13,12 @@ function ApplyLink() {
       <S.Link
         onClick={openApplyGoogleForm}
       >
-        지원 링크!
+        <Flash
+          forever
+          duration={2500}
+        >
+          지원 링크!
+        </Flash>
       </S.Link>
     </S.StyledApplyLink>
   );

@@ -9,12 +9,16 @@ export const StyledApplyLink = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
+  background-image: linear-gradient(41deg,
+    ${palette.BLUE_PASTEL} 0%, ${palette.GREEN_PASTEL} 25%, ${palette.PINK_PASTEL} 50%, ${palette.YELLOW20_PASTEL} 75%, mediumpurple 100%
+  );
 `;
 
-export const Link = styled.p`
+export const Link = styled.div`
   margin: 0;
-  font-size: 3rem;
-  color: ${palette.BLUE_NEWTRO};
-  text-decoration: underline;
+  font-size: 4rem;
+  font-weight: bolder;
+  color: ${palette.BLACK_NEWTRO};
   cursor: pointer;
 `;
