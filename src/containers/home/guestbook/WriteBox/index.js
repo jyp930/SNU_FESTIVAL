@@ -35,12 +35,7 @@ function WriteBox() {
 
   return (
     <S.StyledWriteBox>
-      <S.StyledContainer
-        position="top-right"
-        autoClose={2000}
-        pauseOnHover={false}
-        pauseOnFocusLoss={false}
-      />
+
       <S.IdPassword>
         <S.InputBox placeholder="익명" maxLength="20" {...Id} />
         <S.InputBox placeholder="비밀번호" maxLength="20" {...Password} />

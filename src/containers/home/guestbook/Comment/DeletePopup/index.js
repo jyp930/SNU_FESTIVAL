@@ -27,11 +27,6 @@ function DeletePopup({ Password, isModalOpen, setIsModalOpen }) {
 
   return (
     <S.StyledDeletePopup>
-      <S.StyledContainer
-        position="top-right"
-        autoClose={3000}
-        pauseOnHover={false}
-      />
       <Popup {...SimpleModal}>
         <S.DeletePopup>
           <div>삭제하시겠습니까?</div>

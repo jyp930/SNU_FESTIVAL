@@ -1,10 +1,11 @@
 import React from 'react';
 import mascot1 from '@I/svg/mascot/1.svg';
 import mascot2 from '@I/svg/mascot/2.svg';
+import * as S from '@C/home/Home/styles';
 import Comment from './index';
 
 export default {
-  title: 'foundations/Guestbook/Comment',
+  title: 'containers/home/guestbook/Comment',
 };
 
 const items = [
@@ -16,4 +17,14 @@ const items = [
   },
 ];
 
-export const Default = () => <Comment items={items} />;
+export const Default = () => (
+  <div>
+    <S.StyledContainer
+      position="top-right"
+      autoClose={2000}
+      pauseOnHover={false}
+      pauseOnFocusLoss={false}
+    />
+    <Comment items={items} />
+  </div>
+);

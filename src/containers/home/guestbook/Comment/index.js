@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import DeletePopup from '@F/Guestbook/Comment/DeletePopup';
+import DeletePopup from './DeletePopup';
 import * as S from './styles';
 
 function Comment({ items }) {

@@ -1,21 +1,7 @@
 import styled from 'styled-components';
-import { ToastContainer } from 'react-toastify';
-
-export const StyledContainer = styled(ToastContainer).attrs({
-  className: 'toast-container',
-  toastClassName: 'toast',
-  bodyClassName: 'body',
-  progressClassName: 'progress',
-})`
-  .toast {
-    color: black;
-    text-align: center;
-  }
-`;
 
 export const StyledWriteBox = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   padding: 0.5rem;
   flex-direction: column;

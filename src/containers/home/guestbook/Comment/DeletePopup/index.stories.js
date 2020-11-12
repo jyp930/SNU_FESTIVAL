@@ -2,7 +2,7 @@ import React from 'react';
 import DeletePopup from './index';
 
 export default {
-  title: 'foundations/Guestbook/Comment/DeletePopup',
+  title: 'containers/home/guestbook/Comment/DeletePopup',
 };
 
 export const Default = () => <DeletePopup />;
