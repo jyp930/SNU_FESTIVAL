@@ -5,12 +5,14 @@ export const WordsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4rem auto 2rem;
+  margin: 0 auto 2rem;
+  padding-top: 4rem;
   width: 70%;
   
   ${media.lessThan('medium')`
     width: 100%;
     flex-direction: column;
+    padding-top: 6rem;
   `};
 `;
 
