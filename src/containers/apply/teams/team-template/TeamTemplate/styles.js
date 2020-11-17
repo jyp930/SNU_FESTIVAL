@@ -41,3 +41,26 @@ export const Core = styled.p`
   text-align: center;
   word-break: keep-all;
 `;
+
+// Modal
+export const ModalContentWrapper = styled.div`
+  width: 50vw;
+  height: 60vh;
+  overflow-y: scroll;
+  
+  color: white;
+  text-align: center;
+  
+  ${media.lessThan('medium')`
+    width: 80vw;
+  `}; 
+`;
+
+export const Title = styled.p`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+
+export const Content = styled.p`
+  line-height: 1.6; 
+`;
