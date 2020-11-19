@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
+import { firestore } from '@/utils/initializer/firebase';
 import PropTypes from 'prop-types';
-import mascot1 from '@I/svg/mascot/1.svg';
-import mascot2 from '@I/svg/mascot/2.svg';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import WriteBox from '@C/home/guestbook/WriteBox';
 import Comment from '@C/home/guestbook/Comment';
@@ -16,6 +15,18 @@ function Guestbook({ offset, scrollDown }) {
       id: 2, username: '2번', password: 'b', content: '아자차카타파하', created_at: '2020.10.31',
     },
   ];
+
+  const subscribeComments = useCallback(() => {
+    return firestore.collection('guestbook').doc('comments')
+      .onSnapshot(doc => {
+        console.log(doc.data().comments);
+      });
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = subscribeComments();
+    return () => unsubscribe();
+  }, [subscribeComments]);
 
   return (
     <S.StyledGuestbook>
