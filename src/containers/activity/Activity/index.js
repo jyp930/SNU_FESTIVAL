@@ -10,7 +10,7 @@ import IU2 from '@I/jpeg/IU2.jpeg';
 import IU3 from '@I/jpeg/IU3.jpeg';
 import IU4 from '@I/jpeg/IU4.jpeg';
 import IU5 from '@I/jpeg/IU5.jpeg';
-import { preloadImage } from '@/utils/functions/preload';
+import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
 const activityItems = [

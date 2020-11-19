@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { firestore } from '@/utils/initializer/firebase';
+import { firestore } from '@U/initializer/firebase';
 import PropTypes from 'prop-types';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import WriteBox from '@C/home/guestbook/WriteBox';

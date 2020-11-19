@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import mascot from '@I/svg/mascot/mascot-basic.svg';
 import facebook from '@I/svg/icon/facebook.svg';
 import instagram from '@I/svg/icon/instagram.svg';
-import { preloadImage } from '@/utils/functions/preload';
+import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
 function Footer() {

@@ -20,6 +20,7 @@ module.exports = {
       '@F': path.resolve(__dirname, '../src/foundations'),
       '@I': path.resolve(__dirname, '../src/static/image'),
       '@S': path.resolve(__dirname, '../src/static/style'),
+      '@U': path.resolve(__dirname, '../src/utils'),
     };
 
     return config;

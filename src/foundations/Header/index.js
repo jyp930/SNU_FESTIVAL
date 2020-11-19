@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import mascot from '@I/svg/mascot/mascot-basic.svg';
 import Fade from 'react-reveal/Fade';
 import * as S from './styles';
-import { preloadImage } from '@/utils/functions/preload';
+import { preloadImage } from '@U/functions/preload';
 import ClosingFestival from '@I/jpg/closing-festival.jpg';
 
 function Header() {
