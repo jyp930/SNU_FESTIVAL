@@ -27,10 +27,9 @@ export const StyledGoodsImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: 1s;
+  transition: transform 1s;
 
   &:hover {
-    width: 200%;
-    height: 200%;
+    transform: scale(2);
   }
 `;

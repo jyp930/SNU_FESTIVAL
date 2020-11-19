@@ -32,12 +32,14 @@ export const HeaderBar = styled.div`
   width: 100%;
   min-height: 65px;
   padding: 15px 20px;
+  box-sizing: border-box;
 `;
 
 export const Logo = styled.div`  
   display: flex;
   align-items: center;
   cursor: pointer;
+  ${HoverStyle};
 `;
 
 export const LogoImage = styled.img`
@@ -49,7 +51,7 @@ export const LogoText = styled.p`
   margin: 0 0 0 5px;
   font-size: 1.2rem;
   
-  transition: 0.5s;
+  transition: color 0.5s;
   color: ${props => (props.isOpen ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
 `;
 

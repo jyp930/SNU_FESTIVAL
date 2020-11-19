@@ -36,4 +36,5 @@ export const ActivityTitle = styled.p`
   margin: 0;
   color: white;
   font-size: 2rem;
+  font-weight: lighter;
 `;

@@ -1,12 +1,20 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import mascot from '@I/svg/mascot/mascot-basic.svg';
 import Fade from 'react-reveal/Fade';
 import * as S from './styles';
+import { preloadImage } from '@/utils/functions/preload';
+import ClosingFestival from '@I/jpg/closing-festival.jpg';
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const history = useHistory();
+
+  useEffect(() => {
+    if (menuIsOpen) {
+      preloadImage(ClosingFestival);
+    }
+  }, [menuIsOpen]);
 
   const changeUrl = useCallback((route) => {
     history.push(route);
@@ -36,7 +44,7 @@ function Header() {
       <S.LogoText
         isOpen={menuIsOpen}
       >
-        SNU-FESTIVAL
+        SNU FESTIVAL
       </S.LogoText>
     </S.Logo>
   );
