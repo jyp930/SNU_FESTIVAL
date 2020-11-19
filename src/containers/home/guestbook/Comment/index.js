@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import mascot1 from '@I/svg/mascot/1.svg';
 import PropTypes from 'prop-types';
 import DeletePopup from './DeletePopup';
 import * as S from './styles';
@@ -19,17 +20,17 @@ function Comment({ items }) {
   return (
     <S.StyledComment>
       <DeletePopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} Password={Password} />
-      {items.map((item, index) => (
-        <S.CommentThread>
+      {items.map((item) => (
+        <S.CommentThread key={item.id}>
           <S.MainBox>
-            <S.ProfileImage src={item.img} />
+            <S.ProfileImage src={mascot1} />
             <S.ContentsBox>
-              <S.Id>{item.id}</S.Id>
+              <S.Id>{item.username}</S.Id>
               <S.Content>{item.content}</S.Content>
             </S.ContentsBox>
           </S.MainBox>
           <S.TaleBox>
-            <S.Time>{item.time}</S.Time>
+            <S.Time>{item.created_at}</S.Time>
             <S.Delete onClick={() => setIsModalOpen(true)}>삭제</S.Delete>
           </S.TaleBox>
         </S.CommentThread>

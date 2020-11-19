@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledWriteBox = styled.div`
   width: 100%;
   display: flex;
+  box-sizing: border-box;
   padding: 0.5rem;
   flex-direction: column;
 `;
@@ -23,11 +24,12 @@ export const InputBox = styled.input`
   transition: border .15s ease-in-out, padding .15s ease-in-out;
   &:focus{
     padding: 2px 7px 0;
-    border-bottom: 3px solid #fddde6;
+    border-bottom: 3px solid lightpink;
   }
 `;
 
 export const TextArea = styled.textarea`
+  font-family: 'Montserrat', 'NanumSquare', sans-serif;
   height: 5rem;
   padding: 2px 7px 0;
   margin: 5px;
@@ -40,7 +42,7 @@ export const TextArea = styled.textarea`
   transition: border .15s ease-in-out, padding .15s ease-in-out;
   &:focus{
     padding: 2px 7px 0;
-    border-bottom: 3px solid #fddde6;
+    border-bottom: 3px solid lightpink;
   }
 `;
 
