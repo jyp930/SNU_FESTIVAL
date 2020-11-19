@@ -64,5 +64,12 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${palette.PINK_PASTEL};
       color: white;
     }
+    
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
+    & ::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
   }
 `;
