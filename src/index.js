@@ -8,10 +8,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'reactjs-popup/dist/index.css';
 
-import { initializeFirebase, initializeGA } from '@/initialize';
+import { initializeGA } from '@/utils/initializer/googleAnalytics';
 
 initializeGA();
-initializeFirebase();
 
 // noinspection JSCheckFunctionSignatures
 ReactDOM.render(
