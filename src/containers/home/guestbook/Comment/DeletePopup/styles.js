@@ -17,13 +17,13 @@ export const StyledDeletePopup = styled.div`
 `;
 
 export const DeletePopup = styled.div`
-  background-color: ghostwhite;
   width: 12rem;
   height: 7rem;
   display: flex;
   padding: 0.5rem;
   flex-direction: column;
   border: 1px solid;
+  background-color: lightpink;
 `;
 
 export const InputBox = styled.input`
@@ -33,7 +33,7 @@ export const InputBox = styled.input`
   border-bottom: 1px solid #757575;
   border-radius: 0;
   outline: 0;
-  background-color: transparent;
+  background-color: lightpink;
   transition: border .15s ease-in-out, padding .15s ease-in-out;
   &:focus{
     padding: 2px 7px 0;

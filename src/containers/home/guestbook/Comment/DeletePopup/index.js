@@ -12,7 +12,7 @@ function DeletePopup({ Password, isModalOpen, setIsModalOpen }) {
     onClose: () => setIsModalOpen(false),
     closeOnDocumentClick: false,
     contentStyle: {
-      display: 'flex', justifyContent: 'center',
+      border: 'none', display: 'flex', justifyContent: 'center', backgroundColor: 'transparent',
     },
   };
 
