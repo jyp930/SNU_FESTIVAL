@@ -30,11 +30,11 @@ export const TaleBox = styled.div`
   display: flex;
   justify-content: flex-end;
   color: #999999;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 `;
 
 export const Id = styled.div`
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 `;
 
 export const Time = styled.div`
@@ -46,6 +46,7 @@ export const Delete = styled.div`
 `;
 
 export const Content = styled.div`
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: lighter;
   word-break: keep-all;
 `;

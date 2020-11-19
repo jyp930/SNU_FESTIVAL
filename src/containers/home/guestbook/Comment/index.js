@@ -6,16 +6,12 @@ import * as S from './styles';
 
 function Comment({ items }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const useInput = initialValue => {
-    const [value, setValue] = useState(initialValue);
-    const onChange = e => {
-      // console.log(e.target.value);
-      setValue(e.target.value);
-    };
-    return { value, onChange };
-  };
+  const [Password, setPassword] = useState('');
 
-  const Password = useInput('');
+  const openPopup = (password) =>{
+    setPassword(password);
+    setIsModalOpen(true);
+  };
 
   return (
     <S.StyledComment>
@@ -31,7 +27,7 @@ function Comment({ items }) {
           </S.MainBox>
           <S.TaleBox>
             <S.Time>{item.created_at}</S.Time>
-            <S.Delete onClick={() => setIsModalOpen(true)}>삭제</S.Delete>
+            <S.Delete onClick={() => openPopup(item.password)}>삭제</S.Delete>
           </S.TaleBox>
         </S.CommentThread>
       ))}

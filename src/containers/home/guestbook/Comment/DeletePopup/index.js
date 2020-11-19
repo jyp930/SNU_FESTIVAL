@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'reactjs-popup';
 import { toast } from 'react-toastify';
@@ -16,13 +16,24 @@ function DeletePopup({ Password, isModalOpen, setIsModalOpen }) {
     },
   };
 
+  const useInput = initialValue => {
+    const [value, setValue] = useState(initialValue);
+    const onChange = e => {
+      // console.log(e.target.value);
+      setValue(e.target.value);
+    };
+    return { value, onChange, setValue };
+  };
+
+  const Input = useInput('');
   const Delete = () => {
-    if (Password.value === '') toast('비밀번호가 틀렸습니다');
+    if (Input.value !== Password) toast('비밀번호가 틀렸습니다');
     else {
       toast.dismiss();
       toast('삭제되었습니다');
       setIsModalOpen(false);
     }
+    Input.setValue('');
   };
 
   return (
@@ -30,7 +41,7 @@ function DeletePopup({ Password, isModalOpen, setIsModalOpen }) {
       <Popup {...SimpleModal}>
         <S.DeletePopup>
           <div>삭제하시겠습니까?</div>
-          <S.InputBox placeholder="비밀번호" maxLength="20" {...Password} />
+          <S.InputBox placeholder="비밀번호" maxLength="20" {...Input} />
           <S.ButtonBox>
             <button onClick={Delete}>
               삭제
