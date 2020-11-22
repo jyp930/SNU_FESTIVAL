@@ -45,8 +45,16 @@ function TeamTemplate({ name, core, backgroundColor }) {
         onClick={toggleModal}
         backgroundColor={backgroundColor}
       >
-        <S.Name>{ name }</S.Name>
-        <S.Core>{ core }</S.Core>
+        <S.Name>
+          <Fade duration={800}>
+            { name }
+          </Fade>
+        </S.Name>
+        <S.Core>
+          <Fade duration={1000}>
+            { core }
+          </Fade>
+        </S.Core>
       </S.StyledTeamTemplate>
       <PopupModal
         isModalOpen={isModalOpen}

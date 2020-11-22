@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
-import BasicCard from '@F/card/BasicCard';
 import Slider from '@F/Slider';
 import IU1 from '@I/jpeg/IU1.jpeg';
 import IU2 from '@I/jpeg/IU2.jpeg';
@@ -20,9 +19,9 @@ function PosterSlider() {
               key={cardContent.name}
               length={contentList.length}
             >
-              <BasicCard
-                image={cardContent.image}
-                content={<span>{cardContent.name}</span>}
+              <S.Image
+                src={cardContent.image}
+                alt="축제 포스트 사진"
               />
             </S.CardItem>
           ))}

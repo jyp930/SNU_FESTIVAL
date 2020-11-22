@@ -15,8 +15,9 @@ export const FlexContainer = styled.div`
 export const StyledSlider = styled.div`
   height: 100%;
   display: flex;
-  width: 150vw;
 
+  // 부모 컴포넌트와 width sync 맞추기
+  width: 150vw;
   animation: 20s linear 0s infinite slide;
   @keyframes slide {
     0% { margin-left: 0; }
@@ -25,9 +26,8 @@ export const StyledSlider = styled.div`
   
   ${media.lessThan('medium')`
     width: 400vw;
-    
-    animation: 15s linear 0s infinite slidemobile; 
-    @keyframes slidemobile {
+    animation: 15s linear 0s infinite slideMobile; 
+    @keyframes slideMobile {
       0% { margin-left: 0; }
       100% {margin-left: -400vw; }
     };

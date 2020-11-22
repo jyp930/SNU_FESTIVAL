@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 
 export const StyledInformation = styled.div`
-  padding-bottom: 5rem;
+  padding: 5rem 0;
 
   display: flex;
   justify-content: center;

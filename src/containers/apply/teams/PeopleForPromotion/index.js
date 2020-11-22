@@ -7,7 +7,7 @@ import { palette } from '@S/index';
 function PeopleForPromotion() {
   return (
     <TeamTemplate
-      name="홍보"
+      name="홍보팀"
       core="가보지 않은 길을 두려워 하지 않습니다."
       backgroundColor="mediumpurple"
     />
