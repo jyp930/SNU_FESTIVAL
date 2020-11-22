@@ -17,8 +17,8 @@ function LottieFrame({ animationJson, width, height }) {
     <S.StyledLottieFrame>
       <ReactLottie
         options={defaultOptions}
-        height={height ?? 400}
-        width={width ?? 400}
+        height={height}
+        width={width}
       />
     </S.StyledLottieFrame>
   );
@@ -32,6 +32,6 @@ LottieFrame.propTypes = {
 };
 
 LottieFrame.defaultProps = {
-  width: 400,
-  height: 400,
+  width: 280,
+  height: 280,
 };

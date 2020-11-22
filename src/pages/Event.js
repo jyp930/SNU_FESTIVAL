@@ -15,8 +15,6 @@ function Event() {
       <Item>
         <LottieFrame
           animationJson={eventJson}
-          width={280}
-          height={280}
         />
       </Item>
     </Wrapper>
