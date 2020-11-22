@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "craco-alias": "^2.1.1",
+    "dayjs": "^1.9.6",
     "firebase": "^8.0.2",
     "gsap": "^3.5.1",
     "mobx": "^6.0.1",
