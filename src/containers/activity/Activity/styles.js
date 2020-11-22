@@ -11,13 +11,13 @@ export const CardContainer = styled.div`
   align-items: center;
 `;
 
-export const CardItem = styled.div`
+export const Card = styled.div`
   width: 80vw;
   height: 10rem;
   margin: 1.5rem 0;
 `;
 
-export const ActivityItem = styled.div`
+export const Item = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@ export const ActivityItem = styled.div`
   }
 `;
 
-export const ActivityTitle = styled.p`
+export const ItemTitle = styled.p`
   margin: 0;
   color: white;
   font-size: 1.8rem;

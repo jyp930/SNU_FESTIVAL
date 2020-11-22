@@ -13,15 +13,6 @@ import IU5 from '@I/jpeg/IU5.jpeg';
 import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
-const activityItems = [
-  { title: '단체게임', backgroundColor: palette.YELLOW20_PASTEL, content: <GroupGame /> },
-  { title: '미니게임', backgroundColor: palette.YELLOW20_PASTEL, content: <div>2</div> },
-  { title: '한밤의 어쿠스틱 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
-  { title: '별밤의 일렉트로닉 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
-  { title: '공모전', backgroundColor: palette.YELLOW40_PASTEL, content: <div>3</div> },
-  { title: '장터', backgroundColor: palette.YELLOW50_PASTEL, content: <div>4</div> },
-];
-
 function Activity() {
   const [detailComponent, setDetailComponent] = useState(null);
 
@@ -39,14 +30,14 @@ function Activity() {
         >
           <div>
             { activityItems.map(activityItem => (
-              <S.CardItem key={activityItem.title}>
-                <S.ActivityItem
+              <S.Card key={activityItem.title}>
+                <S.Item
                   backgroundColor={activityItem.backgroundColor}
                   onClick={() => setDetailComponent(activityItem.content)}
                 >
-                  <S.ActivityTitle>{activityItem.title}</S.ActivityTitle>
-                </S.ActivityItem>
-              </S.CardItem>
+                  <S.ItemTitle>{activityItem.title}</S.ItemTitle>
+                </S.Item>
+              </S.Card>
             ))}
           </div>
         </Flip>
@@ -66,3 +57,12 @@ export default Activity;
 Activity.propTypes = {
 
 };
+
+const activityItems = [
+  { title: '단체게임', backgroundColor: palette.YELLOW20_PASTEL, content: <GroupGame /> },
+  { title: '미니게임', backgroundColor: palette.YELLOW20_PASTEL, content: <div>2</div> },
+  { title: '한밤의 어쿠스틱 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
+  { title: '별밤의 일렉트로닉 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
+  { title: '공모전', backgroundColor: palette.YELLOW40_PASTEL, content: <div>3</div> },
+  { title: '장터', backgroundColor: palette.YELLOW50_PASTEL, content: <div>4</div> },
+];

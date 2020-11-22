@@ -2,42 +2,33 @@ import { createGlobalStyle } from 'styled-components';
 import media from 'styled-media-query';
 
 export const palette = {
-  BLUE_NEWTRO: '#094f8c',
-  DARK_BLUE_NEWTRO: '#023c7f',
-  DARK_BLUE20_NEWTRO: '#013a65',
-  DARK_BLUE30_NEWTRO: '#1e243c',
-  LIGHT_BLUE_NEWTRO: '#0f6eb2',
-  RED_NEWTRO: '#d01725',
-  RED20_NEWTRO: '#cf010c',
-  RED30_NEWTRO: '#b20200',
-  GREEN_NEWTRO: '#2e693b',
+  // NEWTRO
   ORANGE_NEWTRO: '#e05335',
-
   GRAY_NEWTRO: '#eeeeee',
-  GRAY20_NEWTRO: '#d3c5bb',
-
-  BROWN_NEWTRO: '#b57144',
-  BROWN20_NEWTRO: '#d8a41a',
-
   WHITE_NEWTRO: '#fff6ed',
   WHITE20_NEWTRO: '#efe7ce',
-
   BLACK_NEWTRO: '#1c0b01',
 
+  // PASTEL
   RED_PASTEL: '#ffb3ba',
   PINK_PASTEL: '#fddde6',
 
   ORANGE_PASTEL: '#ffdfba',
 
   YELLOW_PASTEL: '#ffffba',
-  YELLOW20_PASTEL: '#ffb400',
-  YELLOW30_PASTEL: '#ff8200',
-  YELLOW40_PASTEL: '#ff7f50',
-  YELLOW50_PASTEL: '#d2691e',
+  YELLOW20_PASTEL: '#FFD232',
+  YELLOW30_PASTEL: '#ffb400',
+  YELLOW40_PASTEL: '#ff8200',
+  YELLOW50_PASTEL: '#FF9100',
+  YELLOW60_PASTEL: '#FF9100',
 
   GREEN_PASTEL: '#baffc9',
 
   BLUE_PASTEL: '#bae1ff',
+  BLUE20_PASTEL: '#93daff',
+  BLUE30_PASTEL: '#50c8ff',
+  BLUE40_PASTEL: '#1e96ff',
+  BLUE50_PASTEL: '#0a82ff',
 };
 
 export const zIndex = {

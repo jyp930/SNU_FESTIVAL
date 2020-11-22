@@ -7,7 +7,7 @@ import { palette } from '@S/index';
 function PeopleForDesign() {
   return (
     <TeamTemplate
-      name="디자인"
+      name="디자인팀"
       core="가보지 않은 길을 두려워 하지 않습니다."
       backgroundColor={palette.GREEN_PASTEL}
     />

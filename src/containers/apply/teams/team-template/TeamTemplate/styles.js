@@ -24,7 +24,7 @@ export const StyledTeamTemplate = styled.div`
   `};
 `;
 
-export const Name = styled.span`
+export const Name = styled.div`
   position: absolute;
   top: 15px;
   left: 15px;
@@ -32,8 +32,7 @@ export const Name = styled.span`
   font-weight: bold;
 `;
 
-export const Core = styled.p`
-  margin: 0;
+export const Core = styled.div`
   width: 80%;
 
   font-size: 2rem;
