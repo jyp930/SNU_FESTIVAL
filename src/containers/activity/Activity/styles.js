@@ -35,6 +35,6 @@ export const ActivityItem = styled.div`
 export const ActivityTitle = styled.p`
   margin: 0;
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: lighter;
 `;
