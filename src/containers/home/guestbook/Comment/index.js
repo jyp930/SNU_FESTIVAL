@@ -9,7 +9,7 @@ function Comment({ comments }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [Password, setPassword] = useState('');
 
-  const openPopup = (password) =>{
+  const openPopup = (password) => {
     setPassword(password);
     setIsModalOpen(true);
   };

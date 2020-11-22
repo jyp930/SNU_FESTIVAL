@@ -1,31 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './styles';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import { firestore } from '@U/initializer/firebase';
+import useInput from '@U/hooks/useInput';
 
 function WriteBox({ lastComment }) {
-  // useInput hook 분리
-  const useInput = initialValue => {
-    const [value, setValue] = useState(initialValue);
-    const onChange = e => {
-      // console.log(e.target.value);
-      if (e.target.value.split('\n').length < 6) {
-        setValue(e.target.value);
-      }
-    };
-    return { value, onChange, setValue };
-  };
-
   const username = useInput('');
   const password = useInput('');
-  const content = useInput('');
+  const content = useInput('', contentConstraint);
 
   const testFirebase = () => {
     const docRef = firestore.collection('guestbook').doc('comments');
-    docRef.update({
+    return docRef.update({
       comments: firebase.firestore.FieldValue.arrayUnion(({
         id: (lastComment?.id ?? 0) + 1,
         username: username.value,
@@ -33,7 +22,7 @@ function WriteBox({ lastComment }) {
         content: content.value,
         created_at: firebase.firestore.Timestamp.now(),
       })),
-    }).then(a => console.log(a));
+    });
   };
 
   const toastId = React.useRef(0);
@@ -44,11 +33,12 @@ function WriteBox({ lastComment }) {
       else if (password.value === '') toastId.current = toast('비밀번호를 입력해 주세요');
       else if (content.value === '') toastId.current = toast('내용을 입력해 주세요');
       else {
-        toastId.current = toast('등록되었습니다!');
         username.setValue('');
         password.setValue('');
         content.setValue('');
-        testFirebase();
+        testFirebase().then(() => {
+          toastId.current = toast('등록되었습니다!');
+        });
       }
     }
   };
@@ -78,3 +68,7 @@ WriteBox.propTypes = {
     }),
   }),
 };
+
+function contentConstraint(value) {
+  return value.split('\n').length < 6;
+}
