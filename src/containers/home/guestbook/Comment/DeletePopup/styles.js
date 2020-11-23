@@ -1,48 +1,56 @@
 import styled from 'styled-components';
-import { ToastContainer } from 'react-toastify';
-
-export const StyledContainer = styled(ToastContainer).attrs({
-  className: 'toast-container',
-  toastClassName: 'toast',
-  bodyClassName: 'body',
-  progressClassName: 'progress',
-})`
-  .toast {
-    color: black;
-    text-align: center;
-  }
-`;
+import media from 'styled-media-query';
 
 export const StyledDeletePopup = styled.div`
 `;
 
 export const DeletePopup = styled.div`
+  ${media.lessThan('medium')`
+    padding: 1rem;
+  `};
   width: 12rem;
   height: 7rem;
   display: flex;
-  padding: 0.5rem;
+  padding: 1rem;
   flex-direction: column;
-  border: 1px solid;
-  background-color: lightpink;
+  justify-content: space-around;
+  border: none;
+  border-radius: 8px;
+  background-color: white;
 `;
 
 export const InputBox = styled.input`
-  margin: 0.5rem;
   padding: 2px 7px;
   border: 0;
   border-bottom: 1px solid #757575;
   border-radius: 0;
   outline: 0;
-  background-color: lightpink;
+  font-size: 0.9rem;
   transition: border .15s ease-in-out, padding .15s ease-in-out;
   &:focus{
     padding: 2px 7px 0;
-    border-bottom: 3px solid #fddde6;
+    border-bottom: 3px solid lightpink;
   }
 `;
 
 export const ButtonBox = styled.div`
-  padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+`;
+
+export const Button = styled.button`
+  height: 2rem;
+  width: 4rem;
+  border: 2px solid lightpink;
+  border-radius: 8px;
+  outline: 0;
+  background-color: white;
+  cursor: pointer;
+  color: lightpink;
+  font-size: 0.9rem;
+  transition: .15s;
+  &:hover{
+    color: white;
+    background-color: lightpink;
+  }
 `;

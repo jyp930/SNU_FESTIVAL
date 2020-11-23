@@ -9,7 +9,7 @@ import useInput from '@U/hooks/useInput';
 
 function WriteBox({ lastComment }) {
   const username = useInput('');
-  const password = useInput('');
+  const password = useInput('', passwordConstraint);
   const content = useInput('', contentConstraint);
 
   const testFirebase = () => {
@@ -71,4 +71,9 @@ WriteBox.propTypes = {
 
 function contentConstraint(value) {
   return value.split('\n').length < 6;
+}
+
+function passwordConstraint(value) {
+  const regExpPw = /^[0-9a-zA-Z~!@#$%^&*()_?+=-]{0,20}$/;
+  return regExpPw.test(value);
 }

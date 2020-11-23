@@ -5,6 +5,7 @@ export const StyledComment = styled.div`
   display: flex;
   padding: 0.5rem;
   flex-direction: column;
+  box-sizing: border-box;
 `;
 
 export const CommentThread = styled.div`

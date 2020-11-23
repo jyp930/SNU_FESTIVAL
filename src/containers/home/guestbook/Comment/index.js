@@ -16,8 +16,7 @@ function Comment({ comments }) {
 
   return (
     <S.StyledComment>
-      <DeletePopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} Password={Password} />
-      {comments.map((comment) => (
+      {comments.reverse().map((comment) => (
         <S.CommentThread key={comment.id}>
           <S.MainBox>
             <S.ProfileImage src={mascot1} />
@@ -39,6 +38,7 @@ function Comment({ comments }) {
           </S.TaleBox>
         </S.CommentThread>
       ))}
+      <DeletePopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} Password={Password} />
     </S.StyledComment>
   );
 }
