@@ -19,20 +19,19 @@ function Comment({ comments }) {
   };
 
   const loadMore = () => {
-    console.log('!');
     if (comments.length > 0) {
-      console.log(commentNum, comments.length);
       if (commentNum > comments.length) {
         setHasMore(false);
-        console.log('end');
       } else {
         setCommentNum(commentNum + 1);
-        setItems(comments.slice(0, commentNum));
+        setItems(comments.slice(0, commentNum + 1));
       }
     }
   };
 
-  const loader = <div className="loader">Loading ...</div>;
+  const loader = (
+    <div key={0}>Loading ...</div>
+  );
 
   useEffect(() => {
     setItems([]);

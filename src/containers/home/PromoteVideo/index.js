@@ -22,7 +22,7 @@ function PromoteVideo({ offset, scrollDown }) {
     <S.StyledPromoteVideo>
       <ParallaxLayer
         offset={offset}
-        speed={0.1}
+        speed={0.5}
       >
         <S.CenterLabel>
           {centerContent}
