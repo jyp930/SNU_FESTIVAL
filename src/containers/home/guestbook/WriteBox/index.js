@@ -49,7 +49,7 @@ function WriteBox({ lastComment }) {
         <S.InputBox placeholder="익명" maxLength="20" {...username} />
         <S.InputBox placeholder="비밀번호" maxLength="20" {...password} />
       </S.IdPassword>
-      <S.TextArea placeholder="내용" maxLength="400" {...content} />
+      <S.TextArea placeholder="내용" maxLength="200" {...content} />
       <S.Submit onClick={Submit}>등록</S.Submit>
     </S.StyledWriteBox>
   );

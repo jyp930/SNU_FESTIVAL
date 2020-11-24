@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import mascot1 from '@I/svg/mascot/1.svg';
 import DeletePopup from './DeletePopup';
 import dayjs from 'dayjs';
-import { setItem } from 'mobx-persist/lib/storage';
 
 function Comment({ comments }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,9 +12,6 @@ function Comment({ comments }) {
   const [commentNum, setCommentNum] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [items, setItems] = useState([]);
-
-  const commentsTemp = comments;
-  const reversedComments = commentsTemp.reverse();
 
   const openPopup = (password) => {
     setPassword(password);
@@ -31,13 +27,17 @@ function Comment({ comments }) {
         console.log('end');
       } else {
         setCommentNum(commentNum + 1);
-        setItems(reversedComments.slice(0, commentNum));
+        setItems(comments.slice(0, commentNum));
       }
     }
   };
 
   const loader = <div className="loader">Loading ...</div>;
-  const scrollParentRef = useRef('asdff');
+
+  useEffect(() => {
+    setItems([]);
+    setHasMore(true);
+  }, [comments]);
 
   return (
     <S.StyledComment>
@@ -47,7 +47,6 @@ function Comment({ comments }) {
         hasMore={hasMore}
         loader={loader}
         useWindow={false}
-        // getScrollParent={() => scrollParentRef}
       >
         {items.map((comment) => (
           <S.CommentThread key={comment.id}>

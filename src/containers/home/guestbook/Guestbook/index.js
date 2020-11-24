@@ -27,7 +27,7 @@ function Guestbook({ offset, scrollDown }) {
     <S.StyledGuestbook>
       <ParallaxLayer
         offset={offset}
-        speed={0.1}
+        // speed={0.1}
       >
         <S.GuestbookBox>
           <WriteBox lastComment={lastComment} />
