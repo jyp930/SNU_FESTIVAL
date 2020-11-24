@@ -14,9 +14,6 @@ initializeGA();
 
 // noinspection JSCheckFunctionSignatures
 ReactDOM.render(
-  /** LazyLoad library 때문에 strictMode 사용 불가 */
-  // <React.StrictMode>
   <App />,
-  // </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -60,13 +60,6 @@ export const Picture = styled.div`
   }
 `;
 
-export const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  
-  object-fit: cover;
-`;
-
 export const CenterText = styled.div`
   width: 100%;
   height: 100%;

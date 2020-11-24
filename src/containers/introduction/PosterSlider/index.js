@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import Slider from '@F/Slider';
+import Image from '@F/Image';
 import IU1 from '@I/jpeg/IU1.jpeg';
 import IU2 from '@I/jpeg/IU2.jpeg';
 import IU3 from '@I/jpeg/IU3.jpeg';
@@ -19,7 +20,7 @@ function PosterSlider() {
               key={cardContent.name}
               length={contentList.length}
             >
-              <S.Image
+              <Image
                 src={cardContent.image}
                 alt="축제 포스트 사진"
               />

@@ -14,9 +14,3 @@ export const CardItem = styled.div`
   box-sizing: border-box;
   padding: 0 1rem;
 `;
-
-export const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;

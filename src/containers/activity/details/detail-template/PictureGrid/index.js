@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Slide from 'react-reveal/Slide';
 import { centerStore } from '@/mob-x/center';
 import * as S from './styles';
+import Image from '@F/Image';
 
 function PictureGrid({ items, onClickItem }) {
   const setCenterComponent = useCallback((text) => {
@@ -24,7 +25,10 @@ function PictureGrid({ items, onClickItem }) {
             duration={800}
             delay={index * 20}
           >
-            <S.Image src={item.image} alt="IMAGE" />
+            <Image
+              src={item.image}
+              alt="IMAGE"
+            />
           </Slide>
         </S.Picture>
       ))}
