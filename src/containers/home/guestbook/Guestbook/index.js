@@ -7,6 +7,7 @@ import { firestore } from '@U/initializer/firebase';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import WriteBox from '@C/home/guestbook/WriteBox';
 import Comment from '@C/home/guestbook/Comment';
+import Wave from '@F/animation/Wave';
 
 function Guestbook({ offset, scrollDown }) {
   const [comments, setComments] = useState([]);
@@ -29,6 +30,10 @@ function Guestbook({ offset, scrollDown }) {
         offset={offset}
         // speed={0.1}
       >
+        <S.WaveWrapper>
+          <Wave />
+        </S.WaveWrapper>
+
         <S.GuestbookBox>
           <WriteBox lastComment={lastComment} />
           <Comment comments={comments} />

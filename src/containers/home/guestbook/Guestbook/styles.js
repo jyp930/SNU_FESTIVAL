@@ -18,3 +18,12 @@ justify-content: center;
     padding: 0 1rem;
   `};
 `;
+
+export const WaveWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  pointer-events: none;
+  opacity: 0.5;
+`;

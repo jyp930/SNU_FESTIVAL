@@ -1,7 +1,7 @@
 // eslint-disable-next-line max-classes-per-file
 import React, { useEffect } from 'react';
 
-export default function Balls() {
+export default function BallsCanvas() {
   useEffect(() => {
     const balls = new App();
   }, []);
