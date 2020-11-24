@@ -10,14 +10,13 @@ import Comment from '@C/home/guestbook/Comment';
 
 function Guestbook({ offset, scrollDown }) {
   const [comments, setComments] = useState([]);
+  const [items, setItems] = useState(1);
   const lastComment = useMemo(() => comments[comments.length - 1] ?? null, [comments]);
 
-  const subscribeComments = useCallback(() => {
-    return firestore.collection('guestbook').doc('comments')
-      .onSnapshot(doc => {
-        setComments(doc.data().comments);
-      });
-  }, []);
+  const subscribeComments = useCallback(() => firestore.collection('guestbook').doc('comments')
+    .onSnapshot(doc => {
+      setComments(doc.data().comments);
+    }), []);
 
   useEffect(() => {
     const unsubscribe = subscribeComments();
@@ -28,11 +27,11 @@ function Guestbook({ offset, scrollDown }) {
     <S.StyledGuestbook>
       <ParallaxLayer
         offset={offset}
-        speed={0.1}
+        // speed={0.1}
       >
         <S.GuestbookBox>
-          <Comment comments={comments} />
           <WriteBox lastComment={lastComment} />
+          <Comment comments={comments} />
         </S.GuestbookBox>
       </ParallaxLayer>
     </S.StyledGuestbook>

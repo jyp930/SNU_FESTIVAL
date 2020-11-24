@@ -9,7 +9,7 @@ import useInput from '@U/hooks/useInput';
 
 function WriteBox({ lastComment }) {
   const username = useInput('');
-  const password = useInput('');
+  const password = useInput('', passwordConstraint);
   const content = useInput('', contentConstraint);
 
   const testFirebase = () => {
@@ -49,7 +49,7 @@ function WriteBox({ lastComment }) {
         <S.InputBox placeholder="익명" maxLength="20" {...username} />
         <S.InputBox placeholder="비밀번호" maxLength="20" {...password} />
       </S.IdPassword>
-      <S.TextArea placeholder="내용" maxLength="400" {...content} />
+      <S.TextArea placeholder="내용" maxLength="200" {...content} />
       <S.Submit onClick={Submit}>등록</S.Submit>
     </S.StyledWriteBox>
   );
@@ -71,4 +71,9 @@ WriteBox.propTypes = {
 
 function contentConstraint(value) {
   return value.split('\n').length < 6;
+}
+
+function passwordConstraint(value) {
+  const regExpPw = /^[0-9a-zA-Z~!@#$%^&*()_?+=-]{0,20}$/;
+  return regExpPw.test(value);
 }

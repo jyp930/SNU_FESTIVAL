@@ -16,6 +16,7 @@ function Home() {
     <S.StyledHome>
       <S.StyledContainer
         position="top-right"
+        hideProgressBar
         autoClose={3000}
         pauseOnHover={false}
         newestOnTop

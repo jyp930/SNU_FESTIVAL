@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const StyledWriteBox = styled.div`
   width: 100%;
@@ -22,6 +23,9 @@ export const InputBox = styled.input`
   border-radius: 0;
   outline: 0;
   transition: border .15s ease-in-out, padding .15s ease-in-out;
+  ${media.lessThan('320px')`
+    width: 45%;
+  `};
   &:focus{
     padding: 2px 7px 0;
     border-bottom: 3px solid lightpink;
@@ -47,16 +51,21 @@ export const TextArea = styled.textarea`
 `;
 
 export const Submit = styled.button`
+  width: 5rem;
+  height: 3rem;
   margin: 0 5px;
-  border: 2px solid #fddde6;
+  border: 2px solid lightpink;
   border-radius: 8px;
   outline: 0;
   background-color: white;
   cursor: pointer;
+  font-size: 1rem;
   font-weight: bold;
+  color: lightpink;
   align-self: flex-end;
   transition: .15s;
   &:hover{
-    background-color: #fddde6;
+    color: white;
+    background-color: lightpink;
   }
 `;

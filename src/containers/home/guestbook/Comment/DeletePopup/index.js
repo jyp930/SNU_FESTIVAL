@@ -43,12 +43,12 @@ function DeletePopup({ Password, isModalOpen, setIsModalOpen }) {
           <div>삭제하시겠습니까?</div>
           <S.InputBox placeholder="비밀번호" maxLength="20" {...Input} />
           <S.ButtonBox>
-            <button onClick={Delete}>
+            <S.Button onClick={Delete}>
               삭제
-            </button>
-            <button onClick={() => setIsModalOpen(false)}>
+            </S.Button>
+            <S.Button onClick={() => setIsModalOpen(false)}>
               닫기
-            </button>
+            </S.Button>
           </S.ButtonBox>
         </S.DeletePopup>
       </Popup>
