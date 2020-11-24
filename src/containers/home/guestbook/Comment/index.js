@@ -1,43 +1,77 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+import InfiniteScroll from 'react-infinite-scroller';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import mascot1 from '@I/svg/mascot/1.svg';
 import DeletePopup from './DeletePopup';
 import dayjs from 'dayjs';
+import { setItem } from 'mobx-persist/lib/storage';
 
 function Comment({ comments }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [Password, setPassword] = useState('');
+  const [commentNum, setCommentNum] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [items, setItems] = useState([]);
+
+  const commentsTemp = comments;
+  const reversedComments = commentsTemp.reverse();
 
   const openPopup = (password) => {
     setPassword(password);
     setIsModalOpen(true);
   };
 
+  const loadMore = () => {
+    console.log('!');
+    if (comments.length > 0) {
+      console.log(commentNum, comments.length);
+      if (commentNum > comments.length) {
+        setHasMore(false);
+        console.log('end');
+      } else {
+        setCommentNum(commentNum + 1);
+        setItems(reversedComments.slice(0, commentNum));
+      }
+    }
+  };
+
+  const loader = <div className="loader">Loading ...</div>;
+  const scrollParentRef = useRef('asdff');
+
   return (
     <S.StyledComment>
-      {comments.reverse().map((comment) => (
-        <S.CommentThread key={comment.id}>
-          <S.MainBox>
-            <S.ProfileImage src={mascot1} />
-            <S.ContentsBox>
-              <S.Id>{comment.username}</S.Id>
-              <S.Content>
-                {comment.content.split('\n').map((line, index) => (
-                  <React.Fragment key={index}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                ))}
-              </S.Content>
-            </S.ContentsBox>
-          </S.MainBox>
-          <S.TaleBox>
-            <S.Time>{dayjs.unix(comment.created_at.seconds).format('YYYY-MM-DD HH:mm:ss')}</S.Time>
-            <S.Delete onClick={() => openPopup(comment.password)}>삭제</S.Delete>
-          </S.TaleBox>
-        </S.CommentThread>
-      ))}
+      <InfiniteScroll
+        pageStart={0}
+        loadMore={loadMore}
+        hasMore={hasMore}
+        loader={loader}
+        useWindow={false}
+        // getScrollParent={() => scrollParentRef}
+      >
+        {items.map((comment) => (
+          <S.CommentThread key={comment.id}>
+            <S.MainBox>
+              <S.ProfileImage src={mascot1} />
+              <S.ContentsBox>
+                <S.Id>{comment.username}</S.Id>
+                <S.Content>
+                  {comment.content.split('\n').map((line, index) => (
+                    <React.Fragment key={index}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  ))}
+                </S.Content>
+              </S.ContentsBox>
+            </S.MainBox>
+            <S.TaleBox>
+              <S.Time>{dayjs.unix(comment.created_at.seconds).format('YYYY-MM-DD HH:mm:ss')}</S.Time>
+              <S.Delete onClick={() => openPopup(comment.password)}>삭제</S.Delete>
+            </S.TaleBox>
+          </S.CommentThread>
+        ))}
+      </InfiniteScroll>
       <DeletePopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} Password={Password} />
     </S.StyledComment>
   );

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledComment = styled.div`
+  height: 60vh;
+  overflow: auto;
   width: 100%;
   display: flex;
   padding: 0.5rem;
