@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 
 export const StyledGuestbook = styled.div`
-
+  width: 100%;
+  height: 100%;
+  background-color: linen;
 `;
 
 export const GuestbookBox = styled.div`

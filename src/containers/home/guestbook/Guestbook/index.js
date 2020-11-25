@@ -25,10 +25,10 @@ function Guestbook({ offset }) {
   }, [subscribeComments]);
 
   return (
-    <S.StyledGuestbook>
-      <ParallaxLayer
-        offset={offset}
-      >
+    <ParallaxLayer
+      offset={offset}
+    >
+      <S.StyledGuestbook>
         <S.WaveWrapper>
           <Wave />
         </S.WaveWrapper>
@@ -37,8 +37,8 @@ function Guestbook({ offset }) {
           <WriteBox lastComment={lastComment} />
           <Comment comments={comments} />
         </S.GuestbookBox>
-      </ParallaxLayer>
-    </S.StyledGuestbook>
+      </S.StyledGuestbook>
+    </ParallaxLayer>
   );
 }
 export default Guestbook;

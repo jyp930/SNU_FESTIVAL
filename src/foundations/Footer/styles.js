@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { HoverStyle } from '@S/responsive/mouse';
-import { palette } from '@S/index';
+import { palette, zIndex } from '@S/index';
 
 const Menu = css`
   width: 3rem;
@@ -39,6 +39,7 @@ export const ExpandButton = styled.div`
 
   box-shadow: rgba(0, 0, 0, 0.12) 0 3px 5px 2px;
   transition: box-shadow 0.1s ease-in-out 0s;
+  z-index: ${zIndex.base};
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.12) 1px 1px 5px 5px;
@@ -66,7 +67,6 @@ export const LinkMenu = styled.div`
 export const Info = styled.div`
   height: 4rem;
   position: absolute;
-  pointer-events: none;
   
   display: flex;
   flex-direction: column;
