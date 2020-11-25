@@ -36,7 +36,10 @@ class App {
     this.maxRadius = 20;
     this.minRadius = 10;
 
-    window.addEventListener('resize', this.resize.bind(this), false);
+    const isMobile = document.body.clientWidth < 768;
+    if (!isMobile) {
+      window.addEventListener('resize', this.resize.bind(this), false);
+    }
     this.resize();
 
     window.requestAnimationFrame(this.animate.bind(this));

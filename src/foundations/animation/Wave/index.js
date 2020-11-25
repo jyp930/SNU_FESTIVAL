@@ -21,9 +21,12 @@ class App {
     this.wrapper = document.getElementById('CanvasWrapper');
     this.wrapper.appendChild(this.canvas);
 
-    this.waveGroup = new WaveGroup();
+    const isMobile = document.body.clientWidth < 768;
+    this.waveGroup = new WaveGroup(isMobile ? 5 : 6);
 
-    window.addEventListener('resize', this.resize.bind(this), false);
+    if (!isMobile) {
+      window.addEventListener('resize', this.resize.bind(this), false);
+    }
     this.resize();
 
     requestAnimationFrame(this.animate.bind(this));
@@ -54,7 +57,7 @@ class Point {
     this.fixedY = y;
     this.speed = 0.03;
     this.cur = index;
-    this.max = Math.random() * 100 + 50;
+    this.max = Math.random() * 50 + 20;
   }
 
   update() {
@@ -126,9 +129,9 @@ class Wave {
 }
 
 class WaveGroup {
-  constructor() {
+  constructor(totalPoints) {
     this.totalWaves = 3;
-    this.totalPoints = 6;
+    this.totalPoints = totalPoints;
 
     this.color = ['rgba(255, 0, 0, 0.4)', 'rgba(255, 255, 0, 0.4)', 'rgba(0, 255, 255, 0.4)'];
 
