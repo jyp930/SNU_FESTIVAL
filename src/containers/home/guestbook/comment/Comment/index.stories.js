@@ -1,25 +1,27 @@
 import React from 'react';
-import mascot1 from '@I/svg/mascot/1.svg';
-import mascot2 from '@I/svg/mascot/2.svg';
 import * as S from '@C/home/Home/styles';
 import Comment from './index';
 
 export default {
-  title: 'containers/home/guestbook/Comment',
+  title: 'containers/home/guestbook/comment/Comment',
 };
 
-const comments =[
-  {},
-  {}
-];
+const comments = [{
+  id: 1,
+  username: 'test',
+  password: 'test',
+  content: 'test',
+  created_at: { seconds: 1111111111 },
+}];
+
 export const Default = () => (
   <div>
     <S.StyledContainer
-      position="top-right"
+      position="top-center"
       autoClose={2000}
       pauseOnHover={false}
       pauseOnFocusLoss={false}
     />
-    <Comment comments={comments}/>
+    <Comment comments={comments} />
   </div>
 );

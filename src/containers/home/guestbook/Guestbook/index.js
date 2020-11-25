@@ -6,14 +6,14 @@ import * as S from './styles';
 import { firestore } from '@U/initializer/firebase';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import WriteBox from '@C/home/guestbook/WriteBox';
-import Comment from '@C/home/guestbook/Comment';
+import Comment from '@C/home/guestbook/comment/Comment';
 import Wave from '@F/animation/Wave';
 
-function Guestbook({ offset, scrollDown }) {
+function Guestbook({ offset }) {
   const [comments, setComments] = useState([]);
-  const [items, setItems] = useState(1);
   const lastComment = useMemo(() => comments[comments.length - 1] ?? null, [comments]);
 
+  // TODO: 중요: firestore field 형식 바꾸기
   const subscribeComments = useCallback(() => firestore.collection('guestbook').doc('comments')
     .onSnapshot(doc => {
       setComments(doc.data().comments);
@@ -28,7 +28,6 @@ function Guestbook({ offset, scrollDown }) {
     <S.StyledGuestbook>
       <ParallaxLayer
         offset={offset}
-        // speed={0.1}
       >
         <S.WaveWrapper>
           <Wave />
@@ -45,5 +44,5 @@ function Guestbook({ offset, scrollDown }) {
 export default Guestbook;
 
 Guestbook.propTypes = {
-  offset: PropTypes.number,
+  offset: PropTypes.number.isRequired,
 };

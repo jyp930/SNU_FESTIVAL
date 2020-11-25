@@ -13,7 +13,7 @@ export const Default = () => {
   return (
     <Parallax ref={ref => setParallax(ref)} pages={1} style={{ top: 0, left: 0 }}>
       <S.StyledContainer
-        position="top-right"
+        position="top-center"
         autoClose={3000}
         pauseOnHover={false}
         newestOnTop

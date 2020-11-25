@@ -9,7 +9,7 @@ export default {
 export const Default = () => (
   <div>
     <S.StyledContainer
-      position="top-right"
+      position="top-center"
       autoClose={2000}
       pauseOnHover={false}
       pauseOnFocusLoss={false}

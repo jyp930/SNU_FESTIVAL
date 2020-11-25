@@ -23,7 +23,7 @@ export const InputBox = styled.input`
   border-radius: 0;
   outline: 0;
   transition: border .15s ease-in-out, padding .15s ease-in-out;
-  ${media.lessThan('320px')`
+  ${media.lessThan('medium')`
     width: 45%;
   `};
   &:focus{

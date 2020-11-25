@@ -19,6 +19,12 @@ export const DeletePopup = styled.div`
   background-color: white;
 `;
 
+export const ButtonBox = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+// TODO: CSS 코드 중복
 export const InputBox = styled.input`
   padding: 2px 7px;
   border: 0;
@@ -33,22 +39,20 @@ export const InputBox = styled.input`
   }
 `;
 
-export const ButtonBox = styled.div`
-  display: flex;
-  justify-content: space-around;
-`;
-
 export const Button = styled.button`
   height: 2rem;
   width: 4rem;
+
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: .15s;
+
   border: 2px solid lightpink;
   border-radius: 8px;
   outline: 0;
-  background-color: white;
-  cursor: pointer;
+    
   color: lightpink;
-  font-size: 0.9rem;
-  transition: .15s;
+  background-color: white;
   &:hover{
     color: white;
     background-color: lightpink;

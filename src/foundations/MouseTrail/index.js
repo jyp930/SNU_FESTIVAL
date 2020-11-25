@@ -91,8 +91,7 @@ function triggerMouseTrail() {
 
   // animate() calls draw() then recursively calls itself
   // everytime the screen repaints via requestAnimationFrame().
-  function animate(timestamp) {
-    // TODO: 성능 문제가 있을 시 timestamp 로 조절
+  function animate() {
     draw();
     requestAnimationFrame(animate);
   }

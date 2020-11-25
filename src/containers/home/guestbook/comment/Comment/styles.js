@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-import InfiniteScroll from 'react-infinite-scroller';
-
-export const Parallax = styled(InfiniteScroll)`
-  max-height: 100vh;
-`;
+import { palette } from '@S/index';
 
 export const StyledComment = styled.div`
   height: 60vh;
@@ -37,14 +33,23 @@ export const ContentsBox = styled.div`
 export const TaleBox = styled.div`
   display: flex;
   justify-content: flex-end;
-  color: #999999;
+  color: ${palette.BLACK_NEWTRO};
+  opacity: 0.6;
+  
   font-size: 0.7rem;
   padding-top: 0.7rem;
 `;
 
 export const Id = styled.div`
-  font-weight: lighter;
+  font-size: 0.9rem;
+  color: ${palette.BLACK_NEWTRO};
+  opacity: 0.6;
+`;
+
+export const Content = styled.div`
   font-size: 1rem;
+  font-weight: lighter;
+  word-break: keep-all;
 `;
 
 export const Time = styled.div`
@@ -53,10 +58,4 @@ export const Time = styled.div`
 
 export const Delete = styled.div`
   cursor: pointer;
-`;
-
-export const Content = styled.div`
-  font-size: 0.9rem;
-  font-weight: lighter;
-  word-break: keep-all;
 `;
