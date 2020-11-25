@@ -28,16 +28,15 @@ function Guestbook({ offset }) {
     <ParallaxLayer
       offset={offset}
     >
-      <S.StyledGuestbook>
-        <S.WaveWrapper>
-          <Wave />
-        </S.WaveWrapper>
+      {/* TODO: 배경색 */}
+      <S.WaveWrapper>
+        <Wave />
+      </S.WaveWrapper>
 
-        <S.GuestbookBox>
-          <WriteBox lastComment={lastComment} />
-          <Comment comments={comments} />
-        </S.GuestbookBox>
-      </S.StyledGuestbook>
+      <S.GuestbookBox>
+        <WriteBox lastComment={lastComment} />
+        <Comment comments={comments} />
+      </S.GuestbookBox>
     </ParallaxLayer>
   );
 }

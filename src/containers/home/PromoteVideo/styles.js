@@ -18,10 +18,6 @@ const PreventDrag = css`
   user-select: none;
 `;
 
-export const StyledPromoteVideo = styled.div`
-
-`;
-
 export const CenterLabel = styled.p`
   ${BottomPosition};
   ${PreventDrag};

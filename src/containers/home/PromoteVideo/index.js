@@ -15,34 +15,32 @@ const centerContent = (
   </span>
 );
 
-function PromoteVideo({ offset, scrollDown }) {
+function PromoteVideo({ offset }) {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
-    <S.StyledPromoteVideo>
-      <ParallaxLayer
-        offset={offset}
-        speed={0.5}
+    <ParallaxLayer
+      offset={offset}
+      speed={0.5}
+    >
+      <S.CenterLabel>
+        {centerContent}
+      </S.CenterLabel>
+
+      <S.SoundButton
+        onClick={() => setIsMuted(state => !state)}
       >
-        <S.CenterLabel>
-          {centerContent}
-        </S.CenterLabel>
+        <Pulse forever>
+          { isMuted ? <S.SpeakerOffIcon /> : <S.SpeakerIcon /> }
+        </Pulse>
+      </S.SoundButton>
 
-        <S.SoundButton
-          onClick={() => setIsMuted(state => !state)}
-        >
-          <Pulse forever>
-            { isMuted ? <S.SpeakerOffIcon /> : <S.SpeakerIcon /> }
-          </Pulse>
-        </S.SoundButton>
-
-        <Video
-          video={tunaVideo}
-          poster={tunaPoster}
-          isMuted={isMuted}
-        />
-      </ParallaxLayer>
-    </S.StyledPromoteVideo>
+      <Video
+        video={tunaVideo}
+        poster={tunaPoster}
+        isMuted={isMuted}
+      />
+    </ParallaxLayer>
   );
 }
 export default PromoteVideo;
