@@ -13,10 +13,9 @@ function Guestbook({ offset }) {
   const [comments, setComments] = useState([]);
   const lastComment = useMemo(() => comments[comments.length - 1] ?? null, [comments]);
 
-  // TODO: 중요: firestore field 형식 바꾸기
   const subscribeComments = useCallback(() => firestore.collection('guestbook').doc('comments')
     .onSnapshot(doc => {
-      setComments(doc.data().comments);
+      setComments(doc.data().comments ?? []);
     }), []);
 
   useEffect(() => {

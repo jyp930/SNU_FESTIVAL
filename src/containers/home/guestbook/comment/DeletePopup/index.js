@@ -4,6 +4,8 @@ import { toast } from 'react-toastify';
 import * as S from './styles';
 import useInput from '@U/hooks/useInput';
 import PopupModal from '@F/PopupModal';
+import { firestore } from '@U/initializer/firebase';
+import firebase from 'firebase';
 
 function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
   const Input = useInput('');
@@ -12,11 +14,19 @@ function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
       toast('비밀번호가 틀렸습니다');
     } else {
       toast.dismiss();
-      // TODO: firestore 삭제
-      toast('삭제되었습니다');
-      setIsModalOpen(false);
+      deleteFromFirestore().then(() => {
+        toast('삭제되었습니다');
+        setIsModalOpen(false);
+      });
     }
     Input.setValue('');
+  };
+
+  const deleteFromFirestore = () => {
+    const docRef = firestore.collection('guestbook').doc('comments');
+    return docRef.update({
+      comments: firebase.firestore.FieldValue.arrayRemove(comment),
+    });
   };
 
   return (
