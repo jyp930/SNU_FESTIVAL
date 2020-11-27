@@ -36,6 +36,7 @@ class App {
     this.stageWidth = this.wrapper.clientWidth;
     this.stageHeight = this.wrapper.clientHeight;
 
+    // TODO: pixel ratio
     this.canvas.width = this.stageWidth * 2;
     this.canvas.height = this.stageHeight * 2;
     this.ctx.scale(2, 2);
