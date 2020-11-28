@@ -33,12 +33,12 @@ function MouseTrail() {
 }
 export default MouseTrail;
 
-function removeTrails() {
+export function removeTrails() {
   const removeElements = (elements) => elements.forEach(element => element.remove());
   removeElements(document.querySelectorAll('.mouseTrailElement'));
 }
 
-function triggerMouseTrail() {
+export function triggerMouseTrail() {
   const dots = [];
   const mouse = { x: 0, y: 0 };
 
@@ -89,13 +89,11 @@ function triggerMouseTrail() {
     mouse.y = event.pageY;
   });
 
-  // animate() calls draw() then recursively calls itself
-  // everytime the screen repaints via requestAnimationFrame().
   function animate() {
     draw();
     requestAnimationFrame(animate);
   }
 
-  // And get it started by calling animate().
+  // get it started by calling animate().
   animate();
 }
