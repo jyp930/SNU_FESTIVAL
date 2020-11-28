@@ -2,6 +2,11 @@ import styled, { css } from 'styled-components';
 import { GiSpeaker, GiSpeakerOff, IoIosArrowDown } from 'react-icons/all';
 import { palette, zIndex } from '@S/index';
 
+export const StyledPromoteVideo = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
 const ResponsiveIconStyleWithColor = css`
   width: 4rem;
   height: 4rem;

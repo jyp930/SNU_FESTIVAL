@@ -1,6 +1,5 @@
 ## TODO
 - sal.js 를 react-reveal 로 교체
-- react-spring 을 react-reveal 로 교체
 
 ## Technical Stack
 
@@ -18,7 +17,6 @@
 
 ### `styled-components`
 ### `styled-media-query`
-### `react-spring`
 ### `react-reveal`
 ### `react-slick`
 

@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { Suspense, useEffect } from 'react';
+import {BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import routes from '@/routes';
 import GaAnalytics from '@/UserAnalytics';
 import { GA_TRACKING_KEY } from '@/config';

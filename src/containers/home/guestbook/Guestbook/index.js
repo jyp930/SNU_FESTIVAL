@@ -2,12 +2,11 @@ import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import { firestore } from '@U/initializer/firebase';
-import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import WriteBox from '@C/home/guestbook/WriteBox';
 import Comment from '@C/home/guestbook/comment/Comment';
 import Wave from '@F/animation/Wave';
 
-function Guestbook({ offset }) {
+function Guestbook() {
   const [comments, setComments] = useState([]);
 
   const subscribeComments = useCallback(() => firestore.collection('guestbook')
@@ -28,10 +27,7 @@ function Guestbook({ offset }) {
   }, [subscribeComments]);
 
   return (
-    <ParallaxLayer
-      offset={offset}
-    >
-      {/* TODO: 배경색 */}
+    <S.StyledGuestbook>
       <S.WaveWrapper>
         <Wave />
       </S.WaveWrapper>
@@ -40,11 +36,11 @@ function Guestbook({ offset }) {
         <WriteBox />
         <Comment comments={comments} />
       </S.GuestbookBox>
-    </ParallaxLayer>
+    </S.StyledGuestbook>
   );
 }
 export default Guestbook;
 
 Guestbook.propTypes = {
-  offset: PropTypes.number.isRequired,
+
 };

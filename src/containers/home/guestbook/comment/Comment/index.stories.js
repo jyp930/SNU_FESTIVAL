@@ -7,7 +7,7 @@ export default {
 };
 
 const comments = [{
-  id: 1,
+  id: '1111',
   username: 'test',
   password: 'test',
   content: 'test',

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-import { Parallax as SpringParallax } from 'react-spring/renderprops-addons';
 import { ToastContainer } from 'react-toastify';
 
 export const StyledHome = styled.div`
 
 `;
 
-export const Parallax = styled(SpringParallax)`
-  top: 0;
-  left: 0;
+export const FullWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
 `;
 
 // TODO: toast 라이브러리 변경

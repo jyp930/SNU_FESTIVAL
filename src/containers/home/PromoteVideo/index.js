@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import tunaVideo from '@I/video/tuna.mp4';
 import tunaPoster from '@I/video/poster/tuna.jpg';
 import Video from '@F/Video';
@@ -15,14 +14,11 @@ const centerContent = (
   </span>
 );
 
-function PromoteVideo({ offset }) {
+function PromoteVideo() {
   const [isMuted, setIsMuted] = useState(true);
 
   return (
-    <ParallaxLayer
-      offset={offset}
-      speed={0.5}
-    >
+    <S.StyledPromoteVideo>
       <S.CenterLabel>
         {centerContent}
       </S.CenterLabel>
@@ -40,16 +36,11 @@ function PromoteVideo({ offset }) {
         poster={tunaPoster}
         isMuted={isMuted}
       />
-    </ParallaxLayer>
+    </S.StyledPromoteVideo>
   );
 }
 export default PromoteVideo;
 
 PromoteVideo.propTypes = {
-  offset: PropTypes.number.isRequired,
-  scrollDown: PropTypes.func,
-};
 
-PromoteVideo.defaultProps = {
-  scrollDown: () => {},
 };
