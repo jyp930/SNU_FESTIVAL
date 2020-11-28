@@ -36,7 +36,7 @@ function Footer() {
           <S.Info>
             <S.InfoText index={1}>축제하는 사람들 snufestival@gmail.com</S.InfoText>
             <S.InfoText index={2}>축하사장 권지현 jjang@snu.ac.kr</S.InfoText>
-            <S.InfoText index={3}>개발팀장 박용주 jyp@snu.ac.kr</S.InfoText>
+            <S.InfoText index={3}>개발자 박용주 jyp@snu.ac.kr</S.InfoText>
           </S.Info>
         </>
       )}
