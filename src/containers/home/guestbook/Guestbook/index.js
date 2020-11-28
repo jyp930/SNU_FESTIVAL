@@ -1,6 +1,4 @@
-import React, {
-  useCallback, useEffect, useState, useMemo,
-} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import { firestore } from '@U/initializer/firebase';
@@ -11,11 +9,17 @@ import Wave from '@F/animation/Wave';
 
 function Guestbook({ offset }) {
   const [comments, setComments] = useState([]);
-  const lastComment = useMemo(() => comments[comments.length - 1] ?? null, [comments]);
 
-  const subscribeComments = useCallback(() => firestore.collection('guestbook').doc('comments')
-    .onSnapshot(doc => {
-      setComments(doc.data().comments ?? []);
+  const subscribeComments = useCallback(() => firestore.collection('guestbook')
+    .orderBy('created_at', 'desc')
+    .onSnapshot(docs => {
+      const firestoreComments = [];
+      docs.forEach(doc => (
+        firestoreComments.push({
+          id: doc.id,
+          ...doc.data(),
+        })));
+      setComments(firestoreComments ?? []);
     }), []);
 
   useEffect(() => {
@@ -33,7 +37,7 @@ function Guestbook({ offset }) {
       </S.WaveWrapper>
 
       <S.GuestbookBox>
-        <WriteBox lastComment={lastComment} />
+        <WriteBox />
         <Comment comments={comments} />
       </S.GuestbookBox>
     </ParallaxLayer>

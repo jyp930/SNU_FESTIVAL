@@ -54,7 +54,7 @@ export default Comment;
 
 Comment.propTypes = {
   comments: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     username: PropTypes.string,
     password: PropTypes.string,
     content: PropTypes.string,

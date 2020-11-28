@@ -5,7 +5,6 @@ import * as S from './styles';
 import useInput from '@U/hooks/useInput';
 import PopupModal from '@F/PopupModal';
 import { firestore } from '@U/initializer/firebase';
-import firebase from 'firebase/app';
 
 function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
   const Input = useInput('');
@@ -23,10 +22,8 @@ function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
   };
 
   const deleteFromFirestore = () => {
-    const docRef = firestore.collection('guestbook').doc('comments');
-    return docRef.update({
-      comments: firebase.firestore.FieldValue.arrayRemove(comment),
-    });
+    const docRef = firestore.collection('guestbook').doc(comment.id);
+    return docRef.delete();
   };
 
   return (

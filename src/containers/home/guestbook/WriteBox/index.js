@@ -6,21 +6,18 @@ import firebase from 'firebase/app';
 import { firestore } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
 
-function WriteBox({ lastComment }) {
+function WriteBox() {
   const username = useInput('');
   const password = useInput('', passwordConstraint);
   const content = useInput('', contentConstraint);
 
   const addToFirestore = () => {
-    const docRef = firestore.collection('guestbook').doc('comments');
-    return docRef.update({
-      comments: firebase.firestore.FieldValue.arrayUnion(({
-        id: (lastComment?.id ?? 0) + 1,
-        username: username.value.trim(),
-        password: password.value.trim(),
-        content: content.value.trim(),
-        created_at: firebase.firestore.Timestamp.now(),
-      })),
+    const collectionRef = firestore.collection('guestbook');
+    return collectionRef.add({
+      username: username.value.trim(),
+      password: password.value.trim(),
+      content: content.value.trim(),
+      created_at: firebase.firestore.Timestamp.now(),
     });
   };
 
@@ -58,20 +55,7 @@ function WriteBox({ lastComment }) {
 export default WriteBox;
 
 WriteBox.propTypes = {
-  lastComment: PropTypes.shape({
-    id: PropTypes.number,
-    username: PropTypes.string,
-    password: PropTypes.string,
-    content: PropTypes.string,
-    created_at: PropTypes.shape({
-      nanoseconds: PropTypes.number,
-      seconds: PropTypes.number, // unix time
-    }),
-  }),
-};
 
-WriteBox.defaultProps = {
-  lastComment: null,
 };
 
 function contentConstraint(value) {
