@@ -21,6 +21,8 @@ class App {
     this.wrapper = document.getElementById('CanvasWrapper');
     this.wrapper.appendChild(this.canvas);
 
+    this.pixelRatio = (window.devicePixelRatio > 1) ? 2 : 1;
+
     const isMobile = document.body.clientWidth < 768;
     this.waveGroup = new WaveGroup(isMobile ? 5 : 6);
 
@@ -36,10 +38,9 @@ class App {
     this.stageWidth = this.wrapper.clientWidth;
     this.stageHeight = this.wrapper.clientHeight;
 
-    // TODO: pixel ratio
-    this.canvas.width = this.stageWidth * 2;
-    this.canvas.height = this.stageHeight * 2;
-    this.ctx.scale(2, 2);
+    this.canvas.width = this.stageWidth * this.pixelRatio;
+    this.canvas.height = this.stageHeight * this.pixelRatio;
+    this.ctx.scale(this.pixelRatio, this.pixelRatio);
 
     this.waveGroup.resize(this.stageWidth, this.stageHeight);
   }
