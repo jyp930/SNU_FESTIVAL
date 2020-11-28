@@ -11,6 +11,7 @@ function Guestbook() {
 
   const subscribeComments = useCallback(() => firestore.collection('guestbook')
     .orderBy('created_at', 'desc')
+    .limit(100)
     .onSnapshot(docs => {
       const firestoreComments = [];
       docs.forEach(doc => (
