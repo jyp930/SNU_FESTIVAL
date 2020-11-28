@@ -1,5 +1,6 @@
 import React from 'react';
 import ActivityContainer from '@C/activity/Activity';
+import withMountEvent from '@U/hoc/withMountEvent';
 
 function Activity() {
   return (
@@ -8,4 +9,4 @@ function Activity() {
     </div>
   );
 }
-export default Activity;
+export default withMountEvent(Activity);

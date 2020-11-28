@@ -1,5 +1,6 @@
 import React from 'react';
 import PerformanceContainer from '@C/performance/Performance';
+import withMountEvent from '@U/hoc/withMountEvent';
 
 function Performance() {
   return (
@@ -8,4 +9,4 @@ function Performance() {
     </div>
   );
 }
-export default Performance;
+export default withMountEvent(Performance);
