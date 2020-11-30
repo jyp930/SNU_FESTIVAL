@@ -26,9 +26,7 @@ class App {
     const isMobile = document.body.clientWidth < 768;
     this.waveGroup = new WaveGroup(isMobile ? 5 : 6);
 
-    if (!isMobile) {
-      window.addEventListener('resize', this.resize.bind(this), false);
-    }
+    window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
 
     requestAnimationFrame(this.animate.bind(this));
