@@ -42,11 +42,13 @@ function Comment({ comments }) {
           </S.TaleBox>
         </S.CommentThread>
       ))}
-      <DeletePopup
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-        comment={targetComment}
-      />
+      { isModalOpen && (
+        <DeletePopup
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          comment={targetComment}
+        />
+      )}
     </S.StyledComment>
   );
 }
