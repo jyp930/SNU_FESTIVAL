@@ -19,7 +19,7 @@ function Guestbook() {
           id: doc.id,
           ...doc.data(),
         })));
-      setComments(firestoreComments ?? []);
+      setComments(firestoreComments);
     }), []);
 
   useEffect(() => {

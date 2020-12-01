@@ -8,7 +8,7 @@ export default function WaveCanvas() {
   return (
     <div
       id="CanvasWrapper"
-      style={{ width: '50vw', height: '50vh' }}
+      style={{ width: '100%', height: '100%' }}
     />
   );
 }
@@ -20,8 +20,6 @@ class App {
 
     this.wrapper = document.getElementById('CanvasWrapper');
     this.wrapper.appendChild(this.canvas);
-
-    this.pixelRatio = (window.devicePixelRatio > 1) ? 2 : 1;
 
     const isMobile = document.body.clientWidth < 768;
     this.waveGroup = new WaveGroup(isMobile ? 5 : 6);
@@ -36,9 +34,9 @@ class App {
     this.stageWidth = this.wrapper.clientWidth;
     this.stageHeight = this.wrapper.clientHeight;
 
-    this.canvas.width = this.stageWidth * this.pixelRatio;
-    this.canvas.height = this.stageHeight * this.pixelRatio;
-    this.ctx.scale(this.pixelRatio, this.pixelRatio);
+    this.canvas.width = this.stageWidth;
+    this.canvas.height = this.stageHeight;
+    this.ctx.scale(1, 1);
 
     this.waveGroup.resize(this.stageWidth, this.stageHeight);
   }
@@ -57,7 +55,7 @@ class Point {
     this.fixedY = y;
     this.speed = 0.03;
     this.cur = index;
-    this.max = Math.random() * 50 + 20;
+    this.max = Math.random() * 70 + 20;
   }
 
   update() {
