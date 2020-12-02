@@ -9,7 +9,7 @@ export default function BallsCanvas() {
   return (
     <div
       id="CanvasWrapper"
-      style={{ width: '50vw', height: '50vh' }}
+      style={{ width: '100%', height: '100%' }}
     />
   );
 }
@@ -29,14 +29,13 @@ class App {
     this.wrapper.appendChild(this.canvas);
     this.ctx = this.canvas.getContext('2d');
 
-    this.pixelRatio = (window.devicePixelRatio > 1) ? 2 : 1;
+    const isMobile = document.body.clientWidth < 768;
 
-    this.totalParticles = 10;
+    this.totalParticles = isMobile ? 10 : 15;
     this.particles = [];
     this.maxRadius = 20;
     this.minRadius = 10;
 
-    const isMobile = document.body.clientWidth < 768;
     if (!isMobile) {
       window.addEventListener('resize', this.resize.bind(this), false);
     }
@@ -49,9 +48,9 @@ class App {
     this.stageWidth = this.wrapper.clientWidth;
     this.stageHeight = this.wrapper.clientHeight;
 
-    this.canvas.width = this.stageWidth * this.pixelRatio;
-    this.canvas.height = this.stageHeight * this.pixelRatio;
-    this.ctx.scale(this.pixelRatio, this.pixelRatio);
+    this.canvas.width = this.stageWidth;
+    this.canvas.height = this.stageHeight;
+    this.ctx.scale(1, 1);
 
     // 그라데이션 효과
     // this.ctx.globalCompositeOperation = 'saturation';
@@ -98,8 +97,8 @@ class GlowParticle {
     this.radius = radius;
     this.rgb = rgb;
 
-    this.vx = Math.random() * 3;
-    this.vy = Math.random() * 3;
+    this.vx = Math.random() * 4;
+    this.vy = Math.random() * 4;
 
     this.sinValue = Math.random();
   }

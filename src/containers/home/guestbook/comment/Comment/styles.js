@@ -21,6 +21,7 @@ export const MainBox = styled.div`
 
 export const ProfileImage = styled.img`
   width: 2rem;
+  height: 2rem;
   margin: 5px;
   align-self: flex-start;
 `;
