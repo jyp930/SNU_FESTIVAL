@@ -26,6 +26,7 @@ export const ButtonBox = styled.div`
 
 // TODO: CSS 코드 중복
 export const InputBox = styled.input`
+  width: 10rem;
   padding: 2px 7px;
   border: 0;
   border-bottom: 1px solid #757575;
