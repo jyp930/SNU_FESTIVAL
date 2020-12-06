@@ -4,38 +4,29 @@ import * as S from './styles';
 import Fade from 'react-reveal/Fade';
 import PopupModal from '@F/PopupModal';
 
-function TeamTemplate({ name, core, backgroundColor }) {
+function TeamTemplate({ name, core, backgroundColor, peopleTexts, workTexts, wordTexts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = useCallback(() => setIsModalOpen(open => !open), []);
 
+  const ContentPart = (title, texts) => (
+    <>
+      <S.Title>{title}</S.Title>
+      <S.Content>
+        {texts.map(text => (
+          <React.Fragment key={text}>
+            {text}
+            <br />
+          </React.Fragment>
+        ))}
+      </S.Content>
+    </>
+  );
+
   const ModalContent = (
     <S.ModalContentWrapper>
-      <S.Title>인재상</S.Title>
-      <S.Content>
-        인재상 1
-        <br />
-        인재상 2
-      </S.Content>
-      <S.Title>주요 업무</S.Title>
-      <S.Content>
-        게임 기획 및 제작
-        <br />
-        공모전 모집
-        <br />
-        장터 모집
-        <br />
-        캠핑 모집
-      </S.Content>
-      <S.Title>팀장단 한마디</S.Title>
-      <S.Content>
-        한마디
-        <br />
-        두마디
-        <br />
-        세마디
-        <br />
-        네마디
-      </S.Content>
+      {ContentPart('인재상', peopleTexts)}
+      {ContentPart('주요업무', workTexts)}
+      {ContentPart('팀장단한마디', wordTexts)}
     </S.ModalContentWrapper>
   );
 
@@ -75,4 +66,13 @@ TeamTemplate.propTypes = {
   name: PropTypes.string.isRequired,
   core: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string.isRequired,
+  peopleTexts: PropTypes.arrayOf(PropTypes.string),
+  workTexts: PropTypes.arrayOf(PropTypes.string),
+  wordTexts: PropTypes.arrayOf(PropTypes.string),
+};
+
+TeamTemplate.defaultProps = {
+  peopleTexts: [],
+  workTexts: [],
+  wordTexts: [],
 };

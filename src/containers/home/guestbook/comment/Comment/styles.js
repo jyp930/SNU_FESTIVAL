@@ -50,7 +50,6 @@ export const Id = styled.div`
 export const Content = styled.div`
   font-size: 1rem;
   font-weight: lighter;
-  word-break: keep-all;
 `;
 
 export const Time = styled.div`

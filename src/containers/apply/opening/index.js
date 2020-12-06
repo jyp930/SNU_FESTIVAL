@@ -14,7 +14,11 @@ function Opening() {
       <S.ApplyLinkBox>
         <Slide left cascade duration={500}>
           <S.EnglishText>JOIN US</S.EnglishText>
-          <S.KoreanText>뭔가 꽤 멋진 문구 멋짐이 모자라지도 그렇다고 넘치지도 않은 상태</S.KoreanText>
+          <S.KoreanText>
+            사람을 움직이는 힘
+            <br />
+            그것은 바로 열정입니다.
+          </S.KoreanText>
         </Slide>
       </S.ApplyLinkBox>
     </S.StyledMain>

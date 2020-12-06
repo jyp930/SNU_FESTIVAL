@@ -5,7 +5,7 @@ import Flash from 'react-reveal/Flash';
 
 function ApplyLink() {
   const openApplyGoogleForm = useCallback(() => {
-    window.open('https://naver.com', '_blank');
+    window.open('https://bit.ly/21봄축하사모집', '_blank');
   }, []);
 
   return (
@@ -17,7 +17,7 @@ function ApplyLink() {
           forever
           duration={2500}
         >
-          지원 링크!
+          https://bit.ly/21봄축하사모집
         </Flash>
       </S.Link>
     </S.StyledApplyLink>
