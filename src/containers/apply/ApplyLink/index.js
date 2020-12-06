@@ -20,6 +20,9 @@ function ApplyLink() {
           https://bit.ly/21봄축하사모집
         </Flash>
       </S.Link>
+      <S.PeriodText>
+        12월 14일 ~ 12월 23일
+      </S.PeriodText>
     </S.StyledApplyLink>
   );
 }

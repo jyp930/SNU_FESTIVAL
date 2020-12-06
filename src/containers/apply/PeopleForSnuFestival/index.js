@@ -19,7 +19,16 @@ function PeopleForSnuFestival() {
       <S.Section>
         <Slide bottom duration={800}>
           <S.Description>
-
+            내가 바로 분위기메이커!
+            <br />
+            매 축제에 활기를 불어넣을 수 있는 사람
+            <br />
+            아무말대잔치 환영!
+            <br />
+            독특하고 신박한 아이디어를 마구 제공해줄 수 있는 사람
+            <br />
+            불도저 같은 추진력!
+            <br />
           </S.Description>
         </Slide>
       </S.Section>

@@ -27,3 +27,9 @@ export const Link = styled.div`
     font-size: 2rem;
   `};
 `;
+
+export const PeriodText = styled.p`
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+`;
