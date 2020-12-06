@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { palette } from '@S/index';
+import media from 'styled-media-query';
 
 export const StyledApplyLink = styled.div`
   width: 100%;
@@ -21,4 +22,8 @@ export const Link = styled.div`
   font-weight: bolder;
   color: ${palette.BLACK_NEWTRO};
   cursor: pointer;
+  
+  ${media.lessThan('medium')`
+    font-size: 2rem;
+  `};
 `;

@@ -35,8 +35,8 @@ function Footer() {
           </S.LinkMenu>
           <S.Info>
             <S.InfoText index={1}>축제하는 사람들 snufestival@gmail.com</S.InfoText>
-            <S.InfoText index={2}>축하사장 권지현 jjang@snu.ac.kr</S.InfoText>
-            <S.InfoText index={3}>개발자 박용주 jyp@snu.ac.kr</S.InfoText>
+            <S.InfoText index={2}>축하사장 권지현 geehyun0105@snu.ac.kr</S.InfoText>
+            <S.InfoText index={3}>개발자 박용주 jyp930@snu.ac.kr</S.InfoText>
           </S.Info>
         </>
       )}
