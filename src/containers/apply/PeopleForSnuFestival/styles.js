@@ -5,6 +5,8 @@ import { palette } from '@S/index';
 export const StyledPeopleForSnuFestival = styled.div`
   width: 100%;
   height: 55vh;
+  min-height: 500px;
+  
   background-color: ${palette.PINK_PASTEL};
   
   display: flex;
@@ -12,7 +14,7 @@ export const StyledPeopleForSnuFestival = styled.div`
   align-items: center;
   
   ${media.lessThan('medium')`
-    height: 65vh;
+    height: 100vh;
     flex-direction: column;
   `};
 `;
@@ -45,4 +47,8 @@ export const Description = styled.p`
   font-size: 1.3rem;
   font-weight: lighter;
   word-break: keep-all;
+`;
+
+export const BoldText = styled.span`
+  font-weight: bold;
 `;
