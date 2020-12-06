@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 
 export const SliderContainer = styled.div`
-  height: 50vh;
+  height: 60vh;
+  
+  ${media.lessThan('medium')`
+    height: 50vh;
+  `};
 `;
 
 export const CardItem = styled.div`
