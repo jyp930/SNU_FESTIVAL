@@ -33,7 +33,6 @@ export const InputBox = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-  font-family: 'Montserrat', 'NanumSquare', sans-serif;
   height: 5rem;
   padding: 2px 7px 0;
   margin: 5px;
@@ -60,7 +59,6 @@ export const Submit = styled.button`
   background-color: white;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: bold;
   color: lightpink;
   align-self: flex-end;
   transition: .15s;

@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: 'Montserrat', 'NanumSquare', sans-serif;
+    font-family: 'Do Hyeon', 'Montserrat', sans-serif;
     
     & ::selection {
       background-color: ${palette.PINK_PASTEL};
@@ -62,5 +62,9 @@ export const GlobalStyle = createGlobalStyle`
     & ::-webkit-scrollbar {
       display: none; /* Chrome, Safari, Opera*/
     }
+  }
+  
+  input, textarea {
+    font-family: inherit;
   }
 `;
