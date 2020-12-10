@@ -40,7 +40,7 @@ export function removeTrails() {
 
 export function triggerMouseTrail() {
   const dots = [];
-  const mouse = { x: 0, y: 0 };
+  const mouse = { x: 100, y: 100 };
 
   const Dot = function Dot(i) {
     this.x = 0;
