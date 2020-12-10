@@ -61,8 +61,6 @@ Activity.propTypes = {
 const activityItems = [
   { title: '단체게임', backgroundColor: palette.YELLOW20_PASTEL, content: <GroupGame /> },
   { title: '미니게임', backgroundColor: palette.YELLOW20_PASTEL, content: <div>2</div> },
-  { title: '한밤의 어쿠스틱 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
-  { title: '별밤의 일렉트로닉 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
-  { title: '공모전', backgroundColor: palette.YELLOW40_PASTEL, content: <div>3</div> },
-  { title: '장터', backgroundColor: palette.YELLOW50_PASTEL, content: <div>4</div> },
+  { title: '어쿠스틱/일렉트로닉 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
+  { title: '공모전/장터', backgroundColor: palette.YELLOW40_PASTEL, content: <div>3</div> },
 ];

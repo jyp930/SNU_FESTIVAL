@@ -35,6 +35,6 @@ export const Item = styled.div`
 export const ItemTitle = styled.p`
   margin: 0;
   color: white;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: lighter;
 `;
