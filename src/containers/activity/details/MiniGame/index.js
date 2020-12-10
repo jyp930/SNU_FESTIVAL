@@ -22,17 +22,17 @@ const items = [
   { image: IU3, description: '11번 설명' },
 ];
 
-function GroupGame() {
+function MiniGame() {
   return (
     <DetailTemplate
-      title="단체게임"
-      description="우당탕탕 상금 사수 대작전! 친구들과 함께하는 축제의 피날레"
+      title="미니게임"
+      description="소확행은 이곳에서! 누구나 참여할 수 있는 쉽고 재미있는 미니게임"
       items={items}
     />
   );
 }
-export default GroupGame;
+export default MiniGame;
 
-GroupGame.propTypes = {
+MiniGame.propTypes = {
 
 };

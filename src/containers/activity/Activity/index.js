@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import * as S from './styles';
 import { palette } from '@S/index';
 import FullScreen from '@F/FullScreen';
-import GroupGame from '@C/activity/details/GroupGame';
 import Flip from 'react-reveal/Flip';
 
 import IU1 from '@I/jpeg/IU1.jpeg';
@@ -11,7 +11,10 @@ import IU3 from '@I/jpeg/IU3.jpeg';
 import IU4 from '@I/jpeg/IU4.jpeg';
 import IU5 from '@I/jpeg/IU5.jpeg';
 import { preloadImage } from '@U/functions/preload';
-import * as S from './styles';
+import GroupGame from '@C/activity/details/GroupGame';
+import MiniGame from '@C/activity/details/MiniGame';
+import Camping from '@C/activity/details/Camping';
+import Market from '@C/activity/details/Market';
 
 function Activity() {
   const [detailComponent, setDetailComponent] = useState(null);
@@ -60,7 +63,7 @@ Activity.propTypes = {
 
 const activityItems = [
   { title: '단체게임', backgroundColor: palette.YELLOW20_PASTEL, content: <GroupGame /> },
-  { title: '미니게임', backgroundColor: palette.YELLOW20_PASTEL, content: <div>2</div> },
-  { title: '어쿠스틱/일렉트로닉 캠핑', backgroundColor: palette.YELLOW30_PASTEL, content: <div>2</div> },
-  { title: '공모전/장터', backgroundColor: palette.YELLOW40_PASTEL, content: <div>3</div> },
+  { title: '미니게임', backgroundColor: palette.YELLOW20_PASTEL, content: <MiniGame /> },
+  { title: '캠핑/심야게임', backgroundColor: palette.YELLOW30_PASTEL, content: <Camping /> },
+  { title: '공모전/장터', backgroundColor: palette.YELLOW40_PASTEL, content: <Market /> },
 ];

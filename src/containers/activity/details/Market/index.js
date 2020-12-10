@@ -22,17 +22,17 @@ const items = [
   { image: IU3, description: '11번 설명' },
 ];
 
-function GroupGame() {
+function Market() {
   return (
     <DetailTemplate
-      title="단체게임"
-      description="우당탕탕 상금 사수 대작전! 친구들과 함께하는 축제의 피날레"
+      title="공모전/장터"
+      description="꿈이 현실이 되는 공간! 맛있는 음식과 다양한 물건이 가득한 잔디"
       items={items}
     />
   );
 }
-export default GroupGame;
+export default Market;
 
-GroupGame.propTypes = {
+Market.propTypes = {
 
 };

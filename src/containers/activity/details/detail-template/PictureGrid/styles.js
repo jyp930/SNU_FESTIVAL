@@ -39,7 +39,7 @@ const ItemPositionStyle = css`
   
   &:nth-of-type(5) {
     grid-column: 1 / 2;
-    grid-row: 3 / 5;
+    grid-row: 3 / 4;
   }
 `;
 

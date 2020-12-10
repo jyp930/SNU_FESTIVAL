@@ -12,7 +12,7 @@ export const Card = styled(FCard)`
 
 export const Img = styled.img`
   width: 100%;
-  height: 70%;
+  height: 80%;
 
   object-fit: cover;
   border-radius: 10px 10px 0 0;
@@ -20,8 +20,11 @@ export const Img = styled.img`
 
 export const Content = styled.div`
   width: 100%;
-  height: 30%;
+  height: 20%;
   
   box-sizing: border-box;
-  padding: 30px 35px;
+  padding: 0 2rem;
+  
+  display: flex;
+  align-items: center;
 `;

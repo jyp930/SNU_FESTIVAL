@@ -22,17 +22,17 @@ const items = [
   { image: IU3, description: '11번 설명' },
 ];
 
-function GroupGame() {
+function Closing() {
   return (
     <DetailTemplate
-      title="단체게임"
+      title="폐막제"
       description="우당탕탕 상금 사수 대작전! 친구들과 함께하는 축제의 피날레"
       items={items}
     />
   );
 }
-export default GroupGame;
+export default Closing;
 
-GroupGame.propTypes = {
+Closing.propTypes = {
 
 };

@@ -5,20 +5,20 @@ import * as S from './styles';
 // NOTE: 기획 변경에 대비해 행사팀 스타일을 그대로 사용
 import * as AS from '../../activity/Activity/styles';
 import { palette } from '@S/index';
-import IU1 from '@I/jpeg/IU1.jpeg';
-import IU2 from '@I/jpeg/IU2.jpeg';
-import IU3 from '@I/jpeg/IU3.jpeg';
-import IU4 from '@I/jpeg/IU4.jpeg';
-import IU5 from '@I/jpeg/IU5.jpeg';
 import { preloadImage } from '@U/functions/preload';
 import Flip from 'react-reveal/Flip';
 import FullScreen from '@F/FullScreen';
+import HitTheStage from '@C/performance/details/HitTheStage';
+import SingStealer from '@C/performance/details/SingStealer';
+import DivingInAcoustic from '@C/performance/details/DivingInAcoustic';
+import Closing from '@C/performance/details/Closing';
 
 function Performance() {
   const [detailComponent, setDetailComponent] = useState(null);
 
   useEffect(() => {
-    [IU1, IU2, IU3, IU4, IU5].map(preloadImage);
+    // TODO: preload
+    [].map(preloadImage);
   }, []);
 
   return (
@@ -60,8 +60,8 @@ Performance.propTypes = {
 };
 
 const performanceItems = [
-  { title: '힛더스테이지', backgroundColor: palette.BLUE20_PASTEL, content: <div>3</div> },
-  { title: '씽스틸러', backgroundColor: palette.BLUE30_PASTEL, content: <div>2</div> },
-  { title: '따이빙 인 어쿠스틱', backgroundColor: palette.BLUE40_PASTEL, content: <div>1</div> },
-  { title: '폐막제', backgroundColor: palette.BLUE50_PASTEL, content: <div>4</div> },
+  { title: '힛더스테이지', backgroundColor: palette.BLUE20_PASTEL, content: <HitTheStage /> },
+  { title: '씽스틸러', backgroundColor: palette.BLUE30_PASTEL, content: <SingStealer /> },
+  { title: '따이빙 인 어쿠스틱', backgroundColor: palette.BLUE40_PASTEL, content: <DivingInAcoustic /> },
+  { title: '폐막제', backgroundColor: palette.BLUE50_PASTEL, content: <Closing /> },
 ];

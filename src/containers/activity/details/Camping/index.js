@@ -22,17 +22,17 @@ const items = [
   { image: IU3, description: '11번 설명' },
 ];
 
-function GroupGame() {
+function Camping() {
   return (
     <DetailTemplate
-      title="단체게임"
-      description="우당탕탕 상금 사수 대작전! 친구들과 함께하는 축제의 피날레"
+      title="캠핑/심야게임"
+      description="친구들과 음악과 텐트라면.. 금잔디가 부럽지 않은 학생잔디"
       items={items}
     />
   );
 }
-export default GroupGame;
+export default Camping;
 
-GroupGame.propTypes = {
+Camping.propTypes = {
 
 };
