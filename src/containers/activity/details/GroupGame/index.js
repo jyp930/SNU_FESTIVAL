@@ -2,24 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import DetailTemplate from '@C/activity/details/detail-template/DetailTemplate';
-import IU1 from '@I/jpeg/IU1.jpeg';
-import IU2 from '@I/jpeg/IU2.jpeg';
-import IU3 from '@I/jpeg/IU3.jpeg';
-import IU4 from '@I/jpeg/IU4.jpeg';
-import IU5 from '@I/jpeg/IU5.jpeg';
+import GroupGame1 from '@I/activity/groupGame/groupGame1.jpeg';
+import GroupGame2 from '@I/activity/groupGame/groupGame2.jpeg';
+import GroupGame3 from '@I/activity/groupGame/groupGame3.jpeg';
+import GroupGame4 from '@I/activity/groupGame/groupGame4.jpeg';
+import GroupGame5 from '@I/activity/groupGame/groupGame5.jpeg';
+import GroupGame6 from '@I/activity/groupGame/groupGame6.jpeg';
+import GroupGame7 from '@I/activity/groupGame/groupGame7.jpeg';
+import GroupGame8 from '@I/activity/groupGame/groupGame8.jpeg';
+import GroupGame9 from '@I/activity/groupGame/groupGame9.jpeg';
+import GroupGame10 from '@I/activity/groupGame/groupGame10.jpeg';
 
 const items = [
-  { image: IU1, description: '1번 설명' },
-  { image: IU2, description: '2번 설명' },
-  { image: IU3, description: '3번 설명' },
-  { image: IU4, description: '4번 설명' },
-  { image: IU5, description: '5번 설명' },
-  { image: IU1, description: '6번 설명' },
-  { image: IU2, description: '7번 설명' },
-  { image: IU3, description: '8번 설명' },
-  { image: IU4, description: '9번 설명' },
-  { image: IU5, description: '10번 설명' },
-  { image: IU3, description: '11번 설명' },
+  { image: GroupGame3, description: '3번 설명' },
+  { image: GroupGame2, description: '2번 설명' },
+  { image: GroupGame1, description: '1번 설명' },
+  { image: GroupGame10, description: '10번 설명' },
+  { image: GroupGame5, description: '5번 설명' },
+  { image: GroupGame6, description: '6번 설명' },
+  { image: GroupGame7, description: '7번 설명' },
+  { image: GroupGame8, description: '8번 설명' },
+  { image: GroupGame9, description: '9번 설명' },
+  { image: GroupGame4, description: '4번 설명' },
 ];
 
 function GroupGame() {

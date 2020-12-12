@@ -64,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   
-  input, textarea {
+  input, textarea, button {
     font-family: inherit;
   }
 `;
