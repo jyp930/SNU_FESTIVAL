@@ -24,7 +24,7 @@ function TeamTemplate({ name, core, backgroundColor, peopleTexts, workTexts, wor
 
   const ModalContent = (
     <S.ModalContentWrapper>
-      {ContentPart('인재상', peopleTexts)}
+      {ContentPart('팀소개', peopleTexts)}
       {ContentPart('주요업무', workTexts)}
       {ContentPart('팀장단한마디', wordTexts)}
     </S.ModalContentWrapper>
