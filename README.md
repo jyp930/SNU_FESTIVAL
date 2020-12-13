@@ -1,5 +1,4 @@
 ## TODO
-- password hash
 - sal.js 를 react-reveal 로 교체
 - mobile react-reveal 에서 skeleton image 작동
 - SSR

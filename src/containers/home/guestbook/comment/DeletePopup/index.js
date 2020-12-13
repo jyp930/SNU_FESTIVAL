@@ -5,11 +5,12 @@ import * as S from './styles';
 import useInput from '@U/hooks/useInput';
 import PopupModal from '@F/PopupModal';
 import { firestore } from '@U/initializer/firebase';
+import { sha512 } from 'js-sha512';
 
 function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
-  const Input = useInput('');
+  const password = useInput('');
   const Delete = () => {
-    if (Input.value !== comment?.password) {
+    if (sha512(password.value) !== comment?.password) {
       toast('비밀번호가 틀렸습니다');
     } else {
       toast.dismiss();
@@ -18,7 +19,7 @@ function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
         setIsModalOpen(false);
       });
     }
-    Input.setValue('');
+    password.setValue('');
   };
 
   const deleteFromFirestore = () => {
@@ -35,7 +36,7 @@ function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
         <S.DeletePopup>
           <div>삭제하시겠습니까?</div>
           <form>
-            <S.InputBox placeholder="비밀번호" maxLength="20" type="password" autoComplete="off" {...Input} />
+            <S.InputBox placeholder="비밀번호" maxLength="20" type="password" autoComplete="off" {...password} />
           </form>
           <S.ButtonBox>
             <S.Button onClick={Delete}>삭제</S.Button>

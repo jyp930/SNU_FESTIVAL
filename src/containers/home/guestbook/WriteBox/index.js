@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import { firestore } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
+import { sha512 } from 'js-sha512';
 
 function WriteBox() {
   const username = useInput('');
@@ -15,7 +16,8 @@ function WriteBox() {
     const collectionRef = firestore.collection('guestbook');
     return collectionRef.add({
       username: username.value.trim(),
-      password: password.value.trim(),
+      // NOTE: 비밀번호는 sha512로 암호화
+      password: sha512(password.value),
       content: content.value.trim(),
       created_at: firebase.firestore.Timestamp.now(),
     });
