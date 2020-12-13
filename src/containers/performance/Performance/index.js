@@ -16,10 +16,10 @@ import Closing from '@C/performance/details/Closing';
 function Performance() {
   const [detailComponent, setDetailComponent] = useState(null);
 
-  useEffect(() => {
-    // TODO: preload
-    [].map(preloadImage);
-  }, []);
+  // TODO: preload
+  // useEffect(() => {
+  //   [].forEach(preloadImage);
+  // }, []);
 
   return (
     <S.StyledPerformance>

@@ -14,7 +14,7 @@ function Footer() {
   }, []);
 
   useEffect(() => {
-    [facebook, instagram].map(preloadImage);
+    [facebook, instagram].forEach(preloadImage);
   }, []);
 
   return (

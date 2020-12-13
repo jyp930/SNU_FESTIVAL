@@ -4,6 +4,7 @@ import mascot from '@I/svg/mascot/mascot-basic.svg';
 import Fade from 'react-reveal/Fade';
 import * as S from './styles';
 import { preloadImage } from '@U/functions/preload';
+import LogoImage from '@I/png/logo.png';
 import ClosingFestival from '@I/jpg/closing-festival.jpg';
 
 function Header() {
@@ -12,7 +13,7 @@ function Header() {
 
   useEffect(() => {
     if (menuIsOpen) {
-      preloadImage(ClosingFestival);
+      [LogoImage, ClosingFestival].forEach(preloadImage);
     }
   }, [menuIsOpen]);
 
