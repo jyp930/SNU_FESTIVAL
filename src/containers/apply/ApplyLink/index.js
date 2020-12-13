@@ -2,9 +2,11 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import Flash from 'react-reveal/Flash';
+import { EventBehavior } from '@U/initializer/googleAnalytics';
 
 function ApplyLink() {
   const openApplyGoogleForm = useCallback(() => {
+    EventBehavior('Apply', 'Click Google Form', 'click google form in apply page');
     window.open('https://bit.ly/21봄축하사모집', '_blank');
   }, []);
 
