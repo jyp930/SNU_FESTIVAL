@@ -25,6 +25,10 @@ function Event() {
           />
         </S.Item>
       </S.Information>
+
+      <S.ThanksToText>
+        thanks to @cmiscm
+      </S.ThanksToText>
     </>
   );
 }

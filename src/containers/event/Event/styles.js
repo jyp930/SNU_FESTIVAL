@@ -19,3 +19,11 @@ export const BallsWrapper = styled.div`
   width: 100vw;
   height: 100vh;
 `;
+
+export const ThanksToText = styled.p`
+  margin: 0;
+
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+`;
