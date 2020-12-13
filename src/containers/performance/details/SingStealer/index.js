@@ -21,7 +21,7 @@ const items = [
 function SingStealer() {
   return (
     <DetailTemplate
-      title="씽쓰틸러"
+      title="씽스틸러"
       description="힙합부터 발라드까지! 지나가던 나의 발길을 이끄는 장르불문 귀호강 사운드"
       items={items}
     />
