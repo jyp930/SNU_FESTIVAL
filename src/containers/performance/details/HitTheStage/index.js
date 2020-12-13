@@ -2,31 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import DetailTemplate from '@C/activity/details/detail-template/DetailTemplate';
-import IU1 from '@I/jpeg/IU1.jpeg';
-import IU2 from '@I/jpeg/IU2.jpeg';
-import IU3 from '@I/jpeg/IU3.jpeg';
-import IU4 from '@I/jpeg/IU4.jpeg';
-import IU5 from '@I/jpeg/IU5.jpeg';
+import HitTheStage1 from '@I/performance/hitTheStage/hitTheStage1.jpeg';
+import HitTheStage2 from '@I/performance/hitTheStage/hitTheStage2.jpeg';
+import HitTheStage3 from '@I/performance/hitTheStage/hitTheStage3.jpeg';
+import HitTheStage4 from '@I/performance/hitTheStage/hitTheStage4.jpeg';
+import HitTheStage5 from '@I/performance/hitTheStage/hitTheStage5.jpeg';
+import HitTheStage6 from '@I/performance/hitTheStage/hitTheStage6.jpeg';
+import HitTheStage7 from '@I/performance/hitTheStage/hitTheStage7.jpeg';
+import HitTheStage8 from '@I/performance/hitTheStage/hitTheStage8.jpeg';
+import HitTheStage9 from '@I/performance/hitTheStage/hitTheStage9.jpeg';
+import HitTheStage10 from '@I/performance/hitTheStage/hitTheStage10.jpeg';
 
 const items = [
-  { image: IU1, description: '1번 설명' },
-  { image: IU2, description: '2번 설명' },
-  { image: IU3, description: '3번 설명' },
-  { image: IU4, description: '4번 설명' },
-  { image: IU5, description: '5번 설명' },
-  { image: IU1, description: '6번 설명' },
-  { image: IU2, description: '7번 설명' },
-  { image: IU3, description: '8번 설명' },
-  { image: IU4, description: '9번 설명' },
-  { image: IU5, description: '10번 설명' },
-  { image: IU3, description: '11번 설명' },
+  { image: HitTheStage7, description: '1번 설명' },
+  { image: HitTheStage2, description: '2번 설명' },
+  { image: HitTheStage3, description: '3번 설명' },
+  { image: HitTheStage10, description: '4번 설명' },
+  { image: HitTheStage5, description: '5번 설명' },
+  { image: HitTheStage6, description: '6번 설명' },
+  { image: HitTheStage8, description: '7번 설명' },
+  { image: HitTheStage1, description: '8번 설명' },
+  { image: HitTheStage9, description: '9번 설명' },
+  { image: HitTheStage4, description: '10번 설명' },
 ];
 
 function HitTheStage() {
   return (
     <DetailTemplate
       title="힛더스테이지"
-      description="우당탕탕 상금 사수 대작전! 친구들과 함께하는 축제의 피날레"
+      description="무대를 뒤집어놓으셨다! 관악 제일의 춤꾼들과 함께하는 신나는 공연타임"
       items={items}
     />
   );

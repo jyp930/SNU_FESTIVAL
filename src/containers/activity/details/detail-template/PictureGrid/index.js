@@ -7,7 +7,8 @@ import Image from '@F/Image';
 
 function PictureGrid({ items, onClickItem }) {
   const setCenterComponent = useCallback((text) => {
-    centerStore.setCenterComponent(<S.CenterText>{text}</S.CenterText>);
+    // NOTE: 중앙 문구 삭제
+    // centerStore.setCenterComponent(<S.CenterText>{text}</S.CenterText>);
   }, []);
 
   return (

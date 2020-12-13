@@ -30,7 +30,7 @@ function Closing() {
   return (
     <DetailTemplate
       title="폐막제"
-      description="우당탕탕 상금 사수 대작전! 친구들과 함께하는 축제의 피날레"
+      description="축제의 마지막! 동아리 간 콜라보 공연과 연예인 게스트까지!"
       items={items}
     />
   );

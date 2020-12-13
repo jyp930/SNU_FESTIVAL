@@ -14,7 +14,8 @@ function DetailTemplate({ title, description, items }) {
 
   const openCarouselModal = useCallback((index) => {
     setModalInitialIndex(index);
-    setIsModalOpen(true);
+    // NOTE: 클릭 삭제
+    // setIsModalOpen(true);
   }, []);
 
   useEffect(() => {
