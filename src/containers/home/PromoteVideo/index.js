@@ -8,9 +8,9 @@ import * as S from './styles';
 
 const centerContent = (
   <span>
-    2020 SNU FESTIVAL
+    2021 SNU FESTIVAL
     <br />
-    축 하 사 모 집 중
+    봄 축 하 사 모 집 중
   </span>
 );
 

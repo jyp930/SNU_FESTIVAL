@@ -44,7 +44,7 @@ export const Core = styled.div`
 // Modal
 export const ModalContentWrapper = styled.div`
   width: 50vw;
-  height: 60vh;
+  height: 70vh;
   overflow-y: scroll;
   
   color: white;
