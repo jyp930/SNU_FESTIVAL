@@ -39,8 +39,8 @@ function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
             <S.InputBox placeholder="비밀번호" maxLength="20" type="password" autoComplete="off" {...password} />
           </form>
           <S.ButtonBox>
-            <S.Button onClick={Delete}>삭제</S.Button>
             <S.Button onClick={() => setIsModalOpen(false)}>닫기</S.Button>
+            <S.Button onClick={Delete}>삭제</S.Button>
           </S.ButtonBox>
         </S.DeletePopup>
       </PopupModal>
