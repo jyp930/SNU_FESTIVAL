@@ -4,10 +4,10 @@ import routes from '@/routes';
 import GaAnalytics from '@/UserAnalytics';
 import { GA_TRACKING_KEY } from '@/config';
 import { GlobalStyle } from '@S/index';
-import Header from '@F/Header';
+import Header from '@F/layout/Header';
 import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
 import Lottie404 from '@F/lottie/Lottie404';
-import MouseTrail from '@F/MouseTrail';
+import MouseTrail from '@F/animation/MouseTrail';
 import Toast from '@F/Toast';
 
 function App() {

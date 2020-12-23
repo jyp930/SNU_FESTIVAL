@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TypingTextTransition from '@F/text-animation/TypingTextTransition';
+import TypingTextTransition from '@F/animation/text-animation/TypingTextTransition';
 import Flip from 'react-reveal/Flip';
 import * as S from './styles';
 

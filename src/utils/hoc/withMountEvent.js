@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { removeTrails, triggerMouseTrail } from '@F/MouseTrail';
+import { removeTrails, triggerMouseTrail } from '@F/animation/MouseTrail';
 
 function withMountEvent(InputComponent) {
   return function ResultComponent(props) {

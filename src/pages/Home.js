@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeContainer from '@C/home/Home';
-import Footer from '@F/Footer';
+import Footer from '@F/layout/Footer';
 import withMountEvent from '@U/hoc/withMountEvent';
 
 function Home() {

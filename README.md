@@ -1,6 +1,5 @@
 ## TODO
 - sal.js 를 react-reveal 로 교체
-- SSR
 
 ## Technical Stack
 

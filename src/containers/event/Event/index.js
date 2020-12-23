@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
-import RandomTextShuffle from '@F/text-animation/RandomTextShuffle';
+import RandomTextShuffle from '@F/animation/text-animation/RandomTextShuffle';
 import LottieFrame from '@F/lottie/LottieFrame';
 import eventJson from '@I/lottie/event.json';
 import Balls from '@F/animation/Balls';
