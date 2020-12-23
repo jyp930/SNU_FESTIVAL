@@ -1,7 +1,3 @@
-## TODO
-- sal.js 를 react-reveal 로 교체
-- SSR
-
 ## Technical Stack
 
 ### `CRA`
@@ -12,7 +8,7 @@
 ### `Firebase-hosting`
 ### `Google Analytics`
 ### `git flow`
-### `mobX`
+### `redux`
 
 ## Css Stack
 

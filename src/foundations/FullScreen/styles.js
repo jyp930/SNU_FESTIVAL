@@ -39,17 +39,3 @@ export const CloseIcon = styled(IoMdClose)`
   height: 40px;
   color: ${palette.BLACK_NEWTRO};
 `;
-
-export const Center = styled.div`
-  z-index: ${zIndex.fullScreen + 1};
-  position: fixed;
-  left: calc(50% - 10rem);
-  top: calc(50% - 15rem);
-
-  width: 20rem;
-  height: 30rem;
-  
-  pointer-events: none;
-  color: ${palette.WHITE_NEWTRO};
-  mix-blend-mode: difference;
-`;
