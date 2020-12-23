@@ -75,7 +75,6 @@ function Header() {
         {NaviButton('공연', '/performance', 350)}
         {NaviButton('이벤트', '/event', 400)}
         {NaviButton('축하사 지원', '/apply', 450)}
-        {/* {NaviButton('굿즈', '/goods', 450)} */}
         {NaviButton('축제 소개', '/introduction', 500)}
       </S.OpenedMenu>
     </Fade>

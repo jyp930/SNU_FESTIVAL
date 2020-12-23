@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Sal from '@F/Sal';
+import Slide from 'react-reveal/Slide';
 import * as S from './styles';
 
 function FullScreen({
@@ -13,11 +13,7 @@ function FullScreen({
         backgroundColor={backgroundColor}
       >
         { isFullScreen && (
-          <Sal
-            animation="slide-down"
-            duration={800}
-            delay={1000}
-          >
+          <Slide top>
             <>
               <S.CloseButton
                 onClick={onCloseFullScreen}
@@ -26,7 +22,7 @@ function FullScreen({
               </S.CloseButton>
               { children }
             </>
-          </Sal>
+          </Slide>
         )}
       </S.StyledFullScreen>
     </>
