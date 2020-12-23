@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import { palette } from '@S/index';
 import FullScreen from '@F/FullScreen';
 import Flip from 'react-reveal/Flip';
 
-import { preloadImage } from '@U/functions/preload';
 import GroupGame from '@C/activity/details/GroupGame';
 import MiniGame from '@C/activity/details/MiniGame';
 import Camping from '@C/activity/details/Camping';
@@ -13,11 +12,6 @@ import Market from '@C/activity/details/Market';
 
 function Activity() {
   const [detailComponent, setDetailComponent] = useState(null);
-
-  // TODO: preload image
-  // useEffect(() => {
-  //
-  // }, []);
 
   return (
     <S.StyledActivity>

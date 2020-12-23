@@ -24,7 +24,6 @@ export const ButtonBox = styled.div`
   justify-content: space-around;
 `;
 
-// TODO: CSS 코드 중복
 export const InputBox = styled.input`
   width: 10rem;
   padding: 2px 7px;

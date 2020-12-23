@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
 // NOTE: 기획 변경에 대비해 행사팀 스타일을 그대로 사용
 import * as AS from '../../activity/Activity/styles';
 import { palette } from '@S/index';
-import { preloadImage } from '@U/functions/preload';
 import Flip from 'react-reveal/Flip';
 import FullScreen from '@F/FullScreen';
 import HitTheStage from '@C/performance/details/HitTheStage';
@@ -15,11 +14,6 @@ import Closing from '@C/performance/details/Closing';
 
 function Performance() {
   const [detailComponent, setDetailComponent] = useState(null);
-
-  // TODO: preload
-  // useEffect(() => {
-  //   [].forEach(preloadImage);
-  // }, []);
 
   return (
     <S.StyledPerformance>
