@@ -11,7 +11,7 @@
 ### `Firebase-hosting`
 ### `Google Analytics`
 ### `git flow`
-### `mobX`
+### `redux`
 
 ## Css Stack
 

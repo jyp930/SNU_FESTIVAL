@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Sal from '@F/Sal';
-import { CenterComponent } from '@/mob-x/center';
 import * as S from './styles';
 
 function FullScreen({
@@ -30,10 +29,6 @@ function FullScreen({
           </Sal>
         )}
       </S.StyledFullScreen>
-
-      <S.Center>
-        <CenterComponent />
-      </S.Center>
     </>
   );
 }
