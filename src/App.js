@@ -8,6 +8,7 @@ import Header from '@F/Header';
 import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
 import Lottie404 from '@F/lottie/Lottie404';
 import MouseTrail from '@F/MouseTrail';
+import Toast from '@F/Toast';
 
 function App() {
   useEffect(() => {
@@ -18,6 +19,7 @@ function App() {
     <>
       <GlobalStyle />
       <MouseTrail />
+      <Toast />
 
       <Router>
         <Suspense fallback={<LottieLoadingPacMan />}>

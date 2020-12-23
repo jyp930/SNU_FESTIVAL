@@ -6,13 +6,6 @@ import * as S from './styles';
 function Home() {
   return (
     <S.StyledHome>
-      <S.StyledContainer
-        position="top-center"
-        hideProgressBar
-        autoClose={3000}
-        pauseOnHover={false}
-        newestOnTop
-      />
       <S.FullWrapper>
         <PromoteVideo />
       </S.FullWrapper>
