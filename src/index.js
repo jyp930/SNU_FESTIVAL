@@ -9,11 +9,18 @@ import 'reactjs-popup/dist/index.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { initializeGA } from '@U/initializer/googleAnalytics';
+import reduxRoot from '@/redux/common/store';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 initializeGA();
 
 // noinspection JSCheckFunctionSignatures
 ReactDOM.render(
-  <App />,
+  <Provider store={reduxRoot.store}>
+    <PersistGate loading={<p>Redux 로딩중 ...</p>} persistor={reduxRoot.persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
   document.getElementById('root'),
 );
