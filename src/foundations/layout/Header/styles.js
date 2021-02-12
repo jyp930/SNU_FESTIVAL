@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
 import { palette, zIndex } from '@S/index';
 import { HoverStyle } from '@S/responsive/mouse';
+import LGoogleAuth from '@F/layout/GoogleAuth';
 
 export const StyledHeader = styled.div`
   position: fixed;
@@ -97,4 +98,11 @@ export const NaviText = styled.p`
     transition-timing-function: cubic-bezier(.175,.885,.32,1);
     font-size: 3rem;
   }
+`;
+
+export const GoogleAuth = styled(LGoogleAuth)`
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  z-index: ${zIndex.header + 1};
 `;

@@ -2,14 +2,16 @@ import {
   createStore, combineReducers, compose, applyMiddleware,
 } from 'redux';
 import countReducer, { countPersistConfig } from '@/redux/count/state';
+import userReducer, { userPersistConfig } from '@/redux/user/state';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import sessionStorage from 'redux-persist/lib/storage/session';
 import { all } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 import countSaga from '@/redux/count/saga';
 
 const reducer = combineReducers({
   count: persistReducer(countPersistConfig, countReducer),
+  user: persistReducer(userPersistConfig, userReducer),
 });
 
 /**
@@ -18,8 +20,8 @@ const reducer = combineReducers({
  * */
 const rootPersistConfig = {
   key: 'snufestival/root',
-  storage,
-  whitelist: [],
+  storage: sessionStorage,
+  whitelist: [userReducer],
 };
 const persistedReducer = persistReducer(rootPersistConfig, reducer);
 

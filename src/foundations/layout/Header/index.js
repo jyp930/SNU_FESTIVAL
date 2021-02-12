@@ -84,6 +84,7 @@ function Header() {
     <S.StyledHeader id="Header">
       {HeaderBar}
       {menuIsOpen && openedMenu}
+      {!menuIsOpen && <S.GoogleAuth />}
     </S.StyledHeader>
   );
 }
