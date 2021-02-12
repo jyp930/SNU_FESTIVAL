@@ -1,6 +1,7 @@
 import { FIREBASE_CONFIG } from '@/config';
 import 'firebase/firestore';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 if (FIREBASE_CONFIG) {
   firebase.initializeApp(FIREBASE_CONFIG);

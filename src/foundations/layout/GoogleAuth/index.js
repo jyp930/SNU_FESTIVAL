@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import { auth } from '@U/initializer/firebase';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { actions } from '@/redux/user/state';
 
