@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
-import { palette, zIndex } from '@S/index';
 import { HoverStyle } from '@S/responsive/mouse';
 import LGoogleAuth from '@F/layout/GoogleAuth';
 
@@ -10,14 +9,14 @@ export const StyledHeader = styled.div`
   left: 0;
   width: 100vw;
   height: auto;
-  z-index: ${zIndex.header};
+  z-index: ${({ theme }) => theme.zIndex.header};
 `;
 
 export const HeaderBarContainer = styled.div`
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: ${zIndex.header + 1};
+  z-index: ${({ theme }) => theme.zIndex.header + 1};
   
   ${props => props.isOpen && css`
     pointer-events: none;
@@ -53,7 +52,7 @@ export const LogoText = styled.p`
   font-size: 1.2rem;
   
   transition: color 0.5s;
-  color: ${props => (props.isOpen ? palette.BLACK_NEWTRO : palette.GRAY_NEWTRO)};
+  color: ${props => (props.isOpen ? props.theme.palette.BLACK_NEWTRO : props.theme.palette.GRAY_NEWTRO)};
 `;
 
 export const MenuButton = styled.div`
@@ -71,7 +70,7 @@ export const MenuButton = styled.div`
 export const MenuButtonBar = styled.div`
   width: 100%;
   height: calc(var(--width) / 7);
-  background-color: ${palette.GRAY_NEWTRO};
+  background-color: ${({ theme }) => theme.palette.GRAY_NEWTRO};
   margin: calc(var(--width) / 7) 0;
 `;
 
@@ -82,14 +81,14 @@ export const OpenedMenu = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: ${palette.GRAY_NEWTRO};
+  background-color: ${({ theme }) => theme.palette.GRAY_NEWTRO};
   opacity: 0.9;
 `;
 
 export const NaviText = styled.p`
   margin: 20px 0;
   font-size: 2rem;
-  color: ${palette.BLACK_NEWTRO};
+  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
   cursor: pointer;
   text-shadow: 1px 1px 2px grey;
   transition-duration: 1s;
@@ -104,5 +103,5 @@ export const GoogleAuth = styled(LGoogleAuth)`
   position: absolute;
   top: 20px;
   right: 70px;
-  z-index: ${zIndex.header + 1};
+  z-index: ${({ theme }) => theme.zIndex.header + 1};
 `;

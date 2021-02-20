@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { palette } from '@S/index';
 
 export const StyledPeopleForSnuFestival = styled.div`
   width: 100%;
   height: 55vh;
   min-height: 500px;
   
-  background-color: ${palette.PINK_PASTEL};
+  background-color: ${({ theme }) => theme.palette.PINK_PASTEL};
   
   display: flex;
   justify-content: center;

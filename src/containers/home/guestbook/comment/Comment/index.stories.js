@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from '@C/home/Home/styles';
+import { StyledContainer } from '@F/Toast/styles';
 import Comment from './index';
 
 export default {
@@ -16,7 +16,7 @@ const comments = [{
 
 export const Default = () => (
   <div>
-    <S.StyledContainer
+    <StyledContainer
       position="top-center"
       autoClose={2000}
       pauseOnHover={false}

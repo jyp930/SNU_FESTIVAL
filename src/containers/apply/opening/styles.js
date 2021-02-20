@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { palette } from '@S/index';
 
 export const StyledMain = styled.div`
   position: relative;
@@ -42,13 +41,13 @@ export const ApplyLinkBox = styled.div`
 `;
 
 export const EnglishText = styled.p`
-  color: ${palette.WHITE20_NEWTRO};
+  color: ${({ theme }) => theme.palette.WHITE20_NEWTRO};
   font-size: 1rem;
   margin-bottom: 0;
 `;
 
 export const KoreanText = styled.p`
-  color: ${palette.WHITE_NEWTRO};
+  color: ${({ theme }) => theme.palette.WHITE_NEWTRO};
   font-size: 2rem;
   font-weight: lighter;
   margin-top: 10px;

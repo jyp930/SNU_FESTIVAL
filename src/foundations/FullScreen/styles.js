@@ -1,9 +1,8 @@
 import styled, { css } from 'styled-components';
 import { IoMdClose } from 'react-icons/all';
-import { palette, zIndex } from '@S/index';
 
 export const StyledFullScreen = styled.div`
-  z-index: ${zIndex.fullScreen};
+  z-index: ${({ theme }) => theme.zIndex.fullScreen};
   position: fixed;
   top: 0;
   left: 0;
@@ -37,5 +36,5 @@ export const CloseButton = styled.div`
 export const CloseIcon = styled(IoMdClose)`
   width: 40px;
   height: 40px;
-  color: ${palette.BLACK_NEWTRO};
+  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
 `;

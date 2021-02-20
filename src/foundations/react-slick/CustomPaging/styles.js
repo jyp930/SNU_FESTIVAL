@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { palette } from '@S/index';
 import media from 'styled-media-query';
 
 export const StyledCustomPaging = styled.div`
@@ -18,7 +17,7 @@ export const StyledCustomPaging = styled.div`
   
   .slick-arrow {
     &:before {
-      color: ${palette.WHITE_NEWTRO}; 
+      color: ${({ theme }) => theme.palette.WHITE_NEWTRO}; 
     }
   }
   

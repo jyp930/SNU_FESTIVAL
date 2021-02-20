@@ -38,6 +38,11 @@ export const zIndex = {
   mouseTrail: 10000,
 };
 
+export const theme = {
+  palette,
+  zIndex,
+};
+
 export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;

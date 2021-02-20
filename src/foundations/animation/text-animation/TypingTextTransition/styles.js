@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { zIndex } from '@S/index';
 
 export const StyledTypingTextTransition = styled.div`
   width: 100%;
@@ -23,7 +22,7 @@ export const Text = styled.p`
   display: block;
   position: absolute;
   margin: 0;
-  z-index: ${zIndex.base};
+  z-index: ${({ theme }) => theme.zIndex.base};
 
   span {
     position: absolute;

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { palette } from '@S/index';
 
 export const StyledComment = styled.div`
   height: 60vh;
@@ -34,7 +33,7 @@ export const ContentsBox = styled.div`
 export const TaleBox = styled.div`
   display: flex;
   justify-content: flex-end;
-  color: ${palette.BLACK_NEWTRO};
+  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
   opacity: 0.6;
   
   font-size: 0.7rem;
@@ -43,7 +42,7 @@ export const TaleBox = styled.div`
 
 export const Id = styled.div`
   font-size: 0.9rem;
-  color: ${palette.BLACK_NEWTRO};
+  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
   opacity: 0.6;
 `;
 

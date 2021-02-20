@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { GiSpeaker, GiSpeakerOff, IoIosArrowDown } from 'react-icons/all';
-import { palette, zIndex } from '@S/index';
 
 export const StyledPromoteVideo = styled.div`
   width: 100%;
@@ -10,13 +9,13 @@ export const StyledPromoteVideo = styled.div`
 const ResponsiveIconStyleWithColor = css`
   width: 4rem;
   height: 4rem;
-  color: ${palette.WHITE_NEWTRO};
+  color: ${({ theme }) => theme.palette.WHITE_NEWTRO};
 `;
 
 const BottomPosition = css`
   position: absolute;
   bottom: 0;
-  z-index: ${zIndex.base};
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
 const PreventDrag = css`
@@ -31,7 +30,7 @@ export const CenterLabel = styled.p`
   text-align: center;
   font-weight: lighter;
   
-  color: ${palette.WHITE_NEWTRO};
+  color: ${({ theme }) => theme.palette.WHITE_NEWTRO};
   font-size: 2.5rem;
   opacity: 0.8;
 `;
@@ -67,5 +66,5 @@ export const ArrowDownButton = styled.div`
   cursor: pointer;
   
   font-size: 1rem;
-  color: ${palette.WHITE_NEWTRO};
+  color: ${({ theme }) => theme.palette.WHITE_NEWTRO};
 `;
