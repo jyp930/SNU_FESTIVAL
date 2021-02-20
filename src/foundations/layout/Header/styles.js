@@ -80,7 +80,7 @@ export const OpenedMenu = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: ${({ theme }) => theme.windowHeight}px;
   background-color: ${({ theme }) => theme.palette.GRAY_NEWTRO};
   opacity: 0.9;
 `;

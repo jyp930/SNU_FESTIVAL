@@ -24,7 +24,9 @@ function App() {
   const [windowHeight, setWindowHeight] = useState(0);
   const themeWithWindowHeight = useMemo(() => ({ ...theme, windowHeight }), [windowHeight]);
   const onResize = () => {
-    setWindowHeight(window.innerHeight);
+    // TODO: 기획에 따라 height 정책 변경
+    const documentClientHeight = document.documentElement.clientHeight;
+    setWindowHeight(documentClientHeight > 768 ? documentClientHeight : window.innerHeight);
   };
   useEffect(() => {
     // TODO: throttle

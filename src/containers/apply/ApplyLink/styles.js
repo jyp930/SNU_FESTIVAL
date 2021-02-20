@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 export const StyledApplyLink = styled.div`
   width: 100%;
-  height: 35vh;
+  height: ${({ theme }) => theme.windowHeight * (35 / 100)}px;
   
   display: flex;
   flex-direction: column;

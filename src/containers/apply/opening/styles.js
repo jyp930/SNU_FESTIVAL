@@ -4,10 +4,10 @@ import media from 'styled-media-query';
 export const StyledMain = styled.div`
   position: relative;
   width: 100%;
-  height: 65vh;
+  height: ${({ theme }) => theme.windowHeight * (65 / 100)}px;
   
   ${media.lessThan('medium')`
-    height: 100vh;
+    height: ${({ theme }) => theme.windowHeight}px;
   `};
 `;
 

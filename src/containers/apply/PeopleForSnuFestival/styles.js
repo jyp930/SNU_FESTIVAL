@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 export const StyledPeopleForSnuFestival = styled.div`
   width: 100%;
-  height: 55vh;
+  height: ${({ theme }) => theme.windowHeight * (55 / 100)}px;
   min-height: 500px;
   
   background-color: ${({ theme }) => theme.palette.PINK_PASTEL};
@@ -13,7 +13,7 @@ export const StyledPeopleForSnuFestival = styled.div`
   align-items: center;
   
   ${media.lessThan('medium')`
-    height: 100vh;
+    height: ${({ theme }) => theme.windowHeight}px;
     flex-direction: column;
   `};
 `;

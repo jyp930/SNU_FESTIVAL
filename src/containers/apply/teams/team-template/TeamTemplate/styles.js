@@ -4,7 +4,7 @@ import media from 'styled-media-query';
 export const StyledTeamTemplate = styled.div`
   position: relative;
   width: calc(100% / 4);
-  height: 45vh;
+  height: ${({ theme }) => theme.windowHeight * (45 / 100)}px;
   
   display: flex;
   justify-content: center;
@@ -15,12 +15,12 @@ export const StyledTeamTemplate = styled.div`
 
   ${media.lessThan('large')`
     width: calc(100% / 2);
-    height: 50vh;
+    height: ${({ theme }) => theme.windowHeight * (50 / 100)}px;
   `};
   
   ${media.lessThan('medium')`
     width: 100%;
-    height: 50vh;
+    height: ${({ theme }) => theme.windowHeight * (50 / 100)}px;
   `};
 `;
 
@@ -44,7 +44,7 @@ export const Core = styled.div`
 // Modal
 export const ModalContentWrapper = styled.div`
   width: 50vw;
-  height: 70vh;
+  height: ${({ theme }) => theme.windowHeight * (70 / 100)}px;
   overflow-y: scroll;
   
   color: white;

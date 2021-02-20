@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 
 export const SliderContainer = styled.div`
-  height: 60vh;
+  height: ${({ theme }) => theme.windowHeight * (60 / 100)}px;
   
   ${media.lessThan('medium')`
-    height: 50vh;
+    height: ${({ theme }) => theme.windowHeight * (50 / 100)}px;
   `};
 `;
 

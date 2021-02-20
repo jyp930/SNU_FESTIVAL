@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledComment = styled.div`
-  height: 60vh;
+  height: ${({ theme }) => theme.windowHeight * (60 / 100)}px;
   overflow: auto;
   width: 100%;
   display: flex;

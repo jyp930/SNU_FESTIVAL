@@ -17,7 +17,8 @@ addDecorator(s => {
   const [windowHeight, setWindowHeight] = useState(0);
   const themeWithWindowHeight = useMemo(() => ({ ...theme, windowHeight }), [windowHeight]);
   const onResize = () => {
-    setWindowHeight(window.innerHeight);
+    const documentClientHeight = document.documentElement.clientHeight;
+    setWindowHeight(documentClientHeight > 768 ? documentClientHeight : window.innerHeight);
   };
   useEffect(() => {
     window.addEventListener('resize', onResize);

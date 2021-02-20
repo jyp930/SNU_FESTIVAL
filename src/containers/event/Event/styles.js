@@ -17,7 +17,7 @@ export const BallsWrapper = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: ${({ theme }) => theme.windowHeight}px;
 `;
 
 export const ThanksToText = styled.p`

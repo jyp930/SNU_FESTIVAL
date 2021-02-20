@@ -51,7 +51,7 @@ export const Picture = styled.div`
   `};
   
   ${media.lessThan('medium')`
-    height: 40vh;
+    height: ${({ theme }) => theme.windowHeight * (40 / 100)}px;
     margin: 1rem 0;
     min-height: 10rem;
   `};
