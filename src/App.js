@@ -1,6 +1,4 @@
-import React, {
-  Suspense, useEffect, useState, useMemo,
-} from 'react';
+import React, { Suspense, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import routes from '@/routes';
 import GaAnalytics from '@/UserAnalytics';
@@ -12,29 +10,15 @@ import Lottie404 from '@F/lottie/Lottie404';
 import MouseTrail from '@F/animation/MouseTrail';
 import Toast from '@F/Toast';
 import { ThemeProvider } from 'styled-components';
+import useResize from '@U/hooks/useResize';
 
 function App() {
   useEffect(() => {
     console.log('또 열어봤네!!❣ 실례가 안 된다면 콘솔 닫고 방명록 하나만 남겨주십시오😇');
   }, []);
 
-  /**
-   * 브라우저 resize 시 height 설정
-   */
-  const [windowHeight, setWindowHeight] = useState(0);
+  const windowHeight = useResize();
   const themeWithWindowHeight = useMemo(() => ({ ...theme, windowHeight }), [windowHeight]);
-  const onResize = () => {
-    // TODO: 기획에 따라 height 정책 변경
-    const documentClientHeight = document.documentElement.clientHeight;
-    setWindowHeight(documentClientHeight > 768 ? documentClientHeight : window.innerHeight);
-  };
-  useEffect(() => {
-    // TODO: throttle
-    window.addEventListener('resize', onResize);
-    onResize();
-
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
 
   return (
     <ThemeProvider theme={themeWithWindowHeight}>
