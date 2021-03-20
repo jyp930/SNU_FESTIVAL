@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import tunaVideo from '@I/video/tuna.mp4';
 import tunaPoster from '@I/video/poster/tuna.jpg';
 import Video from '@F/Video';
