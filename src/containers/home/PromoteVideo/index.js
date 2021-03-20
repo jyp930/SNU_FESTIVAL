@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import tunaVideo from '@I/video/tuna.mp4';
 import tunaPoster from '@I/video/poster/tuna.jpg';
 import Video from '@F/Video';
@@ -10,7 +9,7 @@ const centerContent = (
   <span>
     2021 SNU FESTIVAL
     <br />
-    봄 축 하 사 모 집 중
+    5월에 새로운 모습으로 찾아뵙겠습니다
   </span>
 );
 
