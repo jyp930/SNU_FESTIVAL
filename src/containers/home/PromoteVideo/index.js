@@ -10,7 +10,7 @@ const centerContent = (
   <span>
     2021 SNU FESTIVAL
     <br />
-    봄 축 하 사 모 집 중
+    5월에 새로운 모습으로 찾아뵙겠습니다
   </span>
 );
 
