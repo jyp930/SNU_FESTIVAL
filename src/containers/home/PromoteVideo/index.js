@@ -9,7 +9,15 @@ const centerContent = (
   <span>
     2021 SNU FESTIVAL
     <br />
-    <p style={{ margin: 0, textAlign: 'center', wordBreak: 'keep-all' }}>5월에 새로운 모습으로 찾아뵙겠습니다</p>
+    <span
+      style={{
+        margin: 0,
+        textAlign: 'center',
+        wordBreak: 'keep-all',
+      }}
+    >
+      5월에 새로운 모습으로 찾아뵙겠습니다
+    </span>
   </span>
 );
 
