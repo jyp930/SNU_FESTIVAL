@@ -23,3 +23,13 @@ export const StampDescriptionBoxWrapper = styled.div`
   width: 100%;
   height: 100px;
 `;
+
+export const WriteBoxWrapper = styled.div`
+  width: 100%;
+  height: ${({ theme }) => (theme.windowHeight - 165) * (1 / 3)}px; // NOTE: header 와 stamp description 의 height 합이 165px
+`;
+
+export const CommentsWrapper = styled.div`
+  width: 100%;
+  height: ${({ theme }) => (theme.windowHeight - 165) * (2 / 3)}px; // NOTE: header 와 stamp description 의 height 합이 165px
+`;

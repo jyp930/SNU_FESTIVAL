@@ -29,7 +29,7 @@ export const HeaderBar = styled.div`
   align-items: center;
 
   width: 100%;
-  max-height: 65px;
+  height: 65px;
   padding: 15px 20px;
   box-sizing: border-box;
 `;
