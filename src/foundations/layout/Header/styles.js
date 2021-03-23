@@ -29,7 +29,7 @@ export const HeaderBar = styled.div`
   align-items: center;
 
   width: 100%;
-  min-height: 65px;
+  max-height: 65px;
   padding: 15px 20px;
   box-sizing: border-box;
 `;
@@ -42,8 +42,8 @@ export const Logo = styled.div`
 `;
 
 export const LogoImage = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 5rem;
+  height: auto;
 `;
 
 export const LogoText = styled.p`

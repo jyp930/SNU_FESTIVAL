@@ -3,7 +3,7 @@ import { StyledContainer } from '@F/Toast/styles';
 import WriteBox from './index';
 
 export default {
-  title: 'containers/guest-book/comment/WriteBox',
+  title: 'containers/guest-book/WriteBox',
 };
 
 export const Default = () => (

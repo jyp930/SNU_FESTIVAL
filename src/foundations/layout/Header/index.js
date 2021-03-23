@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import mascot from '@I/svg/mascot/mascot-basic.svg';
+import MascotInFolder from '@I/svg/mascot/mascot-in-folder.svg';
 import Fade from 'react-reveal/Fade';
 import * as S from './styles';
 import { preloadImage } from '@U/functions/preload';
@@ -39,14 +39,9 @@ function Header() {
   const Logo = (
     <S.Logo onClick={() => changeUrl('/')}>
       <S.LogoImage
-        src={mascot}
+        src={MascotInFolder}
         alt="mascot"
       />
-      <S.LogoText
-        isOpen={menuIsOpen}
-      >
-        SNU FESTIVAL
-      </S.LogoText>
     </S.Logo>
   );
 

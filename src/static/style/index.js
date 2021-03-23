@@ -29,6 +29,10 @@ export const palette = {
   BLUE30_PASTEL: '#50c8ff',
   BLUE40_PASTEL: '#1e96ff',
   BLUE50_PASTEL: '#0a82ff',
+
+  // 21 봄축제 축페이지 전용
+  PURPLE50: '#9397d6',
+  PURPLE80: '#485582',
 };
 
 export const zIndex = {
@@ -50,11 +54,20 @@ export const GlobalStyle = createGlobalStyle`
     ${media.lessThan('medium')`
        font-size: 12px;
     `};
+    
+    // TODO: 웹폰트 제거
+    @font-face {
+      font-family: 'PFStardust';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
   }
 
   body {
     margin: 0;
-    font-family: 'Do Hyeon', 'Montserrat', sans-serif;
+    // TODO: 웹폰트가 아닌 font-face 로 변경
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     
     & ::selection {
       background-color: ${palette.PINK_PASTEL};

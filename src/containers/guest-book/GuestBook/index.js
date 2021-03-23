@@ -2,12 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 import Comment from '@C/guest-book/comment/Comment';
+import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
 
 function GuestBook() {
   return (
     <S.StyledGuestBook>
       <S.Header>방명록</S.Header>
-      <Comment />
+      {/* NOTE: width 조절을 위해 임시로 style 부여 */}
+      <div style={{ width: '100%', height: '100%' }}>
+        <S.StampDescriptionBoxWrapper>
+          <StampDescriptionBox />
+        </S.StampDescriptionBoxWrapper>
+        <Comment />
+      </div>
     </S.StyledGuestBook>
   );
 }

@@ -17,11 +17,11 @@ function App() {
     console.log('또 열어봤네!!❣ 실례가 안 된다면 콘솔 닫고 방명록 하나만 남겨주십시오😇');
   }, []);
 
-  const windowHeight = useResize();
-  const themeWithWindowHeight = useMemo(() => ({ ...theme, windowHeight }), [windowHeight]);
+  const [windowWidth, windowHeight] = useResize();
+  const themeWithWindowSize = useMemo(() => ({ ...theme, windowHeight, windowWidth }), [windowHeight, windowWidth]);
 
   return (
-    <ThemeProvider theme={themeWithWindowHeight}>
+    <ThemeProvider theme={themeWithWindowSize}>
       <GlobalStyle />
       <MouseTrail />
       <Toast />
