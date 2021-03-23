@@ -46,14 +46,6 @@ export const LogoImage = styled.img`
   height: auto;
 `;
 
-export const LogoText = styled.p`
-  margin: 0 0 0 5px;
-  font-size: 1.2rem;
-  
-  transition: color 0.5s;
-  color: ${props => (props.isOpen ? props.theme.palette.BLACK_NEWTRO : props.theme.palette.GRAY_NEWTRO)};
-`;
-
 export const MenuButton = styled.div`
   --width: 35px;
   ${media.lessThan('medium')`
@@ -67,10 +59,13 @@ export const MenuButton = styled.div`
 `;
 
 export const MenuButtonBar = styled.div`
-  width: 100%;
-  height: calc(var(--width) / 7);
-  background-color: ${({ theme }) => theme.palette.GRAY_NEWTRO};
+  width: ${props => props.width};
+  height: 0;
+  box-sizing: border-box;
+  border: solid 1px #ffffff;
+  border-radius: 5px;
   margin: calc(var(--width) / 7) 0;
+  margin-left: auto;
 `;
 
 export const OpenedMenu = styled.div`

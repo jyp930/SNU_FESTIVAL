@@ -2,10 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import MascotInFolder from '@I/svg/mascot/mascot-in-folder.svg';
 import Fade from 'react-reveal/Fade';
-import * as S from './styles';
 import { preloadImage } from '@U/functions/preload';
 import LogoImage from '@I/png/logo.png';
 import ClosingFestival from '@I/jpg/closing-festival.jpg';
+import * as S from './styles';
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -47,9 +47,9 @@ function Header() {
 
   const MenuHamburger = (
     <S.MenuButton onClick={() => setMenuIsOpen(true)}>
-      <S.MenuButtonBar />
-      <S.MenuButtonBar />
-      <S.MenuButtonBar />
+      <S.MenuButtonBar width="100%" />
+      <S.MenuButtonBar width="66%" />
+      <S.MenuButtonBar width="33%" />
     </S.MenuButton>
   );
 
