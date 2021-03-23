@@ -1,15 +1,14 @@
 import React from 'react';
 import { StyledContainer } from '@F/Toast/styles';
-import Comment from './index';
+import { Comment } from './index';
 
 export default {
-  title: 'containers/home/guestbook/comment/Comment',
+  title: 'containers/guest-book/comment/Comment',
 };
 
 const comments = [{
   id: '1111',
   username: 'test',
-  password: 'test',
   content: 'test',
   created_at: { seconds: 1111111111 },
 }];

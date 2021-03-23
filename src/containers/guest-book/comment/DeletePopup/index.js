@@ -23,7 +23,7 @@ function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
   };
 
   const deleteFromFirestore = () => {
-    const docRef = firestore.collection('guestbook').doc(comment.id);
+    const docRef = firestore.collection('guest-book').doc(comment.id);
     return docRef.delete();
   };
 

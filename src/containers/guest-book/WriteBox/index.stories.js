@@ -1,19 +1,19 @@
 import React from 'react';
 import { StyledContainer } from '@F/Toast/styles';
-import Guestbook from './index';
+import WriteBox from './index';
 
 export default {
-  title: 'containers/home/guestbook/Guestbook',
+  title: 'containers/guest-book/comment/WriteBox',
 };
 
 export const Default = () => (
-  <div style={{ width: '100vw', height: '100vh' }}>
+  <div>
     <StyledContainer
       position="top-center"
-      autoClose={3000}
+      autoClose={2000}
       pauseOnHover={false}
-      newestOnTop
+      pauseOnFocusLoss={false}
     />
-    <Guestbook />
+    <WriteBox />
   </div>
 );

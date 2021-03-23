@@ -6,6 +6,7 @@ const Performance = lazy(() => import('@/pages/Performance'));
 const Event = lazy(() => import('@/pages/Event'));
 const Apply = lazy(() => import('@/pages/Apply'));
 const Introduction = lazy(() => import('@/pages/Introduction'));
+const GuestBook = lazy(() => import('@/pages/GuestBook'));
 
 const routes = [
   {
@@ -31,6 +32,10 @@ const routes = [
   {
     path: '/introduction',
     component: Introduction,
+  },
+  {
+    path: '/guestbook',
+    component: GuestBook,
   },
 ];
 export default routes;
