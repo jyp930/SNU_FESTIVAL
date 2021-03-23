@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './styles';
 import Comment from '@C/guest-book/comment/Comment';
 import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
+import * as S from './styles';
 
 function GuestBook() {
   return (

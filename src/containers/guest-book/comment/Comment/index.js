@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import * as S from './styles';
 import mascot1 from '@I/svg/mascot/1.svg';
 import mascot2 from '@I/svg/mascot/2.svg';
 import mascot3 from '@I/svg/mascot/3.svg';
@@ -13,6 +12,7 @@ import mascot13 from '@I/svg/mascot/13.svg';
 import mascot14 from '@I/svg/mascot/14.svg';
 import dayjs from 'dayjs';
 import { firestore } from '@U/initializer/firebase';
+import * as S from './styles';
 
 export function Comment({ comments }) {
   return (

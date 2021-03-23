@@ -17,7 +17,7 @@ module.exports = {
         "jsx-a11y/media-has-caption": 0,
         "react/button-has-type": 0,
         "no-use-before-define": 0,
-        "import/order": 0,
+        "import/order": 2,
         "react/jsx-props-no-spreading": 0,
         "react/no-array-index-key": 0,
         "comma-dangle": 1,

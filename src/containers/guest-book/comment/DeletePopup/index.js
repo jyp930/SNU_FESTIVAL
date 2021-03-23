@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
-import * as S from './styles';
 import useInput from '@U/hooks/useInput';
 import PopupModal from '@F/PopupModal';
 import { firestore } from '@U/initializer/firebase';
 import { sha512 } from 'js-sha512';
+import * as S from './styles';
 
 function DeletePopup({ comment, isModalOpen, setIsModalOpen }) {
   const password = useInput('');

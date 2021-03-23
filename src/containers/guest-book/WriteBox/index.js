@@ -1,10 +1,10 @@
 import React from 'react';
-import * as S from './styles';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import { firestore } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
+import * as S from './styles';
 
 function WriteBox() {
   const username = useInput('');
