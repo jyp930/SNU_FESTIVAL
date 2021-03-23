@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Comments from '@C/guest-book/comment/Comment';
 import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
+import WriteBox from '@C/guest-book/WriteBox';
 import * as S from './styles';
 
 function GuestBook() {
@@ -13,7 +14,9 @@ function GuestBook() {
         <S.StampDescriptionBoxWrapper>
           <StampDescriptionBox />
         </S.StampDescriptionBoxWrapper>
-        <S.WriteBoxWrapper />
+        <S.WriteBoxWrapper>
+          <WriteBox />
+        </S.WriteBoxWrapper>
         <S.CommentsWrapper>
           <Comments />
         </S.CommentsWrapper>

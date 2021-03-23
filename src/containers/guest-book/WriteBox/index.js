@@ -7,14 +7,16 @@ import useInput from '@U/hooks/useInput';
 import * as S from './styles';
 
 function WriteBox() {
-  const username = useInput('');
+  const username = useInput('', nameConstraint);
   const content = useInput('', contentConstraint);
 
   const addToFirestore = () => {
     const collectionRef = firestore.collection('guest-book');
     return collectionRef.add({
+      author: 'jyp930',
       username: username.value.trim(),
       content: content.value.trim(),
+      likes: [],
       created_at: firebase.firestore.Timestamp.now(),
     });
   };
@@ -38,10 +40,8 @@ function WriteBox() {
 
   return (
     <S.StyledWriteBox>
-      <S.IdPassword>
-        <S.InputBox placeholder="익명" maxLength="20" {...username} />
-      </S.IdPassword>
-      <S.TextArea placeholder="내용" maxLength="200" {...content} />
+      <S.InputBox placeholder="익명" {...username} />
+      <S.TextArea {...content} />
       <S.Submit onClick={Submit}>등록</S.Submit>
     </S.StyledWriteBox>
   );
@@ -52,6 +52,11 @@ WriteBox.propTypes = {
 
 };
 
+function nameConstraint(value) {
+  const regex = /^[ㄱ-ㅎ가-힣a-zA-Z0-9]*$/;
+  return value.length <= 20 && regex.test(value);
+}
+
 function contentConstraint(value) {
-  return value.split('\n').length < 6;
+  return value.length <= 200 && value.split('\n').length <= 5;
 }

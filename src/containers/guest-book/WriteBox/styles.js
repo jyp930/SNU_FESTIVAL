@@ -1,66 +1,70 @@
 import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
+import { rgba } from 'polished';
 
 export const StyledWriteBox = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
-  box-sizing: border-box;
-  padding: 0.5rem;
   flex-direction: column;
 `;
 
-export const IdPassword = styled.div`
-  display: flex;
-`;
-
 const InputStyle = css`
-  margin: 5px;
-  background-color: transparent;
+  margin: 5px 0;
   border: 0;
-  border-bottom: 1px solid #757575;
   border-radius: 0;
   outline: 0;
-  transition: border .15s ease-in-out, padding .15s ease-in-out;
-  &:focus{
-    padding: 2px 7px 0;
-    border-bottom: 3px solid lightpink;
-  }
+
+  color: ${({ theme }) => theme.palette.PURPLE50};
+  font-size: 1rem;
 `;
 
 export const InputBox = styled.input`
   ${InputStyle};
+  min-height: 1.8rem;
+  box-sizing: border-box;
 
-  width: 10rem;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.PURPLE50};
+  transition: border .15s ease-in-out, padding .15s ease-in-out;
+  &:focus{
+    border-bottom: 2px solid ${({ theme }) => theme.palette.PURPLE50};
+  }
+  
+  background-color: transparent;
+  font-weight: bold;
+  width: 4rem;
   padding: 2px 7px;
   
-  ${media.lessThan('medium')`
-    width: 45%;
-  `};
+  &::placeholder {
+    color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.6)};
+  }
 `;
 
 export const TextArea = styled.textarea`
   ${InputStyle};
 
   resize: none;
-  height: 5rem;
-  padding: 2px 7px 0;
+  flex: 1;
+  background-color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.15)};
 `;
 
 export const Submit = styled.button`
-  width: 5rem;
-  height: 3rem;
-  margin: 0 5px;
-  border: 2px solid lightpink;
-  border-radius: 8px;
+  align-self: flex-end;
+  width: 4rem;
+  height: 2rem;
+  margin: 5px 0;
+
+  border: 1px solid transparent;
+  border-radius: 18px;
   outline: 0;
-  background-color: white;
+ 
   cursor: pointer;
   font-size: 1rem;
-  color: lightpink;
-  align-self: flex-end;
-  transition: .15s;
+
+  color: ${({ theme }) => theme.palette.GRAY80};
+  background-color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.45)};
+  transition: color, background-color, .15s;
   &:hover{
-    color: white;
-    background-color: lightpink;
+    color: ${({ theme }) => theme.palette.PURPLE50};
+    background-color: ${({ theme }) => rgba(theme.palette.GRAY80, 0.45)};
   }
 `;

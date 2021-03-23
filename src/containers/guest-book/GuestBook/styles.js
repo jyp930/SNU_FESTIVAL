@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledGuestBook = styled.div`
   height: ${({ theme }) => theme.windowHeight}px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,9 +15,11 @@ export const Header = styled.div`
   
   width: 100%;
   min-height: 65px;
-  color: white;
   background-color: ${({ theme }) => theme.palette.PURPLE50};
+  
+  color: white;
   font-size: 1.5rem;
+  font-weight: bold;
 `;
 
 export const StampDescriptionBoxWrapper = styled.div`
@@ -26,10 +29,17 @@ export const StampDescriptionBoxWrapper = styled.div`
 
 export const WriteBoxWrapper = styled.div`
   width: 100%;
-  height: ${({ theme }) => (theme.windowHeight - 165) * (1 / 3)}px; // NOTE: header 와 stamp description 의 height 합이 165px
+  height: ${({ theme }) => (theme.windowHeight - 170) * (1 / 3)}px; // NOTE: header 와 stamp description 의 height 합이 165px
+  min-height: 150px;
+  padding: 1rem;
+  box-sizing: border-box;
 `;
 
 export const CommentsWrapper = styled.div`
   width: 100%;
-  height: ${({ theme }) => (theme.windowHeight - 165) * (2 / 3)}px; // NOTE: header 와 stamp description 의 height 합이 165px
+  height: ${({ theme }) => (
+    theme.windowHeight > 600
+      ? (theme.windowHeight - 170) * (2 / 3) // NOTE: header 와 stamp description 의 height 합이 165px
+      : theme.windowHeight - 320 // NOTE: WriteBox 의 min-height 가 150px
+  )}px;
 `;

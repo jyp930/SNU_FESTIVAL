@@ -43,13 +43,13 @@ export const MascotImage = styled.img`
 `;
 
 export const Title = styled.p`
-  margin: 5px 0;
+  margin: 0 0 5px 0;
   color: ${({ theme }) => theme.palette.PURPLE50};
   font-size: 1.1rem;
 `;
 
 export const Description = styled.div`
   margin: 0;
-  color: #707070;
+  color: ${({ theme }) => theme.palette.GRAY80};
   font-size: 0.8rem;
 `;
