@@ -38,7 +38,7 @@ export const WriteBoxWrapper = styled.div`
 export const CommentsWrapper = styled.div`
   width: 100%;
   height: ${({ theme }) => (
-    theme.windowHeight > 600
+    theme.windowHeight > 620
       ? (theme.windowHeight - 170) * (2 / 3) // NOTE: header 와 stamp description 의 height 합이 165px
       : theme.windowHeight - 320 // NOTE: WriteBox 의 min-height 가 150px
   )}px;
