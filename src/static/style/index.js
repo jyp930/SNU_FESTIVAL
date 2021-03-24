@@ -55,14 +55,6 @@ export const GlobalStyle = createGlobalStyle`
     ${media.lessThan('medium')`
        font-size: 12px;
     `};
-    
-    // TODO: 웹폰트 제거
-    @font-face {
-      font-family: 'PFStardust';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/PFStardust.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
   }
 
   body {

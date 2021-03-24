@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
+import '@/static/font/font.css';
 
 export const StyledStampDescriptionBox = styled.div`
   position: relative;
