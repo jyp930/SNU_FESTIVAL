@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Comments from '@C/guest-book/comment/Comment';
+import Comments from '@C/guest-book/Comment';
 import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
 import WriteBox from '@C/guest-book/WriteBox';
 import * as S from './styles';

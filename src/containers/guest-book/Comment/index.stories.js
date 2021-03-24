@@ -3,7 +3,7 @@ import { StyledContainer } from '@F/Toast/styles';
 import { Comment } from './index';
 
 export default {
-  title: 'containers/guest-book/comment/Comment',
+  title: 'containers/guest-book/Comment',
 };
 
 const comments = [{
