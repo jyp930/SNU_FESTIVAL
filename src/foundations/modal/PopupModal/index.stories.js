@@ -2,7 +2,7 @@ import React from 'react';
 import PopupModal from './index';
 
 export default {
-  title: 'foundations/PopupModal',
+  title: 'foundations/modal/PopupModal',
 };
 
 export const Default = () => (

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Title from '@C/activity/details/detail-template/Title';
 import PictureGrid from '@C/activity/details/detail-template/PictureGrid';
 import CustomPaging from '@F/react-slick/CustomPaging';
-import PopupModal from '@F/PopupModal';
+import PopupModal from '@F/modal/PopupModal';
 import Fade from 'react-reveal/Fade';
 import * as S from './styles';
 

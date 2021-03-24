@@ -1,10 +1,12 @@
 import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import * as S from './styles';
 import Fade from 'react-reveal/Fade';
-import PopupModal from '@F/PopupModal';
+import PopupModal from '@F/modal/PopupModal';
+import * as S from './styles';
 
-function TeamTemplate({ name, core, backgroundColor, peopleTexts, workTexts, wordTexts }) {
+function TeamTemplate({
+  name, core, backgroundColor, peopleTexts, workTexts, wordTexts,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = useCallback(() => setIsModalOpen(open => !open), []);
 
