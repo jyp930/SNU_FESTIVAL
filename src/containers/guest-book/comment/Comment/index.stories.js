@@ -11,6 +11,7 @@ const comments = [{
   username: 'test',
   content: 'test',
   created_at: { seconds: 1111111111 },
+  likes: [],
 }];
 
 export const Default = () => (

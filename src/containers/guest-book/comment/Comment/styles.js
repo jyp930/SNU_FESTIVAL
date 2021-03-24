@@ -1,60 +1,117 @@
 import styled from 'styled-components';
+import { rgba } from 'polished';
 
 export const StyledComment = styled.div`
   overflow: auto;
+
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  display: flex;
+
   padding: 0.5rem;
-  flex-direction: column;
   box-sizing: border-box;
 `;
 
 export const CommentThread = styled.div`
-  margin-bottom: 0.5rem;
+  border-bottom: 1px solid ${({ theme }) => rgba(theme.palette.GRAY80, 0.2)};
+  padding: 0.4rem;
+  box-sizing: border-box;
+  
+  &:first-child {
+    border-top: 1px solid ${({ theme }) => rgba(theme.palette.GRAY80, 0.2)};
+  }
 `;
 
-export const MainBox = styled.div`
+export const FirstRow = styled.div`
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+`;
+
+export const Box = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const ProfileImage = styled.img`
-  width: 2rem;
-  height: 2rem;
-  margin: 5px;
-  align-self: flex-start;
-`;
-
-export const ContentsBox = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const TaleBox = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
-  opacity: 0.6;
-  
-  font-size: 0.7rem;
-  padding-top: 0.7rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 5px;
 `;
 
 export const Id = styled.div`
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
-  opacity: 0.6;
-`;
-
-export const Content = styled.div`
+  color: ${({ theme }) => theme.palette.GRAY80};
   font-size: 1rem;
-  font-weight: lighter;
-`;
-
-export const Time = styled.div`
-  margin-right: 1rem;
+  font-weight: bold;
 `;
 
 export const Delete = styled.div`
+  margin-right: 0.6rem;
+  color: ${({ theme }) => theme.palette.GRAY80};
+  font-size: 0.6rem;
   cursor: pointer;
+`;
+
+export const LikeButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+`;
+
+export const ContentRow = styled.div`
+
+`;
+
+export const BestLabel = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 1.2rem;
+  margin-right: 5px;
+
+  border-radius: 1rem;
+  color: white;
+  background-color: ${({ theme }) => theme.palette.PURPLE50};
+  font-size: 0.8rem;
+`;
+
+export const Content = styled.span`
+  display: inline;
+  color: ${({ theme }) => theme.palette.GRAY80};
+  font-size: 1rem;
+  line-height: 1.5;
+`;
+
+export const LastRow = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 0.6rem;
+  color: ${({ theme }) => theme.palette.GRAY80};
+  font-size: 0.6rem;
+`;
+
+export const Time = styled.div`
+  margin-right: 0.5rem;
+`;
+
+export const Likes = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.palette.PURPLE50};
+  font-size: 0.9rem;
+  transform: scale(0.8);
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
 `;

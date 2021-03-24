@@ -58,7 +58,7 @@ export const Submit = styled.button`
   outline: 0;
  
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8rem;
 
   color: ${({ theme }) => theme.palette.GRAY80};
   background-color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.45)};
