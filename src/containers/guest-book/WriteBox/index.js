@@ -6,6 +6,7 @@ import { firestore } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
 import { shallowEqual, useSelector } from 'react-redux';
 import PopupModal from '@F/modal/PopupModal';
+import LoginGuide from '@F/modal/content/LoginGuide';
 import * as S from './styles';
 
 function WriteBox({ user }) {
@@ -44,22 +45,21 @@ function WriteBox({ user }) {
     }
   };
 
-  const checkAuthority = useCallback(() => {
+  const checkAuthority = useCallback((e) => {
     if (!isAuthorized) {
+      e.preventDefault();
       setIsModalOpen(true);
     }
   }, [isAuthorized]);
 
   return (
     <S.StyledWriteBox>
-      <S.InputBox placeholder="익명" {...username} onClick={checkAuthority} />
-      <S.TextArea {...content} onClick={checkAuthority} />
-      <S.Submit onClick={isAuthorized ? Submit : checkAuthority}>
-        등록
-      </S.Submit>
+      <S.InputBox placeholder="익명" {...username} onMouseDown={checkAuthority} />
+      <S.TextArea {...content} onMouseDown={checkAuthority} />
+      <S.Submit onClick={isAuthorized ? Submit : checkAuthority}>등록</S.Submit>
 
       <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-        <div>로그인이 필요합니다</div>
+        <LoginGuide setIsModalOpen={setIsModalOpen} />
       </PopupModal>
     </S.StyledWriteBox>
   );
