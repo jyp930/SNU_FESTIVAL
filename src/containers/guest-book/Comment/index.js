@@ -14,9 +14,10 @@ import dayjs from 'dayjs';
 import { firestore } from '@U/initializer/firebase';
 import FilledHeart from '@I/svg/icon/filled-heart.svg';
 import EmptyHeart from '@I/svg/icon/empty-heart.svg';
+import { shallowEqual, useSelector } from 'react-redux';
 import * as S from './styles';
 
-export function Comment({ comments }) {
+export function Comment({ user, comments }) {
   return (
     <S.StyledComment>
       {comments.map(comment => (
@@ -56,6 +57,10 @@ export function Comment({ comments }) {
 }
 
 Comment.propTypes = {
+  user: PropTypes.shape({
+    uid: PropTypes.string,
+    isLoading: PropTypes.bool,
+  }).isRequired,
   comments: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     username: PropTypes.string,
@@ -72,8 +77,14 @@ const mascots = [
 ];
 
 function CommentParent() {
-  const [comments, setComments] = useState([]);
+  // user
+  const user = useSelector(state => ({
+    uid: state.user.uid,
+    isLoading: state.user.isLoading,
+  }), shallowEqual);
 
+  // comments
+  const [comments, setComments] = useState([]);
   const subscribeComments = useCallback(() => firestore.collection('guest-book')
     .orderBy('created_at', 'desc')
     .limit(100)
@@ -86,12 +97,11 @@ function CommentParent() {
         })));
       setComments(firestoreComments);
     }), []);
-
   useEffect(() => {
     const unsubscribe = subscribeComments();
     return () => unsubscribe();
   }, [subscribeComments]);
 
-  return <Comment comments={comments} />;
+  return <Comment comments={comments} user={user} />;
 }
 export default CommentParent;

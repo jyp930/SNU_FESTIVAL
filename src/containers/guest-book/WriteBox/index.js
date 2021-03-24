@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import { firestore } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
+import { shallowEqual, useSelector } from 'react-redux';
+import PopupModal from '@F/modal/PopupModal';
 import * as S from './styles';
 
-function WriteBox() {
+function WriteBox({ user }) {
+  const isAuthorized = useMemo(() => !!(user.uid && !user.isLoading), [user]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const username = useInput('', nameConstraint);
   const content = useInput('', contentConstraint);
 
   const addToFirestore = () => {
+    // TODO: firestore 규칙으로 권한 체크
     const collectionRef = firestore.collection('guest-book');
     return collectionRef.add({
-      author: 'jyp930',
+      author: user.uid,
       username: username.value.trim(),
       content: content.value.trim(),
       likes: [],
@@ -38,18 +44,32 @@ function WriteBox() {
     }
   };
 
+  const checkAuthority = useCallback(() => {
+    if (!isAuthorized) {
+      setIsModalOpen(true);
+    }
+  }, [isAuthorized]);
+
   return (
     <S.StyledWriteBox>
-      <S.InputBox placeholder="익명" {...username} />
-      <S.TextArea {...content} />
-      <S.Submit onClick={Submit}>등록</S.Submit>
+      <S.InputBox placeholder="익명" {...username} onClick={checkAuthority} />
+      <S.TextArea {...content} onClick={checkAuthority} />
+      <S.Submit onClick={isAuthorized ? Submit : checkAuthority}>
+        등록
+      </S.Submit>
+
+      <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
+        <div>로그인이 필요합니다</div>
+      </PopupModal>
     </S.StyledWriteBox>
   );
 }
-export default WriteBox;
 
 WriteBox.propTypes = {
-
+  user: PropTypes.shape({
+    uid: PropTypes.string,
+    isLoading: PropTypes.bool,
+  }).isRequired,
 };
 
 function nameConstraint(value) {
@@ -60,3 +80,13 @@ function nameConstraint(value) {
 function contentConstraint(value) {
   return value.length <= 200 && value.split('\n').length <= 5;
 }
+
+function WriteBoxParent() {
+  const user = useSelector(state => ({
+    uid: state.user.uid,
+    isLoading: state.user.isLoading,
+  }), shallowEqual);
+
+  return <WriteBox user={user} />;
+}
+export default WriteBoxParent;

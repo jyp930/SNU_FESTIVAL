@@ -8,7 +8,9 @@ function PopupModal({ isModalOpen, setIsModalOpen, children }) {
     <Popup
       modal
       open={isModalOpen}
+      closeOnDocumentClick={false}
       onClose={() => setIsModalOpen(false)}
+      overlayStyle={{ opacity: 0.8 }}
       contentStyle={{
         border: 'none', display: 'flex', justifyContent: 'center', backgroundColor: 'transparent',
       }}
