@@ -45,7 +45,7 @@ export function Comment({ comments }) {
           <S.LastRow>
             <S.Time>{dayjs.unix(comment.created_at.seconds).format('YYYY.MM.DD HH:mm')}</S.Time>
             <S.Likes>
-              <S.Image src={EmptyHeart} alt="likes" style={{ marginRight: 2 }} />
+              <S.Image src={EmptyHeart} alt="likes" style={{ marginRight: 3 }} />
               <div>{comment.likes.length}</div>
             </S.Likes>
           </S.LastRow>
