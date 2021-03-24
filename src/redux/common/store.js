@@ -29,8 +29,8 @@ const persistedReducer = persistReducer(rootPersistConfig, reducer);
  * saga 적용
  */
 const sagaMiddleware = createSagaMiddleware();
-// TODO: production 환경에서 redux_devtool 삭제
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = (
+  (process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose);
 const store = createStore(
   persistedReducer,
   composeEnhancers(applyMiddleware(sagaMiddleware)),
