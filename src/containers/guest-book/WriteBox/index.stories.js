@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledContainer } from '@F/Toast/styles';
-import WriteBox from './index';
+import { WriteBox } from './index';
 
 export default {
   title: 'containers/guest-book/WriteBox',
@@ -14,6 +14,6 @@ export const Default = () => (
       pauseOnHover={false}
       pauseOnFocusLoss={false}
     />
-    <WriteBox />
+    <WriteBox user={{ uid: 'test', isLoading: false }} />
   </div>
 );

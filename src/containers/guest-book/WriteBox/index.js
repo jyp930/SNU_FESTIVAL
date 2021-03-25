@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
-import { firestore } from '@U/initializer/firebase';
+import { guestBookCollectionRef } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
 import { shallowEqual, useSelector } from 'react-redux';
 import PopupModal from '@F/modal/PopupModal';
@@ -10,24 +10,20 @@ import SignInGuide from '@F/modal/content/SignInGuide';
 import useAuth from '@U/hooks/useAuth';
 import * as S from './styles';
 
-function WriteBox({ user }) {
-  useAuth(); // TODO: HOC 이 더 어울릴 듯
+export function WriteBox({ user }) {
   const isAuthorized = useMemo(() => !!(user.uid && !user.isLoading), [user]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const username = useInput('', nameConstraint);
   const content = useInput('', contentConstraint);
 
-  const addToFirestore = () => {
-    const collectionRef = firestore.collection('guest-book');
-    return collectionRef.add({
-      author: user.uid,
-      username: username.value.trim(),
-      content: content.value.trim(),
-      likes: [],
-      created_at: firebase.firestore.Timestamp.now(),
-    });
-  };
+  const addToFirestore = () => guestBookCollectionRef.add({
+    author: user.uid,
+    username: username.value.trim(),
+    content: content.value.trim(),
+    likes: [],
+    created_at: firebase.firestore.Timestamp.now(),
+  });
 
   const toastId = React.useRef(0);
   const Submit = () => {
@@ -83,6 +79,8 @@ function contentConstraint(value) {
 }
 
 function WriteBoxParent() {
+  useAuth(); // NOTE: 유저가 바뀔 때를 useEffect 로 감지하기 위함. HOC 이 더 어울릴 듯.
+
   const user = useSelector(state => ({
     uid: state.user.uid,
     isLoading: state.user.isLoading,

@@ -22,6 +22,6 @@ export const Default = () => (
       pauseOnHover={false}
       pauseOnFocusLoss={false}
     />
-    <Comment comments={comments} />
+    <Comment comments={comments} user={{ uid: 'test', isLoading: false }} />
   </div>
 );

@@ -11,47 +11,57 @@ import mascot12 from '@I/svg/mascot/12.svg';
 import mascot13 from '@I/svg/mascot/13.svg';
 import mascot14 from '@I/svg/mascot/14.svg';
 import dayjs from 'dayjs';
-import { firestore } from '@U/initializer/firebase';
+import { guestBookCollectionRef } from '@U/initializer/firebase';
 import FilledHeart from '@I/svg/icon/filled-heart.svg';
 import EmptyHeart from '@I/svg/icon/empty-heart.svg';
 import { shallowEqual, useSelector } from 'react-redux';
 import * as S from './styles';
 
 export function Comment({ user, comments }) {
+  const deleteComment = useCallback((commentId) => {
+    guestBookCollectionRef.doc(commentId).delete();
+  }, []);
+
   return (
     <S.StyledComment>
-      {comments.map(comment => (
-        <S.CommentThread key={comment.id}>
-          <S.FirstRow>
-            <S.Box>
-              <S.ProfileImage src={mascots[comment.created_at.seconds % mascots.length]} />
-              <S.Id>{comment.username}</S.Id>
-            </S.Box>
-            <S.Box>
-              <S.Delete>삭제</S.Delete>
-              <S.LikeButton>
-                <S.Image src={FilledHeart} alt="like" />
-              </S.LikeButton>
-            </S.Box>
-          </S.FirstRow>
-          <S.ContentRow>
-            <S.BestLabel>BEST</S.BestLabel>
-            {comment.content.split('\n').map((line, index) => (
-              <S.Content key={index}>
-                {line}
-                <br />
-              </S.Content>
-            ))}
-          </S.ContentRow>
-          <S.LastRow>
-            <S.Time>{dayjs.unix(comment.created_at.seconds).format('YYYY.MM.DD HH:mm')}</S.Time>
-            <S.Likes>
-              <S.Image src={EmptyHeart} alt="likes" style={{ marginRight: 3 }} />
-              <div>{comment.likes.length}</div>
-            </S.Likes>
-          </S.LastRow>
-        </S.CommentThread>
-      ))}
+      {comments.map(comment => {
+        const isMine = user.uid === comment.author;
+
+        return (
+          <S.CommentThread key={comment.id}>
+            <S.FirstRow>
+              <S.Box>
+                <S.ProfileImage src={mascots[comment.created_at.seconds % mascots.length]} />
+                <S.Id>{comment.username}</S.Id>
+              </S.Box>
+              <S.Box>
+                { isMine && (
+                  <S.Delete onClick={() => deleteComment(comment.id)}>삭제</S.Delete>
+                )}
+                <S.LikeButton>
+                  <S.Image src={FilledHeart} alt="like" />
+                </S.LikeButton>
+              </S.Box>
+            </S.FirstRow>
+            <S.ContentRow>
+              <S.BestLabel>BEST</S.BestLabel>
+              {comment.content.split('\n').map((line, index) => (
+                <S.Content key={index}>
+                  {line}
+                  <br />
+                </S.Content>
+              ))}
+            </S.ContentRow>
+            <S.LastRow>
+              <S.Time>{dayjs.unix(comment.created_at.seconds).format('YYYY.MM.DD HH:mm')}</S.Time>
+              <S.Likes>
+                <S.Image src={EmptyHeart} alt="likes" style={{ marginRight: 3 }} />
+                <div>{comment.likes.length}</div>
+              </S.Likes>
+            </S.LastRow>
+          </S.CommentThread>
+        );
+      })}
     </S.StyledComment>
   );
 }
@@ -85,9 +95,9 @@ function CommentParent() {
 
   // comments
   const [comments, setComments] = useState([]);
-  const subscribeComments = useCallback(() => firestore.collection('guest-book')
+  const subscribeComments = useCallback(() => guestBookCollectionRef
     .orderBy('created_at', 'desc')
-    .limit(100)
+    .limit(1000)
     .onSnapshot(docs => {
       const firestoreComments = [];
       docs.forEach(doc => (

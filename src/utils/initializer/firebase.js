@@ -8,4 +8,6 @@ if (FIREBASE_CONFIG) {
 }
 
 export const firestore = firebase.firestore();
+export const guestBookCollectionRef = firestore.collection('guest-book');
+
 export const auth = firebase.auth();
