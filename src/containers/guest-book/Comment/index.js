@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+  useCallback, useEffect, useState, useMemo,
+} from 'react';
 import PropTypes from 'prop-types';
 import mascot1 from '@I/svg/mascot/1.svg';
 import mascot2 from '@I/svg/mascot/2.svg';
@@ -59,7 +61,7 @@ export function Comment({ user, comments }) {
               </S.Box>
             </S.FirstRow>
             <S.ContentRow>
-              <S.BestLabel>BEST</S.BestLabel>
+              {comment.isBest && <S.BestLabel>BEST</S.BestLabel>}
               {comment.content.split('\n').map((line, index) => (
                 <S.Content key={index}>
                   {line}
@@ -110,6 +112,22 @@ function CommentParent() {
 
   // comments
   const [comments, setComments] = useState([]);
+  const [bestComments, setBestComments] = useState([]);
+  useEffect(() => {
+    const newBestComments = comments
+      .filter(comment => comment.likes.length > 0)
+      .sort((a, b) => b.likes.length - a.likes.length)
+      .slice(0, 3);
+    newBestComments.forEach(comment => {
+      comment.isBest = true;
+    });
+    setBestComments(newBestComments);
+  }, [comments]);
+  const normalComments = useMemo(() => {
+    const bestCommentIds = bestComments.map(comment => comment.id);
+    return comments.filter(comment => !bestCommentIds.includes(comment.id));
+  }, [comments, bestComments]);
+
   const subscribeComments = useCallback(() => guestBookCollectionRef
     .orderBy('created_at', 'desc')
     .limit(1000)
@@ -127,6 +145,6 @@ function CommentParent() {
     return () => unsubscribe();
   }, [subscribeComments]);
 
-  return <Comment comments={comments} user={user} />;
+  return <Comment comments={[...bestComments, ...normalComments]} user={user} />;
 }
 export default CommentParent;
