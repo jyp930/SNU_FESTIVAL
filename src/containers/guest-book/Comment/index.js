@@ -12,20 +12,35 @@ import mascot13 from '@I/svg/mascot/13.svg';
 import mascot14 from '@I/svg/mascot/14.svg';
 import dayjs from 'dayjs';
 import { guestBookCollectionRef } from '@U/initializer/firebase';
+import firebase from 'firebase/app';
 import FilledHeart from '@I/svg/icon/filled-heart.svg';
 import EmptyHeart from '@I/svg/icon/empty-heart.svg';
 import { shallowEqual, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import * as S from './styles';
 
 export function Comment({ user, comments }) {
   const deleteComment = useCallback((commentId) => {
-    guestBookCollectionRef.doc(commentId).delete();
+    guestBookCollectionRef.doc(commentId)
+      .delete()
+      .then(() => toast('삭제되었습니다.'));
   }, []);
+
+  const toggleLikeForComment = useCallback((commentId, isLiked) => {
+    guestBookCollectionRef.doc(commentId)
+      .update({
+        likes: isLiked
+          ? firebase.firestore.FieldValue.arrayRemove(user.uid)
+          : firebase.firestore.FieldValue.arrayUnion(user.uid),
+      })
+      .then(() => toast(isLiked ? '좋아요를 취소하였습니다.' : '이 댓글을 좋아합니다.'));
+  }, [user.uid]);
 
   return (
     <S.StyledComment>
       {comments.map(comment => {
         const isMine = user.uid === comment.author;
+        const isLiked = comment.likes.includes(user.uid);
 
         return (
           <S.CommentThread key={comment.id}>
@@ -38,8 +53,8 @@ export function Comment({ user, comments }) {
                 { isMine && (
                   <S.Delete onClick={() => deleteComment(comment.id)}>삭제</S.Delete>
                 )}
-                <S.LikeButton>
-                  <S.Image src={FilledHeart} alt="like" />
+                <S.LikeButton onClick={() => toggleLikeForComment(comment.id, isLiked)}>
+                  <S.Image src={isLiked ? FilledHeart : EmptyHeart} alt="like" />
                 </S.LikeButton>
               </S.Box>
             </S.FirstRow>

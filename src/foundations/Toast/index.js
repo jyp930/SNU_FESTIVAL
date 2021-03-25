@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import * as S from './styles';
 
 function Toast() {
@@ -8,7 +7,7 @@ function Toast() {
       <S.StyledContainer
         position="top-center"
         hideProgressBar
-        autoClose={3000}
+        autoClose={1500}
         pauseOnHover={false}
         newestOnTop
       />

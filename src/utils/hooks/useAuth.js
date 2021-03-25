@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { auth } from '@U/initializer/firebase';
 import { actions } from '@/redux/user/state';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 const useAuth = () => {
   const dispatch = useDispatch();

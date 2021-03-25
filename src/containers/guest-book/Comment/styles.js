@@ -65,7 +65,8 @@ export const LikeButton = styled.div`
 `;
 
 export const ContentRow = styled.div`
-
+  word-break: break-all;
+  word-wrap: break-word;
 `;
 
 export const BestLabel = styled.div`
@@ -84,7 +85,6 @@ export const BestLabel = styled.div`
 `;
 
 export const Content = styled.span`
-  display: inline;
   color: ${({ theme }) => theme.palette.GRAY80};
   font-size: 1rem;
   line-height: 1.5;
