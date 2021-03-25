@@ -1,18 +1,17 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import { guestBookCollectionRef } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
-import { shallowEqual, useSelector } from 'react-redux';
-import PopupModal from '@F/modal/PopupModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
-import useAuth from '@U/hooks/useAuth';
+import useAuth, { useUser } from '@U/hooks/useAuth';
+import useModal from '@U/hooks/useModal';
 import * as S from './styles';
 
 export function WriteBox({ user }) {
   const isAuthorized = useMemo(() => !!(user.uid && !user.isLoading), [user]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { modalComponent, setIsModalOpen } = useModal(SignInGuide);
 
   const username = useInput('', nameConstraint);
   const content = useInput('', contentConstraint);
@@ -47,7 +46,7 @@ export function WriteBox({ user }) {
       e.preventDefault();
       setIsModalOpen(true);
     }
-  }, [isAuthorized]);
+  }, [isAuthorized, setIsModalOpen]);
 
   return (
     <S.StyledWriteBox>
@@ -55,9 +54,7 @@ export function WriteBox({ user }) {
       <S.TextArea {...content} onMouseDown={checkAuthority} />
       <S.Submit onClick={isAuthorized ? Submit : checkAuthority}>등록</S.Submit>
 
-      <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-        <SignInGuide setIsModalOpen={setIsModalOpen} />
-      </PopupModal>
+      {modalComponent}
     </S.StyledWriteBox>
   );
 }
@@ -80,11 +77,7 @@ function contentConstraint(value) {
 
 function WriteBoxParent() {
   useAuth(); // NOTE: 유저가 바뀔 때를 useEffect 로 감지하기 위함. HOC 이 더 어울릴 듯.
-
-  const user = useSelector(state => ({
-    uid: state.user.uid,
-    isLoading: state.user.isLoading,
-  }), shallowEqual);
+  const { user } = useUser();
 
   return <WriteBox user={user} />;
 }

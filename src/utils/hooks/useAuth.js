@@ -1,5 +1,5 @@
-import { useCallback, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useCallback, useEffect, useMemo } from 'react';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { auth } from '@U/initializer/firebase';
 import { actions } from '@/redux/user/state';
 import firebase from 'firebase/app';
@@ -42,3 +42,13 @@ const useAuth = () => {
   return { signIn, signOut };
 };
 export default useAuth;
+
+export const useUser = () => {
+  const user = useSelector(state => ({
+    uid: state.user.uid,
+    isLoading: state.user.isLoading,
+  }), shallowEqual);
+  const isAuthorized = useMemo(() => !!(user.uid && !user.isLoading), [user]);
+
+  return { user, isAuthorized };
+};

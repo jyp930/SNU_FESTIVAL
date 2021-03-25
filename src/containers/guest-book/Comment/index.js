@@ -17,11 +17,16 @@ import { guestBookCollectionRef } from '@U/initializer/firebase';
 import firebase from 'firebase/app';
 import FilledHeart from '@I/svg/icon/filled-heart.svg';
 import EmptyHeart from '@I/svg/icon/empty-heart.svg';
-import { shallowEqual, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import useModal from '@U/hooks/useModal';
+import SignInGuide from '@F/modal/content/SignInGuide';
+import { useUser } from '@U/hooks/useAuth';
 import * as S from './styles';
 
 export function Comment({ user, comments }) {
+  const { modalComponent, setIsModalOpen } = useModal(SignInGuide);
+  const { isAuthorized } = useUser();
+
   const deleteComment = useCallback((commentId) => {
     guestBookCollectionRef.doc(commentId)
       .delete()
@@ -29,6 +34,11 @@ export function Comment({ user, comments }) {
   }, []);
 
   const toggleLikeForComment = useCallback((commentId, isLiked) => {
+    if (!isAuthorized) {
+      setIsModalOpen(true);
+      return;
+    }
+
     guestBookCollectionRef.doc(commentId)
       .update({
         likes: isLiked
@@ -36,7 +46,7 @@ export function Comment({ user, comments }) {
           : firebase.firestore.FieldValue.arrayUnion(user.uid),
       })
       .then(() => toast(isLiked ? '좋아요를 취소하였습니다.' : '이 댓글을 좋아합니다.'));
-  }, [user.uid]);
+  }, [user.uid, isAuthorized, setIsModalOpen]);
 
   return (
     <S.StyledComment>
@@ -79,6 +89,8 @@ export function Comment({ user, comments }) {
           </S.CommentThread>
         );
       })}
+
+      {modalComponent}
     </S.StyledComment>
   );
 }
@@ -105,10 +117,7 @@ const mascots = [
 
 function CommentParent() {
   // user
-  const user = useSelector(state => ({
-    uid: state.user.uid,
-    isLoading: state.user.isLoading,
-  }), shallowEqual);
+  const { user } = useUser();
 
   // comments
   const [comments, setComments] = useState([]);
