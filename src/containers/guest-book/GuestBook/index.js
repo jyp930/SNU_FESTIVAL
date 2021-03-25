@@ -10,7 +10,7 @@ function GuestBook() {
     <S.StyledGuestBook>
       <S.Header>방명록</S.Header>
       {/* NOTE: width 조절을 위해 임시로 style 부여 */}
-      <div style={{ width: '100%', height: '100%' }}>
+      <div style={{ width: '100%', height: '100%', maxWidth: '1000px' }}>
         <S.StampDescriptionBoxWrapper>
           <StampDescriptionBox />
         </S.StampDescriptionBoxWrapper>
