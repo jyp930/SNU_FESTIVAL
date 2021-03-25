@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Close from '@I/svg/icon/close.svg';
+import useAuth from '@U/hooks/useAuth';
 import * as S from './styles';
 
 function SignInGuide({ setIsModalOpen }) {
+  const { signIn } = useAuth();
+
   return (
     <S.SignInGuideBox>
       <S.Image src={Close} alt="close" onClick={() => setIsModalOpen(false)} />
@@ -17,7 +20,7 @@ function SignInGuide({ setIsModalOpen }) {
         <S.SubSpan>
           (구글 연동한 스누 메일 권장)
         </S.SubSpan>
-        <S.Button>
+        <S.Button onClick={signIn}>
           로그인 하러 가기
         </S.Button>
       </S.ContentBox>

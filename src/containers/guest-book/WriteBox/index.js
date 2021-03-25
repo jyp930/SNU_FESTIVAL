@@ -7,9 +7,11 @@ import useInput from '@U/hooks/useInput';
 import { shallowEqual, useSelector } from 'react-redux';
 import PopupModal from '@F/modal/PopupModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
+import useAuth from '@U/hooks/useAuth';
 import * as S from './styles';
 
 function WriteBox({ user }) {
+  useAuth(); // TODO: HOC 이 더 어울릴 듯
   const isAuthorized = useMemo(() => !!(user.uid && !user.isLoading), [user]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,7 +19,6 @@ function WriteBox({ user }) {
   const content = useInput('', contentConstraint);
 
   const addToFirestore = () => {
-    // TODO: firestore 규칙으로 권한 체크
     const collectionRef = firestore.collection('guest-book');
     return collectionRef.add({
       author: user.uid,

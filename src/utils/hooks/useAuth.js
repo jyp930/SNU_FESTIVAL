@@ -1,15 +1,11 @@
 import { useCallback, useEffect } from 'react';
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { auth } from '@U/initializer/firebase';
 import { actions } from '@/redux/user/state';
 import firebase from 'firebase';
 
 const useAuth = () => {
   const dispatch = useDispatch();
-  const { uid, isLoading } = useSelector(state => ({
-    uid: state.user.uid,
-    isLoading: state.user.isLoading,
-  }), shallowEqual);
 
   useEffect(() => {
     auth.onAuthStateChanged((currentUser) => {
