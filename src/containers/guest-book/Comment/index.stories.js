@@ -11,7 +11,14 @@ const comments = [{
   username: 'test',
   content: 'test',
   created_at: { seconds: 1111111111 },
-  likes: [],
+  likes: ['1111', '2222'],
+  isBest: true,
+}, {
+  id: '2222',
+  username: 'test2',
+  content: 'test2',
+  created_at: { seconds: 1111111111 },
+  likes: ['1111'],
 }];
 
 export const Default = () => (
