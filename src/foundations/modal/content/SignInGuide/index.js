@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Close from '@I/svg/icon/close.svg';
 import * as S from './styles';
 
-function LoginGuide({ setIsModalOpen }) {
+function SignInGuide({ setIsModalOpen }) {
   return (
-    <S.LoginGuideBox>
+    <S.SignInGuideBox>
       <S.Image src={Close} alt="close" onClick={() => setIsModalOpen(false)} />
       <S.ContentBox>
         <S.MainSpan>
@@ -21,11 +21,11 @@ function LoginGuide({ setIsModalOpen }) {
           로그인 하러 가기
         </S.Button>
       </S.ContentBox>
-    </S.LoginGuideBox>
+    </S.SignInGuideBox>
   );
 }
-export default LoginGuide;
+export default SignInGuide;
 
-LoginGuide.propTypes = {
+SignInGuide.propTypes = {
   setIsModalOpen: PropTypes.func.isRequired,
 };

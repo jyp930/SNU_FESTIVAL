@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
 
-export const LoginGuideBox = styled.div`
+export const SignInGuideBox = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;

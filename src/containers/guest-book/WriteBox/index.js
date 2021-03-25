@@ -6,7 +6,7 @@ import { firestore } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
 import { shallowEqual, useSelector } from 'react-redux';
 import PopupModal from '@F/modal/PopupModal';
-import LoginGuide from '@F/modal/content/LoginGuide';
+import SignInGuide from '@F/modal/content/SignInGuide';
 import * as S from './styles';
 
 function WriteBox({ user }) {
@@ -59,7 +59,7 @@ function WriteBox({ user }) {
       <S.Submit onClick={isAuthorized ? Submit : checkAuthority}>등록</S.Submit>
 
       <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-        <LoginGuide setIsModalOpen={setIsModalOpen} />
+        <SignInGuide setIsModalOpen={setIsModalOpen} />
       </PopupModal>
     </S.StyledWriteBox>
   );

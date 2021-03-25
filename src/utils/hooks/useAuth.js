@@ -1,12 +1,10 @@
-import React, { useCallback, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import * as S from './styles';
-import { auth } from '@U/initializer/firebase';
-import firebase from 'firebase/app';
+import { useCallback, useEffect } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { auth } from '@U/initializer/firebase';
 import { actions } from '@/redux/user/state';
+import firebase from 'firebase';
 
-function GoogleAuth({ className }) {
+const useAuth = () => {
   const dispatch = useDispatch();
   const { uid, isLoading } = useSelector(state => ({
     uid: state.user.uid,
@@ -45,19 +43,6 @@ function GoogleAuth({ className }) {
     }
   }, [dispatch]);
 
-  return (
-    <S.StyledGoogleAuth className={className}>
-      {/* eslint-disable-next-line no-nested-ternary */}
-      { isLoading
-        ? <S.Loading>로딩중...</S.Loading>
-        : uid
-          ? <S.SignButton onClick={signOut}>구글 로그아웃 테스트</S.SignButton>
-          : <S.SignButton onClick={signIn}>구글 로그인 테스트</S.SignButton>}
-    </S.StyledGoogleAuth>
-  );
-}
-export default GoogleAuth;
-
-GoogleAuth.propTypes = {
-  className: PropTypes.string.isRequired,
+  return { signIn, signOut };
 };
+export default useAuth;
