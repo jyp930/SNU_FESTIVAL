@@ -55,10 +55,12 @@ export const MenuButton = styled.div`
 export const MenuButtonBar = styled.div`
   width: ${props => props.width};
   height: 0;
-  box-sizing: border-box;
-  border: solid 2px #ffffff;
-  border-radius: 5px;
   margin-left: auto;
+
+  box-sizing: border-box;
+  border: solid 2px white;
+  border-radius: 5px;
+  background-color: white;
 
   transform-origin: right;
   transform: rotate(0deg);
@@ -87,6 +89,7 @@ export const BasicText = styled.div`
   justify-content: space-around;
   
   p {
+    overflow-x: hidden;
     margin: 0;
     color: white;
     
