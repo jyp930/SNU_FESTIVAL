@@ -115,11 +115,7 @@ const mascots = [
   mascot1, mascot2, mascot3, mascot4, mascot5, mascot10, mascot11, mascot12, mascot13, mascot14,
 ];
 
-function CommentParent() {
-  // user
-  const { user } = useUser();
-
-  // comments
+function CommentParent({ user }) {
   const [comments, setComments] = useState([]);
   const [bestComments, setBestComments] = useState([]);
   useEffect(() => {
@@ -157,3 +153,11 @@ function CommentParent() {
   return <Comment comments={[...bestComments, ...normalComments]} user={user} />;
 }
 export default CommentParent;
+
+// TODO: user 와 공통된 propTypes 분리
+CommentParent.propTypes = {
+  user: PropTypes.shape({
+    uid: PropTypes.string,
+    isLoading: PropTypes.bool,
+  }).isRequired,
+};

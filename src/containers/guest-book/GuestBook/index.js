@@ -3,24 +3,27 @@ import PropTypes from 'prop-types';
 import Comments from '@C/guest-book/Comment';
 import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
 import WriteBox from '@C/guest-book/WriteBox';
+import useAuth, { useUser } from '@U/hooks/useAuth';
 import * as S from './styles';
 
 function GuestBook() {
+  useAuth(); // NOTE: 유저가 바뀔 때를 useEffect 로 감지하기 위함. HOC 이 더 어울릴 듯.
+  const { user } = useUser();
+
   return (
     <S.StyledGuestBook>
       <S.Header>방명록</S.Header>
-      {/* NOTE: width 조절을 위해 임시로 style 부여 */}
-      <div style={{ width: '100%', height: '100%', maxWidth: '1000px' }}>
+      <S.Body>
         <S.StampDescriptionBoxWrapper>
           <StampDescriptionBox />
         </S.StampDescriptionBoxWrapper>
         <S.WriteBoxWrapper>
-          <WriteBox />
+          <WriteBox user={user} />
         </S.WriteBoxWrapper>
         <S.CommentsWrapper>
-          <Comments />
+          <Comments user={user} />
         </S.CommentsWrapper>
-      </div>
+      </S.Body>
     </S.StyledGuestBook>
   );
 }

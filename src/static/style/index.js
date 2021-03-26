@@ -42,6 +42,7 @@ export const zIndex = {
   header: 50,
   fullScreen: 100,
   mouseTrail: 10000,
+  loading: 1000,
 };
 
 export const theme = {

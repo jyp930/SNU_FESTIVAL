@@ -5,11 +5,10 @@ import firebase from 'firebase/app';
 import { guestBookCollectionRef } from '@U/initializer/firebase';
 import useInput from '@U/hooks/useInput';
 import SignInGuide from '@F/modal/content/SignInGuide';
-import useAuth, { useUser } from '@U/hooks/useAuth';
 import useModal from '@U/hooks/useModal';
 import * as S from './styles';
 
-export function WriteBox({ user }) {
+function WriteBox({ user }) {
   const isAuthorized = useMemo(() => !!(user.uid && !user.isLoading), [user]);
   const { modalComponent, setIsModalOpen } = useModal(SignInGuide);
 
@@ -58,6 +57,7 @@ export function WriteBox({ user }) {
     </S.StyledWriteBox>
   );
 }
+export default WriteBox;
 
 WriteBox.propTypes = {
   user: PropTypes.shape({
@@ -74,11 +74,3 @@ function nameConstraint(value) {
 function contentConstraint(value) {
   return value.length <= 200 && value.split('\n').length <= 5;
 }
-
-function WriteBoxParent() {
-  useAuth(); // NOTE: 유저가 바뀔 때를 useEffect 로 감지하기 위함. HOC 이 더 어울릴 듯.
-  const { user } = useUser();
-
-  return <WriteBox user={user} />;
-}
-export default WriteBoxParent;

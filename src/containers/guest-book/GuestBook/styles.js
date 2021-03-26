@@ -22,6 +22,12 @@ export const Header = styled.div`
   font-weight: bold;
 `;
 
+export const Body = styled.div`
+  width: 100%;
+  max-width: 1000px;
+  height: 100%;
+`;
+
 export const StampDescriptionBoxWrapper = styled.div`
   width: 100%;
   height: 100px;
