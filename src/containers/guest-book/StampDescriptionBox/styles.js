@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 import { rgba } from 'polished';
 import '@/static/font/font.css';
 
@@ -46,11 +47,16 @@ export const MascotImage = styled.img`
 export const Title = styled.p`
   margin: 0 0 5px 0;
   color: ${({ theme }) => theme.palette.PURPLE50};
-  font-size: 1.1rem;
+  font-size: 16px;
 `;
 
 export const Description = styled.div`
   margin: 0;
   color: ${({ theme }) => theme.palette.GRAY80};
-  font-size: 0.8rem;
+  font-size: 12px;
+  line-height: 1.4;
+  
+  ${media.lessThan('300px')`
+    font-size: 10px;
+  `};
 `;
