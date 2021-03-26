@@ -7,7 +7,7 @@ function PageLoading({ message }) {
   return (
     <S.StyledPageLoading>
       <LottieLoadingPacMan />
-      {message}
+      <S.Message>{message}</S.Message>
     </S.StyledPageLoading>
   );
 }
