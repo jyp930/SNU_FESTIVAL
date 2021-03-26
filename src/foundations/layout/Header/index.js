@@ -5,6 +5,7 @@ import Fade from 'react-reveal/Fade';
 import { preloadImage } from '@U/functions/preload';
 import LogoImage from '@I/png/logo.png';
 import ClosingFestival from '@I/jpg/closing-festival.jpg';
+import Menus from '@F/layout/Menus';
 import * as S from './styles';
 
 function Header() {
@@ -22,31 +23,25 @@ function Header() {
     setMenuIsOpen(false);
   }, [history]);
 
-  const NaviButton = useCallback((page, url, delay) => (
-    <Fade
-      bottom
-      duration={500}
-      delay={delay}
-    >
-      <S.NaviText
-        onClick={() => changeUrl(url)}
-      >
-        {page}
-      </S.NaviText>
-    </Fade>
-  ), [changeUrl]);
-
   const Logo = (
     <S.Logo onClick={() => changeUrl('/')}>
       <S.LogoImage
         src={MascotInFolder}
         alt="mascot"
       />
+      { menuIsOpen && (
+        <Fade duration={800}>
+          <S.BasicText>
+            <p>서울대학교 2021 봄축제</p>
+            <p>페스월드</p>
+          </S.BasicText>
+        </Fade>
+      )}
     </S.Logo>
   );
 
   const MenuHamburger = (
-    <S.MenuButton onClick={() => setMenuIsOpen(true)}>
+    <S.MenuButton onClick={() => setMenuIsOpen(!menuIsOpen)}>
       <S.MenuButtonBar width="100%" />
       <S.MenuButtonBar width="66%" />
       <S.MenuButtonBar width="33%" />
@@ -54,24 +49,17 @@ function Header() {
   );
 
   const HeaderBar = (
-    <S.HeaderBarContainer isOpen={menuIsOpen}>
+    <S.HeaderBarContainer>
       <S.HeaderBar>
         {Logo}
-        {!menuIsOpen && MenuHamburger}
+        {MenuHamburger}
       </S.HeaderBar>
     </S.HeaderBarContainer>
   );
 
   const openedMenu = (
     <Fade duration={800}>
-      <S.OpenedMenu onClick={() => setMenuIsOpen(false)}>
-        {NaviButton('메인화면', '/', 250)}
-        {NaviButton('행사', '/activity', 300)}
-        {NaviButton('공연', '/performance', 350)}
-        {NaviButton('이벤트', '/event', 400)}
-        {NaviButton('축하사 지원', '/apply', 450)}
-        {NaviButton('축제 소개', '/introduction', 500)}
-      </S.OpenedMenu>
+      <Menus setMenuIsOpen={setMenuIsOpen} />
     </Fade>
   );
 

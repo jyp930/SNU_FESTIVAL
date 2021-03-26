@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import media from 'styled-media-query';
 import { HoverStyle } from '@S/responsive/mouse';
+import '@/static/font/font.css';
 
 export const StyledHeader = styled.div`
   position: fixed;
@@ -16,10 +17,6 @@ export const HeaderBarContainer = styled.div`
   top: 0;
   width: 100%;
   z-index: ${({ theme }) => theme.zIndex.header + 1};
-  
-  ${props => props.isOpen && css`
-    pointer-events: none;
-  `};
 `;
 
 export const HeaderBar = styled.div`
@@ -37,13 +34,13 @@ export const HeaderBar = styled.div`
 export const Logo = styled.div`  
   display: flex;
   align-items: center;
-  cursor: pointer;
-  ${HoverStyle};
 `;
 
 export const LogoImage = styled.img`
   width: 5rem;
   height: auto;
+  cursor: pointer;
+  ${HoverStyle};
 `;
 
 export const MenuButton = styled.div`
@@ -68,27 +65,25 @@ export const MenuButtonBar = styled.div`
   margin-left: auto;
 `;
 
-export const OpenedMenu = styled.div`
+export const BasicText = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: ${({ theme }) => theme.windowHeight}px;
-  background-color: ${({ theme }) => theme.palette.GRAY_NEWTRO};
-  opacity: 0.9;
-`;
-
-export const NaviText = styled.p`
-  margin: 20px 0;
-  font-size: 2rem;
-  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
-  cursor: pointer;
-  text-shadow: 1px 1px 2px grey;
-  transition-duration: 1s;
-
-  &:hover {
-    transition-timing-function: cubic-bezier(.175,.885,.32,1);
-    font-size: 3rem;
+  align-items: flex-start;
+  justify-content: space-around;
+  
+  p {
+    margin: 0;
+    color: white;
+    
+    &:first-child {
+      font-size: 12px;
+    }
+    
+    &:last-child {
+      font-size: 14px;
+      font-family: 'PFStardust', sans-serif;
+      line-height: 1.2;
+    }
   }
 `;
