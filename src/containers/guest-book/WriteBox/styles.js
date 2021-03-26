@@ -7,6 +7,7 @@ export const StyledWriteBox = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 `;
 
 const InputStyle = css`
@@ -50,8 +51,16 @@ export const TextArea = styled.textarea`
 
 export const Submit = styled.button`
   align-self: flex-end;
-  width: 4rem;
-  height: 2rem;
+  font-size: 0.8rem;
+  width: 72px;
+  height: 36px;
+  
+  ${media.lessThan('medium')`
+    width: 5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  `};
+
   margin: 5px 0;
 
   border: 1px solid transparent;
@@ -59,7 +68,6 @@ export const Submit = styled.button`
   outline: 0;
  
   cursor: pointer;
-  font-size: 0.8rem;
 
   color: ${({ theme }) => theme.palette.GRAY80};
   background-color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.45)};
