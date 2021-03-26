@@ -45,7 +45,7 @@ export function Comment({ user, comments }) {
           ? firebase.firestore.FieldValue.arrayRemove(user.uid)
           : firebase.firestore.FieldValue.arrayUnion(user.uid),
       })
-      .then(() => toast(isLiked ? '좋아요를 취소하였습니다.' : '이 댓글을 좋아합니다.'));
+      .then(() => toast(isLiked ? '좋아요를 취소하였습니다.' : '이 방명록 글을 좋아합니다.'));
   }, [user.uid, isAuthorized, setIsModalOpen]);
 
   return (
