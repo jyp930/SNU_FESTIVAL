@@ -28,7 +28,7 @@ export function WriteBox({ user }) {
   const Submit = () => {
     if (!toast.isActive(toastId.current)) {
       if (username.value.trim() === '') {
-        toastId.current = toast('아이디를 입력해 주세요');
+        toastId.current = toast('닉네임을 입력해 주세요');
       } else if (content.value.trim() === '') {
         toastId.current = toast('내용을 입력해 주세요');
       } else {
