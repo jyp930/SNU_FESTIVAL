@@ -32,6 +32,6 @@ LottieFrame.propTypes = {
 };
 
 LottieFrame.defaultProps = {
-  width: 280,
-  height: 280,
+  width: undefined,
+  height: undefined,
 };

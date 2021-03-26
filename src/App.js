@@ -27,7 +27,7 @@ function App() {
       <Toast />
 
       <Router>
-        <Suspense fallback={<LottieLoadingPacMan />}>
+        <Suspense fallback={<LottieLoadingPacMan width={280} height={280} />}>
           <Header />
           <Switch>
             { routes.map((route) => (

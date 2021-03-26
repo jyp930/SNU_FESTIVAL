@@ -40,6 +40,8 @@ function Lottie404() {
     <S.StyledLottie404>
       { LinesInParagraph(redShoesPartOne) }
       <LottieFrame
+        width={280}
+        height={280}
         animationJson={notFoundPageJson}
       />
       { LinesInParagraph(redShoesPartTwo) }

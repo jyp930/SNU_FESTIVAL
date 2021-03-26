@@ -6,7 +6,7 @@ import * as S from './styles';
 function PageLoading({ message }) {
   return (
     <S.StyledPageLoading>
-      <LottieLoadingPacMan />
+      <S.Animation><LottieLoadingPacMan /></S.Animation>
       <S.Message>{message}</S.Message>
     </S.StyledPageLoading>
   );

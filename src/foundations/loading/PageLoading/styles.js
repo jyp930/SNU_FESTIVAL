@@ -17,6 +17,13 @@ export const StyledPageLoading = styled.div`
   background-color: ${rgba('purple', 0.1)};
 `;
 
+export const Animation = styled.div`
+  max-width: 280px;
+  max-height: 280px;
+  width: 50vw;
+  height: 50vw;
+`;
+
 export const Message = styled.span`
   font-size: 1.2rem;
   font-weight: bold;
