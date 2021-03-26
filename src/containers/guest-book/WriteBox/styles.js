@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
 import { rgba } from 'polished';
 
 export const StyledWriteBox = styled.div`
@@ -31,7 +32,7 @@ export const InputBox = styled.input`
   
   background-color: transparent;
   font-weight: bold;
-  width: 4rem;
+  width: 6rem;
   padding: 2px 7px;
   
   &::placeholder {

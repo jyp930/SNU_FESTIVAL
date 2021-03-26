@@ -50,7 +50,7 @@ export function WriteBox({ user }) {
 
   return (
     <S.StyledWriteBox>
-      <S.InputBox placeholder="익명" {...username} onMouseDown={checkAuthority} />
+      <S.InputBox placeholder="닉네임" {...username} onMouseDown={checkAuthority} />
       <S.TextArea {...content} onMouseDown={checkAuthority} />
       <S.Submit onClick={isAuthorized ? Submit : checkAuthority}>등록</S.Submit>
 
