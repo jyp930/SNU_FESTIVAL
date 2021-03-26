@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import media from 'styled-media-query';
+import styled, { css } from 'styled-components';
 import { HoverStyle } from '@S/responsive/mouse';
 import '@/static/font/font.css';
 
@@ -44,25 +43,40 @@ export const LogoImage = styled.img`
 `;
 
 export const MenuButton = styled.div`
-  --width: 35px;
-  ${media.lessThan('medium')`
-    --width: 28px;
-  `};
-  
-  width: var(--width);
-  height: var(--width);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  width: 32px;
+  height: 32px;
   cursor: pointer;
-  ${HoverStyle};
 `;
 
 export const MenuButtonBar = styled.div`
   width: ${props => props.width};
   height: 0;
   box-sizing: border-box;
-  border: solid 1px #ffffff;
+  border: solid 2px #ffffff;
   border-radius: 5px;
-  margin: calc(var(--width) / 7) 0;
   margin-left: auto;
+
+  transform-origin: right;
+  transform: rotate(0deg);
+  transition: transform, opacity, width, 1s;
+  will-change: transform, opacity, width;
+  
+  ${props => props.menuIsOpen && css`
+    &:first-of-type {
+      transform: rotate(-45deg) scaleX(0.935);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:last-of-type {
+      width: 100%;
+      transform: rotate(45deg) scaleX(0.935);
+    }
+  `};
 `;
 
 export const BasicText = styled.div`

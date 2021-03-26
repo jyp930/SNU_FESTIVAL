@@ -42,9 +42,9 @@ function Header() {
 
   const MenuHamburger = (
     <S.MenuButton onClick={() => setMenuIsOpen(!menuIsOpen)}>
-      <S.MenuButtonBar width="100%" />
-      <S.MenuButtonBar width="66%" />
-      <S.MenuButtonBar width="33%" />
+      <S.MenuButtonBar menuIsOpen={menuIsOpen} width="100%" />
+      <S.MenuButtonBar menuIsOpen={menuIsOpen} width="66%" />
+      <S.MenuButtonBar menuIsOpen={menuIsOpen} width="33%" />
     </S.MenuButton>
   );
 
