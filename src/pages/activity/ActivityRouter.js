@@ -5,17 +5,31 @@ import Lottie404 from '@F/lottie/Lottie404';
 
 function ActivityRouter({ match }) {
   return (
-    <Switch>
+    <>
       { activityRoutes.map((route) => (
-        <Route
-          exact
-          key={`${match.path}${route.path}`}
-          path={`${match.path}${route.path}`}
-          component={route.component}
-        />
+        <React.Fragment key={route.path}>
+          <Switch>
+            <Route
+              exact
+              key={`${match.path}${route.path}`}
+              path={`${match.path}${route.path}`}
+              component={route.component}
+            />
+
+            { route.children && route.children.map((childRoute) => (
+              <Route
+                exact
+                key={`${match.path}${route.path}${childRoute.path}`}
+                path={`${match.path}${route.path}${childRoute.path}`}
+                component={childRoute.component}
+              />
+            ))}
+
+            <Route component={Lottie404} />
+          </Switch>
+        </React.Fragment>
       ))}
-      <Route component={Lottie404} />
-    </Switch>
+    </>
   );
 }
 export default ActivityRouter;
@@ -26,11 +40,18 @@ ActivityRouter.propTypes = {
   }).isRequired,
 };
 
-const MiniGame = lazy(() => import('@/pages/activity/MiniGame'));
+const MiniGame = lazy(() => import('@/pages/activity/mini/MiniGame'));
+const GuessTheSong = lazy(() => import('@/pages/activity/mini/GuessTheSong'));
 
 const activityRoutes = [
   {
     path: '/mini',
     component: MiniGame,
+    children: [
+      {
+        path: '/guess-the-song',
+        component: GuessTheSong,
+      },
+    ],
   },
 ];
