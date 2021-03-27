@@ -27,7 +27,7 @@ export const TileContainerWrapper = styled.div`
 `;
 
 export const TileContainer = styled.div`
-  ${media.lessThan('medium')`
+  ${media.lessThan('large')`
     border-top: 1px solid white;
     border-bottom: 1px solid white;
   `};
