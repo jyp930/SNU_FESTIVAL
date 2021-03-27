@@ -3,6 +3,7 @@ import {
 } from 'redux';
 import countReducer, { countPersistConfig } from '@/redux/count/state';
 import userReducer, { userPersistConfig } from '@/redux/user/state';
+import miniGameReducer, { miniGamePersistConfig } from '@/redux/mini-game/state';
 import { persistStore, persistReducer } from 'redux-persist';
 import sessionStorage from 'redux-persist/lib/storage/session';
 import { all } from 'redux-saga/effects';
@@ -12,6 +13,7 @@ import countSaga from '@/redux/count/saga';
 const reducer = combineReducers({
   count: persistReducer(countPersistConfig, countReducer),
   user: persistReducer(userPersistConfig, userReducer),
+  miniGame: persistReducer(miniGamePersistConfig, miniGameReducer),
 });
 
 /**
@@ -21,7 +23,7 @@ const reducer = combineReducers({
 const rootPersistConfig = {
   key: 'snufestival/root',
   storage: sessionStorage,
-  whitelist: [userReducer],
+  whitelist: [],
 };
 const persistedReducer = persistReducer(rootPersistConfig, reducer);
 
