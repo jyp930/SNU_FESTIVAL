@@ -80,9 +80,9 @@ export const HeaderContent = styled.div`
   
   width: 100%;
   min-height: 65px;
-  background-color: ${({ theme }) => theme.palette.PURPLE50};
   
-  color: white;
+  background-color: ${props => props.backgroundColor || props.theme.palette.PURPLE50};
+  color: ${props => props.color || 'white'};
   font-size: 1.5rem;
   font-weight: bold;
 `;
