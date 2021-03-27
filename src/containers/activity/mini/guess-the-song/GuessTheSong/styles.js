@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const StyledGuessTheSong = styled.div`
 
@@ -26,8 +27,11 @@ export const TileContainerWrapper = styled.div`
 `;
 
 export const TileContainer = styled.div`
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  ${media.lessThan('medium')`
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  `};
+  
   width: 100%;
   height: 60%;
 
