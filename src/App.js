@@ -31,7 +31,12 @@ function App() {
           <Header />
           <Switch>
             { routes.map((route) => (
-              <Route exact key={route.path} path={route.path} component={route.component} />
+              <Route
+                exact={route.exact}
+                key={route.path}
+                path={route.path}
+                component={route.component}
+              />
             )) }
             <Route component={Lottie404} />
           </Switch>
