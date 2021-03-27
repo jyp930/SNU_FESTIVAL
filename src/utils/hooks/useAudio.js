@@ -5,7 +5,9 @@ function useAudio(audioFile) {
   const [audioElement, setAudioElement] = useState(null);
 
   useEffect(() => {
-    const newAudioElement = new Howl({ src: [audioFile] });
+    const newAudioElement = new Howl({
+      src: [audioFile], html5: true, mute: false, usingWebAudio: false, webAudio: false,
+    });
     setAudioElement(newAudioElement);
   }, [audioFile]);
 
