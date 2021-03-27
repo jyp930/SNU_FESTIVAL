@@ -13,10 +13,19 @@ export const Background = styled.div`
   );
 `;
 
-export const TileContainer = styled.div`
+export const TileContainerWrapper = styled.div`
   z-index: ${({ theme }) => theme.zIndex.base};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: absolute;
-  top: 20%;
+  width: 100%;
+  height: 100%;
+`;
+
+export const TileContainer = styled.div`
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   width: 100%;

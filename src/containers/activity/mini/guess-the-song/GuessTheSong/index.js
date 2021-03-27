@@ -60,7 +60,7 @@ function GuessTheSong() {
   }, []);
 
   const Tiles = useMemo(() => (
-    ['Fake1', 'Fake2', 'Fake3', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'].map((key, i) => {
+    ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O'].map((key, i) => {
       const className = `Tile${key}`;
       let element = null;
       return (
@@ -86,9 +86,11 @@ function GuessTheSong() {
   return (
     <ThemeProvider theme={themeBasic}>
       <S.Background className="SvgWrapper">
-        <S.TileContainer>
-          {Tiles}
-        </S.TileContainer>
+        <S.TileContainerWrapper>
+          <S.TileContainer>
+            {Tiles}
+          </S.TileContainer>
+        </S.TileContainerWrapper>
 
         <Lyrics
           trigger={triggers.triggerLyrics}
