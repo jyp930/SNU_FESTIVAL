@@ -14,6 +14,8 @@ const lyricsAnimation = css`
 
 export const StyledLyrics = styled.div`
   z-index: ${({ theme }) => theme.zIndex.base + 1};
+  pointer-events: none;
+  
   position: absolute;
   width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
