@@ -5,6 +5,7 @@ import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
 import WriteBox from '@C/guest-book/WriteBox';
 import useAuth, { useUser } from '@U/hooks/useAuth';
 import PageLoading from '@F/loading/PageLoading';
+import { HeaderContent } from '@F/layout/Header';
 import * as S from './styles';
 
 function GuestBook() {
@@ -15,7 +16,7 @@ function GuestBook() {
     <S.StyledGuestBook>
       {/* NOTE: 재사용시 HOC 으로 분리할수도... */}
       { user.isLoading && <PageLoading message="로그인 중입니다..." /> }
-      <S.Header>방명록</S.Header>
+      <HeaderContent>방명록</HeaderContent>
       <S.Body>
         <S.StampDescriptionBoxWrapper>
           <StampDescriptionBox />

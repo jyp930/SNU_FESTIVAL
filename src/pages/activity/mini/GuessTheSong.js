@@ -3,9 +3,7 @@ import GuessTheSongContainer from '@C/activity/mini/guess-the-song/GuessTheSong'
 
 function GuessTheSong() {
   return (
-    <div>
-      <GuessTheSongContainer />
-    </div>
+    <GuessTheSongContainer />
   );
 }
 export default GuessTheSong;

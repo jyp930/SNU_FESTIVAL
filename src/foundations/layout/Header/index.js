@@ -6,6 +6,7 @@ import { preloadImage } from '@U/functions/preload';
 import LogoImage from '@I/png/logo.png';
 import ClosingFestival from '@I/jpg/closing-festival.jpg';
 import Menus from '@F/layout/Menus';
+import styled from 'styled-components';
 import * as S from './styles';
 
 function Header() {
@@ -71,3 +72,17 @@ function Header() {
   );
 }
 export default Header;
+
+export const HeaderContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  min-height: 65px;
+  background-color: ${({ theme }) => theme.palette.PURPLE50};
+  
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
