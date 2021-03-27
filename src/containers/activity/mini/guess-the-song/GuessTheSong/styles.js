@@ -16,12 +16,15 @@ export const Background = styled.div`
 export const TileContainer = styled.div`
   z-index: ${({ theme }) => theme.zIndex.base};
   position: absolute;
+  top: 20%;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   width: 100%;
-  height: 100%;
-  
+  height: 60%;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 `;
 
 export const Tile = styled.div`
