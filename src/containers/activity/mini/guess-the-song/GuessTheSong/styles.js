@@ -11,12 +11,11 @@ export const Background = styled.div`
     ${({ theme }) => theme.palette.PURPLE50},
     ${({ theme }) => theme.palette.GREEN80}
   );
-  transition: background-color 0.35s;
 `;
 
 export const TileContainer = styled.div`
+  z-index: ${({ theme }) => theme.zIndex.base};
   position: absolute;
-  z-index: 1;
   width: 100%;
   height: 100%;
   

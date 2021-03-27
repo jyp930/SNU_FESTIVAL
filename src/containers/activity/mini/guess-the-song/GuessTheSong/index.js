@@ -1,4 +1,6 @@
-import React, { useReducer, useEffect, useMemo } from 'react';
+import React, {
+  useReducer, useEffect, useMemo, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import Flicker1 from '@C/activity/mini/guess-the-song/Flicker1';
 import { ThemeProvider } from 'styled-components';
@@ -17,10 +19,12 @@ import HorizontalLine3 from '@C/activity/mini/guess-the-song/HorizontalLine3';
 import Explosion1 from '@C/activity/mini/guess-the-song/Explosion1';
 import Explosion2 from '@C/activity/mini/guess-the-song/Explosion2';
 import Explosion3 from '@C/activity/mini/guess-the-song/Explosion3';
+import Lyrics from '@C/activity/mini/guess-the-song/Lyrics';
 import * as S from './styles';
 
 function GuessTheSong() {
   const [triggers, dispatch] = useReducer(reducer, null, init);
+  const [lyrics, setLyrics] = useState('');
 
   useEffect(() => {
     const keypressFunction = (e) => {
@@ -41,6 +45,8 @@ function GuessTheSong() {
         case 'KeyN':
         case 'KeyO':
           dispatch({ type: 'toggle', key: `trigger${e.code[3]}` });
+          dispatch({ type: 'toggle', key: 'triggerLyrics' });
+          setLyrics(lyricsList[e.code[3]]);
           break;
         default:
           break;
@@ -69,6 +75,8 @@ function GuessTheSong() {
             const triggerReflow = element.offsetWidth;
             element.style.display = 'block';
             dispatch({ type: 'toggle', key: `trigger${key}` });
+            dispatch({ type: 'toggle', key: 'triggerLyrics' });
+            setLyrics(lyricsList[key]);
           }}
         />
       );
@@ -81,6 +89,12 @@ function GuessTheSong() {
         <S.TileContainer>
           {Tiles}
         </S.TileContainer>
+
+        <Lyrics
+          trigger={triggers.triggerLyrics}
+          dispatch={dispatch}
+          lyrics={lyrics}
+        />
 
         <Slide3 trigger={triggers.triggerF} dispatch={dispatch} />
         <Slide2 trigger={triggers.triggerE} dispatch={dispatch} />
@@ -101,7 +115,6 @@ function GuessTheSong() {
         <Explosion1 trigger={triggers.triggerM} dispatch={dispatch} />
         <Explosion2 trigger={triggers.triggerN} dispatch={dispatch} />
         <Explosion3 trigger={triggers.triggerO} dispatch={dispatch} />
-
       </S.Background>
     </ThemeProvider>
   );
@@ -114,6 +127,7 @@ GuessTheSong.propTypes = {
 
 function init() {
   return {
+    triggerLyrics: false,
     triggerA: false,
     triggerB: false,
     triggerC: false,
@@ -139,3 +153,21 @@ function reducer(state, action) {
   }
   throw new Error();
 }
+
+const lyricsList = {
+  A: '세상의 모서리 구부정하게 커버린',
+  B: '잊지마 이 오랜 겨울 사이',
+  C: '언 틈으로 피울 꽃 하나',
+  D: '보이니 하루 뒤 봄이 얼마나',
+  E: 'like dynamite',
+  F: '눈물이 고여도 꾹 참을래',
+  G: '영원히 되감을 순간이니까',
+  H: '어느 작별이 이보다 완벽할까',
+  I: '이런 결말이 어울려',
+  J: 'It\'s no kids zone',
+  K: 'I can\'t die I\'m all-in',
+  L: '나를 알게 되어서 기뻤는지',
+  M: '나를 사랑해서 좋았었는지',
+  N: '우릴 위해 불렀던 지나간 노래들이',
+  O: '여전히 위로가 되는지',
+};
