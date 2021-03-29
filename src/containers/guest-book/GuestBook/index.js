@@ -5,8 +5,8 @@ import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
 import WriteBox from '@C/guest-book/WriteBox';
 import useAuth, { useUser } from '@U/hooks/useAuth';
 import PageLoading from '@F/loading/PageLoading';
-import { HeaderContent } from '@F/layout/Header';
 import * as S from './styles';
+import { HeaderContent } from '@F/layout/Header';
 
 function GuestBook() {
   useAuth(); // NOTE: 유저가 바뀔 때를 useEffect 로 감지하기 위함. HOC 이 더 어울릴 듯.

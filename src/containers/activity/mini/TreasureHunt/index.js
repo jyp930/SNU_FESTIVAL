@@ -27,9 +27,9 @@ function TreasureHunt() {
     <S.StyledTreasureHunt>
       <HeaderContent>보물찾기</HeaderContent>
       <S.Body>
-        <button onClick={startTreasureHunt}>start</button>
-        <button onClick={endTreasureHunt}>end</button>
-        <button onClick={pushTreasureHunt}>push</button>
+        <button onClick={startTreasureHunt}>보물찾기 시작</button>
+        <button onClick={endTreasureHunt}>정답!</button>
+        <button onClick={pushTreasureHunt}>보물 찾음</button>
       </S.Body>
     </S.StyledTreasureHunt>
   );
