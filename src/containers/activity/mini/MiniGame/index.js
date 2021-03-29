@@ -33,14 +33,16 @@ export function MiniGame({ user, isAuthorized }) {
   }, [user, isAuthorized, dispatch]);
 
   const checkClear = () => {
-    miniGameCollectionRef.doc(user.uid).get()
-      .then((doc) => {
-        if (doc.exists) {
-          const stages = doc.data();
-          const newIsClear = Object.values(stages).every(stage => stage === true);
-          setIsClear(newIsClear);
-        }
-      });
+    if (isAuthorized) {
+      miniGameCollectionRef.doc(user.uid).get()
+        .then((doc) => {
+          if (doc.exists) {
+            const stages = doc.data();
+            const newIsClear = Object.values(stages).every(stage => stage === true);
+            setIsClear(newIsClear);
+          }
+        });
+    }
   };
 
   const go = (url) => {
