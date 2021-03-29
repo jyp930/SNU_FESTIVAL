@@ -9,5 +9,6 @@ if (FIREBASE_CONFIG) {
 
 export const firestore = firebase.firestore();
 export const guestBookCollectionRef = firestore.collection('guest-book');
+export const miniGameCollectionRef = firestore.collection('mini-game');
 
 export const auth = firebase.auth();

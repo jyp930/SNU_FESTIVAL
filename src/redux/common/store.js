@@ -9,6 +9,7 @@ import sessionStorage from 'redux-persist/lib/storage/session';
 import { all } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 import countSaga from '@/redux/count/saga';
+import miniGameSaga from '@/redux/mini-game/saga';
 
 const reducer = combineReducers({
   count: persistReducer(countPersistConfig, countReducer),
@@ -39,7 +40,7 @@ const store = createStore(
 );
 
 function* rootSaga() {
-  yield all([countSaga()]);
+  yield all([countSaga(), miniGameSaga()]);
 }
 sagaMiddleware.run(rootSaga);
 
