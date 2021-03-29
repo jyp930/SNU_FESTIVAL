@@ -17,6 +17,8 @@ function MiniGame() {
       <S.Body>
         <button onClick={() => go('guess-the-song')}>노래맞히기</button>
         <button onClick={() => go('treasure-hunt')}>보물찾기</button>
+        <button onClick={() => go('riddle')}>미궁게임</button>
+        <button onClick={() => go('black-and-white')}>흑과백</button>
       </S.Body>
     </S.StyledMiniGame>
   );

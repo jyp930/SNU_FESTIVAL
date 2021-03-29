@@ -43,6 +43,8 @@ ActivityRouter.propTypes = {
 const MiniGame = lazy(() => import('@/pages/activity/mini/MiniGame'));
 const GuessTheSong = lazy(() => import('@/pages/activity/mini/GuessTheSong'));
 const TreasureHunt = lazy(() => import('@/pages/activity/mini/TreasureHunt'));
+const Riddle = lazy(() => import('@/pages/activity/mini/Riddle'));
+const BlackAndWhite = lazy(() => import('@/pages/activity/mini/BlackAndWhite'));
 
 const activityRoutes = [
   {
@@ -56,6 +58,14 @@ const activityRoutes = [
       {
         path: '/treasure-hunt',
         component: TreasureHunt,
+      },
+      {
+        path: '/riddle',
+        component: Riddle,
+      },
+      {
+        path: '/black-and-white',
+        component: BlackAndWhite,
       },
     ],
   },

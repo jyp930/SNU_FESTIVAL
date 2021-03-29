@@ -1,12 +1,9 @@
 import React from 'react';
-import ActivityContainer from '@C/activity/Activity';
 import withMountEvent from '@U/hoc/withMountEvent';
 
 function Activity() {
   return (
-    <div style={{ marginTop: 60 }}>
-      <ActivityContainer />
-    </div>
+    <div>행사 준비중...</div>
   );
 }
 export default withMountEvent(Activity);

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledMiniGame = styled.div`
+export const StyledRiddle = styled.div`
 
 `;
