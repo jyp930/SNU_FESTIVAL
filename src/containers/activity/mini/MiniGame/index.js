@@ -60,7 +60,7 @@ export function MiniGame({ user, isAuthorized }) {
         <br />
         <br />
         <br />
-        <button onClick={() => checkClear()}>클리어?!</button>
+        <button onClick={checkClear}>클리어?!</button>
         <div>{isClear ? '클리어 함' : '클리어 못함'}</div>
       </S.Body>
     </S.StyledMiniGame>

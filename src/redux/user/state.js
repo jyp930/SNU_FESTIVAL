@@ -6,8 +6,8 @@ const PREFIX = 'USER';
 
 /** initial state */
 const INITIAL_STATE = {
-  user: null,
   uid: null,
+  email: null,
   isLoading: false,
 };
 

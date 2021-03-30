@@ -10,8 +10,10 @@ const useAuth = () => {
   useEffect(() => {
     auth.onAuthStateChanged((currentUser) => {
       if (currentUser) {
+        dispatch(actions.setValue('email', currentUser.email));
         dispatch(actions.setValue('uid', currentUser.uid));
       } else {
+        dispatch(actions.setValue('email', null));
         dispatch(actions.setValue('uid', null));
       }
       dispatch(actions.setLoading(false));
@@ -46,6 +48,7 @@ export default useAuth;
 export const useUser = () => {
   const user = useSelector(state => ({
     uid: state.user.uid,
+    email: state.user.email,
     isLoading: state.user.isLoading,
   }), shallowEqual);
   const isAuthorized = useMemo(() => !!(user.uid && !user.isLoading), [user]);
