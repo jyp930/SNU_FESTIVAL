@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
+import media from 'styled-media-query';
 
 export const StyledWriteBox = styled.div`
   width: 100%;
@@ -31,11 +32,11 @@ export const InputBox = styled.input`
   
   background-color: transparent;
   font-weight: bold;
-  width: 4rem;
+  width: 6rem;
   padding: 2px 7px;
   
   &::placeholder {
-    color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.6)};
+    color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.4)};
   }
 `;
 
@@ -49,16 +50,17 @@ export const TextArea = styled.textarea`
 
 export const Submit = styled.button`
   align-self: flex-end;
-  width: 4rem;
-  height: 2rem;
   margin: 5px 0;
+
+  width: 4.5rem;
+  height: 2.25rem;
+  font-size: 0.8rem;
 
   border: 1px solid transparent;
   border-radius: 18px;
   outline: 0;
- 
+
   cursor: pointer;
-  font-size: 0.8rem;
 
   color: ${({ theme }) => theme.palette.GRAY80};
   background-color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.45)};
@@ -67,4 +69,10 @@ export const Submit = styled.button`
     color: ${({ theme }) => theme.palette.PURPLE50};
     background-color: ${({ theme }) => rgba(theme.palette.GRAY80, 0.45)};
   }
+  
+  ${media.lessThan('medium')`
+    width: 5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  `};
 `;
