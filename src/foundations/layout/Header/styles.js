@@ -58,15 +58,15 @@ export const MenuButtonBar = styled.div`
   margin-left: auto;
 
   box-sizing: border-box;
-  border: solid 2px white;
   border-radius: 5px;
-  background-color: white;
+  border: solid 2px ${props => (props.menuIsOpen ? 'white' : props.color)};
+  background-color: ${props => (props.menuIsOpen ? 'white' : props.color)};
 
   transform-origin: right;
   transform: rotate(0deg);
-  transition: transform, opacity, width, 1s;
+  transition: transform, opacity, width, border, background-color, 1s;
   will-change: transform, opacity, width;
-  
+
   ${props => props.menuIsOpen && css`
     &:first-of-type {
       transform: rotate(-45deg) scaleX(0.935);
@@ -98,7 +98,7 @@ export const BasicText = styled.div`
     }
     
     &:last-child {
-      font-size: 14px;
+      font-size: 16px;
       font-family: 'PFStardust', sans-serif;
       line-height: 1.2;
     }

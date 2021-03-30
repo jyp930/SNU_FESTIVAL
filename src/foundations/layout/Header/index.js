@@ -1,17 +1,28 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import MascotInFolder from '@I/svg/mascot/mascot-in-folder.svg';
 import Fade from 'react-reveal/Fade';
 import { preloadImage } from '@U/functions/preload';
 import LogoImage from '@I/png/logo.png';
 import ClosingFestival from '@I/jpg/closing-festival.jpg';
 import Menus from '@F/layout/Menus';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { theme } from '@S/index';
 import * as S from './styles';
 
 function Header() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const history = useHistory();
+
+  const [hamburgerColor, setHamburgerColor] = useState('white');
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setHamburgerColor(theme.palette.PURPLE50);
+    } else {
+      setHamburgerColor('white');
+    }
+  }, [location]);
 
   useEffect(() => {
     if (menuIsOpen) {
@@ -43,9 +54,9 @@ function Header() {
 
   const MenuHamburger = (
     <S.MenuButton onClick={() => setMenuIsOpen(!menuIsOpen)}>
-      <S.MenuButtonBar menuIsOpen={menuIsOpen} width="100%" />
-      <S.MenuButtonBar menuIsOpen={menuIsOpen} width="66%" />
-      <S.MenuButtonBar menuIsOpen={menuIsOpen} width="33%" />
+      <S.MenuButtonBar color={hamburgerColor} menuIsOpen={menuIsOpen} width="100%" />
+      <S.MenuButtonBar color={hamburgerColor} menuIsOpen={menuIsOpen} width="66%" />
+      <S.MenuButtonBar color={hamburgerColor} menuIsOpen={menuIsOpen} width="33%" />
     </S.MenuButton>
   );
 
@@ -85,4 +96,8 @@ export const HeaderContent = styled.div`
   color: ${props => props.color || 'white'};
   font-size: 1.5rem;
   font-weight: bold;
+  
+  ${props => props.hasBoxShadow && css`
+    box-shadow: rgba(0, 0, 0, 0.12) 0 3px 5px 2px;
+  `}
 `;
