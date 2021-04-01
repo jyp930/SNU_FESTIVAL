@@ -32,6 +32,7 @@ export const palette = {
 
   // 21 봄축제 축페이지 전용
   GREEN80: '#40c2d1',
+  PURPLE20: '#E5E7FB',
   PURPLE50: '#9397d6',
   PURPLE80: '#485582',
   GRAY80: '#707070',

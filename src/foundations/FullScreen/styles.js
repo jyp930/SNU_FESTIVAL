@@ -22,7 +22,7 @@ export const StyledFullScreen = styled.div`
     border-radius: 0;
     
     transform: scale(1);
-    transition: width 0.5s ease-out, height 0.5s ease-out, border-radius 0.9s ease, transform 1s ease;
+    transition: width 0.5s ease-out, height 0.6s ease-out, border-radius 0.9s ease, transform 1s ease;
   `};
 `;
 
