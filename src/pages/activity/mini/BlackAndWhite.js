@@ -1,9 +1,13 @@
 import React from 'react';
 import BlackAndWhiteContainer from '@C/activity/mini/BlackAndWhite';
+import Header from '@F/layout/Header';
 
 function BlackAndWhite() {
   return (
-    <BlackAndWhiteContainer />
+    <>
+      <Header />
+      <BlackAndWhiteContainer />
+    </>
   );
 }
 export default BlackAndWhite;

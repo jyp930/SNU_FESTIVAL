@@ -4,7 +4,6 @@ import routes from '@/routes';
 import GaAnalytics from '@/UserAnalytics';
 import { GA_TRACKING_KEY } from '@/config';
 import { GlobalStyle, theme } from '@S/index';
-import Header from '@F/layout/Header';
 import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
 import Lottie404 from '@F/lottie/Lottie404';
 import MouseTrail from '@F/animation/MouseTrail';
@@ -28,7 +27,6 @@ function App() {
 
       <Router>
         <Suspense fallback={<LottieLoadingPacMan width={280} height={280} />}>
-          <Header />
           <Switch>
             { routes.map((route) => (
               <Route

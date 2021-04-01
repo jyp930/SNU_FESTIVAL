@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import MascotInFolder from '@I/svg/mascot/mascot-in-folder.svg';
 import Fade from 'react-reveal/Fade';
 import { preloadImage } from '@U/functions/preload';
@@ -7,22 +8,11 @@ import LogoImage from '@I/png/logo.png';
 import ClosingFestival from '@I/jpg/closing-festival.jpg';
 import Menus from '@F/layout/Menus';
 import styled, { css } from 'styled-components';
-import { theme } from '@S/index';
 import * as S from './styles';
 
-function Header() {
+function Header({ hamburgerColor }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const history = useHistory();
-
-  const [hamburgerColor, setHamburgerColor] = useState('white');
-  const location = useLocation();
-  useEffect(() => {
-    if (location.pathname === '/') {
-      setHamburgerColor(theme.palette.PURPLE50);
-    } else {
-      setHamburgerColor('white');
-    }
-  }, [location]);
 
   useEffect(() => {
     if (menuIsOpen) {
@@ -83,6 +73,14 @@ function Header() {
   );
 }
 export default Header;
+
+Header.propTypes = {
+  hamburgerColor: PropTypes.string,
+};
+
+Header.defaultProps = {
+  hamburgerColor: 'white',
+};
 
 export const HeaderContent = styled.div`
   display: flex;
