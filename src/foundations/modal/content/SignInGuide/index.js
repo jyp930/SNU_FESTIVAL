@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Close from '@I/svg/icon/close.svg';
+import Close from '@I/icon/close.svg';
 import useAuth from '@U/hooks/useAuth';
 import * as S from './styles';
 

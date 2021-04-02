@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
-import SignOut from '@I/svg/icon/sign-out.svg';
+import SignOut from '@I/icon/sign-out.svg';
 import useAuth, { useUser } from '@U/hooks/useAuth';
 import * as S from './styles';
 
