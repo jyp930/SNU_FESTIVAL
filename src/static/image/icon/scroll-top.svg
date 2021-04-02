@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52">
+    <defs>
+        <filter id="타원_20" width="52" height="52" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-opacity=".2"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="그룹_74" transform="translate(-299 -1048)">
+        <g filter="url(#타원_20)" transform="translate(299 1048)">
+            <circle id="타원_20-2" cx="17" cy="17" r="17" class="cls-1" transform="translate(9 6)"/>
+        </g>
+        <circle id="타원_21" cx="15" cy="15" r="15" fill="#9397d6" transform="translate(310 1056)"/>
+        <path id="Icon_awesome-angle-up" d="M6.945 11.01l5.337 5.337a.938.938 0 0 1 0 1.33l-.887.887a.938.938 0 0 1-1.33 0l-3.788-3.778-3.783 3.783a.938.938 0 0 1-1.33 0l-.891-.887a.938.938 0 0 1 0-1.33l5.337-5.338a.939.939 0 0 1 1.334 0z" class="cls-1" transform="translate(318.723 1056.266)"/>
+    </g>
+</svg>
