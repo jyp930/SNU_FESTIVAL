@@ -6,7 +6,9 @@ import { ResponsiveWidthStyle } from '@S/responsive/display';
 export const StyledFestivalSection = styled.div`
   background-image: url(${FestivalBackground});
   width: 100%;
+  overflow-x: hidden;
   height: auto;
+
   background-repeat: no-repeat;
   background-size: cover;
   padding: 1.5rem 0;
