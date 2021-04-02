@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import PropTypes from 'prop-types';
+import { withTheme } from 'styled-components';
+import { HeaderContent } from '@F/layout/Header';
+import FestivalSection from '@C/introduction/FestivalSection';
 import * as S from './styles';
-import ChiefSpeech from '@C/introduction/ChiefSpeech';
-import PosterSlider from '@C/introduction/PosterSlider';
-import Information from '@C/introduction/Information';
 
-function Introduction() {
+function Introduction({ theme }) {
+  const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+
   return (
     <S.StyledIntroduction>
-      <ChiefSpeech />
-      <PosterSlider />
-      <Information />
+      <HeaderContent hasBoxShadow>축하사 소개</HeaderContent>
+      <S.Body>
+        <FestivalSection isMobile={isMobile} />
+      </S.Body>
     </S.StyledIntroduction>
   );
 }
-export default Introduction;
+export default withTheme(Introduction);
 
 Introduction.propTypes = {
-
+  theme: PropTypes.shape({
+    windowWidth: PropTypes.number.isRequired,
+  }).isRequired,
 };
