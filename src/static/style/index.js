@@ -31,11 +31,12 @@ export const palette = {
   BLUE50_PASTEL: '#0a82ff',
 
   // 21 봄축제 축페이지 전용
-  GREEN80: '#40c2d1',
+  GREEN80: '#40C2D1',
   PURPLE20: '#E5E7FB',
-  PURPLE50: '#9397d6',
+  PURPLE50: '#9397D6',
   PURPLE80: '#485582',
   GRAY80: '#707070',
+  GRAY60: '#ADADAD',
 };
 
 export const zIndex = {

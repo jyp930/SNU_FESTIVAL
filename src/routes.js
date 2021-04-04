@@ -6,6 +6,7 @@ const Event = lazy(() => import('@/pages/Event'));
 const Apply = lazy(() => import('@/pages/Apply'));
 const Introduction = lazy(() => import('@/pages/Introduction'));
 const GuestBook = lazy(() => import('@/pages/GuestBook'));
+const Vote = lazy(() => import('@/pages/Vote'));
 
 const routes = [
   {
@@ -35,6 +36,11 @@ const routes = [
   {
     path: '/guestbook',
     component: GuestBook,
+    exact: true,
+  },
+  {
+    path: '/vote',
+    component: Vote,
     exact: true,
   },
 ];
