@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '@F/layout/Header';
-import VoteContainer from '@C/Vote';
+import VoteContainer from '@C/vote/Vote';
 
 function Vote() {
   return (

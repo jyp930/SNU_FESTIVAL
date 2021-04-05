@@ -1,21 +1,7 @@
 import styled from 'styled-components';
 
-export const StyledVote = styled.div`
-  height: ${({ theme }) => theme.windowHeight}px;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Body = styled.div`
-  width: 100%;
-  max-width: 1000px;
-  height: 100%;
-`;
-
 export const TextSection = styled.div`
-  padding: 3rem 2rem;
+  padding: 2rem;
 `;
 
 export const PurpleText = styled.span`
@@ -37,6 +23,7 @@ export const Notice = styled.p`
   font-size: 1rem;
   color: ${({ theme }) => theme.palette.GRAY80};
   line-height: 1.67;
+  word-break: keep-all;
 `;
 
 export const Evaluation = styled.p`
