@@ -11,7 +11,6 @@ function TextSection({ isMobile }) {
         <S.PurpleText>공연</S.PurpleText>
         에
         {' '}
-        {isMobile && <br />}
         <S.PurpleText>투표</S.PurpleText>
         하세요!
       </S.Title>

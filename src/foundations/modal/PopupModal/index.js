@@ -1,18 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Popup from 'reactjs-popup';
-import * as S from './styles';
+import { rgba } from 'polished';
 
-function PopupModal({ isModalOpen, setIsModalOpen, children }) {
+function PopupModal({
+  isModalOpen, setIsModalOpen, children, closeOnDocumentClick, width,
+}) {
   return (
     <Popup
       modal
       open={isModalOpen}
-      closeOnDocumentClick={false}
+      closeOnDocumentClick={closeOnDocumentClick}
       onClose={() => setIsModalOpen(false)}
-      overlayStyle={{ opacity: 0.8 }}
+      overlayStyle={{ background: rgba(0, 0, 0, 0.7) }}
       contentStyle={{
-        border: 'none', display: 'flex', justifyContent: 'center', backgroundColor: 'transparent',
+        width,
+        margin: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'transparent',
+        border: 'none',
       }}
     >
       {children}
@@ -25,4 +33,11 @@ PopupModal.propTypes = {
   isModalOpen: PropTypes.bool.isRequired,
   setIsModalOpen: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,
+  closeOnDocumentClick: PropTypes.bool,
+  width: PropTypes.string,
+};
+
+PopupModal.defaultProps = {
+  closeOnDocumentClick: false,
+  width: undefined,
 };

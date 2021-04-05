@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TextSection = styled.div`
-  padding: 2rem;
+
 `;
 
 export const PurpleText = styled.span`
@@ -20,6 +20,7 @@ export const Title = styled.p`
 
 export const Notice = styled.p`
   margin-top: 0;
+  margin-bottom: 0.5rem;
   font-size: 1rem;
   color: ${({ theme }) => theme.palette.GRAY80};
   line-height: 1.67;
@@ -28,6 +29,7 @@ export const Notice = styled.p`
 
 export const Evaluation = styled.p`
   margin-top: 0;
+  margin-bottom: 0.8rem;
   font-size: 0.9rem;
   color: ${({ theme }) => theme.palette.GRAY60};
 `;
