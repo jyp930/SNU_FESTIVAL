@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import Carousel from '@F/carousel/Carousel';
 import { PHONE_CERT_LIST as VARIABLE_PHONE_CERT_LIST, SING_STEALER_LIST as VARIABLE_SING_STEALER_LIST } from '@C/vote/VoteSection/variables';
@@ -9,10 +9,19 @@ const PHONE_CERT = 0;
 const SING_STEALER = 1;
 
 function VoteSection({ theme, isMobile }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentPerformance, setCurrentPerformance] = useState(PHONE_CERT);
   const PHONE_CERT_LIST = VARIABLE_PHONE_CERT_LIST;
   const SING_STEALER_LIST = VARIABLE_SING_STEALER_LIST;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPerformance, setCurrentPerformance] = useState(PHONE_CERT);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentItem = useMemo(() => (
+    currentPerformance === PHONE_CERT ? PHONE_CERT_LIST[currentIndex] : SING_STEALER_LIST[currentIndex]
+  ), [currentPerformance, currentIndex, PHONE_CERT_LIST, SING_STEALER_LIST]);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [currentPerformance]);
 
   return (
     <S.StyledVoteSection>
@@ -39,6 +48,7 @@ function VoteSection({ theme, isMobile }) {
             ))}
             fullHeight={isMobile ? 240 : theme.windowWidth / 3}
             fullWidth={isMobile ? 340 : theme.windowWidth / 2}
+            emitCurrentIndex={setCurrentIndex}
           />
         )}
         { currentPerformance === SING_STEALER && (
@@ -48,11 +58,12 @@ function VoteSection({ theme, isMobile }) {
             ))}
             fullHeight={isMobile ? 240 : theme.windowWidth / 3}
             fullWidth={isMobile ? 340 : theme.windowWidth / 2}
+            emitCurrentIndex={setCurrentIndex}
           />
         )}
       </S.CarouselSection>
       <S.TeamInfoSection>
-        폴라로이드
+        {currentItem.name}
       </S.TeamInfoSection>
       <S.SubmitSection>
         <div>제출하기</div>
@@ -62,8 +73,8 @@ function VoteSection({ theme, isMobile }) {
         <iframe
           width={isMobile ? theme.windowWidth : theme.windowWidth * (2 / 3)}
           height={isMobile ? theme.windowWidth / 1.77 : (theme.windowWidth * (2 / 3)) / 1.77}
-          src="https://www.youtube.com/embed/86BST8NIpNM?start=10"
-          title="SNU FESTIVAL"
+          src={currentItem.youtubeUrl}
+          title={currentItem.name}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

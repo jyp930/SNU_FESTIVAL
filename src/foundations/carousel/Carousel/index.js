@@ -4,7 +4,9 @@ import React, {
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
-function Carousel({ fullWidth, fullHeight, items }) {
+function Carousel({
+  fullWidth, fullHeight, items, emitCurrentIndex,
+}) {
   const arrayLength = useMemo(() => items.length, [items]); // 아이템의 총 수
   const itemWidth = useMemo(() => fullWidth * 0.6, [fullWidth]); // 아이템의 너비
   const distance = useMemo(() => itemWidth / 4, [itemWidth]); // 아이템간의 거리
@@ -18,6 +20,9 @@ function Carousel({ fullWidth, fullHeight, items }) {
 
   // 마우스 이벤트
   useEffect(() => {
+    if (xSpeed > 1) {
+      // setXSpeed(xSpeed * 0.8);
+    }
     setCurrentX(x => {
       let newX = x;
       while (newX > 0) {
@@ -52,6 +57,10 @@ function Carousel({ fullWidth, fullHeight, items }) {
     }
     setCurrentIndex(Math.abs(newCurrentIndex));
   }, [currentX, distance, arrayLength]);
+
+  useEffect(() => {
+    emitCurrentIndex(currentIndex);
+  }, [emitCurrentIndex, currentIndex]);
 
   const visibleRange = 3;
 
@@ -115,4 +124,9 @@ Carousel.propTypes = {
   fullWidth: PropTypes.number.isRequired,
   fullHeight: PropTypes.number.isRequired,
   items: PropTypes.arrayOf(PropTypes.element).isRequired,
+  emitCurrentIndex: PropTypes.func,
+};
+
+Carousel.defaultProps = {
+  emitCurrentIndex: () => {},
 };
