@@ -3,19 +3,13 @@ import PropTypes from 'prop-types';
 import Comments from '@C/guest-book/Comment';
 import StampDescriptionBox from '@C/guest-book/StampDescriptionBox';
 import WriteBox from '@C/guest-book/WriteBox';
-import useAuth, { useUser } from '@U/hooks/useAuth';
-import PageLoading from '@F/loading/PageLoading';
-import * as S from './styles';
+import withUser from '@U/hoc/withUser';
 import { HeaderContent } from '@F/layout/Header';
+import * as S from './styles';
 
-function GuestBook() {
-  useAuth(); // NOTE: 유저가 바뀔 때를 useEffect 로 감지하기 위함. HOC 이 더 어울릴 듯.
-  const { user } = useUser();
-
+function GuestBook({ user }) {
   return (
     <S.StyledGuestBook>
-      {/* NOTE: 재사용시 HOC 으로 분리할수도... */}
-      { user.isLoading && <PageLoading message="로그인 중입니다..." /> }
       <HeaderContent>방명록</HeaderContent>
       <S.Body>
         <S.StampDescriptionBoxWrapper>
@@ -31,8 +25,12 @@ function GuestBook() {
     </S.StyledGuestBook>
   );
 }
-export default GuestBook;
+export default withUser(GuestBook);
 
 GuestBook.propTypes = {
-
+  user: PropTypes.shape({
+    uid: PropTypes.string,
+    isLoading: PropTypes.bool,
+    email: PropTypes.string,
+  }).isRequired,
 };

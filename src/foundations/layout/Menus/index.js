@@ -9,7 +9,7 @@ import * as S from './styles';
 function Menus({ setMenuIsOpen }) {
   const history = useHistory();
   const { isAuthorized } = useUser();
-  const { signOut } = useAuth();
+  const { signIn, signOut } = useAuth();
 
   const changeUrl = useCallback((route) => {
     history.push(route);
@@ -36,6 +36,13 @@ function Menus({ setMenuIsOpen }) {
         <S.SignOutButton onClick={signOut}>
           <S.Image src={SignOut} alt="signOut" />
           <p>로그아웃</p>
+        </S.SignOutButton>
+      )}
+      { !isAuthorized && (
+        <S.SignOutButton onClick={signIn}>
+          {/* TODO: SignIn 이미지로 교체하기 */}
+          <S.Image src={SignOut} alt="signIn" style={{ transform: 'scaleX(-1)' }} />
+          <p>로그인</p>
         </S.SignOutButton>
       )}
     </S.StyledMenus>

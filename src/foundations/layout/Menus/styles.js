@@ -39,13 +39,13 @@ export const SignOutButton = styled.div`
   cursor: pointer;
   
   p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: white;
   }
 `;
 
 export const Image = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
 `;

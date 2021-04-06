@@ -5,12 +5,13 @@ import { PHONE_CERT_LIST as VARIABLE_PHONE_CERT_LIST, SING_STEALER_LIST as VARIA
 import PopupModal from '@F/modal/PopupModal';
 import FilledHeart from '@I/icon/filled-heart.svg';
 import EmptyHeart from '@I/icon/empty-heart.svg';
+import withUser from '@U/hoc/withUser';
 import * as S from './styles';
 
 const PHONE_CERT = 0;
 const SING_STEALER = 1;
 
-function VoteSection({ theme, isMobile }) {
+export function VoteSection({ theme, isMobile, user }) {
   const PHONE_CERT_LIST = VARIABLE_PHONE_CERT_LIST;
   const SING_STEALER_LIST = VARIABLE_SING_STEALER_LIST;
 
@@ -88,11 +89,18 @@ function VoteSection({ theme, isMobile }) {
     </S.StyledVoteSection>
   );
 }
-export default VoteSection;
 
 VoteSection.propTypes = {
   theme: PropTypes.shape({
     windowWidth: PropTypes.number.isRequired,
   }).isRequired,
   isMobile: PropTypes.bool.isRequired,
+  user: PropTypes.shape({
+    uid: PropTypes.string,
+    isLoading: PropTypes.bool,
+    email: PropTypes.string,
+  }).isRequired,
 };
+
+const VoteSectionParent = withUser((props) => <VoteSection {...props} />);
+export default VoteSectionParent;
