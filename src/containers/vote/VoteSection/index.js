@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Carousel from '@F/carousel/Carousel';
 import { PHONE_CERT_LIST as VARIABLE_PHONE_CERT_LIST, SING_STEALER_LIST as VARIABLE_SING_STEALER_LIST } from '@C/vote/VoteSection/variables';
 import PopupModal from '@F/modal/PopupModal';
+import FilledHeart from '@I/icon/filled-heart.svg';
+import EmptyHeart from '@I/icon/empty-heart.svg';
 import * as S from './styles';
 
 const PHONE_CERT = 0;
@@ -63,7 +65,11 @@ function VoteSection({ theme, isMobile }) {
         )}
       </S.CarouselSection>
       <S.TeamInfoSection>
-        {currentItem.name}
+        <p>{currentItem.name}</p>
+        <p>{currentItem.songs}</p>
+        <S.LikeButton>
+          <img src={false ? FilledHeart : EmptyHeart} alt="like" />
+        </S.LikeButton>
       </S.TeamInfoSection>
       <S.SubmitSection>
         <div>제출하기</div>

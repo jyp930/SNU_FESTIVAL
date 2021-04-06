@@ -5,4 +5,4 @@ export default {
   title: 'containers/vote/VoteSection',
 };
 
-export const Default = () => <VoteSection />;
+export const Default = () => <VoteSection isMobile={false} theme={{ windowWidth: 1000 }} />;

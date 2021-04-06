@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const StyledVote = styled.div`
   height: ${({ theme }) => theme.windowHeight}px;
@@ -24,4 +25,8 @@ export const VoteWrapper = styled.div`
   width: 100%;
   height: 100%;
   align-self: center;
+  
+  ${media.greaterThan('medium')`
+    padding-bottom: 2rem;
+  `};
 `;

@@ -5,4 +5,4 @@ export default {
   title: 'containers/vote/Vote',
 };
 
-export const Default = () => <Vote />;
+export const Default = () => <Vote theme={{ windowWidth: 1000 }} />;

@@ -52,7 +52,42 @@ export const Thumbnail = styled.div`
 `;
 
 export const TeamInfoSection = styled.div`
+  position: relative;
+  text-align: center;
   height: 4rem;
+  margin-bottom: 1rem;
+  
+  & > p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    &:first-of-type {
+      color: ${({ theme }) => theme.palette.PURPLE50};
+    }
+    &:last-of-type {
+      color: ${({ theme }) => theme.palette.GRAY80};
+    }
+  }
+`;
+
+export const LikeButton = styled.div`
+  position: absolute;
+  top: 1.25rem;
+  right: 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const SubmitSection = styled.div`
