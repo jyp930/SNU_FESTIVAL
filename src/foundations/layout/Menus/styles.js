@@ -29,7 +29,7 @@ export const NaviText = styled.p`
   }
 `;
 
-export const SignOutButton = styled.div`
+export const SignButton = styled.div`
   position: absolute;
   bottom: 5vw;
   left: 10vw;

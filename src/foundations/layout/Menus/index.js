@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
+import SignIn from '@I/icon/sign-in.svg';
 import SignOut from '@I/icon/sign-out.svg';
 import useAuth, { useUser } from '@U/hooks/useAuth';
 import * as S from './styles';
@@ -33,17 +34,16 @@ function Menus({ setMenuIsOpen }) {
   return (
     <S.StyledMenus>
       { isAuthorized && (
-        <S.SignOutButton onClick={signOut}>
+        <S.SignButton onClick={signOut}>
           <S.Image src={SignOut} alt="signOut" />
           <p>로그아웃</p>
-        </S.SignOutButton>
+        </S.SignButton>
       )}
       { !isAuthorized && (
-        <S.SignOutButton onClick={signIn}>
-          {/* TODO: SignIn 이미지로 교체하기 */}
-          <S.Image src={SignOut} alt="signIn" style={{ transform: 'scaleX(-1)' }} />
+        <S.SignButton onClick={signIn}>
+          <S.Image src={SignIn} alt="signIn" />
           <p>로그인</p>
-        </S.SignOutButton>
+        </S.SignButton>
       )}
     </S.StyledMenus>
   );

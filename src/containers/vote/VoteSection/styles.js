@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FlexCenterStyle } from '@S/responsive/display';
 
 export const StyledVoteSection = styled.div`
@@ -91,21 +91,26 @@ export const LikeButton = styled.div`
 `;
 
 export const SubmitSection = styled.div`
-  & div {
-    ${FlexCenterStyle};
-    width: 100%;
-    height: 4rem;
-
-    font-size: 1.5rem;
-    border-radius: 5px;
-    background-color: ${({ theme }) => theme.palette.PURPLE50};
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
-  }
-
   & p {
     text-align: center;
     color: ${({ theme }) => theme.palette.PURPLE50};
   }
+`;
+
+export const SubmitButton = styled.div`
+  ${FlexCenterStyle};
+  width: 100%;
+  height: 4rem;
+  
+  font-size: 1.5rem;
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.palette.PURPLE50};
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  
+  ${props => props.isDisabled && css`
+    opacity: 0.5;
+    cursor: not-allowed;
+  `};
 `;

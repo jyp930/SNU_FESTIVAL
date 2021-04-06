@@ -6,25 +6,64 @@ import PopupModal from '@F/modal/PopupModal';
 import FilledHeart from '@I/icon/filled-heart.svg';
 import EmptyHeart from '@I/icon/empty-heart.svg';
 import withUser from '@U/hoc/withUser';
+import { toast } from 'react-toastify';
 import * as S from './styles';
 
 const PHONE_CERT = 0;
 const SING_STEALER = 1;
 
-export function VoteSection({ theme, isMobile, user }) {
+export function VoteSection({
+  theme, isMobile, user, isAuthorized, haveVotedForPhoneCert, haveVotedForSingStealer,
+}) {
   const PHONE_CERT_LIST = VARIABLE_PHONE_CERT_LIST;
   const SING_STEALER_LIST = VARIABLE_SING_STEALER_LIST;
 
+  // 공연 정보
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPerformance, setCurrentPerformance] = useState(PHONE_CERT);
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentItem = useMemo(() => (
     currentPerformance === PHONE_CERT ? PHONE_CERT_LIST[currentIndex] : SING_STEALER_LIST[currentIndex]
   ), [currentPerformance, currentIndex, PHONE_CERT_LIST, SING_STEALER_LIST]);
-
   useEffect(() => {
     setCurrentIndex(0);
   }, [currentPerformance]);
+
+  // 투표 정보
+  const isDisableToVote = useMemo(() => (
+    currentPerformance === PHONE_CERT
+      ? !isAuthorized || haveVotedForPhoneCert
+      : !isAuthorized || haveVotedForSingStealer
+  ), [currentPerformance, haveVotedForPhoneCert, haveVotedForSingStealer, isAuthorized]);
+  const [myLikesForPhoneCert, setMyLikesForPhoneCert] = useState([]);
+  const [myLikesForSingStealer, setMyLikesForSingStealer] = useState([]);
+  const myLikesForCurrentPerformance = useMemo(() => (
+    currentPerformance === PHONE_CERT ? myLikesForPhoneCert : myLikesForSingStealer
+  ), [currentPerformance, myLikesForSingStealer, myLikesForPhoneCert]);
+  const ILikeCurrentItem = useMemo(() => (
+    myLikesForCurrentPerformance.includes(currentItem.performanceId)
+  ), [myLikesForCurrentPerformance, currentItem]);
+
+  const cancelLike = () => {
+    if (currentPerformance === PHONE_CERT) {
+      setMyLikesForPhoneCert(state => state.filter(item => item !== currentItem.performanceId));
+    } else {
+      setMyLikesForSingStealer(state => state.filter(item => item !== currentItem.performanceId));
+    }
+  };
+  const addLike = () => {
+    if (currentPerformance === PHONE_CERT) {
+      if (myLikesForPhoneCert.length >= 3) {
+        toast('투표는 최대 3팀까지 할 수 있습니다.');
+      } else {
+        setMyLikesForPhoneCert(state => [...state, currentItem.performanceId]);
+      }
+    } else if (myLikesForSingStealer.length >= 3) {
+      toast('투표는 최대 3팀까지 할 수 있습니다.');
+    } else {
+      setMyLikesForSingStealer(state => [...state, currentItem.performanceId]);
+    }
+  };
 
   return (
     <S.StyledVoteSection>
@@ -68,12 +107,12 @@ export function VoteSection({ theme, isMobile, user }) {
       <S.TeamInfoSection>
         <p>{currentItem.name}</p>
         <p>{currentItem.songs}</p>
-        <S.LikeButton>
-          <img src={false ? FilledHeart : EmptyHeart} alt="like" />
+        <S.LikeButton onClick={ILikeCurrentItem ? cancelLike : addLike}>
+          <img src={ILikeCurrentItem ? FilledHeart : EmptyHeart} alt="like" />
         </S.LikeButton>
       </S.TeamInfoSection>
       <S.SubmitSection>
-        <div>제출하기</div>
+        <S.SubmitButton isDisabled={isDisableToVote}>제출하기</S.SubmitButton>
         <p>버튼을 누른 이후에는 수정이 불가합니다!</p>
       </S.SubmitSection>
       <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} closeOnDocumentClick width="90%">
@@ -100,7 +139,23 @@ VoteSection.propTypes = {
     isLoading: PropTypes.bool,
     email: PropTypes.string,
   }).isRequired,
+  isAuthorized: PropTypes.bool.isRequired,
+  haveVotedForPhoneCert: PropTypes.bool.isRequired,
+  haveVotedForSingStealer: PropTypes.bool.isRequired,
 };
 
-const VoteSectionParent = withUser((props) => <VoteSection {...props} />);
+const VoteSectionParent = withUser((props) => {
+  const isAuthorized = useMemo(() => !!(props.user.uid && !props.user.isLoading), [props.user]);
+  const haveVotedForPhoneCert = false;
+  const haveVotedForSingStealer = true;
+
+  return (
+    <VoteSection
+      {...props}
+      isAuthorized={isAuthorized}
+      haveVotedForPhoneCert={haveVotedForPhoneCert}
+      haveVotedForSingStealer={haveVotedForSingStealer}
+    />
+  );
+});
 export default VoteSectionParent;
