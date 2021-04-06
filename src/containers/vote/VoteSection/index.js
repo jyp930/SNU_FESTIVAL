@@ -13,7 +13,9 @@ const PHONE_CERT = 0;
 const SING_STEALER = 1;
 
 export function VoteSection({
-  theme, isMobile, user, isAuthorized, haveVotedForPhoneCert, haveVotedForSingStealer,
+  theme, isMobile, user, isAuthorized,
+  haveVotedForPhoneCert, haveVotedForSingStealer,
+  phoneCertListIHaveVoted, singStealerListIHaveVoted,
 }) {
   const PHONE_CERT_LIST = VARIABLE_PHONE_CERT_LIST;
   const SING_STEALER_LIST = VARIABLE_SING_STEALER_LIST;
@@ -22,9 +24,10 @@ export function VoteSection({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPerformance, setCurrentPerformance] = useState(PHONE_CERT);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const currentItem = useMemo(() => (
-    currentPerformance === PHONE_CERT ? PHONE_CERT_LIST[currentIndex] : SING_STEALER_LIST[currentIndex]
-  ), [currentPerformance, currentIndex, PHONE_CERT_LIST, SING_STEALER_LIST]);
+  const currentItemList = useMemo(() => (
+    currentPerformance === PHONE_CERT ? PHONE_CERT_LIST : SING_STEALER_LIST
+  ), [currentPerformance, PHONE_CERT_LIST, SING_STEALER_LIST]);
+  const currentItem = useMemo(() => currentItemList[currentIndex], [currentItemList, currentIndex]);
   useEffect(() => {
     setCurrentIndex(0);
   }, [currentPerformance]);
@@ -43,7 +46,18 @@ export function VoteSection({
   const ILikeCurrentItem = useMemo(() => (
     myLikesForCurrentPerformance.includes(currentItem.performanceId)
   ), [myLikesForCurrentPerformance, currentItem]);
+  useEffect(() => {
+    if (haveVotedForPhoneCert) {
+      setMyLikesForPhoneCert(phoneCertListIHaveVoted);
+    }
+  }, [haveVotedForPhoneCert, phoneCertListIHaveVoted]);
+  useEffect(() => {
+    if (haveVotedForSingStealer) {
+      setMyLikesForSingStealer(singStealerListIHaveVoted);
+    }
+  }, [haveVotedForSingStealer, singStealerListIHaveVoted]);
 
+  // 하트 클릭
   const cancelLike = () => {
     if (currentPerformance === PHONE_CERT) {
       setMyLikesForPhoneCert(state => state.filter(item => item !== currentItem.performanceId));
@@ -62,6 +76,16 @@ export function VoteSection({
       toast('투표는 최대 3팀까지 할 수 있습니다.');
     } else {
       setMyLikesForSingStealer(state => [...state, currentItem.performanceId]);
+    }
+  };
+  const onClickLikeButton = () => {
+    if ((currentPerformance === PHONE_CERT && haveVotedForPhoneCert)
+        || (currentPerformance === SING_STEALER && haveVotedForSingStealer)) {
+      toast('이미 투표한 공연입니다.');
+    } else if (ILikeCurrentItem) {
+      cancelLike();
+    } else {
+      addLike();
     }
   };
 
@@ -83,31 +107,20 @@ export function VoteSection({
         </S.TabItem>
       </S.Tab>
       <S.CarouselSection>
-        { currentPerformance === PHONE_CERT && (
-          <Carousel
-            items={PHONE_CERT_LIST.map(performance => (
-              <S.Thumbnail onClick={() => setIsModalOpen(true)}><img src={performance.thumbnail} alt="" /></S.Thumbnail>
-            ))}
-            fullHeight={isMobile ? 240 : theme.windowWidth / 3}
-            fullWidth={isMobile ? 340 : theme.windowWidth / 2}
-            emitCurrentIndex={setCurrentIndex}
-          />
-        )}
-        { currentPerformance === SING_STEALER && (
-          <Carousel
-            items={SING_STEALER_LIST.map(performance => (
-              <S.Thumbnail onClick={() => setIsModalOpen(true)}><img src={performance.thumbnail} alt="" /></S.Thumbnail>
-            ))}
-            fullHeight={isMobile ? 240 : theme.windowWidth / 3}
-            fullWidth={isMobile ? 340 : theme.windowWidth / 2}
-            emitCurrentIndex={setCurrentIndex}
-          />
-        )}
+        <Carousel
+          key={currentPerformance} // force rerender
+          items={currentItemList.map(performance => (
+            <S.Thumbnail onClick={() => setIsModalOpen(true)}><img src={performance.thumbnail} alt="" /></S.Thumbnail>
+          ))}
+          fullHeight={isMobile ? 240 : theme.windowWidth / 3}
+          fullWidth={isMobile ? 340 : theme.windowWidth / 2}
+          emitCurrentIndex={setCurrentIndex}
+        />
       </S.CarouselSection>
       <S.TeamInfoSection>
         <p>{currentItem.name}</p>
         <p>{currentItem.songs}</p>
-        <S.LikeButton onClick={ILikeCurrentItem ? cancelLike : addLike}>
+        <S.LikeButton onClick={onClickLikeButton}>
           <img src={ILikeCurrentItem ? FilledHeart : EmptyHeart} alt="like" />
         </S.LikeButton>
       </S.TeamInfoSection>
@@ -142,17 +155,26 @@ VoteSection.propTypes = {
   isAuthorized: PropTypes.bool.isRequired,
   haveVotedForPhoneCert: PropTypes.bool.isRequired,
   haveVotedForSingStealer: PropTypes.bool.isRequired,
+  phoneCertListIHaveVoted: PropTypes.arrayOf(PropTypes.number).isRequired,
+  singStealerListIHaveVoted: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 const VoteSectionParent = withUser((props) => {
   const isAuthorized = useMemo(() => !!(props.user.uid && !props.user.isLoading), [props.user]);
-  const haveVotedForPhoneCert = false;
-  const haveVotedForSingStealer = true;
+  const [phoneCertListIHaveVoted, setPhoneCertListIHaveVoted] = useState([]);
+  const [singStealerListIHaveVoted, setSingStealerListIHaveVoted] = useState([]);
+  const haveVotedForPhoneCert = useMemo(() => (
+    phoneCertListIHaveVoted.length > 0), [phoneCertListIHaveVoted]);
+  const haveVotedForSingStealer = useMemo(() => (
+    singStealerListIHaveVoted.length > 0), [singStealerListIHaveVoted]);
+  // TODO: 투표 정보 들고오는 동안은 loading 조건 추가
 
   return (
     <VoteSection
       {...props}
       isAuthorized={isAuthorized}
+      phoneCertListIHaveVoted={phoneCertListIHaveVoted}
+      singStealerListIHaveVoted={singStealerListIHaveVoted}
       haveVotedForPhoneCert={haveVotedForPhoneCert}
       haveVotedForSingStealer={haveVotedForSingStealer}
     />

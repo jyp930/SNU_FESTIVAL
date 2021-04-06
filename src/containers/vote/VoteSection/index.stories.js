@@ -13,5 +13,7 @@ export const Default = () => (
     isAuthorized={false}
     haveVotedForPhoneCert
     haveVotedForSingStealer={false}
+    phoneCertListIHaveVoted={[]}
+    singStealerListIHaveVoted={[]}
   />
 );
