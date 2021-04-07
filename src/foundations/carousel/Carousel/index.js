@@ -20,17 +20,30 @@ function Carousel({
 
   // 마우스 이벤트
   useEffect(() => {
-    if (xSpeed > 1) {
-      // setXSpeed(xSpeed * 0.8);
+    if (Math.abs(xSpeed) > 0.1) {
+      setCurrentX(x => {
+        let newX = x;
+        while (newX > 0) {
+          newX -= (itemFullWidth || 1);
+        }
+        return (newX + xSpeed) % (itemFullWidth || 1);
+      });
+    } else {
+      setXSpeed(0);
     }
-    setCurrentX(x => {
-      let newX = x;
-      while (newX > 0) {
-        newX -= (itemFullWidth || 1);
-      }
-      return (newX + xSpeed) % (itemFullWidth || 1);
-    });
   }, [xSpeed, itemFullWidth]);
+
+  // slowdown
+  useEffect(() => {
+    let timer;
+    if (!isDown) {
+      timer = requestAnimationFrame(function slowDown() {
+        setXSpeed(speed => speed * 0.92);
+        if (Math.abs(xSpeed) > 1) timer = requestAnimationFrame(slowDown);
+      });
+    }
+    return () => cancelAnimationFrame(timer);
+  }, [isDown]);
 
   const onMouseDown = useCallback((e) => {
     const { clientX } = e.type === 'mousedown' ? e : e.touches[0];
@@ -45,7 +58,7 @@ function Carousel({
 
   const onMouseMove = (e) => {
     const { clientX } = e.type === 'mousemove' ? e : e.touches[0];
-    setXSpeed(clientX - offsetX);
+    setXSpeed((clientX - offsetX) * 0.85);
     setOffsetX(clientX);
   };
 
@@ -62,7 +75,7 @@ function Carousel({
     emitCurrentIndex(currentIndex);
   }, [emitCurrentIndex, currentIndex]);
 
-  const visibleRange = 3;
+  const visibleRange = 4;
 
   return (
     <S.StyledCarousel
@@ -83,8 +96,8 @@ function Carousel({
           let indexFromCurrent = Math.abs(index - currentIndex);
           let distanceFromCurrent = distance * index;
 
-          if ((currentIndex === 0 || currentIndex === 1)) {
-            if ((index === arrayLength - 1 || index === arrayLength - 2)) {
+          if (currentIndex === 0 || currentIndex === 1 || currentIndex === 2) {
+            if (index === arrayLength - 1 || index === arrayLength - 2 || index === arrayLength - 3) {
               indexFromCurrent = Math.abs(arrayLength - indexFromCurrent);
               if (currentX > (itemWidth - itemFullWidth)) {
                 distanceFromCurrent -= itemFullWidth;
@@ -94,8 +107,8 @@ function Carousel({
             }
           }
 
-          if ((currentIndex === arrayLength - 1 || currentIndex === arrayLength - 2)) {
-            if ((index === 0 || index === 1)) {
+          if (currentIndex === arrayLength - 1 || currentIndex === arrayLength - 2 || currentIndex === arrayLength - 3) {
+            if (index === 0 || index === 1 || index === 2) {
               indexFromCurrent = Math.abs(arrayLength - indexFromCurrent);
               distanceFromCurrent += itemFullWidth;
             }

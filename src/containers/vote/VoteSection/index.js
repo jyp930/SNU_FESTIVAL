@@ -79,6 +79,7 @@ export function VoteSection({
     }
   };
   const onClickLikeButton = () => {
+    // TODO: 로그인 안되어있으면 로그인 모달 띄우기
     if ((currentPerformance === PHONE_CERT && haveVotedForPhoneCert)
         || (currentPerformance === SING_STEALER && haveVotedForSingStealer)) {
       toast('이미 투표한 공연입니다.');

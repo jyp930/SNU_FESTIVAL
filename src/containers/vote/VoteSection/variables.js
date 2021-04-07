@@ -28,6 +28,15 @@ export const PHONE_CERT_LIST = [
   {
     performanceId: 7, name: '폴라로이드7', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster17Fall,
   },
+  {
+    performanceId: 8, name: '폴라로이드8', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster17Spring,
+  },
+  {
+    performanceId: 9, name: '폴라로이드9', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster17Fall,
+  },
+  {
+    performanceId: 10, name: '폴라로이드10', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster17Spring,
+  },
 ];
 
 export const SING_STEALER_LIST = [
@@ -51,5 +60,14 @@ export const SING_STEALER_LIST = [
   },
   {
     performanceId: 7, name: '망고의배신7', songs: '그리움의 온도 외 7곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Fall,
+  },
+  {
+    performanceId: 8, name: '망고의배신8', songs: '그리움의 온도 외 7곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+  },
+  {
+    performanceId: 9, name: '망고의배신9', songs: '그리움의 온도 외 7곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Fall,
+  },
+  {
+    performanceId: 10, name: '망고의배신10', songs: '그리움의 온도 외 7곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
   },
 ];

@@ -27,10 +27,7 @@ export const TabItem = styled.div`
   cursor: pointer;
 
   color: ${props => (props.isSelected ? props.theme.palette.PURPLE50 : props.theme.palette.GRAY60)};
-  transition: color, scale, 0.2s;
-  &:hover {
-    transform: scale(1.05);
-  }
+  transition: color 0.2s;
 `;
 
 export const CarouselSection = styled.div`
