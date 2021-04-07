@@ -55,6 +55,7 @@ export function Comment({ user, comments }) {
         const isLiked = comment.likes.includes(user.uid);
 
         return (
+          // TODO: react window
           <S.CommentThread key={comment.id}>
             <S.FirstRow>
               <S.Box>
@@ -135,7 +136,7 @@ function CommentParent({ user }) {
 
   const subscribeComments = useCallback(() => guestBookCollectionRef
     .orderBy('created_at', 'desc')
-    .limit(1000)
+    .limit(100)
     .onSnapshot(docs => {
       const firestoreComments = [];
       docs.forEach(doc => (
