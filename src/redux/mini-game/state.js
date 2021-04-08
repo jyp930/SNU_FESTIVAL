@@ -6,7 +6,7 @@ const PREFIX = 'MINI_GAME';
 
 /** initial state */
 const INITIAL_STATE = {
-  isLoading: false,
+  isLoaded: false,
   stage1: false,
   stage2: false,
   stage3: false,
@@ -17,7 +17,7 @@ const INITIAL_STATE = {
 /** type */
 export const types = {
   SET_VALUE: `${PREFIX}/SET_VALUE`,
-  SET_LOADING: `${PREFIX}/SET_LOADING`,
+  SET_LOADED: `${PREFIX}/SET_LOADED`,
   RESET: `${PREFIX}/RESET`,
   CREATE_NEW_MINI_GAME: `${PREFIX}/CREATE_NEW_MINI_GAME`,
   SET_MINI_GAME: `${PREFIX}/SET_MINI_GAME`,
@@ -29,7 +29,7 @@ export const types = {
 /** action */
 export const actions = {
   setValue: createSetValueAction(types.SET_VALUE),
-  setLoading: (isLoading) => ({ type: types.SET_LOADING, isLoading }),
+  setLoaded: (isLoaded) => ({ type: types.SET_LOADED, isLoaded }),
   reset: () => ({ type: types.RESET }),
   createNewMiniGame: (user) => ({ type: types.CREATE_NEW_MINI_GAME, user }),
   setMiniGame: (stages) => ({ type: types.SET_MINI_GAME, stages }),
@@ -41,8 +41,9 @@ export const actions = {
 /** reducer */
 const reducer = createReducer(INITIAL_STATE, {
   [types.SET_VALUE]: setValueReducer,
-  [types.SET_LOADING]: (draft, action) => { draft.isLoading = action.isLoading; },
+  [types.SET_LOADED]: (draft, action) => { draft.isLoaded = action.isLoaded; },
   [types.RESET]: (draft) => {
+    draft.isLoaded = false;
     draft.stage1 = false; draft.stage2 = false;
     draft.stage3 = false; draft.stage4 = false;
   },

@@ -2,39 +2,40 @@ import { createReducer, createSetValueAction, setValueReducer } from '@/redux/co
 import sessionStorage from 'redux-persist/lib/storage/session';
 
 /** prefix */
-const PREFIX = 'USER';
+const PREFIX = 'MISSION';
 
 /** initial state */
 const INITIAL_STATE = {
-  uid: null,
-  email: null,
-  isLoading: false,
+  isLoaded: false,
+  guestbook: false,
 };
 
 /** type */
 export const types = {
   SET_VALUE: `${PREFIX}/SET_VALUE`,
-  SET_LOADING: `${PREFIX}/SET_LOADING`,
+  SET_LOADED: `${PREFIX}/SET_LOADED`,
   RESET: `${PREFIX}/RESET`,
+  CREATE_NEW_MISSION: `${PREFIX}/CREATE_NEW_MISSION`,
 };
 
 /** action */
 export const actions = {
   setValue: createSetValueAction(types.SET_VALUE),
-  setLoading: (isLoading) => ({ type: types.SET_LOADING, isLoading }),
+  setLoaded: (isLoaded) => ({ type: types.SET_LOADED, isLoaded }),
   reset: () => ({ type: types.RESET }),
+  createNewMission: (user) => ({ type: types.CREATE_NEW_MISSION, user }),
 };
 
 /** reducer */
 const reducer = createReducer(INITIAL_STATE, {
   [types.SET_VALUE]: setValueReducer,
-  [types.SET_LOADING]: (draft, action) => { draft.isLoading = action.isLoading; },
-  [types.RESET]: (draft) => { draft.user = null; draft.email = null; draft.isLoading = false; },
+  [types.SET_LOADED]: (draft, action) => { draft.isLoaded = action.isLoaded; },
+  [types.RESET]: (draft) => { draft.isLoaded = false; draft.guestbook = false; },
 });
 export default reducer;
 
-export const userPersistConfig = {
-  key: 'user',
+export const missionPersistConfig = {
+  key: 'mission',
   storage: sessionStorage,
   blacklist: [],
 };

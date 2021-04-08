@@ -41,7 +41,7 @@ export function Comment({ user, comments }) {
   }, [user, isAuthorized, comments]);
 
   useEffect(() => {
-    if (true) { // TODO: 미션 firestore 로딩이 끝났고, 유저가 방명록 미션을 클리어하지 않았다면
+    if (true) { // TODO: 미션 firestore 가 load 되었고, 유저가 방명록 미션을 클리어하지 않았다면
       if (myLikesForComment.length >= 3) {
         console.log('방명록 미션 클리어!');
       }
