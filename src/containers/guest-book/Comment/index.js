@@ -27,6 +27,27 @@ export function Comment({ user, comments }) {
   const { modalComponent, setIsModalOpen } = useModal(SignInGuide);
   const { isAuthorized } = useUser();
 
+  // 내가 좋아하는 방명록 목록
+  const [myLikesForComment, setMyLikesForComment] = useState([]);
+  useEffect(() => {
+    if (isAuthorized) {
+      comments.forEach((comment) => {
+        if (comment.likes.includes(user.uid)) {
+          setMyLikesForComment(state => [...state, comment.id]);
+        }
+      });
+    }
+    return () => setMyLikesForComment([]);
+  }, [user, isAuthorized, comments]);
+
+  useEffect(() => {
+    if (true) { // TODO: 미션 firestore 로딩이 끝났고, 유저가 방명록 미션을 클리어하지 않았다면
+      if (myLikesForComment.length >= 3) {
+        console.log('방명록 미션 클리어!');
+      }
+    }
+  }, [myLikesForComment]);
+
   const deleteComment = useCallback((commentId) => {
     guestBookCollectionRef.doc(commentId)
       .delete()
@@ -52,7 +73,7 @@ export function Comment({ user, comments }) {
     <S.StyledComment>
       {comments.map(comment => {
         const isMine = user.uid === comment.author;
-        const isLiked = comment.likes.includes(user.uid);
+        const isLiked = myLikesForComment.includes(comment.id);
 
         return (
           // TODO: react window
@@ -136,7 +157,6 @@ function CommentParent({ user }) {
 
   const subscribeComments = useCallback(() => guestBookCollectionRef
     .orderBy('created_at', 'desc')
-    .limit(100)
     .onSnapshot(docs => {
       const firestoreComments = [];
       docs.forEach(doc => (
