@@ -5,3 +5,7 @@ export function createNewMissionInFirestore(user) {
     guestbook: false,
   }).then();
 }
+
+export function fetchMissionsFromFirestore(user) {
+  return { guestbook: true };
+}

@@ -5,10 +5,9 @@ import { actions, types } from './state';
 import { createNewMiniGameInFirestore } from './api';
 
 export function* createNewMiniGame(action) {
-  yield put(actions.setLoading(true));
   yield call(createNewMiniGameInFirestore, action.user);
   yield put(actions.reset());
-  yield put(actions.setLoading(false));
+  yield put(actions.setLoaded(true));
 }
 
 export default function* () {
