@@ -27,7 +27,7 @@ export function VoteSection({
   const currentItemList = useMemo(() => (
     currentPerformance === PHONE_CERT ? PHONE_CERT_LIST : SING_STEALER_LIST
   ), [currentPerformance, PHONE_CERT_LIST, SING_STEALER_LIST]);
-  const currentItem = useMemo(() => currentItemList[currentIndex], [currentItemList, currentIndex]);
+  const currentItem = useMemo(() => currentItemList[currentIndex] ?? {}, [currentItemList, currentIndex]);
   useEffect(() => {
     setCurrentIndex(0);
   }, [currentPerformance]);
