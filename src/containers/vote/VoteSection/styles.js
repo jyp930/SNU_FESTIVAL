@@ -70,20 +70,20 @@ export const TeamInfoSection = styled.div`
 
 export const LikeButton = styled.div`
   position: absolute;
-  top: 1.25rem;
+  top: 0.75rem;
   right: 10%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
-  
+
   & > img {
-    width: 100%;
-    height: 100%;
+    width: 65%;
+    height: 65%;
   }
 `;
 

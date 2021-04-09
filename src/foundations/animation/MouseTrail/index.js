@@ -17,8 +17,8 @@ import Mascot15 from '@I/svg/mascot/15.svg';
 import { zIndex } from '@S/index';
 
 const mascots = [
-  Mascot1, Mascot2, Mascot3, Mascot4, Mascot5,
-  Mascot18, Mascot19, Mascot20, Mascot9, Mascot10,
+  Mascot1, Mascot3, Mascot2, Mascot5, Mascot10,
+  Mascot18, Mascot19, Mascot20, Mascot9, Mascot4,
   Mascot11, Mascot12, Mascot13, Mascot14, Mascot15,
 ];
 
@@ -53,7 +53,7 @@ export function triggerMouseTrail() {
       n.src = mascots[i];
       n.className = 'mouseTrailElement';
       n.setAttribute('style',
-        `position: absolute; height: 20px; width: 20px; pointer-events: none; z-index: ${zIndex.mouseTrail}`);
+        `position: absolute; height: 15px; width: 15px; pointer-events: none; z-index: ${zIndex.mouseTrail}`);
       document.body.appendChild(n);
       return n;
     }());
@@ -65,7 +65,7 @@ export function triggerMouseTrail() {
   };
 
   // Creates the Dot objects, populates the dots array
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < 4; i += 1) {
     const d = new Dot(i);
     dots.push(d);
   }
