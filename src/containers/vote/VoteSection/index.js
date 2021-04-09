@@ -106,12 +106,17 @@ export function VoteSection({
     }
   };
   const submit = () => {
+    const { uid, email } = user;
+    if (!email.endsWith('@snu.ac.kr')) {
+      toast('SNU 계정만 투표 가능합니다.');
+      return;
+    }
+
     if (myLikesForPhoneCert.length === 0) {
       toast('하트를 눌러 투표를 진행해 주세요.');
       return;
     }
 
-    const { uid } = user;
     if (currentPerformance === PHONE_CERT) {
       votePhoneCertCollectionRef.doc('phone-cert-doc').update({
         ...(myLikesForPhoneCert[0] && { [myLikesForPhoneCert[0]]: firebase.firestore.FieldValue.arrayUnion(uid) }),

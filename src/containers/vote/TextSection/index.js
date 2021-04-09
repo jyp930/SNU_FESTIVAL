@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
-function TextSection({ isMobile }) {
+function TextSection() {
   return (
     <S.TextSection>
       <S.Title>
@@ -18,7 +18,7 @@ function TextSection({ isMobile }) {
         1.
         {' '}
         <S.PurpleText>구글 연동된 SNU 계정</S.PurpleText>
-        만 투표가능합니다.
+        만 투표 가능합니다.
         {' '}
         <br />
         2. 한 계정당
@@ -30,7 +30,7 @@ function TextSection({ isMobile }) {
         3. 제출하기를 누르면 선택한 팀에게 투표가 완료됩니다.
       </S.Notice>
       <S.Evaluation>
-        * 온라인 투표 30%, 공연자 상호평가 70%
+        * 사진을 누르면 공연 영상을 볼 수 있습니다.
       </S.Evaluation>
     </S.TextSection>
   );
@@ -38,5 +38,4 @@ function TextSection({ isMobile }) {
 export default TextSection;
 
 TextSection.propTypes = {
-  isMobile: PropTypes.bool.isRequired,
 };
