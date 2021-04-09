@@ -142,6 +142,9 @@ export function VoteSection({
     }
   };
 
+  // 공연 클릭 감지
+  const [mouseDownItem, setMouseDownItem] = useState(null);
+
   return (
     <S.StyledVoteSection>
       <S.Tab>
@@ -163,7 +166,10 @@ export function VoteSection({
         <Carousel
           key={currentPerformance} // force rerender
           items={currentItemList.map(performance => (
-            <S.Thumbnail onClick={() => setIsModalOpen(true)}>
+            <S.Thumbnail
+              onMouseDown={() => setMouseDownItem(performance.performanceId)}
+              onMouseUp={() => (currentItem.performanceId === mouseDownItem ? setIsModalOpen(true) : null)}
+            >
               <img src={isMobile ? performance.thumbnailSmall : performance.thumbnail} alt="" />
             </S.Thumbnail>
           ))}
