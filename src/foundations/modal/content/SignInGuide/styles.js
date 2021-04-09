@@ -54,6 +54,10 @@ export const SubSpan = styled.span`
   font-weight: bold;
   color: ${({ theme }) => rgba(theme.palette.GRAY80, 0.55)};
   line-height: 1.43;
+  
+  &:nth-of-type(3) {
+    color: ${({ theme }) => rgba(theme.palette.ORANGE_NEWTRO, 0.55)};
+  }
 `;
 
 export const Button = styled.div`
