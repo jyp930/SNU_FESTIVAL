@@ -14,6 +14,15 @@ import SingStealer5 from '@I/vote/sing-stealer-5.jpg';
 import SingStealer6 from '@I/vote/sing-stealer-6.jpg';
 import SingStealer7 from '@I/vote/sing-stealer-7.jpg';
 import SingStealer8 from '@I/vote/sing-stealer-8.jpg';
+import SingStealer9 from '@I/vote/sing-stealer-9.jpg';
+import SingStealer10 from '@I/vote/sing-stealer-10.jpg';
+import SingStealer11 from '@I/vote/sing-stealer-11.jpg';
+import SingStealer12 from '@I/vote/sing-stealer-12.jpg';
+import SingStealer13 from '@I/vote/sing-stealer-13.jpg';
+import SingStealer14 from '@I/vote/sing-stealer-14.jpg';
+import SingStealer15 from '@I/vote/sing-stealer-15.jpg';
+import SingStealer16 from '@I/vote/sing-stealer-16.jpg';
+import SingStealer17 from '@I/vote/sing-stealer-17.jpg';
 
 export const PHONE_CERT_LIST = [
   {
@@ -77,30 +86,30 @@ export const SING_STEALER_LIST = [
     performanceId: 8, name: '인기하태', songs: 'Empty hole 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer8,
   },
   {
-    performanceId: 9, name: '김민찬', songs: '이별', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Fall,
+    performanceId: 9, name: '김민찬', songs: '이별', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer9,
   },
   {
-    performanceId: 10, name: '잘된 놈, 망한 놈, 이상한 놈', songs: '브이로그 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 10, name: '잘된 놈, 망한 놈, 이상한 놈', songs: '브이로그 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer10,
   },
   {
-    performanceId: 11, name: '장시유', songs: 'Mercy', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 11, name: '장시유', songs: 'Mercy', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer11,
   },
   {
-    performanceId: 12, name: 'By the sea', songs: 'beautiful', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 12, name: 'By the sea', songs: 'beautiful', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer12,
   },
   {
-    performanceId: 13, name: '유황김', songs: 'Babushka Boi 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 13, name: '유황김', songs: 'Babushka Boi 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer13,
   },
   {
-    performanceId: 14, name: '양준석', songs: '비밀', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 14, name: '양준석', songs: '비밀', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer14,
   },
   {
-    performanceId: 15, name: '오성재', songs: 'I\'m not sorry 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 15, name: '오성재', songs: 'I\'m not sorry 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer15,
   },
   {
-    performanceId: 16, name: '신문 만드는 아이들', songs: '그대 내 품에', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 16, name: '신문 만드는 아이들', songs: '그대 내 품에', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer16,
   },
   {
-    performanceId: 17, name: '이진도', songs: '큰일이다', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 17, name: '이진도', songs: '큰일이다', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer17,
   },
 ];
