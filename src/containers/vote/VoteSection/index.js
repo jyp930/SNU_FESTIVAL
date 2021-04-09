@@ -174,7 +174,7 @@ export function VoteSection({
       </S.TeamInfoSection>
       <S.SubmitSection>
         <S.SubmitButton isDisabled={isDisableToVote} onClick={!isDisableToVote ? submit : null}>
-          { isPhoneCertLoaded && isSingStealerLoaded ? '제출하기' : '로딩 중...' }
+          { !isAuthorized || (isPhoneCertLoaded && isSingStealerLoaded) ? '제출하기' : '로딩 중...' }
         </S.SubmitButton>
         <p>버튼을 누른 이후에는 수정이 불가합니다!</p>
       </S.SubmitSection>
