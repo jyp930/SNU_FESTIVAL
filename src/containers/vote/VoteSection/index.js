@@ -7,6 +7,9 @@ import FilledHeart from '@I/icon/filled-heart.svg';
 import EmptyHeart from '@I/icon/empty-heart.svg';
 import withUser from '@U/hoc/withUser';
 import { toast } from 'react-toastify';
+import useModal from '@U/hooks/useModal';
+import SignInGuide from '@F/modal/content/SignInGuide';
+import { votePhoneCertCollectionRef, voteSingStealerCollectionRef } from '@U/initializer/firebase';
 import * as S from './styles';
 
 const PHONE_CERT = 0;
@@ -16,7 +19,11 @@ export function VoteSection({
   theme, isMobile, user, isAuthorized,
   haveVotedForPhoneCert, haveVotedForSingStealer,
   phoneCertListIHaveVoted, singStealerListIHaveVoted,
+  isPhoneCertLoaded, isSingStealerLoaded,
 }) {
+  // 로그인 모달
+  const { modalComponent: signInModalComponent, setIsModalOpen: setSignInModalComponent } = useModal(SignInGuide);
+
   const PHONE_CERT_LIST = VARIABLE_PHONE_CERT_LIST;
   const SING_STEALER_LIST = VARIABLE_SING_STEALER_LIST;
 
@@ -35,14 +42,15 @@ export function VoteSection({
   // 투표 정보
   const isDisableToVote = useMemo(() => (
     currentPerformance === PHONE_CERT
-      ? !isAuthorized || haveVotedForPhoneCert
-      : !isAuthorized || haveVotedForSingStealer
-  ), [currentPerformance, haveVotedForPhoneCert, haveVotedForSingStealer, isAuthorized]);
+      ? !isAuthorized || haveVotedForPhoneCert || !isPhoneCertLoaded
+      : !isAuthorized || haveVotedForSingStealer || !isSingStealerLoaded
+  ), [currentPerformance, haveVotedForPhoneCert, haveVotedForSingStealer, isAuthorized, isPhoneCertLoaded, isSingStealerLoaded]);
   const [myLikesForPhoneCert, setMyLikesForPhoneCert] = useState([]);
   const [myLikesForSingStealer, setMyLikesForSingStealer] = useState([]);
-  const myLikesForCurrentPerformance = useMemo(() => (
-    currentPerformance === PHONE_CERT ? myLikesForPhoneCert : myLikesForSingStealer
-  ), [currentPerformance, myLikesForSingStealer, myLikesForPhoneCert]);
+  const myLikesForCurrentPerformance = useMemo(() => {
+    if (!isAuthorized) return [];
+    return currentPerformance === PHONE_CERT ? myLikesForPhoneCert : myLikesForSingStealer;
+  }, [isAuthorized, currentPerformance, myLikesForSingStealer, myLikesForPhoneCert]);
   const ILikeCurrentItem = useMemo(() => (
     myLikesForCurrentPerformance.includes(currentItem.performanceId)
   ), [myLikesForCurrentPerformance, currentItem]);
@@ -79,7 +87,10 @@ export function VoteSection({
     }
   };
   const onClickLikeButton = () => {
-    // TODO: 로그인 안되어있으면 로그인 모달 띄우기
+    if (!isAuthorized) {
+      setSignInModalComponent(true);
+      return;
+    }
     if ((currentPerformance === PHONE_CERT && haveVotedForPhoneCert)
         || (currentPerformance === SING_STEALER && haveVotedForSingStealer)) {
       toast('이미 투표한 공연입니다.');
@@ -88,6 +99,9 @@ export function VoteSection({
     } else {
       addLike();
     }
+  };
+  const submit = () => {
+
   };
 
   return (
@@ -126,10 +140,15 @@ export function VoteSection({
         </S.LikeButton>
       </S.TeamInfoSection>
       <S.SubmitSection>
-        <S.SubmitButton isDisabled={isDisableToVote}>제출하기</S.SubmitButton>
+        <S.SubmitButton isDisabled={isDisableToVote} onClick={!isDisableToVote ? submit : null}>제출하기</S.SubmitButton>
         <p>버튼을 누른 이후에는 수정이 불가합니다!</p>
       </S.SubmitSection>
-      <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} closeOnDocumentClick width="90%">
+      <PopupModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        closeOnDocumentClick
+        width={`${isMobile ? theme.windowWidth : theme.windowWidth * (2 / 3)}px`}
+      >
         <iframe
           width={isMobile ? theme.windowWidth : theme.windowWidth * (2 / 3)}
           height={isMobile ? theme.windowWidth / 1.77 : (theme.windowWidth * (2 / 3)) / 1.77}
@@ -139,6 +158,8 @@ export function VoteSection({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
       </PopupModal>
+
+      {signInModalComponent}
     </S.StyledVoteSection>
   );
 }
@@ -158,6 +179,8 @@ VoteSection.propTypes = {
   haveVotedForSingStealer: PropTypes.bool.isRequired,
   phoneCertListIHaveVoted: PropTypes.arrayOf(PropTypes.number).isRequired,
   singStealerListIHaveVoted: PropTypes.arrayOf(PropTypes.number).isRequired,
+  isPhoneCertLoaded: PropTypes.bool.isRequired,
+  isSingStealerLoaded: PropTypes.bool.isRequired,
 };
 
 const VoteSectionParent = withUser((props) => {
@@ -168,7 +191,37 @@ const VoteSectionParent = withUser((props) => {
     phoneCertListIHaveVoted.length > 0), [phoneCertListIHaveVoted]);
   const haveVotedForSingStealer = useMemo(() => (
     singStealerListIHaveVoted.length > 0), [singStealerListIHaveVoted]);
-  // TODO: 투표 정보 들고오는 동안은 loading 조건 추가
+
+  // firestore 정보 가져오기
+  const [isPhoneCertLoaded, setIsPhoneCertLoaded] = useState(false);
+  const [isSingStealerLoaded, setIsSingStealerLoaded] = useState(false);
+  useEffect(() => {
+    const { uid } = props.user;
+    if (uid) {
+      votePhoneCertCollectionRef.get().then((querySnapshot) => {
+        const newListIHaveVoted = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data.likes.includes(uid)) {
+            newListIHaveVoted.push(data.performanceId);
+          }
+        });
+        setPhoneCertListIHaveVoted(newListIHaveVoted);
+        setIsPhoneCertLoaded(true);
+      });
+      voteSingStealerCollectionRef.get().then((querySnapshot) => {
+        const newListIHaveVoted = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data.likes.includes(uid)) {
+            newListIHaveVoted.push(data.performanceId);
+          }
+        });
+        setSingStealerListIHaveVoted(newListIHaveVoted);
+        setIsSingStealerLoaded(true);
+      });
+    }
+  }, [props.user]);
 
   return (
     <VoteSection
@@ -178,6 +231,8 @@ const VoteSectionParent = withUser((props) => {
       singStealerListIHaveVoted={singStealerListIHaveVoted}
       haveVotedForPhoneCert={haveVotedForPhoneCert}
       haveVotedForSingStealer={haveVotedForSingStealer}
+      isPhoneCertLoaded={isPhoneCertLoaded}
+      isSingStealerLoaded={isSingStealerLoaded}
     />
   );
 });

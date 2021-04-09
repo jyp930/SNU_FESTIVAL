@@ -6,30 +6,39 @@ import Poster19Fall from '@I/poster/19fall.png';
 import Poster18Fall from '@I/poster/18fall.jpeg';
 import Poster17Fall from '@I/poster/17fall.jpg';
 
+import SingStealer1 from '@I/vote/sing-stealer-1.jpg';
+import SingStealer2 from '@I/vote/sing-stealer-2.jpg';
+import SingStealer3 from '@I/vote/sing-stealer-3.jpg';
+import SingStealer4 from '@I/vote/sing-stealer-4.jpg';
+import SingStealer5 from '@I/vote/sing-stealer-5.jpg';
+import SingStealer6 from '@I/vote/sing-stealer-6.jpg';
+import SingStealer7 from '@I/vote/sing-stealer-7.jpg';
+import SingStealer8 from '@I/vote/sing-stealer-8.jpg';
+
 export const PHONE_CERT_LIST = [
   {
-    performanceId: 1, name: '도로도로', songs: '괜찮아도 괜찮아 (D.O) 외 3곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=10', thumbnail: Poster21Spring,
+    performanceId: 1, name: '도로도로', songs: '괜찮아도 괜찮아 (D.O) 외 3곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=10', thumbnail: SingStealer1,
   },
   {
-    performanceId: 2, name: '폴라로이드', songs: '괜찮아도 괜찮아 (D.O) 외 4곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=20', thumbnail: Poster19Spring,
+    performanceId: 2, name: '폴라로이드', songs: '괜찮아도 괜찮아 (D.O) 외 4곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=20', thumbnail: SingStealer2,
   },
   {
-    performanceId: 3, name: '아미학', songs: '괜찮아도 괜찮아 (D.O) 외 5곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=30', thumbnail: Poster18Spring,
+    performanceId: 3, name: '아미학', songs: '괜찮아도 괜찮아 (D.O) 외 5곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=30', thumbnail: SingStealer3,
   },
   {
-    performanceId: 4, name: '2014', songs: '괜찮아도 괜찮아 (D.O) 외 6곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=40', thumbnail: Poster17Spring,
+    performanceId: 4, name: '2014', songs: '괜찮아도 괜찮아 (D.O) 외 6곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=40', thumbnail: SingStealer4,
   },
   {
-    performanceId: 5, name: '김영준', songs: '괜찮아도 괜찮아 (D.O) 외 7곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=50', thumbnail: Poster19Fall,
+    performanceId: 5, name: '김영준', songs: '괜찮아도 괜찮아 (D.O) 외 7곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=50', thumbnail: SingStealer5,
   },
   {
-    performanceId: 6, name: 'Wave', songs: '괜찮아도 괜찮아 (D.O) 외 8곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=60', thumbnail: Poster18Fall,
+    performanceId: 6, name: 'Wave', songs: '괜찮아도 괜찮아 (D.O) 외 8곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=60', thumbnail: SingStealer6,
   },
   {
-    performanceId: 7, name: '매화수', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster17Fall,
+    performanceId: 7, name: '매화수', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: SingStealer7,
   },
   {
-    performanceId: 8, name: '6416', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster17Spring,
+    performanceId: 8, name: '6416', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: SingStealer8,
   },
   {
     performanceId: 9, name: '소리느낌', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster17Fall,
@@ -44,28 +53,28 @@ export const PHONE_CERT_LIST = [
 
 export const SING_STEALER_LIST = [
   {
-    performanceId: 1, name: '조현지', songs: '하늘을 달리다', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: Poster18Spring,
+    performanceId: 1, name: '조현지', songs: '하늘을 달리다', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=70', thumbnail: SingStealer1,
   },
   {
-    performanceId: 2, name: '김희진', songs: 'square', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=80', thumbnail: Poster19Spring,
+    performanceId: 2, name: '김희진', songs: 'square', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=80', thumbnail: SingStealer2,
   },
   {
-    performanceId: 3, name: '이종호', songs: 'Selfmade Orange2', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=90', thumbnail: Poster17Spring,
+    performanceId: 3, name: '이종호', songs: 'Selfmade Orange2', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=90', thumbnail: SingStealer3,
   },
   {
-    performanceId: 4, name: '유로 & 유정', songs: 'At my worst', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=100', thumbnail: Poster17Spring,
+    performanceId: 4, name: '유로 & 유정', songs: 'At my worst', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=100', thumbnail: SingStealer4,
   },
   {
-    performanceId: 5, name: '노만영', songs: 'Happy', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=110', thumbnail: Poster19Fall,
+    performanceId: 5, name: '노만영', songs: 'Happy', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=110', thumbnail: SingStealer5,
   },
   {
-    performanceId: 6, name: '안효준', songs: '거위의 꿈', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=120', thumbnail: Poster18Fall,
+    performanceId: 6, name: '안효준', songs: '거위의 꿈', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=120', thumbnail: SingStealer6,
   },
   {
-    performanceId: 7, name: '최민영', songs: '홍연', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Fall,
+    performanceId: 7, name: '최민영', songs: '홍연', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer7,
   },
   {
-    performanceId: 8, name: '인기하태', songs: 'Empty hole 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Spring,
+    performanceId: 8, name: '인기하태', songs: 'Empty hole 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: SingStealer8,
   },
   {
     performanceId: 9, name: '김민찬', songs: '이별', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=130', thumbnail: Poster17Fall,
