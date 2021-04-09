@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import useModal from '@U/hooks/useModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
 import { votePhoneCertCollectionRef, voteSingStealerCollectionRef } from '@U/initializer/firebase';
+import firebase from 'firebase/app';
 import * as S from './styles';
 
 const PHONE_CERT = 0;
@@ -17,7 +18,6 @@ const SING_STEALER = 1;
 
 export function VoteSection({
   theme, isMobile, user, isAuthorized,
-  haveVotedForPhoneCert, haveVotedForSingStealer,
   phoneCertListIHaveVoted, singStealerListIHaveVoted,
   isPhoneCertLoaded, isSingStealerLoaded,
 }) {
@@ -40,11 +40,26 @@ export function VoteSection({
   }, [currentPerformance]);
 
   // 투표 정보
+  const [haveVotedForPhoneCert, setHaveVotedForPhoneCert] = useState(false);
+  const [haveVotedForSingStealer, setHaveVotedForSingStealer] = useState(false);
+  useEffect(() => {
+    if (phoneCertListIHaveVoted.length > 0) {
+      setMyLikesForPhoneCert(phoneCertListIHaveVoted);
+      setHaveVotedForPhoneCert(true);
+    }
+  }, [phoneCertListIHaveVoted]);
+  useEffect(() => {
+    if (singStealerListIHaveVoted.length > 0) {
+      setMyLikesForSingStealer(singStealerListIHaveVoted);
+      setHaveVotedForSingStealer(true);
+    }
+  }, [singStealerListIHaveVoted]);
   const isDisableToVote = useMemo(() => (
     currentPerformance === PHONE_CERT
       ? !isAuthorized || haveVotedForPhoneCert || !isPhoneCertLoaded
       : !isAuthorized || haveVotedForSingStealer || !isSingStealerLoaded
   ), [currentPerformance, haveVotedForPhoneCert, haveVotedForSingStealer, isAuthorized, isPhoneCertLoaded, isSingStealerLoaded]);
+
   const [myLikesForPhoneCert, setMyLikesForPhoneCert] = useState([]);
   const [myLikesForSingStealer, setMyLikesForSingStealer] = useState([]);
   const myLikesForCurrentPerformance = useMemo(() => {
@@ -54,16 +69,6 @@ export function VoteSection({
   const ILikeCurrentItem = useMemo(() => (
     myLikesForCurrentPerformance.includes(currentItem.performanceId)
   ), [myLikesForCurrentPerformance, currentItem]);
-  useEffect(() => {
-    if (haveVotedForPhoneCert) {
-      setMyLikesForPhoneCert(phoneCertListIHaveVoted);
-    }
-  }, [haveVotedForPhoneCert, phoneCertListIHaveVoted]);
-  useEffect(() => {
-    if (haveVotedForSingStealer) {
-      setMyLikesForSingStealer(singStealerListIHaveVoted);
-    }
-  }, [haveVotedForSingStealer, singStealerListIHaveVoted]);
 
   // 하트 클릭
   const cancelLike = () => {
@@ -93,7 +98,7 @@ export function VoteSection({
     }
     if ((currentPerformance === PHONE_CERT && haveVotedForPhoneCert)
         || (currentPerformance === SING_STEALER && haveVotedForSingStealer)) {
-      toast('이미 투표한 공연입니다.');
+      toast('이미 투표에 참여했습니다.');
     } else if (ILikeCurrentItem) {
       cancelLike();
     } else {
@@ -101,7 +106,35 @@ export function VoteSection({
     }
   };
   const submit = () => {
+    if (myLikesForPhoneCert.length === 0) {
+      toast('하트를 눌러 투표를 진행해 주세요.');
+      return;
+    }
 
+    const { uid } = user;
+    if (currentPerformance === PHONE_CERT) {
+      votePhoneCertCollectionRef.doc('phone-cert-doc').update({
+        ...(myLikesForPhoneCert[0] && { [myLikesForPhoneCert[0]]: firebase.firestore.FieldValue.arrayUnion(uid) }),
+        ...(myLikesForPhoneCert[1] && { [myLikesForPhoneCert[1]]: firebase.firestore.FieldValue.arrayUnion(uid) }),
+        ...(myLikesForPhoneCert[2] && { [myLikesForPhoneCert[2]]: firebase.firestore.FieldValue.arrayUnion(uid) }),
+      }).then(() => {
+        toast('폰서트 투표에 참여되었습니다.');
+        setHaveVotedForPhoneCert(true);
+      }).catch(() => {
+        toast('인터넷이 불안정합니다. 다시 진행해주세요.');
+      });
+    } else if (currentPerformance === SING_STEALER) {
+      voteSingStealerCollectionRef.doc('sing-stealer-doc').update({
+        ...(myLikesForSingStealer[0] && { [myLikesForSingStealer[0]]: firebase.firestore.FieldValue.arrayUnion(uid) }),
+        ...(myLikesForSingStealer[1] && { [myLikesForSingStealer[1]]: firebase.firestore.FieldValue.arrayUnion(uid) }),
+        ...(myLikesForSingStealer[2] && { [myLikesForSingStealer[2]]: firebase.firestore.FieldValue.arrayUnion(uid) }),
+      }).then(() => {
+        toast('씽스틸러 투표에 참여되었습니다.');
+        setHaveVotedForSingStealer(true);
+      }).catch(() => {
+        toast('인터넷이 불안정합니다. 다시 진행해주세요.');
+      });
+    }
   };
 
   return (
@@ -140,7 +173,9 @@ export function VoteSection({
         </S.LikeButton>
       </S.TeamInfoSection>
       <S.SubmitSection>
-        <S.SubmitButton isDisabled={isDisableToVote} onClick={!isDisableToVote ? submit : null}>제출하기</S.SubmitButton>
+        <S.SubmitButton isDisabled={isDisableToVote} onClick={!isDisableToVote ? submit : null}>
+          { isPhoneCertLoaded && isSingStealerLoaded ? '제출하기' : '로딩 중...' }
+        </S.SubmitButton>
         <p>버튼을 누른 이후에는 수정이 불가합니다!</p>
       </S.SubmitSection>
       <PopupModal
@@ -175,8 +210,6 @@ VoteSection.propTypes = {
     email: PropTypes.string,
   }).isRequired,
   isAuthorized: PropTypes.bool.isRequired,
-  haveVotedForPhoneCert: PropTypes.bool.isRequired,
-  haveVotedForSingStealer: PropTypes.bool.isRequired,
   phoneCertListIHaveVoted: PropTypes.arrayOf(PropTypes.number).isRequired,
   singStealerListIHaveVoted: PropTypes.arrayOf(PropTypes.number).isRequired,
   isPhoneCertLoaded: PropTypes.bool.isRequired,
@@ -187,10 +220,6 @@ const VoteSectionParent = withUser((props) => {
   const isAuthorized = useMemo(() => !!(props.user.uid && !props.user.isLoading), [props.user]);
   const [phoneCertListIHaveVoted, setPhoneCertListIHaveVoted] = useState([]);
   const [singStealerListIHaveVoted, setSingStealerListIHaveVoted] = useState([]);
-  const haveVotedForPhoneCert = useMemo(() => (
-    phoneCertListIHaveVoted.length > 0), [phoneCertListIHaveVoted]);
-  const haveVotedForSingStealer = useMemo(() => (
-    singStealerListIHaveVoted.length > 0), [singStealerListIHaveVoted]);
 
   // firestore 정보 가져오기
   const [isPhoneCertLoaded, setIsPhoneCertLoaded] = useState(false);
@@ -198,23 +227,21 @@ const VoteSectionParent = withUser((props) => {
   useEffect(() => {
     const { uid } = props.user;
     if (uid) {
-      votePhoneCertCollectionRef.get().then((querySnapshot) => {
+      votePhoneCertCollectionRef.doc('phone-cert-doc').get().then((doc) => {
         const newListIHaveVoted = [];
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          if (data.likes.includes(uid)) {
-            newListIHaveVoted.push(data.performanceId);
+        Object.entries(doc.data()).forEach(([key, likes]) => {
+          if (likes.includes(uid)) {
+            newListIHaveVoted.push(Number(key));
           }
         });
         setPhoneCertListIHaveVoted(newListIHaveVoted);
         setIsPhoneCertLoaded(true);
       });
-      voteSingStealerCollectionRef.get().then((querySnapshot) => {
+      voteSingStealerCollectionRef.doc('sing-stealer-doc').get().then((doc) => {
         const newListIHaveVoted = [];
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          if (data.likes.includes(uid)) {
-            newListIHaveVoted.push(data.performanceId);
+        Object.entries(doc.data()).forEach(([key, likes]) => {
+          if (likes.includes(uid)) {
+            newListIHaveVoted.push(Number(key));
           }
         });
         setSingStealerListIHaveVoted(newListIHaveVoted);
@@ -229,8 +256,6 @@ const VoteSectionParent = withUser((props) => {
       isAuthorized={isAuthorized}
       phoneCertListIHaveVoted={phoneCertListIHaveVoted}
       singStealerListIHaveVoted={singStealerListIHaveVoted}
-      haveVotedForPhoneCert={haveVotedForPhoneCert}
-      haveVotedForSingStealer={haveVotedForSingStealer}
       isPhoneCertLoaded={isPhoneCertLoaded}
       isSingStealerLoaded={isSingStealerLoaded}
     />
