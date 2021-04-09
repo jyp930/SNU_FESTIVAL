@@ -163,7 +163,9 @@ export function VoteSection({
         <Carousel
           key={currentPerformance} // force rerender
           items={currentItemList.map(performance => (
-            <S.Thumbnail onClick={() => setIsModalOpen(true)}><img src={performance.thumbnail} alt="" /></S.Thumbnail>
+            <S.Thumbnail onClick={() => setIsModalOpen(true)}>
+              <img src={isMobile ? performance.thumbnailSmall : performance.thumbnail} alt="" />
+            </S.Thumbnail>
           ))}
           fullHeight={isMobile ? 240 : theme.windowWidth / 3}
           fullWidth={isMobile ? 340 : theme.windowWidth / 2}
