@@ -15,7 +15,7 @@ export const StyledCarousel = styled.div`
     ${FlexCenterStyle};
     
     border-radius: 10px;
-    background-color: indianred;
+    background-color: ${({ theme }) => theme.palette.PURPLE20};
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
   }
 `;
