@@ -14,7 +14,10 @@ function Home() {
           <p>페스월드</p>
         </S.Title>
       </HeaderContent>
-      <S.Body />
+      <S.Body>
+        <p>2021 SNU FESTIVAL</p>
+        <p>5월 11일에 새로운 모습으로 찾아뵙겠습니다</p>
+      </S.Body>
     </S.StyledHome>
   );
 }

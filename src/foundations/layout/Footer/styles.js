@@ -81,7 +81,7 @@ export const InfoText = styled.p`
   animation-duration: ${({ index }) => 0.3 * index}s;
   animation-fill-mode: forwards;
   
-  color: ${({ theme }) => theme.palette.WHITE_NEWTRO};
+  color: ${({ theme }) => theme.palette.PURPLE50};
 
   @keyframes slideLeft {
     from { 
