@@ -112,7 +112,7 @@ export function VoteSection({
       return;
     }
 
-    if (myLikesForPhoneCert.length === 0) {
+    if (myLikesForCurrentPerformance.length === 0) {
       toast('하트를 눌러 투표를 진행해 주세요.');
       return;
     }

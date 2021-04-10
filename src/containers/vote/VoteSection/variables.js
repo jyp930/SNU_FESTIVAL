@@ -21,7 +21,7 @@ import SingStealer12 from '@I/vote/sing-stealer-12.jpg';
 import SingStealer13 from '@I/vote/sing-stealer-13.jpg';
 import SingStealer14 from '@I/vote/sing-stealer-14.jpg';
 import SingStealer15 from '@I/vote/sing-stealer-15.jpeg';
-import SingStealer16 from '@I/vote/sing-stealer-16.jpg';
+import SingStealer16 from '@I/vote/sing-stealer-16.jpeg';
 import SingStealer17 from '@I/vote/sing-stealer-17.jpg';
 import SingStealer1Small from '@I/vote/sing-stealer-1-small.jpeg';
 import SingStealer2Small from '@I/vote/sing-stealer-2-small.jpeg';
@@ -38,7 +38,7 @@ import SingStealer12Small from '@I/vote/sing-stealer-12-small.jpg';
 import SingStealer13Small from '@I/vote/sing-stealer-13-small.jpg';
 import SingStealer14Small from '@I/vote/sing-stealer-14-small.jpg';
 import SingStealer15Small from '@I/vote/sing-stealer-15-small.jpeg';
-import SingStealer16Small from '@I/vote/sing-stealer-16-small.jpg';
+import SingStealer16Small from '@I/vote/sing-stealer-16-small.jpeg';
 import SingStealer17Small from '@I/vote/sing-stealer-17-small.jpg';
 
 export const PHONE_CERT_LIST = [
