@@ -45,7 +45,7 @@ export const zIndex = {
   base: 1,
   header: 50,
   fullScreen: 100,
-  mouseTrail: 10000,
+  mouseTrail: 200,
   loading: 1000,
 };
 
