@@ -21,6 +21,7 @@ function PopupModal({
         alignItems: 'center',
         backgroundColor: 'transparent',
         border: 'none',
+        padding: 0,
       }}
     >
       {children}

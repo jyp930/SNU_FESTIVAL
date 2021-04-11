@@ -15,5 +15,7 @@ export const Default = () => (
     haveVotedForSingStealer={false}
     phoneCertListIHaveVoted={[]}
     singStealerListIHaveVoted={[]}
+    isPhoneCertLoaded
+    isSingStealerLoaded
   />
 );
