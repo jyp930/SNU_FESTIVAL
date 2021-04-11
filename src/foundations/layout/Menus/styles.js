@@ -18,11 +18,10 @@ export const StyledMenus = styled.div`
 export const OpenedMenu = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: left;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
-  background-color: ${({ theme }) => theme.palette.blueviolet};
   opacity: 1;
 `;
 
@@ -31,12 +30,11 @@ export const NaviText = styled.p`
   font-size: 2rem;
   color: ${({ theme }) => theme.palette.PURPLE20};
   cursor: pointer;
-  text-shadow: 1px 1px 2px grey;
   transition-duration: 1s;
 
   &:hover {
     transition-timing-function: cubic-bezier(.175,.885,.32,1);
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 

@@ -32,15 +32,17 @@ function Menus({ setMenuIsOpen }) {
   ), [changeUrl]);
 
   const openedMenu = (
+    <div style={{ width: '100%' }}>
       <Fade duration={800}>
         <S.OpenedMenu onClick={() => setMenuIsOpen(false)}>
           {NaviButton('공연', '/performance', 300)}
           {NaviButton('행사', '/activity', 350)}
           {NaviButton('굿즈', '/goods', 400)}
           {NaviButton('방명록', '/guestbook', 450)}
-          {NaviButton('축제 소개', '/introduction', 500)}
+          {NaviButton('소개', '/introduction', 500)}
         </S.OpenedMenu>
       </Fade>
+    </div>
   );
 
   return (
