@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const StyledMenus = styled.div`
   display: flex;
@@ -21,14 +22,21 @@ export const OpenedMenu = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  padding-left: 10%;
+  padding-top: 20rem;
+  
+  ${media.greaterThan('medium')`
+    padding-top: 10rem;
+  `};
+  
   height: ${({ theme }) => theme.windowHeight}px;
   opacity: 1;
 `;
 
 export const NaviText = styled.p`
   margin: 20px 0;
-  font-size: 2rem;
-  color: ${({ theme }) => theme.palette.PURPLE20};
+  font-size: 1.6rem;
+  color: ${({ theme }) => theme.palette.WHITE};
   cursor: pointer;
   transition-duration: 1s;
 
