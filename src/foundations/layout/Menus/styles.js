@@ -23,10 +23,11 @@ export const OpenedMenu = styled.div`
   align-items: flex-start;
   width: 100%;
   padding-left: 10%;
-  padding-top: 20rem;
+  padding-top: 10rem;
   
-  ${media.greaterThan('medium')`
-    padding-top: 10rem;
+  ${media.lessThan('medium')`
+    padidng-left: 12%;
+    padding-top: 20rem;
   `};
   
   height: ${({ theme }) => theme.windowHeight}px;
@@ -36,6 +37,11 @@ export const OpenedMenu = styled.div`
 export const NaviText = styled.p`
   margin: 20px 0;
   font-size: 1.6rem;
+  
+  ${media.lessThan('medium')`
+  font-weight: bold;
+  `};
+  
   color: ${({ theme }) => theme.palette.WHITE};
   cursor: pointer;
   transition-duration: 1s;
