@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FestivalBackground from '@I/introduction/festival_background.jpg';
+import FestivalBackground from '@I/introduction/festival-background.jpg';
 
 export const StyledFestivalSection = styled.div`
   background-image: url(${FestivalBackground});

@@ -12,26 +12,26 @@ import * as S from './styles';
 function BasicInfoSection({ isMobile }) {
   const title = useMemo(() => (
     <S.Title widths={[450, 450, 270]}>
-      <Fade left distance="40px">
+      <Fade left distance="40px" delay={100}>
         <S.AbsoluteImage src={SubTitle} alt="FESWORLD" widths={[240, 240, 150]} top={1} left={1} />
       </Fade>
-      <Fade right distance="40px">
+      <Fade right distance="40px" delay={200}>
         <S.AbsoluteImage src={Title} alt="FESWORLD" widths={[230, 230, 150]} top={isMobile ? 25 : 35} right={isMobile ? -10 : -20} />
       </Fade>
-      <Fade bottom distance="20px">
+      <Fade bottom distance="20px" delay={100}>
         <S.AbsoluteImage src={Period} alt="FESWORLD" widths={[140, 140, 75]} top={isMobile ? 80 : 115} right={1} />
       </Fade>
-      <Fade bottom distance="10px">
+      <Fade bottom distance="10px" delay={300}>
         <S.AbsoluteImage src={MascotsInSpeechBubble1} alt="FESWORLD" widths={[140, 140, 100]} top={isMobile ? 65 : 100} left={1} />
       </Fade>
-      <Fade top distance="10px">
+      <Fade top distance="10px" delay={100}>
         <S.AbsoluteImage src={MascotsInSpeechBubble2} alt="FESWORLD" widths={[140, 140, 100]} top={1} right={-1} />
       </Fade>
     </S.Title>
   ), [isMobile]);
 
   const mainPoster = (
-    <Fade left distance="30px">
+    <Fade left distance="30px" delay={200}>
       <S.Image src={Poster21Spring} alt="21spring" widths={[420, 340, 270]} />
     </Fade>
   );

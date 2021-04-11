@@ -49,7 +49,7 @@ export const PHONE_CERT_LIST = [
     performanceId: 2, name: '폴라로이드', songs: '괜찮아도 괜찮아 (D.O) 외 4곡', youtubeUrl: 'https://www.youtube.com/embed/_h3P_4XtStE', thumbnail: SingStealer2, thumbnailSmall: SingStealer2Small,
   },
   {
-    performanceId: 3, name: '아미학', songs: '괜찮아도 괜찮아 (D.O) 외 5곡', youtubeUrl: 'https://www.youtube.com/embed/86BST8NIpNM?start=30', thumbnail: SingStealer3, thumbnailSmall: SingStealer3Small,
+    performanceId: 3, name: '아미학', songs: '괜찮아도 괜찮아 (D.O) 외 5곡', youtubeUrl: 'https://www.youtube.com/embed/GDTr9E7LWNw', thumbnail: SingStealer3, thumbnailSmall: SingStealer3Small,
   },
   {
     performanceId: 4, name: '2014', songs: '괜찮아도 괜찮아 (D.O) 외 6곡', youtubeUrl: 'https://www.youtube.com/embed/3Hbl1Yk3PKY', thumbnail: SingStealer4, thumbnailSmall: SingStealer4Small,
