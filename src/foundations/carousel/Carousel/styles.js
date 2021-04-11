@@ -19,3 +19,17 @@ export const StyledCarousel = styled.div`
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.16);
   }
 `;
+
+export const Wrapper = styled.div`
+  width: ${props => props.width + 100}px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ArrowButton = styled.div`
+  font-size: 35px;
+  color: ${({ theme }) => theme.palette.PURPLE50};
+  cursor: pointer;
+  user-select: none;
+`;

@@ -33,17 +33,14 @@ function Carousel({
     }
   }, [xSpeed, itemFullWidth]);
 
-  // slowdown
   useEffect(() => {
     let timer;
-    if (!isDown) {
-      timer = requestAnimationFrame(function slowDown() {
-        setXSpeed(speed => speed * 0.92);
-        if (Math.abs(xSpeed) > 1) timer = requestAnimationFrame(slowDown);
-      });
-    }
+    timer = requestAnimationFrame(function slowDown() {
+      setXSpeed(speed => speed * 0.92);
+      timer = requestAnimationFrame(slowDown);
+    });
     return () => cancelAnimationFrame(timer);
-  }, [isDown]);
+  }, []);
 
   const onMouseDown = useCallback((e) => {
     const { clientX } = e.type === 'mousedown' ? e : e.touches[0];
@@ -78,20 +75,22 @@ function Carousel({
   const visibleRange = 4;
 
   return (
-    <S.StyledCarousel
-      fullWidth={fullWidth}
-      fullHeight={fullHeight}
-      itemWidth={itemWidth}
-      onMouseDown={onMouseDown}
-      onMouseMove={isDown ? onMouseMove : null}
-      onMouseUp={onMouseUp}
-      onMouseLeave={onMouseUp}
-      onTouchStart={onMouseDown}
-      onTouchMove={isDown ? onMouseMove : null}
-      onTouchEnd={onMouseUp}
-      onTouchCancel={onMouseUp}
-    >
-      {
+    <S.Wrapper width={fullWidth}>
+      { fullWidth > 350 ? <S.ArrowButton onClick={() => setXSpeed(distance / 12.2)}>{'<'}</S.ArrowButton> : <div />}
+      <S.StyledCarousel
+        fullWidth={fullWidth}
+        fullHeight={fullHeight}
+        itemWidth={itemWidth}
+        onMouseDown={onMouseDown}
+        onMouseMove={isDown ? onMouseMove : null}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        onTouchStart={onMouseDown}
+        onTouchMove={isDown ? onMouseMove : null}
+        onTouchEnd={onMouseUp}
+        onTouchCancel={onMouseUp}
+      >
+        {
         items.map((item, index) => {
           let indexFromCurrent = Math.abs(index - currentIndex);
           let distanceFromCurrent = distance * index;
@@ -128,7 +127,9 @@ function Carousel({
           );
         })
       }
-    </S.StyledCarousel>
+      </S.StyledCarousel>
+      { fullWidth > 350 ? <S.ArrowButton onClick={() => setXSpeed(-distance / 12.2)}>{'>'}</S.ArrowButton> : <div />}
+    </S.Wrapper>
   );
 }
 export default Carousel;

@@ -174,7 +174,7 @@ export function VoteSection({
             </S.Thumbnail>
           ))}
           fullHeight={isMobile ? 240 : theme.windowWidth / 3}
-          fullWidth={isMobile ? 340 : theme.windowWidth / 2}
+          fullWidth={isMobile ? 340 : (theme.windowWidth / 2 > 820 ? 820 : theme.windowWidth / 2)}
           emitCurrentIndex={setCurrentIndex}
         />
       </S.CarouselSection>
