@@ -19,17 +19,17 @@ export const OpenedMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
-  background-color: ${({ theme }) => theme.palette.PURPLE50};
+  background-color: ${({ theme }) => theme.palette.blueviolet};
   opacity: 1;
 `;
 
 export const NaviText = styled.p`
   margin: 20px 0;
   font-size: 2rem;
-  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
+  color: ${({ theme }) => theme.palette.PURPLE20};
   cursor: pointer;
   text-shadow: 1px 1px 2px grey;
   transition-duration: 1s;

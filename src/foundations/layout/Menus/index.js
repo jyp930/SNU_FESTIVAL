@@ -34,8 +34,8 @@ function Menus({ setMenuIsOpen }) {
   const openedMenu = (
       <Fade duration={800}>
         <S.OpenedMenu onClick={() => setMenuIsOpen(false)}>
-          {NaviButton('행사', '/activity', 300)}
-          {NaviButton('공연', '/performance', 350)}
+          {NaviButton('공연', '/performance', 300)}
+          {NaviButton('행사', '/activity', 350)}
           {NaviButton('굿즈', '/goods', 400)}
           {NaviButton('방명록', '/guestbook', 450)}
           {NaviButton('축제 소개', '/introduction', 500)}
