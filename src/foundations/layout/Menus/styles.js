@@ -52,6 +52,24 @@ export const NaviText = styled.p`
   }
 `;
 
+export const SmallNaviText = styled.p`
+  margin: 20px 0;
+  font-size: 1rem;
+  
+  ${media.lessThan('medium')`
+  font-weight: bold;
+  `};
+  
+  color: ${({ theme }) => theme.palette.WHITE};
+  cursor: pointer;
+  transition-duration: 1s;
+  
+  &:hover {
+    transition-timing-function: cubic-bezier(.175,.885,.32,1);
+    font-size: 1.8rem;
+  }
+`;
+
 export const SignButton = styled.div`
   position: absolute;
   bottom: 5vw;
