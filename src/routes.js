@@ -14,25 +14,25 @@ const routes = [
     component: Home,
     exact: true,
   },
-  // {
-  //   path: '/activity',
-  //   component: Activity,
-  // },
-  // {
-  //   path: '/event',
-  //   component: Event,
-  //   exact: true,
-  // },
-  // {
-  //   path: '/apply',
-  //   component: Apply,
-  //   exact: true,
-  // },
-  // {
-  //   path: '/introduction',
-  //   component: Introduction,
-  //   exact: true,
-  // },
+  {
+    path: '/activity',
+    component: Activity,
+  },
+  {
+    path: '/event',
+    component: Event,
+    exact: true,
+  },
+  {
+    path: '/apply',
+    component: Apply,
+    exact: true,
+  },
+  {
+    path: '/introduction',
+    component: Introduction,
+    exact: true,
+  },
   {
     path: '/guest-book',
     component: GuestBook,

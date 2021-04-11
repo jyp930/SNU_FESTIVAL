@@ -53,8 +53,9 @@ export const NaviText = styled.p`
 `;
 
 export const SmallNaviText = styled.p`
-  margin: 20px 0;
-  font-size: 1rem;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  padding-left: 1.5rem;
   
   ${media.lessThan('medium')`
   font-weight: bold;
