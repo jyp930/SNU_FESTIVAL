@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const StyledGreeting = styled.div`
   position: relative;
@@ -6,12 +7,16 @@ export const StyledGreeting = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 110px;
+  ${media.greaterThan('medium')`
+    height: 200px;
+  `};
 `;
 
 export const TopText = styled.div`
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.palette.PURPLE50};
+  font-weight: bold;
   
   & > div {
     margin: 0 1rem;
@@ -24,6 +29,10 @@ export const TopText = styled.div`
 export const Images = styled.div`
   & > img {
     width: 145px;
+    ${media.greaterThan('medium')`
+      width: 300px;
+    `};
+    
     height: auto;
     position: absolute;
     bottom: 0;
@@ -31,6 +40,9 @@ export const Images = styled.div`
     &:last-of-type {
       width: 70px;
       bottom: 2px;
+      ${media.greaterThan('medium')`
+        width: 144px;
+      `};
     }
   }
 `;
