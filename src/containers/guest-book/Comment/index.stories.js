@@ -29,6 +29,6 @@ export const Default = () => (
       pauseOnHover={false}
       pauseOnFocusLoss={false}
     />
-    <Comment comments={comments} user={{ uid: 'test', isLoading: false }} />
+    <Comment comments={comments} user={{ uid: 'test', isLoading: false }} mission={{ isLoaded: true, guestBook: false }} />
   </div>
 );

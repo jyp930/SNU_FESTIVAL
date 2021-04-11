@@ -126,7 +126,7 @@ export function VoteSection({
         toast('폰서트 투표에 참여되었습니다.');
         setHaveVotedForPhoneCert(true);
       }).catch(() => {
-        toast('인터넷이 불안정합니다. 다시 진행해주세요.');
+        toast('인터넷이 불안정합니다. 다시 시도해주세요.');
       });
     } else if (currentPerformance === SING_STEALER) {
       voteSingStealerCollectionRef.doc('sing-stealer-doc').update({
@@ -137,7 +137,7 @@ export function VoteSection({
         toast('씽스틸러 투표에 참여되었습니다.');
         setHaveVotedForSingStealer(true);
       }).catch(() => {
-        toast('인터넷이 불안정합니다. 다시 진행해주세요.');
+        toast('인터넷이 불안정합니다. 다시 시도해주세요.');
       });
     }
   };
