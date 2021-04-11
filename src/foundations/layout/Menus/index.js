@@ -31,6 +31,18 @@ function Menus({ setMenuIsOpen }) {
     </Fade>
   ), [changeUrl]);
 
+  const openedMenu = (
+      <Fade duration={800}>
+        <S.OpenedMenu onClick={() => setMenuIsOpen(false)}>
+          {NaviButton('행사', '/activity', 300)}
+          {NaviButton('공연', '/performance', 350)}
+          {NaviButton('굿즈', '/goods', 400)}
+          {NaviButton('방명록', '/guestbook', 450)}
+          {NaviButton('축제 소개', '/introduction', 500)}
+        </S.OpenedMenu>
+      </Fade>
+  );
+
   return (
     <S.StyledMenus>
       { isAuthorized && (
@@ -45,6 +57,7 @@ function Menus({ setMenuIsOpen }) {
           <p>로그인</p>
         </S.SignButton>
       )}
+      {openedMenu}
     </S.StyledMenus>
   );
 }

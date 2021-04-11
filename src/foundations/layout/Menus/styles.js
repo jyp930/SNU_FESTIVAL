@@ -15,6 +15,17 @@ export const StyledMenus = styled.div`
   opacity: 0.98;
 `;
 
+export const OpenedMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: ${({ theme }) => theme.windowHeight}px;
+  background-color: ${({ theme }) => theme.palette.PURPLE50};
+  opacity: 1;
+`;
+
 export const NaviText = styled.p`
   margin: 20px 0;
   font-size: 2rem;
