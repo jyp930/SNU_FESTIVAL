@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Greeting from '@C/introduction/staff-section/Greeting';
 import Description from '@C/introduction/staff-section/Description';
+import GroupPhoto from '@C/introduction/staff-section/GroupPhoto';
 import * as S from './styles';
 
 function StaffSection() {
@@ -10,6 +11,7 @@ function StaffSection() {
       <S.StyledStaffSection>
         <Greeting />
         <Description />
+        <GroupPhoto />
       </S.StyledStaffSection>
     </S.Wrapper>
   );
