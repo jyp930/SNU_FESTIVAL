@@ -1,10 +1,25 @@
-import Poster21Spring from '@I/poster/21spring.png';
-import Poster19Spring from '@I/poster/19spring.png';
-import Poster18Spring from '@I/poster/18spring.jpg';
-import Poster17Spring from '@I/poster/17spring.jpeg';
-import Poster19Fall from '@I/poster/19fall.png';
-import Poster18Fall from '@I/poster/18fall.jpeg';
-import Poster17Fall from '@I/poster/17fall.jpg';
+import PhoneCert1 from '@I/vote/phone-cert-1.jpeg';
+import PhoneCert2 from '@I/vote/phone-cert-2.jpeg';
+import PhoneCert3 from '@I/vote/phone-cert-3.png';
+import PhoneCert4 from '@I/vote/phone-cert-4.jpeg';
+import PhoneCert5 from '@I/vote/phone-cert-5.jpeg';
+import PhoneCert6 from '@I/vote/phone-cert-6.jpeg';
+import PhoneCert7 from '@I/vote/phone-cert-7.jpeg';
+import PhoneCert8 from '@I/vote/phone-cert-8.jpg';
+import PhoneCert9 from '@I/vote/phone-cert-9.jpeg';
+import PhoneCert10 from '@I/vote/phone-cert-10.jpeg';
+import PhoneCert11 from '@I/vote/phone-cert-11.jpeg';
+import PhoneCert1Small from '@I/vote/phone-cert-1-small.jpeg';
+import PhoneCert2Small from '@I/vote/phone-cert-2-small.jpeg';
+import PhoneCert3Small from '@I/vote/phone-cert-3-small.png';
+import PhoneCert4Small from '@I/vote/phone-cert-4-small.jpeg';
+import PhoneCert5Small from '@I/vote/phone-cert-5-small.jpeg';
+import PhoneCert6Small from '@I/vote/phone-cert-6-small.jpeg';
+import PhoneCert7Small from '@I/vote/phone-cert-7-small.jpeg';
+import PhoneCert8Small from '@I/vote/phone-cert-8-small.jpg';
+import PhoneCert9Small from '@I/vote/phone-cert-9-small.jpeg';
+import PhoneCert10Small from '@I/vote/phone-cert-10-small.jpeg';
+import PhoneCert11Small from '@I/vote/phone-cert-11-small.jpeg';
 
 import SingStealer1 from '@I/vote/sing-stealer-1.jpeg';
 import SingStealer2 from '@I/vote/sing-stealer-2.jpeg';
@@ -43,37 +58,37 @@ import SingStealer17Small from '@I/vote/sing-stealer-17-small.jpg';
 
 export const PHONE_CERT_LIST = [
   {
-    performanceId: 1, name: '도로도로', songs: '괜찮아도 괜찮아 (D.O) 외 3곡', youtubeUrl: 'https://www.youtube.com/embed/F20yngfwQQg', thumbnail: SingStealer1, thumbnailSmall: SingStealer1Small,
+    performanceId: 1, name: '도로도로', songs: '취기를 빌려 외 4곡', youtubeUrl: 'https://www.youtube.com/embed/F20yngfwQQg', thumbnail: PhoneCert1, thumbnailSmall: PhoneCert1Small,
   },
   {
-    performanceId: 2, name: '폴라로이드', songs: '괜찮아도 괜찮아 (D.O) 외 4곡', youtubeUrl: 'https://www.youtube.com/embed/_h3P_4XtStE', thumbnail: SingStealer2, thumbnailSmall: SingStealer2Small,
+    performanceId: 2, name: '폴라로이드', songs: '괜찮아도 괜찮아 (D.O) 외 3곡', youtubeUrl: 'https://www.youtube.com/embed/_h3P_4XtStE', thumbnail: PhoneCert2, thumbnailSmall: PhoneCert2Small,
   },
   {
-    performanceId: 3, name: '아미학', songs: '괜찮아도 괜찮아 (D.O) 외 5곡', youtubeUrl: 'https://www.youtube.com/embed/GDTr9E7LWNw', thumbnail: SingStealer3, thumbnailSmall: SingStealer3Small,
+    performanceId: 3, name: '아미학', songs: 'Jet to Jet 외 1곡', youtubeUrl: 'https://www.youtube.com/embed/GDTr9E7LWNw', thumbnail: PhoneCert3, thumbnailSmall: PhoneCert3Small,
   },
   {
-    performanceId: 4, name: '2014', songs: '괜찮아도 괜찮아 (D.O) 외 6곡', youtubeUrl: 'https://www.youtube.com/embed/3Hbl1Yk3PKY', thumbnail: SingStealer4, thumbnailSmall: SingStealer4Small,
+    performanceId: 4, name: '2014', songs: '사랑하지 않아도 됐던 순간들 외 2곡', youtubeUrl: 'https://www.youtube.com/embed/3Hbl1Yk3PKY', thumbnail: PhoneCert4, thumbnailSmall: PhoneCert4Small,
   },
   {
-    performanceId: 5, name: '김영준', songs: '괜찮아도 괜찮아 (D.O) 외 7곡', youtubeUrl: 'https://www.youtube.com/embed/7nJsF0JPCkQ', thumbnail: SingStealer5, thumbnailSmall: SingStealer5Small,
+    performanceId: 5, name: '김영준', songs: '흰나비 외 4곡', youtubeUrl: 'https://www.youtube.com/embed/7nJsF0JPCkQ', thumbnail: PhoneCert5, thumbnailSmall: PhoneCert5Small,
   },
   {
-    performanceId: 6, name: 'Wave', songs: '괜찮아도 괜찮아 (D.O) 외 8곡', youtubeUrl: 'https://www.youtube.com/embed/oOJQ0pbz64w', thumbnail: SingStealer6, thumbnailSmall: SingStealer6Small,
+    performanceId: 6, name: 'Wave', songs: 'Feel good inc 외 2곡', youtubeUrl: 'https://www.youtube.com/embed/oOJQ0pbz64w', thumbnail: PhoneCert6, thumbnailSmall: PhoneCert6Small,
   },
   {
-    performanceId: 7, name: '매화수', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/7Gu_K3iuBow', thumbnail: SingStealer7, thumbnailSmall: SingStealer7Small,
+    performanceId: 7, name: '매화수', songs: 'Englishman in Newyork 외 2곡', youtubeUrl: 'https://www.youtube.com/embed/7Gu_K3iuBow', thumbnail: PhoneCert7, thumbnailSmall: PhoneCert7Small,
   },
   {
-    performanceId: 8, name: '6416', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/UIsv69LDY9s', thumbnail: SingStealer8, thumbnailSmall: SingStealer8Small,
+    performanceId: 8, name: '6416', songs: '내 마음의 주단을 깔고 외 2곡', youtubeUrl: 'https://www.youtube.com/embed/UIsv69LDY9s', thumbnail: PhoneCert8, thumbnailSmall: PhoneCert8Small,
   },
   {
-    performanceId: 9, name: '소리느낌', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/jG5WthpGYOE', thumbnail: Poster17Fall, thumbnailSmall: SingStealer9Small,
+    performanceId: 9, name: '소리느낌', songs: '러브홀릭 외 2곡', youtubeUrl: 'https://www.youtube.com/embed/jG5WthpGYOE', thumbnail: PhoneCert9, thumbnailSmall: PhoneCert9Small,
   },
   {
-    performanceId: 10, name: '슈신자', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/Cyjr0fiOBio', thumbnail: Poster17Spring, thumbnailSmall: SingStealer10Small,
+    performanceId: 10, name: '슈신자', songs: 'Honesty 외 2곡', youtubeUrl: 'https://www.youtube.com/embed/Cyjr0fiOBio', thumbnail: PhoneCert10, thumbnailSmall: PhoneCert10Small,
   },
   {
-    performanceId: 11, name: '후렌치파이', songs: '괜찮아도 괜찮아 (D.O) 외 9곡', youtubeUrl: 'https://www.youtube.com/embed/pkxf2aWNCXY', thumbnail: Poster17Spring, thumbnailSmall: SingStealer11Small,
+    performanceId: 11, name: '후렌치파이', songs: 'Make Up 외 2곡', youtubeUrl: 'https://www.youtube.com/embed/pkxf2aWNCXY', thumbnail: PhoneCert11, thumbnailSmall: PhoneCert11Small,
   },
 ];
 
