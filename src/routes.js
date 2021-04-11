@@ -33,11 +33,11 @@ const routes = [
   //   component: Introduction,
   //   exact: true,
   // },
-  // {
-  //   path: '/guestbook',
-  //   component: GuestBook,
-  //   exact: true,
-  // },
+  {
+    path: '/guest-book',
+    component: GuestBook,
+    exact: true,
+  },
   {
     path: '/vote',
     component: Vote,

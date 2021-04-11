@@ -21,9 +21,12 @@ import { toast } from 'react-toastify';
 import useModal from '@U/hooks/useModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
 import { useUser } from '@U/hooks/useAuth';
+import useMission from '@U/hooks/useMission';
+import { useDispatch } from 'react-redux';
+import { actions } from '@/redux/mission/state';
 import * as S from './styles';
 
-export function Comment({ user, comments }) {
+export function Comment({ user, comments, mission }) {
   const { modalComponent, setIsModalOpen } = useModal(SignInGuide);
   const { isAuthorized } = useUser();
 
@@ -40,13 +43,16 @@ export function Comment({ user, comments }) {
     return () => setMyLikesForComment([]);
   }, [user, isAuthorized, comments]);
 
+  // 방명록 미션
+  const dispatch = useDispatch();
   useEffect(() => {
-    if (true) { // TODO: 미션 firestore 가 load 되었고, 유저가 방명록 미션을 클리어하지 않았다면
+    if (isAuthorized && mission.isLoaded && !mission.guestBook) {
       if (myLikesForComment.length >= 3) {
-        console.log('방명록 미션 클리어!');
+        toast('방명록 미션 클리어!');
+        dispatch(actions.setFirestoreMission(user, 'guestBook', true));
       }
     }
-  }, [myLikesForComment]);
+  }, [myLikesForComment, mission, dispatch, user, isAuthorized]);
 
   const deleteComment = useCallback((commentId) => {
     guestBookCollectionRef.doc(commentId)
@@ -131,6 +137,10 @@ Comment.propTypes = {
       seconds: PropTypes.number, // unix time
     }),
   })).isRequired,
+  mission: PropTypes.shape({
+    isLoaded: PropTypes.bool,
+    guestBook: PropTypes.bool,
+  }).isRequired,
 };
 
 const mascots = [
@@ -138,6 +148,7 @@ const mascots = [
 ];
 
 function CommentParent({ user }) {
+  // 방명록 firestore
   const [comments, setComments] = useState([]);
   const [bestComments, setBestComments] = useState([]);
   useEffect(() => {
@@ -171,7 +182,10 @@ function CommentParent({ user }) {
     return () => unsubscribe();
   }, [subscribeComments]);
 
-  return <Comment comments={[...bestComments, ...normalComments]} user={user} />;
+  // mission redux
+  const mission = useMission();
+
+  return <Comment comments={[...bestComments, ...normalComments]} user={user} mission={mission} />;
 }
 export default CommentParent;
 

@@ -4,16 +4,19 @@ import {
 import countReducer, { countPersistConfig } from '@/redux/count/state';
 import userReducer, { userPersistConfig } from '@/redux/user/state';
 import miniGameReducer, { miniGamePersistConfig } from '@/redux/mini-game/state';
+import missionReducer, { missionPersistConfig } from '@/redux/mission/state';
 import { persistStore, persistReducer } from 'redux-persist';
 import sessionStorage from 'redux-persist/lib/storage/session';
 import { all } from 'redux-saga/effects';
 import createSagaMiddleware from 'redux-saga';
 import countSaga from '@/redux/count/saga';
 import miniGameSaga from '@/redux/mini-game/saga';
+import missionSaga from '@/redux/mission/saga';
 
 const reducer = combineReducers({
   count: persistReducer(countPersistConfig, countReducer),
   user: persistReducer(userPersistConfig, userReducer),
+  mission: persistReducer(missionPersistConfig, missionReducer),
   miniGame: persistReducer(miniGamePersistConfig, miniGameReducer),
 });
 
@@ -40,7 +43,7 @@ const store = createStore(
 );
 
 function* rootSaga() {
-  yield all([countSaga(), miniGameSaga()]);
+  yield all([countSaga(), miniGameSaga(), missionSaga()]);
 }
 sagaMiddleware.run(rootSaga);
 
