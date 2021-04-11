@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { withTheme } from 'styled-components';
 import { HeaderContent } from '@F/layout/Header';
-import FestivalSection from '@C/introduction/FestivalSection';
+import FestivalSection from '@C/introduction/festival-section/FestivalSection';
 import * as S from './styles';
 
 function Introduction({ theme }) {

@@ -28,16 +28,16 @@ const routes = [
   //   component: Apply,
   //   exact: true,
   // },
-  // {
-  //   path: '/introduction',
-  //   component: Introduction,
-  //   exact: true,
-  // },
   {
-    path: '/guest-book',
-    component: GuestBook,
+    path: '/introduction',
+    component: Introduction,
     exact: true,
   },
+  // {
+  //   path: '/guest-book',
+  //   component: GuestBook,
+  //   exact: true,
+  // },
   {
     path: '/vote',
     component: Vote,

@@ -1,15 +1,15 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import Fade from 'react-reveal/Fade';
+import SubTitle from '@I/introduction/sub_title.png';
+import Title from '@I/introduction/title.png';
+import Period from '@I/introduction/period.png';
 import MascotsInSpeechBubble1 from '@I/mascot/mascots-in-speech-bubble-1.svg';
 import MascotsInSpeechBubble2 from '@I/mascot/mascots-in-speech-bubble-2.svg';
-import Period from '@I/introduction/period.png';
-import Title from '@I/introduction/title.png';
-import SubTitle from '@I/introduction/sub_title.png';
 import Poster21Spring from '@I/poster/21spring.png';
-import Fade from 'react-reveal/Fade';
 import * as S from './styles';
 
-function FestivalSection({ isMobile }) {
+function BasicInfoSection({ isMobile }) {
   const title = useMemo(() => (
     <S.Title widths={[450, 450, 270]}>
       <Fade left distance="40px">
@@ -50,7 +50,7 @@ function FestivalSection({ isMobile }) {
   );
 
   return (
-    <S.StyledFestivalSection>
+    <>
       {isMobile && (
         <S.MobileBasicInfo>
           {title}
@@ -69,15 +69,15 @@ function FestivalSection({ isMobile }) {
           </div>
         </S.BasicInfo>
       )}
-    </S.StyledFestivalSection>
+    </>
   );
 }
-export default FestivalSection;
+export default BasicInfoSection;
 
-FestivalSection.propTypes = {
+BasicInfoSection.propTypes = {
   isMobile: PropTypes.bool,
 };
 
-FestivalSection.defaultProps = {
+BasicInfoSection.defaultProps = {
   isMobile: false,
 };
