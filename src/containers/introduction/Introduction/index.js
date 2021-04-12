@@ -4,6 +4,7 @@ import { withTheme } from 'styled-components';
 import { HeaderContent } from '@F/layout/Header';
 import FestivalSection from '@C/introduction/festival-section/FestivalSection';
 import StaffSection from '@C/introduction/staff-section/StaffSection';
+import ArchiveSection from '@C/introduction/ArchiveSection';
 import * as S from './styles';
 
 function Introduction({ theme }) {
@@ -15,6 +16,7 @@ function Introduction({ theme }) {
       <S.Body>
         <FestivalSection isMobile={isMobile} />
         <StaffSection />
+        <ArchiveSection isMobile={isMobile} theme={theme} />
       </S.Body>
     </S.StyledIntroduction>
   );

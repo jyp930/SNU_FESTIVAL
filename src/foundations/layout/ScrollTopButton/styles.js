@@ -11,6 +11,8 @@ export const StyledScrollTopButton = styled.div`
   height: 2.5rem;
   cursor: pointer;
   border-radius: 50%;
+  
+  z-index: ${({ theme }) => theme.zIndex.topButton};
 `;
 
 export const Image = styled.img`

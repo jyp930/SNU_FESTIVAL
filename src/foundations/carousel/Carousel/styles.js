@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import { FlexCenterStyle } from '@S/responsive/display';
 
+export const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const StyledCarousel = styled.div`
   position: relative;
   ${FlexCenterStyle};
@@ -20,16 +27,10 @@ export const StyledCarousel = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
-  width: ${props => props.width + 100}px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 export const ArrowButton = styled.div`
   font-size: 35px;
   color: ${({ theme }) => theme.palette.PURPLE50};
   cursor: pointer;
   user-select: none;
+  margin: 0 3rem;
 `;
