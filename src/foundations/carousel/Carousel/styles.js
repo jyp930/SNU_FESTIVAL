@@ -32,5 +32,5 @@ export const ArrowButton = styled.div`
   color: ${({ theme }) => theme.palette.PURPLE50};
   cursor: pointer;
   user-select: none;
-  margin: 0 3rem;
+  margin: 0 2rem;
 `;
