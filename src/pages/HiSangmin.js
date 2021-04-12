@@ -42,17 +42,16 @@ function HiSangmin() {
         {phoneCertCount}
       </h4>
       {phoneCertAll && (
-        Object.entries(phoneCertAll).map(performance => {
-          console.log(performance);
-          return (
-            <p key={performance[0]}>
-              {PHONE_CERT_LIST.find(element => Number(performance[0]) + 1 === element.performanceId).name}
-              :
-              {' '}
-              {performance[1][1].length}
-            </p>
-          );
-        })
+        Object.entries(phoneCertAll).map(performance => (
+          <p key={performance[1][0]}>
+            {performance[1][0]}
+            {' '}
+            {PHONE_CERT_LIST.find(element => Number(performance[1][0]) === element.performanceId).name}
+            :
+            {' '}
+            {performance[1][1].length}
+          </p>
+        ))
       )}
       <br />
       <h3>씽스틸러</h3>
@@ -62,17 +61,16 @@ function HiSangmin() {
         {singStealerCount}
       </h4>
       {singStealerAll && (
-        Object.entries(singStealerAll).map(performance => {
-          console.log(performance);
-          return (
-            <p key={performance[0]}>
-              {SING_STEALER_LIST.find(element => Number(performance[0]) + 1 === element.performanceId).name}
-              :
-              {' '}
-              {performance[1][1].length}
-            </p>
-          );
-        })
+        Object.entries(singStealerAll).map(performance => (
+          <p key={performance[1][0]}>
+            {performance[1][0]}
+            {' '}
+            {SING_STEALER_LIST.find(element => Number(performance[1][0]) === element.performanceId).name}
+            :
+            {' '}
+            {performance[1][1].length}
+          </p>
+        ))
       )}
     </div>
   );
