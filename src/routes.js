@@ -7,6 +7,7 @@ const Apply = lazy(() => import('@/pages/Apply'));
 const Introduction = lazy(() => import('@/pages/Introduction'));
 const GuestBook = lazy(() => import('@/pages/GuestBook'));
 const Vote = lazy(() => import('@/pages/Vote'));
+const HiSangmin = lazy(() => import('@/pages/HiSangmin'));
 
 const routes = [
   {
@@ -41,6 +42,11 @@ const routes = [
   {
     path: '/vote',
     component: Vote,
+    exact: true,
+  },
+  {
+    path: '/hi-sangmin',
+    component: HiSangmin,
     exact: true,
   },
 ];
