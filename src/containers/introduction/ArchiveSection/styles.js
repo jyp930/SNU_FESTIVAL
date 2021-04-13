@@ -63,10 +63,15 @@ export const Texts = styled.div`
     }
     
     &:nth-of-type(3) {
+      width: 20rem;
+      height: 5rem;
       margin-top: 1rem;
       font-size: 1rem;
       font-weight: bold;
       color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.45)};
+      
+      word-break: keep-all;
+      text-align: center;
     }
   }
 `;

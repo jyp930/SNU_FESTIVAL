@@ -2,12 +2,12 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/Home'));
 const Activity = lazy(() => import('@/pages/activity/ActivityRouter'));
-const Event = lazy(() => import('@/pages/Event'));
 const Apply = lazy(() => import('@/pages/Apply'));
 const Introduction = lazy(() => import('@/pages/Introduction'));
 const GuestBook = lazy(() => import('@/pages/GuestBook'));
 const Vote = lazy(() => import('@/pages/Vote'));
 const HiSangmin = lazy(() => import('@/pages/HiSangmin'));
+const Goods = lazy(() => import('@/pages/Goods'));
 
 const routes = [
   {
@@ -18,11 +18,6 @@ const routes = [
   // {
   //   path: '/activity',
   //   component: Activity,
-  // },
-  // {
-  //   path: '/event',
-  //   component: Event,
-  //   exact: true,
   // },
   // {
   //   path: '/apply',
@@ -49,5 +44,10 @@ const routes = [
   //   component: HiSangmin,
   //   exact: true,
   // },
+  {
+    path: '/goods',
+    component: Goods,
+    exact: true,
+  },
 ];
 export default routes;
