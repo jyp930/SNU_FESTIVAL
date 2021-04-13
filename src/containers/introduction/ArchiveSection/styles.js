@@ -5,7 +5,7 @@ import { rgba } from 'polished';
 
 export const Wrapper = styled.div`
   ${FlexCenterStyle};
-  padding: 4rem 0;
+  height: ${({ theme }) => theme.windowHeight}px;
 `;
 
 export const StyledArchiveSection = styled.div`
@@ -21,9 +21,9 @@ export const StyledArchiveSection = styled.div`
 `;
 
 export const Title = styled.p`
-  margin: 0;
   color: ${({ theme }) => theme.palette.PURPLE70};
   font-weight: bold;
+  margin: 1.5rem 0;
 `;
 
 export const Poster = styled.div`
