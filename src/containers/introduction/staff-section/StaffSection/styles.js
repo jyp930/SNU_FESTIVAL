@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 import { FlexCenterStyle } from '@S/responsive/display';
+import { rgba } from 'polished';
+
+export const Wrapper = styled.div`
+  ${FlexCenterStyle};
+  position: relative;
+  background-image: linear-gradient(
+    white,
+    ${({ theme }) => rgba(theme.palette.PURPLE50, 0.3)}
+  );
+`;
 
 export const StyledStaffSection = styled.div`
   max-width: 800px;
@@ -8,8 +18,6 @@ export const StyledStaffSection = styled.div`
 
   display: flex;
   flex-direction: column;
-`;
-
-export const Wrapper = styled.div`
-  ${FlexCenterStyle};
+  
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;

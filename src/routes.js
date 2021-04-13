@@ -44,10 +44,10 @@ const routes = [
     component: Vote,
     exact: true,
   },
-  {
-    path: '/hi-sangmin',
-    component: HiSangmin,
-    exact: true,
-  },
+  // {
+  //   path: '/hi-sangmin',
+  //   component: HiSangmin,
+  //   exact: true,
+  // },
 ];
 export default routes;
