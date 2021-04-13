@@ -20,7 +20,7 @@ function ArchiveSection({ isMobile, theme }) {
         <S.Title>역대 축제 모아보기</S.Title>
         <Carousel
           className="Carousel"
-          fullHeight={isMobile ? 340 : theme.windowWidth / 2.2}
+          fullHeight={isMobile ? 340 : theme.windowWidth / 2.5}
           fullWidth={isMobile ? 340 : (theme.windowWidth / 2 > 820 ? 820 : theme.windowWidth / 2)}
           items={[Poster19Fall, Poster19Spring, Poster18Fall, Poster18Spring, Poster17Fall,
             Poster17Spring, Poster16Fall, Poster19Fall, Poster19Spring, Poster18Fall, Poster18Spring,
