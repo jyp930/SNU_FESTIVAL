@@ -44,10 +44,10 @@ const routes = [
     component: HiSangmin,
     exact: true,
   },
-  // {
-  //   path: '/goods',
-  //   component: Goods,
-  //   exact: true,
-  // },
+  {
+    path: '/goods',
+    component: Goods,
+    exact: true,
+  },
 ];
 export default routes;
