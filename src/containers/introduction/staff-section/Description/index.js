@@ -34,9 +34,12 @@ function Description({ theme }) {
         <div>
           COVID-19로 인해 즐길 거리가 없으셨을 여러분들을 위해
           { theme.windowWidth > 330 && <br /> }
-          축하사가 “온라인” 축제로 찾아왔어요.
+          축하사가
+          {' '}
+          <S.PurpleText>“온라인” 축제</S.PurpleText>
+          로 찾아왔어요.
           <br />
-          축제를 완성시켜 줄 주인공은 바로 “여러분”!
+          <S.PurpleText>축제를 완성시켜 줄 주인공은 바로 “여러분”!</S.PurpleText>
           <br />
           축하사는 여러분을 기다립니다.
         </div>
