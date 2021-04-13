@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
 import { rgba } from 'polished';
 import * as S from './styles';
 
@@ -70,7 +69,7 @@ function Bubble({ theme }) {
     </S.BubbleWrapper>
   );
 }
-export default withTheme(Bubble);
+export default Bubble;
 
 Bubble.propTypes = {
   theme: PropTypes.shape({

@@ -19,6 +19,12 @@ export const StyledArchiveSection = styled.div`
   `};
 `;
 
+export const Title = styled.p`
+  margin: 0;
+  color: ${({ theme }) => theme.palette.PURPLE70};
+  font-weight: bold;
+`;
+
 export const Poster = styled.div`
   width: 100%;
   height: 100%;

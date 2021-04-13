@@ -15,7 +15,7 @@ function Introduction({ theme }) {
       <HeaderContent hasBoxShadow>축하사 소개</HeaderContent>
       <S.Body>
         <FestivalSection isMobile={isMobile} />
-        <StaffSection />
+        <StaffSection isMobile={isMobile} theme={theme} />
         <ArchiveSection isMobile={isMobile} theme={theme} />
       </S.Body>
     </S.StyledIntroduction>

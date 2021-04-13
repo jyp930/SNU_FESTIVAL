@@ -5,4 +5,4 @@ export default {
   title: 'containers/introduction/staff-section/Greeting',
 };
 
-export const Default = () => <Greeting />;
+export const Default = () => <Greeting isMobile={false} />;
