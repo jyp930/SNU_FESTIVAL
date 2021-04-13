@@ -39,15 +39,15 @@ const routes = [
     component: Vote,
     exact: true,
   },
-  // {
-  //   path: '/hi-sangmin',
-  //   component: HiSangmin,
-  //   exact: true,
-  // },
   {
-    path: '/goods',
-    component: Goods,
+    path: '/hi-sangmin',
+    component: HiSangmin,
     exact: true,
   },
+  // {
+  //   path: '/goods',
+  //   component: Goods,
+  //   exact: true,
+  // },
 ];
 export default routes;
