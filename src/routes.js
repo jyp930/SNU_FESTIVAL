@@ -7,7 +7,7 @@ const Introduction = lazy(() => import('@/pages/Introduction'));
 const GuestBook = lazy(() => import('@/pages/GuestBook'));
 const Vote = lazy(() => import('@/pages/Vote'));
 const HiSangmin = lazy(() => import('@/pages/HiSangmin'));
-const Goods = lazy(() => import('@/pages/Goods'));
+const Goods = lazy(() => import('@/pages/goods/Goods'));
 
 const routes = [
   {
