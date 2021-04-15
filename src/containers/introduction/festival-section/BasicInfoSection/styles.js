@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { ResponsiveWidthStyle } from '@S/responsive/display';
+import { ResponsiveWidthStyle, ResponsiveHeightStyle } from '@S/responsive/display';
 import media from 'styled-media-query';
 
 export const Title = styled.div`
@@ -13,9 +13,10 @@ export const Title = styled.div`
   `};
 `;
 
-export const Image = styled.img`
+export const PosterWrapper = styled.div`
+  position: relative;
   ${ResponsiveWidthStyle};
-  height: auto;
+  ${ResponsiveHeightStyle};
 `;
 
 export const AbsoluteImage = styled.img`
@@ -36,6 +37,19 @@ export const AbsoluteImage = styled.img`
     animation-name: rotate;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-duration: ${props.duration}s;
+  `};
+  
+  @keyframes move {
+    to { transform: translateX(-15%); }
+    from { transform: translateX(10%); }
+  }
+
+  ${props => props.move && css`
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
     animation-duration: ${props.duration}s;
   `};
 `;

@@ -7,6 +7,7 @@ import Period from '@I/introduction/period.png';
 import MascotsInSpeechBubble1 from '@I/mascot/mascots-in-speech-bubble-1.svg';
 import MascotsInSpeechBubble2 from '@I/mascot/mascots-in-speech-bubble-2.svg';
 import Poster21Spring from '@I/poster/21spring.png';
+import Poster21SpringCastle from '@I/poster/21springCastle.png';
 import * as S from './styles';
 
 function BasicInfoSection({ isMobile }) {
@@ -16,7 +17,7 @@ function BasicInfoSection({ isMobile }) {
         <S.AbsoluteImage src={SubTitle} alt="FESWORLD" widths={[240, 240, 150]} top={1} left={1} />
       </Fade>
       <Fade right distance="40px" delay={200}>
-        <S.AbsoluteImage src={Title} alt="FESWORLD" widths={[230, 230, 150]} top={isMobile ? 25 : 35} right={isMobile ? -10 : -20} rotate duration={0.5} />
+        <S.AbsoluteImage src={Title} alt="FESWORLD" widths={[230, 230, 150]} top={isMobile ? 25 : 35} right={isMobile ? -10 : -20} rotate={1} duration={0.5} />
       </Fade>
       <Fade bottom distance="20px" delay={100}>
         <S.AbsoluteImage src={Period} alt="FESWORLD" widths={[140, 140, 75]} top={isMobile ? 80 : 115} right={1} />
@@ -32,7 +33,10 @@ function BasicInfoSection({ isMobile }) {
 
   const mainPoster = (
     <Fade left distance="30px" delay={200}>
-      <S.Image src={Poster21Spring} alt="21spring" widths={[420, 340, 270]} />
+      <S.PosterWrapper widths={[360, 340, 270]} heights={[360, 340, 270].map(num => num * 1.41)}>
+        <S.AbsoluteImage src={Poster21Spring} alt="21spring" widths={[360, 340, 270]} top={0} left={1} />
+        <S.AbsoluteImage src={Poster21SpringCastle} alt="21spring" widths={[360, 340, 270].map(num => num * 0.7)} top={isMobile ? 115 : 150} left={isMobile ? 40 : 50} move={1} duration={1} />
+      </S.PosterWrapper>
     </Fade>
   );
   const festivalDescription = (
