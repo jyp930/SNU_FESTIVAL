@@ -26,6 +26,18 @@ export const AbsoluteImage = styled.img`
   ${props => props.left && css`left: ${props.left}px`};
   ${props => props.right && css`right: ${props.right}px`};
   ${props => props.bottom && css`bottom: ${props.bottom}px`};
+  
+  @keyframes rotate {
+    to { transform: rotate(-3deg); }
+    from { transform: rotate(3deg); }
+  }
+
+  ${props => props.rotate && css`
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: ${props.duration}s;
+  `};
 `;
 
 export const MobileBasicInfo = styled.div`

@@ -16,7 +16,7 @@ function BasicInfoSection({ isMobile }) {
         <S.AbsoluteImage src={SubTitle} alt="FESWORLD" widths={[240, 240, 150]} top={1} left={1} />
       </Fade>
       <Fade right distance="40px" delay={200}>
-        <S.AbsoluteImage src={Title} alt="FESWORLD" widths={[230, 230, 150]} top={isMobile ? 25 : 35} right={isMobile ? -10 : -20} />
+        <S.AbsoluteImage src={Title} alt="FESWORLD" widths={[230, 230, 150]} top={isMobile ? 25 : 35} right={isMobile ? -10 : -20} rotate duration={0.5} />
       </Fade>
       <Fade bottom distance="20px" delay={100}>
         <S.AbsoluteImage src={Period} alt="FESWORLD" widths={[140, 140, 75]} top={isMobile ? 80 : 115} right={1} />
