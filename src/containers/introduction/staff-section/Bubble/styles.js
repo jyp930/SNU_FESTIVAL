@@ -18,7 +18,7 @@ export const Circle = styled.circle`
   animation-direction: reverse;
   animation-timing-function: linear;
   animation-fill-mode: backwards;
-  animation-delay: ${({ index }) => index / 2}s;
+  animation-delay: ${({ index }) => index / 5}s;
 
   @keyframes bubble-${({ index }) => index} {
     0% { transform: translate(0, 0); }

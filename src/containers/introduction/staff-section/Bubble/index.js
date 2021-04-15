@@ -11,7 +11,7 @@ function Bubble({ theme }) {
       <S.Circle
         r={150}
         cx={0}
-        cy="-100"
+        cy="-50"
         translate={{ x: Math.random() * 50 - 25, y: 100 + 50 }}
         fill={rgba(theme.palette.PURPLE50, 0.06)}
         index={1}
@@ -20,7 +20,7 @@ function Bubble({ theme }) {
       <S.Circle
         r={20}
         cx={theme.windowWidth * (1 / 10)}
-        cy="-100"
+        cy="-20"
         translate={{ x: Math.random() * 50 - 15, y: 100 + 20 }}
         fill={rgba(theme.palette.PURPLE50, 0.64)}
         index={5}
@@ -29,7 +29,7 @@ function Bubble({ theme }) {
       <S.Circle
         r={100}
         cx={theme.windowWidth * (2 / 10)}
-        cy="-100"
+        cy="-50"
         translate={{ x: Math.random() * 50 - 25, y: 100 + 50 }}
         fill={rgba(theme.palette.PURPLE50, 0.2)}
         index={2}
@@ -38,7 +38,7 @@ function Bubble({ theme }) {
       <S.Circle
         r={40}
         cx={theme.windowWidth * (5 / 10)}
-        cy="-200"
+        cy="-40"
         translate={{ x: Math.random() * 50 - 25, y: 100 + 50 }}
         fill="transparent"
         stroke={rgba(theme.palette.PURPLE50, 0.8)}
@@ -58,7 +58,7 @@ function Bubble({ theme }) {
       <S.Circle
         r={10}
         cx={theme.windowWidth * (7 / 10)}
-        cy="-50"
+        cy="-10"
         translate={{ x: Math.random() * 50 - 20, y: 100 + 15 }}
         fill={rgba(theme.palette.PURPLE50, 0.65)}
         index={7}
@@ -78,7 +78,7 @@ function Bubble({ theme }) {
           <S.Circle
             r={20}
             cx={theme.windowWidth * (4 / 10)}
-            cy="-100"
+            cy="-50"
             translate={{ x: Math.random() * 50 - 15, y: 100 + 20 }}
             fill={rgba(theme.palette.PURPLE50, 0.54)}
             index={8}
