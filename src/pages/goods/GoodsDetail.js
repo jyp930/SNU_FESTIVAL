@@ -1,14 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Poster21Spring from '@I/poster/21spring.png';
+import GoodsDetailContainer from '@C/goods/GoodsDetail';
+import Header from '@F/layout/Header';
 
 function GoodsDetail({
   formUrl, information, image, longImage,
 }) {
   return (
-    <div>
-      GoodsDetail
-    </div>
+    <>
+      <Header />
+      <GoodsDetailContainer
+        formUrl={formUrl}
+        information={information}
+        image={image}
+        longImage={longImage}
+      />
+    </>
   );
 }
 export default GoodsDetail;
