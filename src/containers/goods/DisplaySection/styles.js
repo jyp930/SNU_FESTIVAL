@@ -22,6 +22,12 @@ export const Item = styled.div`
   ${media.greaterThan('medium')`
     width: 47%;
   `};
+  
+  cursor: pointer;
+  transition: transform 0.5s;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 export const Window = styled.img`
