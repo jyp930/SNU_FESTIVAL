@@ -30,7 +30,6 @@ export const BasicSection = styled.div`
     display: flex;
     justify-content: space-between;
     
-    
     p:first-of-type {
       margin: 1.5rem 0;
       font-size: 1.8rem;
@@ -67,7 +66,7 @@ export const Button = styled.div`
   color: white;
   background-color: ${({ theme }) => theme.palette.PURPLE50};
   
-  cursor: pointer; 
+  cursor: pointer;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 `;
