@@ -15,7 +15,7 @@ export const StyledArchiveSection = styled.div`
   max-width: 800px;
   width: 100%;
   height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
   
   ${media.greaterThan('large')`
     max-width: 1000px;
