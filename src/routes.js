@@ -2,6 +2,7 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/Home'));
 const ActivityRouter = lazy(() => import('@/pages/activity/ActivityRouter'));
+const PerformanceRouter = lazy(() => import('@/pages/performance/PerformanceRouter'));
 const Apply = lazy(() => import('@/pages/Apply'));
 const Introduction = lazy(() => import('@/pages/Introduction'));
 const GuestBook = lazy(() => import('@/pages/GuestBook'));
@@ -18,6 +19,10 @@ const routes = [
   {
     path: '/activity',
     component: ActivityRouter,
+  },
+  {
+    path: '/performance',
+    component: PerformanceRouter,
   },
   // {
   //   path: '/apply',
