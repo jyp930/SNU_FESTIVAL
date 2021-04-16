@@ -1,22 +1,22 @@
 import React, { useMemo } from 'react';
-import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
-import Window from '@I/goods/window.png';
 import { HeaderContent } from '@F/layout/Header';
 import Title from '@C/performance/common/Title';
+import Window from '@I/goods/window.png';
 import Guide from '@C/performance/common/Guide';
+import { withTheme } from 'styled-components';
 import * as S from '../common/styles';
 
-function PhoneCert({ theme }) {
+function HitTheStage({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
 
-  const title = <Title decorationOne="자작곡부터 커버곡까지!" decorationTwo="관악의 밴드 실력자들과 함께하는" title="폰서트 LIVE" />;
+  const title = <Title decorationOne="무대를 가득 채우는 설렘!" decorationTwo="심장을 뛰게 하는 관악 최고의 댄스 무대" title="힛더스테이지" />;
   const image = <S.Image src={Window} />;
-  const guide = <Guide youtubeUrl="https://naver.com" date="5월 13일" times={['1부 14:00~16:00', '2부 18:00~20:00']} />;
+  const guide = <Guide youtubeUrl="https://naver.com" date="5월 11일" times={['18:00~20:00']} />;
 
   return (
     <S.Wrapper>
-      <HeaderContent>폰서트 LIVE</HeaderContent>
+      <HeaderContent>힛더스테이지</HeaderContent>
       {isMobile && (
         <S.MobileBody>
           {title}
@@ -38,9 +38,9 @@ function PhoneCert({ theme }) {
     </S.Wrapper>
   );
 }
-export default withTheme(PhoneCert);
+export default withTheme(HitTheStage);
 
-PhoneCert.propTypes = {
+HitTheStage.propTypes = {
   theme: PropTypes.shape({
     windowWidth: PropTypes.number,
   }).isRequired,

@@ -5,23 +5,17 @@ import Lottie404 from '@F/lottie/Lottie404';
 
 function PerformanceRouter({ match }) {
   return (
-    <>
+    <Switch>
       { performanceRoutes.map((route) => (
-        <React.Fragment key={route.path}>
-          <Switch>
-            { route.component && (
-              <Route
-                exact
-                key={`${match.path}${route.path}`}
-                path={`${match.path}${route.path}`}
-                component={route.component}
-              />
-            )}
-            <Route component={Lottie404} />
-          </Switch>
-        </React.Fragment>
+        <Route
+          exact
+          key={`${match.path}${route.path}`}
+          path={`${match.path}${route.path}`}
+          component={route.component}
+        />
       ))}
-    </>
+      <Route component={Lottie404} />
+    </Switch>
   );
 }
 export default PerformanceRouter;
@@ -33,10 +27,15 @@ PerformanceRouter.propTypes = {
 };
 
 const PhoneCert = lazy(() => import('@/pages/performance/PhoneCert'));
+const HitTheStage = lazy(() => import('@/pages/performance/HitTheStage'));
 
 const performanceRoutes = [
   {
     path: '/phone-cert',
     component: PhoneCert,
+  },
+  {
+    path: '/hit-the-stage',
+    component: HitTheStage,
   },
 ];
