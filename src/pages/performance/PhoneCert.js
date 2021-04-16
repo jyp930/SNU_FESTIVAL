@@ -1,10 +1,9 @@
 import React from 'react';
+import PhoneCertContainer from '@C/performance/PhoneCert';
 
 function PhoneCert() {
   return (
-    <div>
-      PhoneCert
-    </div>
+    <PhoneCertContainer />
   );
 }
 export default PhoneCert;

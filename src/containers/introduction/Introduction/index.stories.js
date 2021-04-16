@@ -6,4 +6,4 @@ export default {
   title: 'containers/introduction/Introduction',
 };
 
-export const Default = () => <Introduction theme={{ windowWidth: 1000, ...theme }} />;
+export const Default = () => <Introduction theme={{ windowWidth: 1000, windowHeight: 1000, ...theme }} />;

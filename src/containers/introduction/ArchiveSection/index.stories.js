@@ -5,4 +5,4 @@ export default {
   title: 'containers/introduction/ArchiveSection',
 };
 
-export const Default = () => <ArchiveSection isMobile={false} theme={{ windowWidth: 1000 }} />;
+export const Default = () => <ArchiveSection isMobile={false} theme={{ windowHeight: 1000 }} />;
