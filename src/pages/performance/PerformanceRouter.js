@@ -28,6 +28,7 @@ PerformanceRouter.propTypes = {
 
 const PhoneCert = lazy(() => import('@/pages/performance/PhoneCert'));
 const HitTheStage = lazy(() => import('@/pages/performance/HitTheStage'));
+const SingStealer = lazy(() => import('@/pages/performance/SingStealer'));
 
 const performanceRoutes = [
   {
@@ -37,5 +38,9 @@ const performanceRoutes = [
   {
     path: '/hit-the-stage',
     component: HitTheStage,
+  },
+  {
+    path: '/sing-stealer',
+    component: SingStealer,
   },
 ];
