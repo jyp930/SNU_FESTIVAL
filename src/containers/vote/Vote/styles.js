@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
 
-export const StyledVote = styled.div`
-  height: ${({ theme }) => theme.windowHeight}px;
-  
+export const StyledVote = styled.div`  
   display: flex;
   flex-direction: column;
   align-items: center;

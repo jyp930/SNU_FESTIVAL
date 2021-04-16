@@ -15,10 +15,10 @@ const routes = [
     component: Home,
     exact: true,
   },
-  // {
-  //   path: '/activity',
-  //   component: Activity,
-  // },
+  {
+    path: '/activity',
+    component: ActivityRouter,
+  },
   // {
   //   path: '/apply',
   //   component: Apply,
@@ -29,11 +29,11 @@ const routes = [
     component: Introduction,
     exact: true,
   },
-  // {
-  //   path: '/guest-book',
-  //   component: GuestBook,
-  //   exact: true,
-  // },
+  {
+    path: '/guest-book',
+    component: GuestBook,
+    exact: true,
+  },
   {
     path: '/vote',
     component: Vote,
