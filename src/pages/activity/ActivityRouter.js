@@ -6,7 +6,7 @@ import Lottie404 from '@F/lottie/Lottie404';
 function ActivityRouter({ match }) {
   return (
     <>
-      { activityRoutes.map((route) => (
+      { activityRoutes.map((route, index) => (
         <React.Fragment key={route.path}>
           <Switch>
             <Route
@@ -23,7 +23,7 @@ function ActivityRouter({ match }) {
                 component={childRoute.component}
               />
             ))}
-            <Route component={Lottie404} />
+            {(index === activityRoutes.length - 1) && <Route component={Lottie404} />}
           </Switch>
         </React.Fragment>
       ))}
@@ -38,6 +38,7 @@ ActivityRouter.propTypes = {
   }).isRequired,
 };
 
+const Radio = lazy(() => import('@/pages/activity/Radio'));
 const MiniGame = lazy(() => import('@/pages/activity/mini/MiniGame'));
 const GuessTheSong = lazy(() => import('@/pages/activity/mini/GuessTheSong'));
 const TreasureHunt = lazy(() => import('@/pages/activity/mini/TreasureHunt'));
@@ -66,5 +67,9 @@ const activityRoutes = [
         component: BlackAndWhite,
       },
     ],
+  },
+  {
+    path: '/radio',
+    component: Radio,
   },
 ];
