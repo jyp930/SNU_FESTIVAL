@@ -19,10 +19,10 @@ function ActivityRouter({ match }) {
               <Route
                 exact
                 path={`${match.path}${route.path}${childRoute.path}`}
+                key={`${match.path}${route.path}${childRoute.path}`}
                 component={childRoute.component}
               />
             ))}
-
             <Route component={Lottie404} />
           </Switch>
         </React.Fragment>

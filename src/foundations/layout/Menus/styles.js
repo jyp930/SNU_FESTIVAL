@@ -1,12 +1,6 @@
 import styled from 'styled-components';
-import media from 'styled-media-query';
 
 export const StyledMenus = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
   width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
   background-image: linear-gradient(
@@ -19,46 +13,31 @@ export const StyledMenus = styled.div`
 export const OpenedMenu = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+
+  padding-top: ${({ theme }) => theme.windowHeight * (1.5 / 10)}px;
+  padding-left: 10vw;
+  box-sizing: border-box;
+  
   width: 100%;
-  padding-left: 10%;
-  padding-top: 10rem;
-  
-  ${media.lessThan('medium')`
-    padidng-left: 12%;
-    padding-top: 20rem;
-  `};
-  
-  height: ${({ theme }) => theme.windowHeight}px;
-  opacity: 1;
+  height: ${({ theme }) => theme.windowHeight * (7.5 / 10)}px;
+  overflow-y: hidden;
 `;
 
 export const InlineMenu = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
-  padding-left: 0%;
-  padding-top: 0rem;
-  opacity: 1;
+  display: inline-flex;
+  align-items: center;
 `;
-export const NaviText = styled.p`
-  margin: 15px 0;
-  font-size: 1.6em;
-  
-  ${media.lessThan('medium')`
-  font-weight: bold;
-  `};
-  
-  color: ${({ theme }) => theme.palette.WHITE};
-  cursor: pointer;
-  transition-duration: 1s;
 
+export const NaviText = styled.p`
+  margin: 1rem 0;
+  font-size: 1.6em;
+  max-width: 5rem;
+  
+  color: white;
+  cursor: pointer;
+  transition: transform 0.5s;
   &:hover {
-    transition-timing-function: cubic-bezier(.175,.885,.32,1);
-    font-size: 2.0rem;
+    transform: scale(1.2);
   }
 `;
 
@@ -67,17 +46,11 @@ export const SmallNaviText = styled.p`
   font-size: 1.0rem;
   padding-left: 1.5rem;
   
-  ${media.lessThan('medium')`
-  font-weight: bold;
-  `};
-  
-  color: ${({ theme }) => theme.palette.WHITE};
+  color: white;
   cursor: pointer;
-  transition-duration: 1s;
-  
+  transition: transform 0.5s;
   &:hover {
-    transition-timing-function: cubic-bezier(.175,.885,.32,1);
-    font-size: 1.5rem;
+    transform: scale(1.15);
   }
 `;
 
@@ -97,9 +70,14 @@ export const SignButton = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const SignImage = styled.img`
+  width: 2.5rem;
+  height: 2.5rem;
+`;
+
+export const Stamp = styled.img`
   width: 1.3rem;
   height: 1.3rem;
-  padding-top: 0.35rem;
-  padding-left: 0.45rem;
+  padding-top: 0.1rem;
+  padding-left: 0.5rem;
 `;

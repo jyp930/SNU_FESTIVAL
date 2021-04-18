@@ -39,7 +39,6 @@ export const palette = {
   GRAY80: '#707070',
   GRAY90: '#6F7070',
   GRAY60: '#ADADAD',
-  WHITE: '#FFFFFF',
 };
 
 export const zIndex = {
