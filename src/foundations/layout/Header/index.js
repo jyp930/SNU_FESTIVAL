@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 import MascotInFolder from '@I/svg/mascot/mascot-in-folder.svg';
 import Fade from 'react-reveal/Fade';
 import { preloadImage } from '@U/functions/preload';
-import LogoImage from '@I/png/logo.png';
-import ClosingFestival from '@I/jpg/closing-festival.jpg';
+import FestivalBackground from '@I/introduction/festival-background.jpg';
+import Poster21Spring from '@I/poster/21spring.png';
+import Poster21SpringCastle from '@I/poster/21springCastle.png';
 import Menus from '@F/layout/Menus';
 import styled, { css } from 'styled-components';
 import * as S from './styles';
@@ -16,7 +17,7 @@ function Header({ hamburgerColor }) {
 
   useEffect(() => {
     if (menuIsOpen) {
-      [LogoImage, ClosingFestival].forEach(preloadImage);
+      [FestivalBackground, Poster21SpringCastle, Poster21Spring].forEach(preloadImage);
     }
   }, [menuIsOpen]);
 

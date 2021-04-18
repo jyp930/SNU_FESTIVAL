@@ -11,7 +11,6 @@ function ActivityRouter({ match }) {
           <Switch>
             <Route
               exact
-              key={`${match.path}${route.path}`}
               path={`${match.path}${route.path}`}
               component={route.component}
             />
@@ -19,7 +18,6 @@ function ActivityRouter({ match }) {
             { route.children && route.children.map((childRoute) => (
               <Route
                 exact
-                key={`${match.path}${route.path}${childRoute.path}`}
                 path={`${match.path}${route.path}${childRoute.path}`}
                 component={childRoute.component}
               />

@@ -11,6 +11,7 @@ import useModal from '@U/hooks/useModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
 import { votePhoneCertCollectionRef, voteSingStealerCollectionRef } from '@U/initializer/firebase';
 import firebase from 'firebase/app';
+import { shuffleArray } from '@U/functions/array';
 import * as S from './styles';
 
 const PHONE_CERT = 0;
@@ -24,8 +25,8 @@ export function VoteSection({
   // 로그인 모달
   const { modalComponent: signInModalComponent, setIsModalOpen: setSignInModalComponent } = useModal(SignInGuide);
 
-  const PHONE_CERT_LIST = VARIABLE_PHONE_CERT_LIST;
-  const SING_STEALER_LIST = VARIABLE_SING_STEALER_LIST;
+  const PHONE_CERT_LIST = useMemo(() => shuffleArray(VARIABLE_PHONE_CERT_LIST), []);
+  const SING_STEALER_LIST = useMemo(() => shuffleArray(VARIABLE_SING_STEALER_LIST), []);
 
   // 공연 정보
   const [isModalOpen, setIsModalOpen] = useState(false);

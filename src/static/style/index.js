@@ -34,17 +34,20 @@ export const palette = {
   GREEN80: '#40C2D1',
   PURPLE20: '#E5E7FB',
   PURPLE50: '#9397D6',
+  PURPLE70: '#777DD6',
   PURPLE80: '#485582',
   GRAY80: '#707070',
+  GRAY90: '#6F7070',
   GRAY60: '#ADADAD',
   WHITE: '#FFFFFF',
 };
 
 export const zIndex = {
   base: 1,
+  topButton: 30,
   header: 50,
   fullScreen: 100,
-  mouseTrail: 10000,
+  mouseTrail: 200,
   loading: 1000,
 };
 

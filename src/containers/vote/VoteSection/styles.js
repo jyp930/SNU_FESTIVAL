@@ -82,7 +82,7 @@ export const LikeButton = styled.div`
   cursor: pointer;
 
   & > img {
-    width: 65%;
+    width: 70%;
     height: 65%;
   }
 `;

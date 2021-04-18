@@ -5,7 +5,7 @@ export const SignInGuideBox = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 65%;
   min-width: 264px;
   height: 220px;
   

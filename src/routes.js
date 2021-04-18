@@ -1,12 +1,14 @@
 import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/Home'));
-const Activity = lazy(() => import('@/pages/activity/ActivityRouter'));
-const Event = lazy(() => import('@/pages/Event'));
+const ActivityRouter = lazy(() => import('@/pages/activity/ActivityRouter'));
+const PerformanceRouter = lazy(() => import('@/pages/performance/PerformanceRouter'));
 const Apply = lazy(() => import('@/pages/Apply'));
 const Introduction = lazy(() => import('@/pages/Introduction'));
 const GuestBook = lazy(() => import('@/pages/GuestBook'));
 const Vote = lazy(() => import('@/pages/Vote'));
+const HiSangmin = lazy(() => import('@/pages/HiSangmin'));
+const GoodsRouter = lazy(() => import('@/pages/goods/GoodsRouter'));
 
 const routes = [
   {
@@ -14,25 +16,24 @@ const routes = [
     component: Home,
     exact: true,
   },
-  // {
-  //   path: '/activity',
-  //   component: Activity,
-  // },
-  // {
-  //   path: '/event',
-  //   component: Event,
-  //   exact: true,
-  // },
+  {
+    path: '/activity',
+    component: ActivityRouter,
+  },
+  {
+    path: '/performance',
+    component: PerformanceRouter,
+  },
   // {
   //   path: '/apply',
   //   component: Apply,
   //   exact: true,
   // },
-  // {
-  //   path: '/introduction',
-  //   component: Introduction,
-  //   exact: true,
-  // },
+  {
+    path: '/introduction',
+    component: Introduction,
+    exact: true,
+  },
   {
     path: '/guest-book',
     component: GuestBook,
@@ -42,6 +43,15 @@ const routes = [
     path: '/vote',
     component: Vote,
     exact: true,
+  },
+  {
+    path: '/hi-sangmin',
+    component: HiSangmin,
+    exact: true,
+  },
+  {
+    path: '/goods',
+    component: GoodsRouter,
   },
 ];
 export default routes;

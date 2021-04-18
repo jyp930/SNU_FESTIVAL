@@ -18,3 +18,15 @@ export const ResponsiveWidthStyle = css`
     width: ${props => props.widths[2]}px;
   `};
 `;
+
+export const ResponsiveHeightStyle = css`
+  ${media.greaterThan('large')`
+    height: ${props => props.heights[0]}px;
+  `};
+  ${media.between('medium', 'large')`
+    height: ${props => props.heights[1]}px;
+  `};
+  ${media.lessThan('medium')`
+    height: ${props => props.heights[2]}px;
+  `};
+`;
