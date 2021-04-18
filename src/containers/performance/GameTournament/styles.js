@@ -89,3 +89,20 @@ export const Teams = styled.div`
     font-weight: 500;
   }
 `;
+
+export const Image = styled.img`
+  align-self: center;
+  width: 80%;
+  height: 100%;
+  margin: 1rem 0 1.5rem;
+  
+  ${media.greaterThan('medium')`
+    width: 47%;
+    height: auto;
+    margin: 0;
+  `};
+  
+  ${media.between('medium', 'large')`
+    object-fit: scale-down;
+  `};
+`;

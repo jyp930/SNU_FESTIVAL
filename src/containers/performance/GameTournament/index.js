@@ -25,7 +25,7 @@ function GameTournament({ theme }) {
     </SS.Title>
   );
   const image = (
-    <S.Image src={isMobile ? CloudTemplarSmall : CloudTemplar} />
+    <SS.Image src={isMobile ? CloudTemplarSmall : CloudTemplar} />
   );
   const teams = (
     <SS.Teams>
