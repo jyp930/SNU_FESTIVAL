@@ -51,6 +51,7 @@ export const Image = styled.img`
   
   ${media.greaterThan('medium')`
     width: 47%;
+    height: auto;
     margin: 0;
   `};
   
