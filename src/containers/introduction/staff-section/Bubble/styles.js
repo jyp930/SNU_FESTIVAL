@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const BubbleWrapper = styled.svg`
+  pointer-events: none;
   overflow: hidden;
   position: absolute;
   top: 0;
