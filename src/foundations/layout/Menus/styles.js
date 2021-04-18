@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const StyledMenus = styled.div`
   display: flex;
@@ -18,25 +19,65 @@ export const StyledMenus = styled.div`
 export const OpenedMenu = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: left;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
+  padding-left: 10%;
+  padding-top: 10rem;
+  
+  ${media.lessThan('medium')`
+    padidng-left: 12%;
+    padding-top: 20rem;
+  `};
+  
   height: ${({ theme }) => theme.windowHeight}px;
-  background-color: ${({ theme }) => theme.palette.blueviolet};
   opacity: 1;
 `;
 
+export const InlineMenu = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 0%;
+  padding-top: 0rem;
+  opacity: 1;
+`;
 export const NaviText = styled.p`
-  margin: 20px 0;
-  font-size: 2rem;
-  color: ${({ theme }) => theme.palette.PURPLE20};
+  margin: 15px 0;
+  font-size: 1.6em;
+  
+  ${media.lessThan('medium')`
+  font-weight: bold;
+  `};
+  
+  color: ${({ theme }) => theme.palette.WHITE};
   cursor: pointer;
-  text-shadow: 1px 1px 2px grey;
   transition-duration: 1s;
 
   &:hover {
     transition-timing-function: cubic-bezier(.175,.885,.32,1);
-    font-size: 3rem;
+    font-size: 2.0rem;
+  }
+`;
+
+export const SmallNaviText = styled.p`
+  margin: 8px 0;
+  font-size: 1.0rem;
+  padding-left: 1.5rem;
+  
+  ${media.lessThan('medium')`
+  font-weight: bold;
+  `};
+  
+  color: ${({ theme }) => theme.palette.WHITE};
+  cursor: pointer;
+  transition-duration: 1s;
+  
+  &:hover {
+    transition-timing-function: cubic-bezier(.175,.885,.32,1);
+    font-size: 1.5rem;
   }
 `;
 
@@ -57,6 +98,8 @@ export const SignButton = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  padding-top: 0.35rem;
+  padding-left: 0.45rem;
 `;
