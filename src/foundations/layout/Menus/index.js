@@ -78,7 +78,6 @@ function Menus({ setMenuIsOpen }) {
         onClick={() => changeUrl(url)}
       >
         {page}
-        &nbsp;
       </S.SmallNaviText>
     </Fade>
   ), [changeUrl]);
@@ -116,19 +115,19 @@ function Menus({ setMenuIsOpen }) {
           </S.InlineMenu>
           {DropDownButton('행사', 'activity', 350)}
           <S.InlineMenu>
-            {ActivityIsOpen && smallNaviButton('- 미니게임  ', '/activity/minigame', 200)}
+            {ActivityIsOpen && smallNaviButton('- 미니게임', '/activity/minigame', 200)}
             {ActivityIsOpen && MinigameStamp && inlineStamp(200)}
           </S.InlineMenu>
           <S.InlineMenu>
-            {ActivityIsOpen && smallNaviButton('- 단체게임  ', '/activity/groupgame', 300)}
+            {ActivityIsOpen && smallNaviButton('- 단체게임', '/activity/groupgame', 300)}
             {ActivityIsOpen && GroupgameStamp && inlineStamp(300)}
           </S.InlineMenu>
           <S.InlineMenu>
-            {ActivityIsOpen && smallNaviButton('- 공모전  ', '/activity/gongmo', 400)}
+            {ActivityIsOpen && smallNaviButton('- 공모전', '/activity/gongmo', 400)}
             {ActivityIsOpen && GongmoStamp && inlineStamp(400)}
           </S.InlineMenu>
           <S.InlineMenu>
-            {ActivityIsOpen && smallNaviButton('- 고릴라디오  ', '/activity/radio', 500)}
+            {ActivityIsOpen && smallNaviButton('- 고릴라디오', '/activity/radio', 500)}
             {ActivityIsOpen && RadioStamp && inlineStamp(500)}
           </S.InlineMenu>
           {NaviButton('굿즈', '/goods', 400)}

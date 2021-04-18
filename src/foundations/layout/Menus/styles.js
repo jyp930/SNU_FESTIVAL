@@ -100,6 +100,6 @@ export const SignButton = styled.div`
 export const Image = styled.img`
   width: 1.3rem;
   height: 1.3rem;
-  padding-top: 0.5rem;
-  padding-left: 0.5rem;
+  padding-top: 0.35rem;
+  padding-left: 0.45rem;
 `;
