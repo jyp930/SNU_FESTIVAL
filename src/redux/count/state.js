@@ -33,7 +33,7 @@ const reducer = createReducer(INITIAL_STATE, {
   [types.SET_VALUE]: setValueReducer,
   [types.ADD]: (draft, action) => { draft.count += action.count; },
   [types.SET_LOADING]: (draft, action) => { draft.isLoading = action.isLoading; },
-  [types.RESET]: (draft) => { draft.count = 0; draft.isLoading = false; }, // TODO: addCountAsync 종료
+  [types.RESET]: (draft) => { draft.count = 0; draft.isLoading = false; },
 });
 export default reducer;
 

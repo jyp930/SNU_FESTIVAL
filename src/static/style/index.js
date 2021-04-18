@@ -68,6 +68,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     // TODO: 웹폰트가 아닌 font-face 로 변경
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    user-select: none;
     
     & ::selection {
       background-color: ${palette.PINK_PASTEL};

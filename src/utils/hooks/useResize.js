@@ -9,7 +9,6 @@ function useResize() {
 
   const onResize = useCallback(() => {
     const documentClientHeight = document.documentElement.clientHeight;
-    // TODO: 기획에 따라 height 정책 변경
     setWindowHeight(documentClientHeight > 768 ? documentClientHeight : window.innerHeight);
     const documentClientWidth = document.documentElement.clientWidth;
     setWindowWidth(documentClientWidth);
