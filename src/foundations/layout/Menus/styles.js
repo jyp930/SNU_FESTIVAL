@@ -34,9 +34,19 @@ export const OpenedMenu = styled.div`
   opacity: 1;
 `;
 
+export const InlineMenu = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 0%;
+  padding-top: 0rem;
+  opacity: 1;
+`;
 export const NaviText = styled.p`
-  margin: 20px 0;
-  font-size: 1.6rem;
+  margin: 15px 0;
+  font-size: 1.6em;
   
   ${media.lessThan('medium')`
   font-weight: bold;
@@ -48,13 +58,13 @@ export const NaviText = styled.p`
 
   &:hover {
     transition-timing-function: cubic-bezier(.175,.885,.32,1);
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
 `;
 
 export const SmallNaviText = styled.p`
-  margin: 10px 0;
-  font-size: 1.2rem;
+  margin: 8px 0;
+  font-size: 1.0rem;
   padding-left: 1.5rem;
   
   ${media.lessThan('medium')`
@@ -67,7 +77,7 @@ export const SmallNaviText = styled.p`
   
   &:hover {
     transition-timing-function: cubic-bezier(.175,.885,.32,1);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -88,6 +98,8 @@ export const SignButton = styled.div`
 `;
 
 export const Image = styled.img`
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
 `;
