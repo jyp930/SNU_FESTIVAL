@@ -90,25 +90,25 @@ function Menus({ setMenuIsOpen }) {
       </S.InlineMenu>
       {(openedTab === 'performance') && (
         <>
-          {smallNaviButton('- 폰서트 LIVE', '/performance/phone-cert', 200)}
-          {smallNaviButton('- 힛더스테이지', '/performance/hit-the-stage', 300)}
-          {smallNaviButton('- 씽스틸러', '/performance/sing-stealer', 400)}
-          {smallNaviButton('- 관악게임토너먼트', '/performance/game-tournament', 500)}
+          {smallNaviButton('- 폰서트 LIVE', '/performance/phone-cert', 0)}
+          {smallNaviButton('- 힛더스테이지', '/performance/hit-the-stage', 100)}
+          {smallNaviButton('- 씽스틸러', '/performance/sing-stealer', 200)}
+          {smallNaviButton('- 관악게임토너먼트', '/performance/game-tournament', 300)}
         </>
       )}
       {DropDownButton('행사', 'activity', 350)}
       {(openedTab === 'activity') && (
         <>
           <S.InlineMenu>
-            {smallNaviButton('- 미니게임', '/activity/mini', 200)}
+            {smallNaviButton('- 미니게임', '/activity/mini', 0)}
             {inlineStamp(200, 2)}
           </S.InlineMenu>
-          {smallNaviButton('- 단체게임', '/activity/group', 300)}
+          {smallNaviButton('- 단체게임', '/activity/group', 100)}
           <S.InlineMenu>
-            {smallNaviButton('- 공모전', '/activity/competition', 400)}
+            {smallNaviButton('- 공모전', '/activity/competition', 200)}
             {inlineStamp(400)}
           </S.InlineMenu>
-          {smallNaviButton('- 고릴라디오', '/activity/radio', 500)}
+          {smallNaviButton('- 고릴라디오', '/activity/radio', 300)}
         </>
       )}
       {NaviButton('굿즈', '/goods', 400)}
