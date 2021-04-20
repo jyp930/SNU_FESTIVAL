@@ -37,7 +37,7 @@ export const Logo = styled.div`
 
 export const LogoImage = styled.img`
   width: 5rem;
-  height: auto;
+  height: 100%;
   cursor: pointer;
   ${HoverStyle};
 `;
