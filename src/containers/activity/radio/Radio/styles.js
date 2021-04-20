@@ -135,7 +135,7 @@ export const Star = styled.div`
   
   @keyframes flicker {
     from { opacity: 0; transform: scale(0.5); }
-    to { opacity: 1; transform: scale(1); }
+    to { opacity: 0.9; transform: scale(1); }
   }
   opacity: 0;
   transform: scale(0.5);
