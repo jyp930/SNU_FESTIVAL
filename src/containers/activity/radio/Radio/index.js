@@ -33,17 +33,10 @@ function Radio({ theme }) {
     <S.StyledRadio>
       <HeaderContent>보이는 라디오</HeaderContent>
       <S.Body>
+        {ellipses(isMobile)}
         <S.Title>
           <S.Image src={Title} alt="고릴라디오" />
-          <Star top={-10} left={10} r={7} />
-          <Star top={13} left={20} r={5} />
-          <Star top={15} left={6} r={6} />
-          <Star top={60} left={25} r={4} />
-
-          <Star top={-10} right={10} r={6} />
-          <Star top={13} right={25} r={7} />
-          <Star top={15} right={6} r={6} />
-          <Star top={45} right={20} r={4} />
+          {stars}
         </S.Title>
         { isMobile ? (
           <S.MobileGuests>
@@ -88,3 +81,24 @@ function Star({
     />
   );
 }
+
+const stars = (
+  <>
+    <Star top={-10} left={10} r={7} />
+    <Star top={13} left={20} r={5} />
+    <Star top={15} left={6} r={6} />
+    <Star top={60} left={25} r={4} />
+
+    <Star top={-10} right={10} r={6} />
+    <Star top={13} right={25} r={7} />
+    <Star top={15} right={6} r={6} />
+    <Star top={45} right={20} r={4} />
+  </>
+);
+
+const ellipses = (isMobile) => (
+  <>
+    <S.Ellipse top={isMobile ? -20 : -10} left={isMobile ? -40 : -20} rotate={isMobile ? 60 : -20} />
+    <S.Ellipse top={isMobile ? -15 : 1} right={isMobile ? -40 : -25} rotate={isMobile ? 60 : -20} />
+  </>
+);

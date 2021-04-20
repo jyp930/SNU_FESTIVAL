@@ -11,18 +11,19 @@ export const StyledRadio = styled.div`
 `;
 
 export const Body = styled.div`
+  position: relative;
+  
   width: 100%;
   min-height: calc(100vh - 65px);
   overflow-y: hidden;
+  
+  ${FlexCenterStyle};
+  flex-direction: column;
+  
   background-image: linear-gradient(
     ${({ theme }) => rgba(theme.palette.PURPLE50, 0.65)},
     white
   );
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const Title = styled.div`
@@ -35,37 +36,11 @@ export const Title = styled.div`
   `};
 `;
 
-export const Star = styled.div`
-  position: absolute;
-  
-  width: ${props => props.r}px;
-  height: ${props => props.r}px;
-  border-radius: 50%;
-  background-color: white;
-  
-  ${props => props.top && css`top: ${props.top}%`};
-  ${props => props.left && css`left: ${props.left}%`};
-  ${props => props.right && css`right: ${props.right}%`};
-  ${props => props.bottom && css`bottom: ${props.bottom}%`};
-  
-  @keyframes flicker {
-    from { opacity: 0; transform: scale(0.5); }
-    to { opacity: 1; transform: scale(1); }
-  }
-  opacity: 0;
-  transform: scale(0.5);
-
-  animation-name: flicker;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-delay: ${props => props.delay}s;
-  animation-duration: ${props => props.duration}s;
-`;
-
 export const Image = styled.img`
   width: 100%;
   max-width: 930px;
   height: 100%;
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
 export const Guests = styled.div`
@@ -143,4 +118,54 @@ export const Texts = styled.div`
       }
     }
   }
+`;
+
+export const Star = styled.div`
+  position: absolute;
+  
+  width: ${props => props.r}px;
+  height: ${props => props.r}px;
+  border-radius: 50%;
+  background-color: white;
+  
+  ${props => props.top && css`top: ${props.top}%`};
+  ${props => props.left && css`left: ${props.left}%`};
+  ${props => props.right && css`right: ${props.right}%`};
+  ${props => props.bottom && css`bottom: ${props.bottom}%`};
+  
+  @keyframes flicker {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  opacity: 0;
+  transform: scale(0.5);
+
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: ${props => props.delay}s;
+  animation-duration: ${props => props.duration}s;
+`;
+
+export const Ellipse = styled.div`
+  position: absolute;
+  ${props => props.top && css`top: ${props.top}%`};
+  ${props => props.left && css`left: ${props.left}%`};
+  ${props => props.right && css`right: ${props.right}%`};
+
+  width: 60%;
+  height: 700px;
+
+  border-radius: 50%;
+  opacity: 0.13;
+  transform: rotate(${props => props.rotate}deg);
+  background-image: linear-gradient(
+    ${({ theme }) => theme.palette.PURPLE50},
+    ${({ theme }) => theme.palette.PURPLE70}
+  );
+
+  ${media.lessThan('small')`
+    width: 80%;
+    height: 400px;
+  `};
 `;
