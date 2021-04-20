@@ -15,7 +15,7 @@ export const Body = styled.div`
   
   width: 100%;
   min-height: calc(100vh - 65px);
-  overflow-y: hidden;
+  overflow: hidden;
   
   ${FlexCenterStyle};
   flex-direction: column;
