@@ -36,9 +36,11 @@ export const palette = {
   PURPLE50: '#9397D6',
   PURPLE70: '#777DD6',
   PURPLE80: '#485582',
+  PURPLE90: '#38395A',
   GRAY80: '#707070',
   GRAY90: '#6F7070',
   GRAY60: '#ADADAD',
+  PINK20: '#EDD5D2',
 };
 
 export const zIndex = {

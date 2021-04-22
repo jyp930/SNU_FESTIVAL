@@ -27,6 +27,7 @@ export const StyledFullScreen = styled.div`
 `;
 
 export const CloseButton = styled.div`
+  z-index: ${({ theme }) => theme.zIndex.fullScreen + 1};
   position: absolute;
   top: 10px;
   right: 10px;
@@ -36,5 +37,5 @@ export const CloseButton = styled.div`
 export const CloseIcon = styled(IoMdClose)`
   width: 40px;
   height: 40px;
-  color: ${({ theme }) => theme.palette.BLACK_NEWTRO};
+  color: white;
 `;
