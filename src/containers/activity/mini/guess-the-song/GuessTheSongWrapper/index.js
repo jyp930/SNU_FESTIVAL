@@ -9,7 +9,7 @@ import * as S from './styles';
 function GuessTheSongWrapper() {
   return (
     <>
-      <HeaderContent absolute>노래 맞히기</HeaderContent>
+      <HeaderContent absolute backgroundColor="transparent">노래 맞히기</HeaderContent>
       <GuessTheSong />
       <Rule />
       <Answer />
