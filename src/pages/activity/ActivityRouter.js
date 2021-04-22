@@ -4,30 +4,28 @@ import { Route, Switch } from 'react-router-dom';
 import Lottie404 from '@F/lottie/Lottie404';
 
 function ActivityRouter({ match }) {
+  // TODO: router 버그 있음
   return (
-    <>
+    <Switch>
       { activityRoutes.map((route, index) => (
         <React.Fragment key={route.path}>
-          <Switch>
+          <Route
+            exact
+            path={`${match.path}${route.path}`}
+            component={route.component}
+          />
+          { route.children && route.children.map((childRoute) => (
             <Route
               exact
-              path={`${match.path}${route.path}`}
-              component={route.component}
+              path={`${match.path}${route.path}${childRoute.path}`}
+              key={`${match.path}${route.path}${childRoute.path}`}
+              component={childRoute.component}
             />
-
-            { route.children && route.children.map((childRoute) => (
-              <Route
-                exact
-                path={`${match.path}${route.path}${childRoute.path}`}
-                key={`${match.path}${route.path}${childRoute.path}`}
-                component={childRoute.component}
-              />
-            ))}
-            {(index === activityRoutes.length - 1) && <Route component={Lottie404} />}
-          </Switch>
+          ))}
+          {(index === activityRoutes.length - 1) && <Route component={Lottie404} />}
         </React.Fragment>
       ))}
-    </>
+    </Switch>
   );
 }
 export default ActivityRouter;

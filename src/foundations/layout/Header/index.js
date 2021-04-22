@@ -84,6 +84,9 @@ Header.defaultProps = {
 };
 
 export const HeaderContent = styled.div`
+  ${props => props.absolute && css`
+    position: absolute;
+  `};
   display: flex;
   align-items: center;
   justify-content: center;

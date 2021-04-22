@@ -27,13 +27,11 @@ export const TileContainerWrapper = styled.div`
 `;
 
 export const TileContainer = styled.div`
-  ${media.lessThan('large')`
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-  `};
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
   
   width: 100%;
-  height: 60%;
+  height: 50%;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
