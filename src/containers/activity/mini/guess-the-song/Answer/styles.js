@@ -36,7 +36,7 @@ export const InputBox = styled.input`
   text-align: center;
   
   &::placeholder {
-    color: ${({ theme }) => rgba(theme.palette.PURPLE50, 0.4)};
+    color: ${({ theme }) => rgba(theme.palette.GRAY80, 0.4)};
   }
   
   margin: 0 0.5rem;

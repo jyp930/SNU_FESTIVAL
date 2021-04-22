@@ -6,11 +6,11 @@ function Answer() {
   return (
     <S.StyledAnswer>
       <S.Inputs>
-        <S.InputBox />
-        <S.InputBox />
-        <S.InputBox />
+        <S.InputBox placeholder="뭐게요" />
+        <S.InputBox placeholder="맞혀봐요" />
+        <S.InputBox placeholder="응?" />
       </S.Inputs>
-      <S.Button onClick={() => alert('제출!')}>등록</S.Button>
+      <S.Button onClick={() => alert('제출!')}>정답!</S.Button>
     </S.StyledAnswer>
   );
 }
