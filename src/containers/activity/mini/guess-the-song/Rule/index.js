@@ -16,7 +16,7 @@ function Rule() {
           <br />
           3. 상단에 노래 3가지를 기입한다.
         </p>
-        <p>@Inspired by palatab</p>
+        <p>@inspired by palatab</p>
       </S.Texts>
     </S.StyledRule>
   );

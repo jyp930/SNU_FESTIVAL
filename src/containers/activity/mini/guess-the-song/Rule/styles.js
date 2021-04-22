@@ -3,6 +3,7 @@ import { FlexCenterStyle } from '@S/responsive/display';
 import media from 'styled-media-query';
 
 export const StyledRule = styled.div`
+  overflow: hidden;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -14,7 +15,7 @@ export const StyledRule = styled.div`
 `;
 
 export const Texts = styled.div`
-  width: 80%;
+  width: 85%;
   max-width: 500px;
 
   p {
@@ -25,15 +26,15 @@ export const Texts = styled.div`
     font-size: 1.2rem;
     font-weight: 500;
     ${media.lessThan('medium')`
-      font-size: 1.5rem;
+      font-size: 1.3rem;
     `};
   }
   p:nth-of-type(2) {
-    margin: 0 0 1rem;
+    margin: 0;
     font-size: 1rem;
     line-height: 1.6;
     ${media.lessThan('medium')`
-      font-size: 1.2rem;
+      font-size: 0.9rem;
     `};
   }
   p:nth-of-type(3) {
