@@ -5,7 +5,7 @@ import HauntedHouseTheme from '@C/activity/mini/riddle/HauntedHouseTheme';
 import FullScreen from '@F/FullScreen';
 import { theme } from '@S/index';
 import AliceOpening from '@I/activity/riddle/alice/alice-opening.png';
-import HauntedHouseOpening from '@I/activity/riddle/haunted-house-opening.png';
+import HauntedHouseOpening from '@I/activity/riddle/hounted-house/haunted-house-opening.png';
 import AliceTheme from '@C/activity/mini/riddle/AliceTheme';
 import * as S from './styles';
 

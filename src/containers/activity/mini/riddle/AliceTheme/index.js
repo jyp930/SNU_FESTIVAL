@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AliceBackground from '@I/activity/riddle/alice/alice-background.jpg';
 import Confetti from '@F/animation/Confetti';
+import QuestionBox from '@C/activity/mini/riddle/QuestionBox';
 
 import Alice from '@I/activity/riddle/alice/confetti/alice.svg';
 import Bottle from '@I/activity/riddle/alice/confetti/bottle.svg';
@@ -38,14 +39,7 @@ function AliceTheme() {
       <S.ConfettiWrapper>
         <Confetti svgs={svgs} />
       </S.ConfettiWrapper>
-      {/* TODO: CONTENT 는 유령의 집이랑 공통 */}
-      <S.Content>
-        <S.Question />
-        <S.Answer>
-          <S.InputBox placeholder="정답을 입력하세요" />
-          <S.Button>등록</S.Button>
-        </S.Answer>
-      </S.Content>
+      <QuestionBox />
     </S.StyledAliceTheme>
   );
 }
