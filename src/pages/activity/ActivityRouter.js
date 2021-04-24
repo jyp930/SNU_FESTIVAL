@@ -27,6 +27,11 @@ function ActivityRouter({ match }) {
           path={`${match.path}${activityRoutes[1].path}`}
           component={activityRoutes[1].component}
         />
+        <Route
+          exact
+          path={`${match.path}${activityRoutes[2].path}`}
+          component={activityRoutes[2].component}
+        />
         <Route component={Lottie404} />
       </Switch>
       {/* { activityRoutes.map((route, index) => ( */}
@@ -60,12 +65,13 @@ ActivityRouter.propTypes = {
   }).isRequired,
 };
 
-const Radio = lazy(() => import('@/pages/activity/Radio'));
 const MiniGame = lazy(() => import('@/pages/activity/mini/MiniGame'));
 const GuessTheSong = lazy(() => import('@/pages/activity/mini/GuessTheSong'));
 const TreasureHunt = lazy(() => import('@/pages/activity/mini/TreasureHunt'));
 const Riddle = lazy(() => import('@/pages/activity/mini/Riddle'));
 const BlackAndWhite = lazy(() => import('@/pages/activity/mini/BlackAndWhite'));
+const Radio = lazy(() => import('@/pages/activity/Radio'));
+const Competition = lazy(() => import('@/pages/activity/Competition'));
 
 const activityRoutes = [
   {
@@ -93,5 +99,9 @@ const activityRoutes = [
   {
     path: '/radio',
     component: Radio,
+  },
+  {
+    path: '/competition',
+    component: Competition,
   },
 ];
