@@ -28,6 +28,11 @@ export const Background = styled.img`
   object-fit: cover;
 `;
 
+export const ConfettiWrapper = styled.div`
+  position: absolute;
+  z-index: ${({ theme }) => theme.zIndex.base};
+`;
+
 export const Content = styled.div`
   ${FlexCenterStyle};
   flex-direction: column;

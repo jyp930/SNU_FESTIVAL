@@ -12,23 +12,14 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'reactjs-popup/dist/index.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from 'styled-components';
+import useResize from '@U/hooks/useResize';
 
 addDecorator(s => {
-  const [windowHeight, setWindowHeight] = useState(0);
-  const themeWithWindowHeight = useMemo(() => ({ ...theme, windowHeight }), [windowHeight]);
-  const onResize = () => {
-    const documentClientHeight = document.documentElement.clientHeight;
-    setWindowHeight(documentClientHeight > 768 ? documentClientHeight : window.innerHeight);
-  };
-  useEffect(() => {
-    window.addEventListener('resize', onResize);
-    onResize();
-
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
+  const [windowWidth, windowHeight] = useResize();
+  const themeWithWindowSize = useMemo(() => ({ ...theme, windowHeight, windowWidth }), [windowHeight, windowWidth]);
 
   return (
-    <ThemeProvider theme={themeWithWindowHeight}>
+    <ThemeProvider theme={themeWithWindowSize}>
       <Provider store={reduxRoot.store}>
         <GlobalStyle/>
         {s()}
