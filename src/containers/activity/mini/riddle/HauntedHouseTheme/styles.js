@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FlexCenterStyle } from '@S/responsive/display';
 
 export const StyledHauntedHouseTheme = styled.div`
@@ -57,5 +57,25 @@ export const Cloud = styled.img`
   animation-name: move;
   animation-duration: 50s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
+`;
+
+export const Bat = styled.img`
+  position: absolute;
+  width: ${props => props.width}px;
+  ${props => props.top && css`top: ${props.top}%`};
+  ${props => props.left && css`left: ${props.left}%`};
+  ${props => props.right && css`right: ${props.right}%`};
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(15deg); }
+  }
+
+  transform: rotate(0deg);
+  animation-name: rotate;
+  animation-duration: ${props => props.duration}s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   animation-timing-function: linear;
 `;
