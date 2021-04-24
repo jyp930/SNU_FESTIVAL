@@ -14,7 +14,7 @@ function VoteSection() {
     <S.StyledVoteSection>
       <S.Tab>
         {Object.keys(FIELDS).map(field => (
-          <>
+          <React.Fragment key={field}>
             <S.TabItem
               onClick={() => setCurrentField(FIELDS[field])}
               isSelected={currentField === FIELDS[field]}
@@ -22,11 +22,11 @@ function VoteSection() {
               {field}
             </S.TabItem>
             {FIELDS[field] !== 2 && <p>|</p>}
-          </>
+          </React.Fragment>
         ))}
       </S.Tab>
 
-      <div style={{ height: 500 }} />
+      <div style={{ height: 300 }} />
 
       <S.SubmitSection>
         <S.SubmitButton>제출하기</S.SubmitButton>

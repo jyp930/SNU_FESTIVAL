@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
 import TextSection from '@C/activity/competition/TextSection';
 import VoteSection from '@C/activity/competition/VoteSection';
+import ArchiveSection from '@C/activity/competition/ArchiveSection';
 import * as S from './styles';
 
 function Competition() {
@@ -12,6 +13,7 @@ function Competition() {
       <S.Body>
         <TextSection />
         <VoteSection />
+        <ArchiveSection />
       </S.Body>
     </S.StyledCompetition>
   );
