@@ -6,9 +6,8 @@ import * as S from './styles';
 function SimpleSlider({ items }) {
   const settings = {
     infinite: true,
-    speed: 500,
     slidesToShow: 2,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
   };
 
   return (

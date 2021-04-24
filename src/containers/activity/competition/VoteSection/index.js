@@ -1,32 +1,50 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import Window from '@I/goods/window.png';
+import SimpleSlider from '@F/react-slick/SimpleSlider';
+import FilledHeart from '@I/icon/filled-heart.svg';
+import EmptyHeart from '@I/icon/empty-heart.svg';
 import * as S from './styles';
 
-const CARTOON = 0;
-const LITERATURE = 1;
-const VIDEO = 2;
-const FIELDS = { 만화: CARTOON, 문학: LITERATURE, 영상: VIDEO };
+const items = [
+  {
+    image: Window, title: '작품 타이틀1', author: '참가자명1', description: '작품 한 줄 설명1',
+  },
+  {
+    image: Window, title: '작품 타이틀2', author: '참가자명2', description: '작품 한 줄 설명2',
+  },
+  {
+    image: Window, title: '작품 타이틀3', author: '참가자명3', description: '작품 한 줄 설명3',
+  },
+  {
+    image: Window, title: '작품 타이틀4', author: '참가자명4', description: '작품 한 줄 설명4',
+  },
+];
 
-function VoteSection() {
-  const [currentField, setCurrentField] = useState(CARTOON);
-
+function VoteSection({ field }) {
   return (
     <S.StyledVoteSection>
-      <S.Tab>
-        {Object.keys(FIELDS).map(field => (
-          <React.Fragment key={field}>
-            <S.TabItem
-              onClick={() => setCurrentField(FIELDS[field])}
-              isSelected={currentField === FIELDS[field]}
-            >
-              {field}
-            </S.TabItem>
-            {FIELDS[field] !== 2 && <p>|</p>}
-          </React.Fragment>
+      <S.SliderSection>
+        <SimpleSlider items={items.map(item => (
+          <S.Item>
+            <S.ImageWrapper>
+              <img src={item.image} alt="작품" />
+              <S.LikeButton>
+                <img src={EmptyHeart} alt="like" />
+              </S.LikeButton>
+            </S.ImageWrapper>
+            <p>
+              {item.title}
+              {' '}
+              -
+              {' '}
+              {item.author}
+            </p>
+            <p>{item.description}</p>
+          </S.Item>
         ))}
-      </S.Tab>
-
-      <div style={{ height: 300 }} />
+        />
+      </S.SliderSection>
 
       <S.SubmitSection>
         <S.SubmitButton>제출하기</S.SubmitButton>
@@ -38,5 +56,5 @@ function VoteSection() {
 export default VoteSection;
 
 VoteSection.propTypes = {
-
+  field: PropTypes.number.isRequired,
 };

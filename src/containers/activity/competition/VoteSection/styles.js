@@ -9,24 +9,58 @@ export const StyledVoteSection = styled.div`
   flex-direction: column;
 `;
 
-export const Tab = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 2px;
+export const SliderSection = styled.div`
+  margin: 2rem 0;
+`;
+
+export const Item = styled.div`
+  margin: 1rem 1rem 2rem;
   
-  & p {
-    padding: 0 1rem;
+  p {
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+  p:nth-of-type(1), p:nth-of-type(2) {
     color: ${({ theme }) => theme.palette.PURPLE50};
+  }
+  p:last-of-type {
+    color: ${({ theme }) => theme.palette.GRAY80};
   }
 `;
 
-export const TabItem = styled.div`
-  font-size: 1.1rem;
-  font-weight: bold;
+export const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const LikeButton = styled.div`
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.5rem;
+  height: 2.5rem;
   cursor: pointer;
 
-  color: ${props => (props.isSelected ? props.theme.palette.PURPLE50 : props.theme.palette.GRAY60)};
-  transition: color 0.2s;
+  & > img {
+    width: 70%;
+    height: 65%;
+  }
 `;
 
 export const SubmitSection = styled.div`

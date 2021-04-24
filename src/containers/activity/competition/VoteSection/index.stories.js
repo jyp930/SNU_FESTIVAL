@@ -5,4 +5,4 @@ export default {
   title: 'containers/activity/competition/VoteSection',
 };
 
-export const Default = () => <VoteSection />;
+export const Default = () => <VoteSection field={0} />;

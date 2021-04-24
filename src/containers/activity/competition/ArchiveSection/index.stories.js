@@ -5,4 +5,8 @@ export default {
   title: 'containers/activity/competition/ArchiveSection',
 };
 
-export const Default = () => <ArchiveSection />;
+export const Default = () => (
+  <ArchiveSection
+    fieldName="영상"
+  />
+);
