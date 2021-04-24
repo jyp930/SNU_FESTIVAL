@@ -6,26 +6,50 @@ import Lottie404 from '@F/lottie/Lottie404';
 function ActivityRouter({ match }) {
   // TODO: router 버그 있음
   return (
-    <Switch>
-      { activityRoutes.map((route, index) => (
-        <React.Fragment key={route.path}>
+    <>
+      <Switch>
+        <Route
+          exact
+          path={`${match.path}${activityRoutes[0].path}`}
+          component={activityRoutes[0].component}
+        />
+        { activityRoutes[0].children && activityRoutes[0].children.map((childRoute) => (
           <Route
             exact
-            path={`${match.path}${route.path}`}
-            component={route.component}
+            path={`${match.path}${activityRoutes[0].path}${childRoute.path}`}
+            key={`${match.path}${activityRoutes[0].path}${childRoute.path}`}
+            component={childRoute.component}
           />
-          { route.children && route.children.map((childRoute) => (
-            <Route
-              exact
-              path={`${match.path}${route.path}${childRoute.path}`}
-              key={`${match.path}${route.path}${childRoute.path}`}
-              component={childRoute.component}
-            />
-          ))}
-          {(index === activityRoutes.length - 1) && <Route component={Lottie404} />}
-        </React.Fragment>
-      ))}
-    </Switch>
+        ))}
+
+        <Route
+          exact
+          path={`${match.path}${activityRoutes[1].path}`}
+          component={activityRoutes[1].component}
+        />
+        <Route component={Lottie404} />
+      </Switch>
+      {/* { activityRoutes.map((route, index) => ( */}
+      {/*  <React.Fragment key={route.path}> */}
+      {/*    <Switch> */}
+      {/*      <Route */}
+      {/*        exact */}
+      {/*        path={`${match.path}${route.path}`} */}
+      {/*        component={route.component} */}
+      {/*      /> */}
+      {/*      { route.children && route.children.map((childRoute) => ( */}
+      {/*        <Route */}
+      {/*          exact */}
+      {/*          path={`${match.path}${route.path}${childRoute.path}`} */}
+      {/*          key={`${match.path}${route.path}${childRoute.path}`} */}
+      {/*          component={childRoute.component} */}
+      {/*        /> */}
+      {/*      ))} */}
+      {/*      <Route component={Lottie404} /> */}
+      {/*    </Switch> */}
+      {/*  </React.Fragment> */}
+      {/* ))} */}
+    </>
   );
 }
 export default ActivityRouter;
