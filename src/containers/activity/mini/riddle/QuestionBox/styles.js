@@ -13,6 +13,7 @@ export const Content = styled.div`
   
   ${media.lessThan('medium')`
     width: 80%;
+    margin-top: -10rem;
   `};
 `;
 

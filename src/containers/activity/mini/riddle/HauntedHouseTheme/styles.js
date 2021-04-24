@@ -25,3 +25,18 @@ export const Background = styled.img`
   height: 100%;
   object-fit: cover;
 `;
+
+export const Castle = styled.img`
+  position: absolute;
+  width: 161px;
+  height: 254px;
+  bottom: 0;
+`;
+
+export const Moon = styled.img`
+  position: absolute;
+  width: 89px;
+  height: 88px;
+  top: 5%;
+  left: 5%;
+`;
