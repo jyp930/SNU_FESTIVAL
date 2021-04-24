@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import HauntedHouseBackground from '@I/activity/riddle/hounted-house/haunted-house-background.jpg';
 import Castle from '@I/activity/riddle/hounted-house/castle.png';
 import Moon from '@I/activity/riddle/hounted-house/moon.png';
+import Cloud from '@I/activity/riddle/hounted-house/cloud.png';
 import QuestionBox from '@C/activity/mini/riddle/QuestionBox';
 import * as S from './styles';
 
@@ -12,6 +13,8 @@ function HauntedHouseTheme() {
       <S.Background src={HauntedHouseBackground} alt="유령의 집 배경" />
       <S.Castle src={Castle} alt="성" />
       <S.Moon src={Moon} alt="달" />
+
+      <S.Cloud src={Cloud} alt="구름" />
 
       <QuestionBox answerColor="white" />
     </S.StyledHauntedHouseTheme>

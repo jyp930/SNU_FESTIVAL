@@ -15,6 +15,7 @@ import Dish from '@I/activity/riddle/alice/confetti/dish.svg';
 import Pot from '@I/activity/riddle/alice/confetti/pot.svg';
 import Rabbit from '@I/activity/riddle/alice/confetti/rabbit.svg';
 import SpaceAce from '@I/activity/riddle/alice/confetti/space-ace.svg';
+import HeartAce from '@I/activity/riddle/alice/confetti/heart-ace.svg';
 import * as S from './styles';
 
 const svgSet = [
@@ -29,6 +30,7 @@ const svgSet = [
   { src: Pot, weight: 0.7 },
   { src: Rabbit, weight: 0.7 },
   { src: SpaceAce, weight: 1.2 },
+  { src: HeartAce, weight: 1.2 },
 ];
 const svgs = [...svgSet, ...svgSet];
 

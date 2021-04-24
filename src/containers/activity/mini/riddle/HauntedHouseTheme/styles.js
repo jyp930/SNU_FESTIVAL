@@ -31,6 +31,7 @@ export const Castle = styled.img`
   width: 161px;
   height: 254px;
   bottom: 0;
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
 export const Moon = styled.img`
@@ -39,4 +40,22 @@ export const Moon = styled.img`
   height: 88px;
   top: 5%;
   left: 5%;
+`;
+
+export const Cloud = styled.img`
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 100%;
+  
+  @keyframes move {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+ 
+  transform: translateX(-100%);
+  animation-name: move;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 `;
