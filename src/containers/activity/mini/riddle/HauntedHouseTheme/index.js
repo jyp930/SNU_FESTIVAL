@@ -16,10 +16,10 @@ function HauntedHouseTheme({ theme }) {
   return (
     <S.StyledHauntedHouseTheme>
       <S.Background src={HauntedHouseBackground} alt="유령의 집 배경" />
-      <S.Castle src={Castle} alt="성" />
       <S.Moon src={Moon} alt="달" />
-
       <S.Cloud src={Cloud} alt="구름" />
+      <S.Castle src={Castle} alt="성" />
+
       <S.Bat src={BatWhite} alt="박쥐" width={isMobile ? 100 : 200} top={isMobile ? 5 : 10} left={10} duration={1} />
       <S.Bat src={BatWhite} alt="박쥐" width={100} top={30} right={18} duration={1.1} />
       <S.Bat src={BatWhite} alt="박쥐" width={50} top={25} left={30} duration={0.9} />

@@ -31,7 +31,6 @@ export const Castle = styled.img`
   width: 161px;
   height: 254px;
   bottom: 0;
-  z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
 export const Moon = styled.img`
@@ -47,6 +46,7 @@ export const Cloud = styled.img`
   bottom: 20%;
   left: 0;
   width: 100%;
+  opacity: 0.9;
   
   @keyframes move {
     0% { transform: translateX(-100%); }
