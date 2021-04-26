@@ -88,6 +88,7 @@ export const HeaderContent = styled.div`
 
   ${props => props.fixed && css`
     position: fixed;
+    top: 0;
   `};
   display: flex;
   align-items: center;
