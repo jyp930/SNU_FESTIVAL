@@ -7,7 +7,6 @@ import * as S from './styles';
 function Confetti({ theme, svgs }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
 
-  // TODO: mac os safari 지원
   useEffect(() => {
     const confettiSettings = {
       target: 'confetti-canvas',
