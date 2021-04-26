@@ -1,33 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import '@/static/font/font.css';
-import { FlexCenterStyle } from '@S/responsive/display';
+import { HoverStyle } from '@S/responsive/mouse';
 
 export const StyledHome = styled.div`
+  position: relative;
+  width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
+  min-height: ${({ height }) => height}px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const Body = styled.div`
-  width: 100%;
-  height: 100%;
-    
-  margin-top: -30px;
-  ${FlexCenterStyle};
-  flex-direction: column;
-
-  font-family: 'PFStardust', sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  word-break: keep-all;
-  color: ${props => props.theme.palette.PURPLE50};
-  text-align: center;
-  
-  & > p {
-    margin: 0;
-  }
+  justify-content: center;
 `;
 
 export const Title = styled.div`
@@ -52,5 +36,43 @@ export const Title = styled.div`
       font-family: 'PFStardust', sans-serif;
       line-height: 1.2;
     }
+  }
+`;
+
+export const Background = styled.img`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+export const IslandWrapper = styled.div`
+  position: relative;
+  margin: auto;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
+`;
+
+export const Island = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
+`;
+
+export const Landmark = styled.img`
+  position: absolute;
+  width: ${({ width }) => width}px;
+  height: auto;
+  ${props => props.top && css`top: ${props.top}%`};
+  ${props => props.left && css`left: ${props.left}%`};
+  ${props => props.right && css`right: ${props.right}%`};
+  ${props => props.bottom && css`bottom: ${props.bottom}%`};
+  
+  ${HoverStyle};
+  &:hover {
+    transform: scale(1.04);
   }
 `;

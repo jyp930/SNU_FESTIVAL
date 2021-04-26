@@ -84,8 +84,10 @@ Header.defaultProps = {
 };
 
 export const HeaderContent = styled.div`
-  ${props => props.absolute && css`
-    position: absolute;
+  z-index: ${({ theme }) => theme.zIndex.header - 1};
+
+  ${props => props.fixed && css`
+    position: fixed;
   `};
   display: flex;
   align-items: center;
@@ -102,4 +104,5 @@ export const HeaderContent = styled.div`
   ${props => props.hasBoxShadow && css`
     box-shadow: rgba(0, 0, 0, 0.12) 0 3px 5px 2px;
   `}
+  
 `;
