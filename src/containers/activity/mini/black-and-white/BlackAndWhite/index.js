@@ -4,6 +4,9 @@ import { HeaderContent } from '@F/layout/Header';
 import { useUser } from '@U/hooks/useAuth';
 import useInput from '@U/hooks/useInput';
 import { getPasswordFromEmail } from '@U/functions/password';
+import Rule from '@C/activity/mini/black-and-white/Rule';
+import Swirl from '@I/activity/black-and-white/swirl.svg';
+import Answer from '@C/activity/mini/black-and-white/Answer';
 import * as S from './styles';
 
 export function BlackAndWhite({ user, isAuthorized }) {
@@ -21,10 +24,11 @@ export function BlackAndWhite({ user, isAuthorized }) {
 
   return (
     <S.StyledBlackAndWhite>
-      <HeaderContent>흑과백</HeaderContent>
+      <HeaderContent backgroundColor="transparent" color="white" style={{ mixBlendMode: 'difference' }}>흑과백</HeaderContent>
       <S.Body>
-        <input placeholder="패스워드" value={password.value} onChange={password.onChange} />
-        <button onClick={checkClear}>클리어!</button>
+        <Rule />
+        <S.Zoom src={Swirl} alt="줌" />
+        <Answer />
       </S.Body>
     </S.StyledBlackAndWhite>
   );

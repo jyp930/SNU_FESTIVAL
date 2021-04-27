@@ -37,6 +37,7 @@ export const palette = {
   PURPLE70: '#777DD6',
   PURPLE80: '#485582',
   PURPLE90: '#38395A',
+  GRAY100: '#1C1C1C',
   GRAY80: '#707070',
   GRAY90: '#6F7070',
   GRAY60: '#ADADAD',

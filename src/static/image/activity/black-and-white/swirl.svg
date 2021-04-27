@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="359" height="359" viewBox="0 0 359 359">
+    <defs>
+        <filter id="패스_2293" width="359" height="359" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur result="blur" stdDeviation="10"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .cls-2{fill:#2b2b2b;stroke:#2b2b2b}.cls-4{stroke:none}.cls-5{fill:none}
+        </style>
+    </defs>
+    <g id="그룹_814" transform="translate(-8 -207)">
+        <g filter="url(#패스_2293)" transform="translate(8 207)">
+            <path id="패스_2293-2" fill="#fff" d="M149.5 0A149.5 149.5 0 1 1 0 149.5 149.5 149.5 0 0 1 149.5 0z" transform="translate(30 30)"/>
+        </g>
+        <g id="타원_86" class="cls-2" transform="translate(62 261)">
+            <circle cx="125.5" cy="125.5" r="125.5" class="cls-4"/>
+            <circle cx="125.5" cy="125.5" r="125" class="cls-5"/>
+        </g>
+        <g id="타원_87" fill="#fff" stroke="#2b2b2b" transform="translate(119 318)">
+            <circle cx="68.5" cy="68.5" r="68.5" class="cls-4"/>
+            <circle cx="68.5" cy="68.5" r="68" class="cls-5"/>
+        </g>
+        <g id="타원_88" class="cls-2" transform="translate(155 354)">
+            <circle cx="32.5" cy="32.5" r="32.5" class="cls-4"/>
+            <circle cx="32.5" cy="32.5" r="32" class="cls-5"/>
+        </g>
+    </g>
+</svg>
