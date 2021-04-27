@@ -11,7 +11,7 @@ export const StyledRule = styled.div`
 `;
 
 export const Texts = styled.div`
-  width: 85%;
+  width: 95%;
   max-width: 500px;
 
   p {
@@ -22,7 +22,7 @@ export const Texts = styled.div`
   p:nth-of-type(1) {
     margin: 0 0 1rem;
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: bold;
     ${media.lessThan('medium')`
       font-size: 1.5rem;
     `};
@@ -30,6 +30,7 @@ export const Texts = styled.div`
   p:nth-of-type(2) {
     margin: 0;
     font-size: 1rem;
+    font-weight: 500;
     line-height: 1.6;
     ${media.lessThan('medium')`
       font-size: 0.9rem;
@@ -38,5 +39,6 @@ export const Texts = styled.div`
   p:nth-of-type(3) {
     text-align: right;
     font-size: 0.5rem;
+    font-weight: 500;
   }
 `;
