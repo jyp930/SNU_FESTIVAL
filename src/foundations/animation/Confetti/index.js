@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ConfettiGenerator from 'confetti-js';
 import * as S from './styles';
 
-function Confetti({ theme, svgs }) {
+function Confetti({ theme, svgs, max }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
 
   useEffect(() => {
@@ -13,19 +13,19 @@ function Confetti({ theme, svgs }) {
       width: theme.windowWidth,
       height: theme.windowHeight,
       rotate: true,
-      max: isMobile ? 15 : 20,
+      max: max || (isMobile ? 15 : 20),
       props: svgs.length > 0 && svgs.map(svg => ({
         type: 'svg',
         src: svg.src,
-        size: (isMobile ? 20 : 50) + Math.random() * 80,
-        weight: svg.weight,
+        size: svg.size || (isMobile ? 20 : 50) + Math.random() * 80,
+        weight: svg.weight || 1,
       })),
     };
     const confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
 
     return () => confetti.clear();
-  }, [theme.windowHeight, theme.windowWidth, svgs, isMobile]);
+  }, [theme.windowHeight, theme.windowWidth, svgs, isMobile, max]);
 
   return (
     <canvas id="confetti-canvas" />
@@ -42,8 +42,10 @@ Confetti.propTypes = {
     src: PropTypes.string,
     weight: PropTypes.number,
   })),
+  max: PropTypes.number,
 };
 
 Confetti.defaultProps = {
   svgs: [],
+  max: null,
 };

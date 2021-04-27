@@ -31,6 +31,8 @@ export const Zoom = styled.img`
   width: 100%;
   max-width: 500px;
   height: auto;
+  cursor: pointer;
+  z-index: ${({ theme }) => theme.zIndex.base};
   
   @keyframes pulse {
     from { transform: scale(0.9); }

@@ -7,6 +7,7 @@ import { getPasswordFromEmail } from '@U/functions/password';
 import Rule from '@C/activity/mini/black-and-white/Rule';
 import Swirl from '@I/activity/black-and-white/swirl.svg';
 import Answer from '@C/activity/mini/black-and-white/Answer';
+import CardConfetti from '@C/activity/mini/black-and-white/CardConfetti';
 import * as S from './styles';
 
 export function BlackAndWhite({ user, isAuthorized }) {
@@ -30,6 +31,7 @@ export function BlackAndWhite({ user, isAuthorized }) {
         <S.Zoom src={Swirl} alt="줌" />
         <Answer />
       </S.Body>
+      <CardConfetti />
     </S.StyledBlackAndWhite>
   );
 }

@@ -5,6 +5,7 @@ import { FlexCenterStyle } from '@S/responsive/display';
 export const StyledAnswer = styled.div`
   width: 100%;
   max-width: 500px;
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
 export const Answer = styled.div`
