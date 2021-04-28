@@ -13,10 +13,10 @@ export const GameWrapper = styled.div`
   width: 100%;
   ${FlexCenterStyle};
   flex-wrap: wrap;
-  
-  margin-top: 3rem;
+
+  margin-top: 5rem;
   ${media.lessThan('medium')`
-    margin-top: 2rem;
+    margin-top: 3rem;
   `};
 `;
 
@@ -36,7 +36,7 @@ export const Game = styled.div`
 `;
 
 export const ClearButton = styled.div`
-  width: 60%;
+  width: 35%;
   max-width: 300px;
   ${HoverStyle};
 
