@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from 'styled-components';
 import { HeaderContent } from '@F/layout/Header';
 import Island from '@I/home/island.png';
 import Competition from '@I/home/competition.png';
@@ -53,7 +52,7 @@ function Home({ theme }) {
     </>
   );
 }
-export default withTheme(Home);
+export default Home;
 
 Home.propTypes = {
   theme: PropTypes.shape({
