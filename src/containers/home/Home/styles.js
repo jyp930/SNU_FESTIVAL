@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import '@/static/font/font.css';
 import { HoverStyle } from '@S/responsive/mouse';
+import { VibrateAnimation } from '@S/responsive/animation';
 
 export const StyledHome = styled.div`
   position: relative;
@@ -77,4 +78,6 @@ export const Landmark = styled.img`
   &:hover {
     transform: scale(1.04);
   }
+  
+  ${props => props.vibrate && VibrateAnimation};
 `;

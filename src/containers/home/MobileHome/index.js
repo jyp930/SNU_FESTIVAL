@@ -52,7 +52,7 @@ function MobileHome({ theme }) {
           <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={381 * mobileRatio * ratio} onClick={() => goToPage('/activity/mini')} />
           <S.Landmark src={Radio} alt="보이는라디오" top={72} left={0.1} width={262 * mobileRatio * ratio} onClick={() => goToPage('/activity/radio')} />
           <S.Landmark src={Goods} alt="굿즈" top={16} left={7} width={234 * mobileRatio * ratio} onClick={() => goToPage('/goods')} />
-          <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} />
+          <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} vibrate />
           <S.Landmark
             src={Performance}
             alt="공연"
