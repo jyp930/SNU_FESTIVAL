@@ -40,13 +40,13 @@ function MobileHome({ theme }) {
           </S.NoticeWrapper>
           <S.Landmark src={Competition} alt="공모전" top={35} left={0} width={150 * mobileRatio * ratio} />
           <S.Landmark src={GuestBook} alt="방명록" top={87} left={20} width={188 * mobileRatio * ratio} />
-          <S.Landmark src={Introduction} alt="소개" top={42} right={1} width={168 * mobileRatio * ratio} />
+          <S.Landmark src={Introduction} alt="소개" top={42} right={1} width={148 * mobileRatio * ratio} />
           <S.Landmark src={GameTournament} alt="관악게임토너먼트" top={72} right={1} width={230 * mobileRatio * ratio} />
           <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={381 * mobileRatio * ratio} />
-          <S.Landmark src={Performance} alt="공연" top={13} right={0.1} width={258 * mobileRatio * ratio} />
+          <S.Landmark src={Performance} alt="공연" top={15} right={0.1} width={230 * mobileRatio * ratio} />
           <S.Landmark src={Radio} alt="보이는라디오" top={72} left={0.1} width={262 * mobileRatio * ratio} />
           <S.Landmark src={Goods} alt="굿즈" top={16} left={7} width={234 * mobileRatio * ratio} />
-          <S.Landmark src={Mission} alt="미션" top={35} left={33} width={190 * mobileRatio * ratio} />
+          <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} />
         </S.IslandWrapper>
       </S.StyledMobileHome>
       <S.Background />
