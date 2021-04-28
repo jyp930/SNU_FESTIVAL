@@ -15,8 +15,7 @@ export const Texts = styled.div`
   max-width: 500px;
 
   p {
-    color: white;
-    mix-blend-mode: difference;
+    color: ${({ theme }) => theme.palette.PURPLE50};
     word-break: keep-all;
   }
   p:nth-of-type(1) {

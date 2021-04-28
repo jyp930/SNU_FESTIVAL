@@ -7,6 +7,8 @@ export const StyledHome = styled.div`
   width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
   min-height: ${({ height }) => height}px;
+  
+  z-index: ${({ theme }) => theme.zIndex.base};
 
   display: flex;
   flex-direction: column;

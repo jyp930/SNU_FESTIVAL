@@ -2,7 +2,7 @@ import React from 'react';
 import MiniGame from './index';
 
 export default {
-  title: 'containers/activity/mini/MiniGame',
+  title: 'containers/activity/mini/home/MiniGame',
 };
 
 export const Default = () => (
