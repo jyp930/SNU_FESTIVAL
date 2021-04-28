@@ -16,7 +16,7 @@ function SingStealer({ theme }) {
 
   return (
     <S.Wrapper>
-      <HeaderContent>힛더스테이지</HeaderContent>
+      <HeaderContent>씽스틸러</HeaderContent>
       {isMobile && (
         <S.MobileBody>
           {title}
