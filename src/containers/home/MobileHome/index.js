@@ -11,6 +11,7 @@ import Performance from '@I/home/performance.png';
 import Radio from '@I/home/radio.png';
 import Goods from '@I/home/goods.png';
 import Mission from '@I/home/mission.png';
+import Bell from '@I/icon/bell.svg';
 import * as S from './styles';
 
 function MobileHome({ theme }) {
@@ -31,6 +32,12 @@ function MobileHome({ theme }) {
         </HeaderContent>
         <S.IslandWrapper width={theme.windowWidth} height={theme.windowWidth * 2.1653}>
           <S.Island src={MobileIsland} alt="" />
+          <S.NoticeWrapper>
+            <S.Notice>
+              <img src={Bell} alt="" />
+              <p>2021 봄축제 [페스월드] 전체 타임테이블</p>
+            </S.Notice>
+          </S.NoticeWrapper>
           <S.Landmark src={Competition} alt="공모전" top={35} left={0} width={150 * mobileRatio * ratio} />
           <S.Landmark src={GuestBook} alt="방명록" top={87} left={20} width={188 * mobileRatio * ratio} />
           <S.Landmark src={Introduction} alt="소개" top={42} right={1} width={168 * mobileRatio * ratio} />
