@@ -15,7 +15,7 @@ function Menus({ setMenuIsOpen }) {
   const { signIn, signOut } = useAuth();
   const [openedTab, setOpenedTab] = useState(null);
 
-  const changeUrl = useCallback((route) => {
+  const goToPage = useCallback((route) => {
     history.push(route);
     setMenuIsOpen(false);
   }, [history, setMenuIsOpen]);
@@ -45,12 +45,12 @@ function Menus({ setMenuIsOpen }) {
       delay={delay}
     >
       <S.NaviText
-        onClick={() => changeUrl(url)}
+        onClick={() => goToPage(url)}
       >
         {page}
       </S.NaviText>
     </Fade>
-  ), [changeUrl]);
+  ), [goToPage]);
 
   const smallNaviButton = useCallback((page, url, delay) => (
     <Fade
@@ -60,13 +60,13 @@ function Menus({ setMenuIsOpen }) {
     >
       <S.InlineMenu>
         <S.SmallNaviText
-          onClick={() => changeUrl(url)}
+          onClick={() => goToPage(url)}
         >
           {page}
         </S.SmallNaviText>
       </S.InlineMenu>
     </Fade>
-  ), [changeUrl]);
+  ), [goToPage]);
 
   const inlineStamp = useCallback((delay, count = 1) => (
     <Fade

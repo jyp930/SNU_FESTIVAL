@@ -21,13 +21,13 @@ function Header({ hamburgerColor }) {
     }
   }, [menuIsOpen]);
 
-  const changeUrl = useCallback((route) => {
+  const goToPage = useCallback((route) => {
     history.push(route);
     setMenuIsOpen(false);
   }, [history]);
 
   const Logo = (
-    <S.Logo onClick={() => changeUrl('/')}>
+    <S.Logo onClick={() => goToPage('/')}>
       <S.LogoImage
         src={MascotInFolder}
         alt="mascot"

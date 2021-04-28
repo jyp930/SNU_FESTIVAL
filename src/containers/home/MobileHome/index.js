@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
 import MobileIsland from '@I/home/island-mobile.jpg';
@@ -12,11 +12,18 @@ import Radio from '@I/home/radio.png';
 import Goods from '@I/home/goods.png';
 import Mission from '@I/home/mission.png';
 import Bell from '@I/icon/bell.svg';
+import { useHistory } from 'react-router';
+import { getRandomElementFromArray } from '@C/activity/mini/guess-the-song/functions';
 import * as S from './styles';
 
 function MobileHome({ theme }) {
   const ratio = useMemo(() => theme.windowWidth / 375, [theme.windowWidth]);
   const mobileRatio = 0.68;
+
+  const history = useHistory();
+  const goToPage = useCallback((route) => {
+    history.push(route);
+  }, [history]);
 
   return (
     <>
@@ -38,15 +45,22 @@ function MobileHome({ theme }) {
               <p>2021 봄축제 [페스월드] 전체 타임테이블</p>
             </S.Notice>
           </S.NoticeWrapper>
-          <S.Landmark src={Competition} alt="공모전" top={35} left={0} width={150 * mobileRatio * ratio} />
-          <S.Landmark src={GuestBook} alt="방명록" top={87} left={20} width={188 * mobileRatio * ratio} />
-          <S.Landmark src={Introduction} alt="소개" top={42} right={1} width={148 * mobileRatio * ratio} />
-          <S.Landmark src={GameTournament} alt="관악게임토너먼트" top={72} right={1} width={230 * mobileRatio * ratio} />
-          <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={381 * mobileRatio * ratio} />
-          <S.Landmark src={Performance} alt="공연" top={15} right={0.1} width={230 * mobileRatio * ratio} />
-          <S.Landmark src={Radio} alt="보이는라디오" top={72} left={0.1} width={262 * mobileRatio * ratio} />
-          <S.Landmark src={Goods} alt="굿즈" top={16} left={7} width={234 * mobileRatio * ratio} />
+          <S.Landmark src={Competition} alt="공모전" top={35} left={0} width={150 * mobileRatio * ratio} onClick={() => goToPage('/activity/competition')} />
+          <S.Landmark src={GuestBook} alt="방명록" top={87} left={20} width={188 * mobileRatio * ratio} onClick={() => goToPage('/guest-book')} />
+          <S.Landmark src={Introduction} alt="소개" top={42} right={1} width={148 * mobileRatio * ratio} onClick={() => goToPage('/introduction')} />
+          <S.Landmark src={GameTournament} alt="관악게임토너먼트" top={72} right={1} width={230 * mobileRatio * ratio} onClick={() => goToPage('/performance/game-tournament')} />
+          <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={381 * mobileRatio * ratio} onClick={() => goToPage('/activity/mini')} />
+          <S.Landmark src={Radio} alt="보이는라디오" top={72} left={0.1} width={262 * mobileRatio * ratio} onClick={() => goToPage('/activity/radio')} />
+          <S.Landmark src={Goods} alt="굿즈" top={16} left={7} width={234 * mobileRatio * ratio} onClick={() => goToPage('/goods')} />
           <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} />
+          <S.Landmark
+            src={Performance}
+            alt="공연"
+            top={15}
+            right={0.1}
+            width={230 * mobileRatio * ratio}
+            onClick={() => goToPage(getRandomElementFromArray(['/performance/phone-cert', '/performance/sing-stealer', '/performance/hit-the-stage']))}
+          />
         </S.IslandWrapper>
       </S.StyledMobileHome>
       <S.Background />
