@@ -62,11 +62,11 @@ export const Balloon = styled.img`
   ${props => props.left && css`left: ${props.left}%`};
   ${props => props.right && css`right: ${props.right}%`};
   
-  @keyframes float-${({ index }) => index} {
+  @keyframes float {
     0%, 100%{ transform:translateY(0) rotate(-4deg); }
     50%{ transform:translateY(-25px) rotate(4deg); }
   }
-  animation: float-${({ index }) => index} infinite;
+  animation: float infinite;
   animation-duration: ${({ duration }) => duration}s;
 `;
 

@@ -7,6 +7,10 @@ import Moon from '@I/activity/riddle/hounted-house/moon.png';
 import Cloud from '@I/activity/riddle/hounted-house/cloud.png';
 import BatWhite from '@I/activity/riddle/hounted-house/bat-light.png';
 import BatDark from '@I/activity/riddle/hounted-house/bat-dark.png';
+import GhostOne from '@I/activity/riddle/hounted-house/ghost-1.png';
+import GhostTwo from '@I/activity/riddle/hounted-house/ghost-2.png';
+import GhostThree from '@I/activity/riddle/hounted-house/ghost-3.png';
+
 import QuestionBox from '@C/activity/mini/riddle/QuestionBox';
 import * as S from './styles';
 
@@ -19,6 +23,10 @@ function HauntedHouseTheme({ theme }) {
       <S.Moon src={Moon} alt="달" />
       <S.Cloud src={Cloud} alt="구름" />
       <S.Castle src={Castle} alt="성" />
+
+      <S.Ghost src={GhostOne} alt="유령1" width={isMobile ? 80 : 100} bottom={12} left={isMobile ? 17 : 40} index={1} duration={5} />
+      <S.Ghost src={GhostThree} alt="유령2" width={isMobile ? 80 : 100} bottom={3} left={isMobile ? 8 : 35} index={2} duration={6} />
+      <S.Ghost src={GhostTwo} alt="유령3" width={isMobile ? 80 : 100} bottom={8} right={isMobile ? 17 : 40} index={3} duration={4.5} />
 
       <S.Bat src={BatWhite} alt="박쥐" width={isMobile ? 100 : 200} top={isMobile ? 5 : 10} left={10} duration={1} />
       <S.Bat src={BatWhite} alt="박쥐" width={100} top={30} right={18} duration={1.1} />

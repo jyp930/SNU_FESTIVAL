@@ -57,6 +57,9 @@ export const Title = styled.div`
   font-weight: bold;
   word-break: keep-all;
   text-align: center;
+  ${media.lessThan('large')`
+    font-size: 1.8rem;
+  `};
 `;
 
 export const Texts = styled.div`
