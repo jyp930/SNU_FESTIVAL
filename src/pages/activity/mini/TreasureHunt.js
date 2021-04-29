@@ -1,5 +1,5 @@
 import React from 'react';
-import TreasureHuntContainer from '@C/activity/mini/TreasureHunt';
+import TreasureHuntContainer from '@C/activity/mini/treasure-hunt/TreasureHunt';
 import Header from '@F/layout/Header';
 
 function TreasureHunt() {
