@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { FlexCenterStyle } from '@S/responsive/display';
 import { HoverStyle } from '@S/responsive/mouse';
 
@@ -21,18 +21,18 @@ export const Background = styled.div`
   left: 0;
   width: 100%;
   height: 1000%;
-  background-image: linear-gradient(to top, #87c7e8, #87c7e8 10%, #51477f 15%, #44407b 26%, #ce8da2 38%, #778fce 69%, #87c7e8 90%, #87c7e8);
+  background-image: linear-gradient(to top, #87c7e8, #87c7e8, #778fce 7%, #5069aa 14%, #524980 24%, #595588 32%, #ce8da2 47%, #778fce 69%, #87c7e8 90%, #87c7e8 100%);
 
   @keyframes background-sky {
     0% { background-position: 0 0; }
-    100% { background-position: 0 -${({ theme }) => theme.windowHeight * 9}px; }
+    100% { background-position: 0 -${({ theme }) => theme.windowHeight * 10}px; }
   }
   will-change: background-position;
   background-position: 0 0;
   animation-name: background-sky;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-duration: 10s;
+  animation-duration: 20s;
 `;
 
 export const Body = styled.div`
@@ -46,28 +46,7 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-export const Balloons = styled.div`
-  position: relative;
-  width: 100%;
-  height: 40%;
-`;
-
-export const Balloon = styled.img`
-  position: absolute;
-  width: ${({ width }) => width}px;
-  height: auto;
-  ${props => props.top && css`top: ${props.top}%`};
-  ${props => props.left && css`left: ${props.left}%`};
-  ${props => props.right && css`right: ${props.right}%`};
-  
-  @keyframes float {
-    0%, 100%{ transform:translateY(0) rotate(-4deg); }
-    50%{ transform:translateY(-25px) rotate(4deg); }
-  }
-  animation: float infinite;
-  animation-duration: ${({ duration }) => duration}s;
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
 export const Button = styled.div`
