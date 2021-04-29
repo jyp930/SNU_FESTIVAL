@@ -6,7 +6,7 @@ export const StyledTreasureHunt = styled.div`
   position: relative;
   width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
-  overflow-y: hidden;
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@ export const StyledBalloons = styled.div`
 export const Balloons = styled.div`
   position: relative;
   width: 100%;
-  height: 40%;
+  height: 45%;
 `;
 
 export const Balloon = styled.img`
