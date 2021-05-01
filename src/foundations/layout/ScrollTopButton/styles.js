@@ -7,8 +7,8 @@ export const StyledScrollTopButton = styled.div`
   bottom: 1.5rem;
   right: 1.5rem;
   
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
   cursor: pointer;
   border-radius: 50%;
   
