@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Image = styled.img`
   width: 100%;
@@ -6,8 +6,10 @@ export const Image = styled.img`
   object-fit: cover;
 `;
 
-export const Skeleton = styled.div`
+export const Skeleton = styled.img`
   width: 100%;
   height: 100%;
-  background-color: ${({ color }) => color};
+  ${props => props.circle && css`
+    border-radius: 50%;
+  `};
 `;

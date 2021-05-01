@@ -1,23 +1,18 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Skeleton from '@I/skeleton/skeleton.png';
 import * as S from './styles';
-import { palette } from '@S/index';
 
-function Image({ src, alt }) {
+function Image({ src, alt, circle }) {
   const [isLoading, setIsLoading] = useState(true);
-  const randomColor = useMemo(() => {
-    const colors = [
-      palette.GREEN_PASTEL, palette.PINK_PASTEL, palette.YELLOW30_PASTEL, palette.BLUE20_PASTEL,
-    ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
-  }, []);
 
   return (
     <>
       { isLoading && (
         <S.Skeleton
-          color={randomColor}
+          src={Skeleton}
+          alt=""
+          circle={circle}
         />
       )}
       <S.Image
@@ -34,4 +29,9 @@ export default Image;
 Image.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  circle: PropTypes.bool,
+};
+
+Image.defaultProps = {
+  circle: false,
 };
