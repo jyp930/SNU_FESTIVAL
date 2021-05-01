@@ -5,6 +5,7 @@ import { actions } from '@/redux/user/state';
 import { actions as missionActions } from '@/redux/mission/state';
 import { actions as performanceActions } from '@/redux/performance/state';
 import firebase from 'firebase/app';
+import { toast } from 'react-toastify';
 
 const useAuth = () => {
   const dispatch = useDispatch();
@@ -29,8 +30,8 @@ const useAuth = () => {
     dispatch(actions.setLoading(true));
     try {
       await auth.signInWithRedirect(provider);
-    } finally {
-      dispatch(actions.setLoading(false));
+    } catch {
+      toast('인터넷이 불안정합니다. 다시 시도해주세요.');
     }
   }, [dispatch]);
 
