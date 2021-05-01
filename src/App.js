@@ -27,7 +27,9 @@ function App() {
       <Toast />
 
       <Router>
-        <Suspense fallback={<LoadingWrapper><LoadingMascot /></LoadingWrapper>}>
+        <Suspense
+          fallback={<LoadingWrapper height={windowHeight}><LoadingMascot /></LoadingWrapper>}
+        >
           <Switch>
             { routes.map((route) => (
               <Route
@@ -50,6 +52,6 @@ export default App;
 
 const LoadingWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: ${({ height }) => height}px;
   ${FlexCenterStyle};
 `;
