@@ -6,13 +6,14 @@ import Guide from '@C/performance/common/Guide';
 import { HeaderContent } from '@F/layout/Header';
 import { withTheme } from 'styled-components';
 import MascotForMission from '@C/performance/common/MascotForMission';
+import Image from '@F/Image';
 import * as S from '../common/styles';
 
 function SingStealer({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
 
   const title = <Title decorationOne="RnB, 힙합, 발라드 장르 불문!" decorationTwo="매력적인 목소리들로 채워가는" title="씽스틸러" />;
-  const image = <S.Image src={Window} />;
+  const image = <S.Image><Image src={Window} alt="" /></S.Image>;
   const guide = <Guide youtubeUrl="https://naver.com" date="5월 11일" times={['14:00~16:00']} />;
 
   return (

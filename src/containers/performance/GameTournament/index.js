@@ -7,6 +7,7 @@ import CloudTemplarSmall from '@I/performance/cloud-templar-small.png';
 import Guide from '@C/performance/common/Guide';
 import Bubble from '@C/introduction/staff-section/Bubble';
 import MascotForMission from '@C/performance/common/MascotForMission';
+import Image from '@F/Image';
 import * as S from '../common/styles';
 import * as SS from './styles';
 
@@ -26,7 +27,7 @@ function GameTournament({ theme }) {
     </SS.Title>
   );
   const image = (
-    <SS.Image src={isMobile ? CloudTemplarSmall : CloudTemplar} />
+    <SS.Image><Image src={isMobile ? CloudTemplarSmall : CloudTemplar} alt="" circle /></SS.Image>
   );
   const teams = (
     <SS.Teams>

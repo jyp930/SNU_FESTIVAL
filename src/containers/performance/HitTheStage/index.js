@@ -6,13 +6,14 @@ import Window from '@I/goods/window.png';
 import Guide from '@C/performance/common/Guide';
 import { withTheme } from 'styled-components';
 import MascotForMission from '@C/performance/common/MascotForMission';
+import Image from '@F/Image';
 import * as S from '../common/styles';
 
 function HitTheStage({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
 
   const title = <Title decorationOne="무대를 가득 채우는 설렘!" decorationTwo="심장을 뛰게 하는 관악 최고의 댄스 무대" title="힛더스테이지" />;
-  const image = <S.Image src={Window} />;
+  const image = <S.Image><Image src={Window} alt="" /></S.Image>;
   const guide = <Guide youtubeUrl="https://naver.com" date="5월 11일" times={['18:00~20:00']} />;
 
   return (

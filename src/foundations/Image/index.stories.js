@@ -7,7 +7,7 @@ export default {
 };
 
 export const Default = () => (
-  <div style={{ width: 500, height: 500 }}>
+  <div style={{ width: 500, height: 'auto' }}>
     <Image
       src={IU1}
       alt="TEST"

@@ -90,7 +90,7 @@ export const Teams = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
   align-self: center;
   width: 80%;
   height: 100%;
