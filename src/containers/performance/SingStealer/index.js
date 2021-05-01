@@ -5,6 +5,7 @@ import Window from '@I/goods/window.png';
 import Guide from '@C/performance/common/Guide';
 import { HeaderContent } from '@F/layout/Header';
 import { withTheme } from 'styled-components';
+import MascotForMission from '@C/performance/common/MascotForMission';
 import * as S from '../common/styles';
 
 function SingStealer({ theme }) {
@@ -35,6 +36,9 @@ function SingStealer({ theme }) {
           </S.Body>
         </S.BodyWrapper>
       )}
+      <MascotForMission
+        performance="singStealer"
+      />
     </S.Wrapper>
   );
 }

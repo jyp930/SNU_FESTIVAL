@@ -4,6 +4,7 @@ import {
 import userReducer, { userPersistConfig } from '@/redux/user/state';
 import miniGameReducer, { miniGamePersistConfig } from '@/redux/mini-game/state';
 import missionReducer, { missionPersistConfig } from '@/redux/mission/state';
+import performanceReducer, { performancePersistConfig } from '@/redux/performance/state';
 import { persistStore, persistReducer } from 'redux-persist';
 import sessionStorage from 'redux-persist/lib/storage/session';
 import { all } from 'redux-saga/effects';
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   user: persistReducer(userPersistConfig, userReducer),
   mission: persistReducer(missionPersistConfig, missionReducer),
   miniGame: persistReducer(miniGamePersistConfig, miniGameReducer),
+  performanceMission: persistReducer(performancePersistConfig, performanceReducer),
 });
 
 /**

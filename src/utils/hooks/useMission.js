@@ -14,12 +14,6 @@ const useMission = () => {
     }
   }, [dispatch, mission, user, isAuthorized]);
 
-  useEffect(() => {
-    if (!isAuthorized) {
-      dispatch(actions.reset());
-    }
-  }, [isAuthorized, dispatch]);
-
   return mission;
 };
 export default useMission;

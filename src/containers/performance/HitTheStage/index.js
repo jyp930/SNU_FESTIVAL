@@ -5,6 +5,7 @@ import Title from '@C/performance/common/Title';
 import Window from '@I/goods/window.png';
 import Guide from '@C/performance/common/Guide';
 import { withTheme } from 'styled-components';
+import MascotForMission from '@C/performance/common/MascotForMission';
 import * as S from '../common/styles';
 
 function HitTheStage({ theme }) {
@@ -35,6 +36,9 @@ function HitTheStage({ theme }) {
           </S.Body>
         </S.BodyWrapper>
       )}
+      <MascotForMission
+        performance="hitTheStage"
+      />
     </S.Wrapper>
   );
 }

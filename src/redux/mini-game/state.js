@@ -46,6 +46,7 @@ const reducer = createReducer(INITIAL_STATE, {
     draft.isLoaded = false;
     draft.stage1 = false; draft.stage2 = false;
     draft.stage3 = false; draft.stage4 = false;
+    draft.treasureHunt = null;
   },
   [types.SET_MINI_GAME]: (draft, action) => {
     draft.stage1 = action.stages.stage1; draft.stage2 = action.stages.stage2;

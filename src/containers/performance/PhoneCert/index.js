@@ -5,6 +5,7 @@ import Window from '@I/goods/window.png';
 import { HeaderContent } from '@F/layout/Header';
 import Title from '@C/performance/common/Title';
 import Guide from '@C/performance/common/Guide';
+import MascotForMission from '@C/performance/common/MascotForMission';
 import * as S from '../common/styles';
 
 function PhoneCert({ theme }) {
@@ -35,6 +36,9 @@ function PhoneCert({ theme }) {
           </S.Body>
         </S.BodyWrapper>
       )}
+      <MascotForMission
+        performance="phoneCert"
+      />
     </S.Wrapper>
   );
 }

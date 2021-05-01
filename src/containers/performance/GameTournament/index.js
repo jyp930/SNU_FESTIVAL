@@ -6,6 +6,7 @@ import CloudTemplar from '@I/performance/cloud-templar.png';
 import CloudTemplarSmall from '@I/performance/cloud-templar-small.png';
 import Guide from '@C/performance/common/Guide';
 import Bubble from '@C/introduction/staff-section/Bubble';
+import MascotForMission from '@C/performance/common/MascotForMission';
 import * as S from '../common/styles';
 import * as SS from './styles';
 
@@ -68,6 +69,9 @@ function GameTournament({ theme }) {
         )}
       </SS.Body>
       <Bubble theme={theme} />
+      <MascotForMission
+        performance="gameTournament"
+      />
     </SS.StyledGameTournament>
   );
 }

@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { auth } from '@U/initializer/firebase';
 import { actions } from '@/redux/user/state';
+import { actions as missionActions } from '@/redux/mission/state';
+import { actions as performanceActions } from '@/redux/performance/state';
 import firebase from 'firebase/app';
 
 const useAuth = () => {
@@ -34,9 +36,13 @@ const useAuth = () => {
 
   const signOut = useCallback(async () => {
     dispatch(actions.setLoading(true));
+    dispatch(actions.reset());
+
     try {
       await auth.signOut();
     } finally {
+      dispatch(missionActions.reset());
+      dispatch(performanceActions.reset());
       dispatch(actions.setLoading(false));
     }
   }, [dispatch]);
