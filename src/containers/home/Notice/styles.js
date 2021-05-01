@@ -52,3 +52,17 @@ export const Notice = styled.div`
     color: ${({ theme }) => theme.palette.PURPLE50};
   }
 `;
+
+export const TimeTable = styled.img`
+  min-width: 264px;
+
+  @media (orientation: landscape) {
+    width: auto;
+    height: 100%;
+  }
+  
+  @media (orientation: portrait) {
+    width: 100%;
+    height: auto;
+  }
+`;

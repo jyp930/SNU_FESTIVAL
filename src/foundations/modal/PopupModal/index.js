@@ -8,6 +8,7 @@ function PopupModal({
 }) {
   return (
     <Popup
+      nested
       modal
       open={isModalOpen}
       closeOnDocumentClick={closeOnDocumentClick}
