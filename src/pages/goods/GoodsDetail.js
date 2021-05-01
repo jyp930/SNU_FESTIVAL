@@ -34,7 +34,6 @@ GoodsDetail.propTypes = {
   information: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
-    description: PropTypes.string,
   }).isRequired,
   image: PropTypes.string.isRequired,
   longImage: PropTypes.string.isRequired,
@@ -43,7 +42,7 @@ GoodsDetail.propTypes = {
 export const Glass = withMountEvent(() => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '축제이즈백 소주잔', price: 7000, description: '' }}
+    information={{ name: '축제이즈백 소주잔', price: 7000 }}
     image={GlassImage}
     longImage={GlassDetail}
   />
@@ -52,7 +51,7 @@ export const Glass = withMountEvent(() => (
 export const SealSticker = withMountEvent(() => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '씰스티커', price: 1500, description: '' }}
+    information={{ name: '씰스티커', price: 1500 }}
     image={SealStickerImage}
     longImage={SealStickerDetail}
   />
@@ -61,7 +60,7 @@ export const SealSticker = withMountEvent(() => (
 export const Calendar = withMountEvent(() => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '사계절 엽서 세트', price: 2000, description: '' }}
+    information={{ name: '사계절 엽서 세트', price: 2000 }}
     image={CalendarImage}
     longImage={CalendarDetail}
   />
@@ -70,7 +69,7 @@ export const Calendar = withMountEvent(() => (
 export const StickerPack = withMountEvent(() => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '스티커팩', price: 1500, description: '' }}
+    information={{ name: '스티커팩', price: 1500 }}
     image={StickerPackImage}
     longImage={StickerPackDetail}
   />

@@ -34,7 +34,7 @@ export const BasicSection = styled.div`
   color: ${({ theme }) => theme.palette.GRAY80};
   font-weight: bold;
 
-  div:first-of-type {
+  div:nth-of-type(2) {
     display: flex;
     justify-content: space-between;
     
@@ -50,7 +50,7 @@ export const BasicSection = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.div`
   width: 100%;
   ${media.lessThan('medium')`
     margin-bottom: 1rem;

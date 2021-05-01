@@ -9,7 +9,7 @@ export default {
 export const Default = () => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '이름', price: 12000, description: '설명' }}
+    information={{ name: '이름', price: 12000 }}
     image={Window}
     longImage={Window}
   />
