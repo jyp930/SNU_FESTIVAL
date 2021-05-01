@@ -1,6 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Window from '@I/goods/window.png';
+import Glass from '@I/goods/glass.jpg';
+import StickerOne from '@I/goods/sticker-1.png';
+import StickerTwo from '@I/goods/seal-sticker.png';
+import Calendar from '@I/goods/calendar.png';
 import { useHistory } from 'react-router';
 import * as S from './styles';
 
@@ -19,10 +21,10 @@ function DisplaySection() {
 
   return (
     <S.StyledDisplaySection>
-      {Item('hood', Window, '축하사 후드티', 12000)}
-      {Item('hood', Window, '축하사 후드티', 12000)}
-      {Item('hood', Window, '축하사 후드티', 12000)}
-      {Item('hood', Window, '축하사 후드티', 12000)}
+      {Item('glass', Glass, '축제이즈백 소주잔', 7000)}
+      {Item('seal-sticker', StickerTwo, '씰스티커', 1500)}
+      {Item('calendar', Calendar, '사계절 엽서 세트', 2000)}
+      {Item('stickerOne', StickerOne, '씰스티커', 1500)}
     </S.StyledDisplaySection>
   );
 }

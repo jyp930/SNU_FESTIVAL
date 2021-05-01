@@ -41,7 +41,9 @@ GoodsRouter.propTypes = {
 };
 
 const Goods = lazy(() => import('@/pages/goods/Goods'));
-const Hood = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.Hood })));
+const Glass = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.Glass })));
+const SealSticker = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.SealSticker })));
+const Calendar = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.Calendar })));
 
 const goodsRoutes = [
   {
@@ -49,8 +51,16 @@ const goodsRoutes = [
     component: Goods,
     children: [
       {
-        path: '/hood',
-        component: Hood,
+        path: '/glass',
+        component: Glass,
+      },
+      {
+        path: '/seal-sticker',
+        component: SealSticker,
+      },
+      {
+        path: '/calendar',
+        component: Calendar,
       },
     ],
   },

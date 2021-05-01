@@ -13,12 +13,19 @@ export const Body = styled.div`
 
   max-width: 750px;
   color: ${({ theme }) => theme.palette.GRAY80};
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const BasicSection = styled.div`
   margin-top: 1.5rem;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  
   display: flex;
   flex-direction: column;
   width: 100%;

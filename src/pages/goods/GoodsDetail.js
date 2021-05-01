@@ -1,6 +1,12 @@
 import React from 'react';
+import withMountEvent from '@U/hoc/withMountEvent';
 import PropTypes from 'prop-types';
-import Poster21Spring from '@I/poster/21spring.png';
+import GlassImage from '@I/goods/glass.jpg';
+import GlassDetail from '@I/goods/glass-detail.png';
+import SealStickerImage from '@I/goods/seal-sticker.png';
+import SealStickerDetail from '@I/goods/seal-sticker-detail.png';
+import CalendarImage from '@I/goods/calendar.png';
+import CalendarDetail from '@I/goods/calendar-detail.png';
 import GoodsDetailContainer from '@C/goods/GoodsDetail';
 import Header from '@F/layout/Header';
 
@@ -19,7 +25,7 @@ function GoodsDetail({
     </>
   );
 }
-export default GoodsDetail;
+export default withMountEvent(GoodsDetail);
 
 GoodsDetail.propTypes = {
   formUrl: PropTypes.string.isRequired,
@@ -32,13 +38,35 @@ GoodsDetail.propTypes = {
   longImage: PropTypes.string.isRequired,
 };
 
-export function Hood() {
+export function Glass() {
   return (
     <GoodsDetail
       formUrl="https://naver.com"
-      information={{ name: '축하사 후드티', price: 12000, description: '한줄설명' }}
-      image={Poster21Spring}
-      longImage={Poster21Spring}
+      information={{ name: '축제이즈백 소주잔', price: 7000, description: '한줄설명' }}
+      image={GlassImage}
+      longImage={GlassDetail}
+    />
+  );
+}
+
+export function SealSticker() {
+  return (
+    <GoodsDetail
+      formUrl="https://naver.com"
+      information={{ name: '씰스티커', price: 1500, description: '한줄설명' }}
+      image={SealStickerImage}
+      longImage={SealStickerDetail}
+    />
+  );
+}
+
+export function Calendar() {
+  return (
+    <GoodsDetail
+      formUrl="https://naver.com"
+      information={{ name: '사계절 엽서 세트', price: 2000, description: '한줄설명' }}
+      image={CalendarImage}
+      longImage={CalendarDetail}
     />
   );
 }
