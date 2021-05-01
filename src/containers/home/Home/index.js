@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
 import Island from '@I/home/island.png';
@@ -14,9 +14,12 @@ import Mission from '@I/home/mission.png';
 import Background from '@F/layout/Background';
 import { useHistory } from 'react-router';
 import { getRandomElementFromArray } from '@C/activity/mini/guess-the-song/functions';
+import Loading from '@I/home/loading.png';
 import * as S from './styles';
 
 function Home({ theme }) {
+  const [isLoading, setIsLoading] = useState(true);
+
   const ratio = useMemo(() => {
     if (theme.windowWidth >= 1700) return 1;
     if (theme.windowWidth >= 1600) return 1600 / 1700;
@@ -43,7 +46,7 @@ function Home({ theme }) {
           </S.Title>
         </HeaderContent>
         <S.IslandWrapper width={1700 * ratio} height={1700 * ratio * 0.527}>
-          <S.Island src={Island} width={1700 * ratio} height={1700 * ratio * 0.527} alt="" />
+          <S.Island src={Island} width={1700 * ratio} height={1700 * ratio * 0.527} alt="" onLoad={() => setIsLoading(false)} />
           <S.Landmark src={Competition} alt="공모전" top={11} right={29} width={150 * ratio} onClick={() => goToPage('/activity/competition')} />
           <S.Landmark src={GuestBook} alt="방명록" top={24} right={13} width={188 * ratio} onClick={() => goToPage('/guest-book')} />
           <S.Landmark src={Introduction} alt="소개" top={32} right={28} width={168 * ratio} onClick={() => goToPage('/introduction')} />
@@ -61,6 +64,7 @@ function Home({ theme }) {
             onClick={() => goToPage(getRandomElementFromArray(['/performance/phone-cert', '/performance/sing-stealer', '/performance/hit-the-stage']))}
           />
         </S.IslandWrapper>
+        {isLoading && <S.Island width={1700 * ratio} height={1700 * ratio * 0.527} src={Loading} alt="" />}
       </S.StyledHome>
       <Background />
     </>

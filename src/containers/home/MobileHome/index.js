@@ -1,7 +1,8 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
 import MobileIsland from '@I/home/island-mobile.jpg';
+import MobileLoading from '@I/home/loading-mobile.png';
 import Competition from '@I/home/competition.png';
 import GuestBook from '@I/home/guest-book.png';
 import Introduction from '@I/home/introduction.png';
@@ -17,6 +18,8 @@ import { getRandomElementFromArray } from '@C/activity/mini/guess-the-song/funct
 import * as S from './styles';
 
 function MobileHome({ theme }) {
+  const [isLoading, setIsLoading] = useState(true);
+
   const ratio = useMemo(() => theme.windowWidth / 375, [theme.windowWidth]);
   const mobileRatio = 0.68;
 
@@ -38,7 +41,7 @@ function MobileHome({ theme }) {
           </S.Title>
         </HeaderContent>
         <S.IslandWrapper width={theme.windowWidth} height={theme.windowWidth * 2.1653}>
-          <S.Island src={MobileIsland} alt="" />
+          <S.Island src={MobileIsland} alt="" onLoad={() => setIsLoading(false)} />
           <S.NoticeWrapper>
             <S.Notice>
               <img src={Bell} alt="" />
@@ -62,6 +65,7 @@ function MobileHome({ theme }) {
             onClick={() => goToPage(getRandomElementFromArray(['/performance/phone-cert', '/performance/sing-stealer', '/performance/hit-the-stage']))}
           />
         </S.IslandWrapper>
+        {isLoading && <S.Island src={MobileLoading} alt="" />}
       </S.StyledMobileHome>
       <S.Background />
     </>
