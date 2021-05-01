@@ -6,6 +6,7 @@ import { actions } from '@/redux/mini-game/state';
 import Rule from '@C/activity/mini/treasure-hunt/Rule';
 import Balloons from '@C/activity/mini/treasure-hunt/Balloons';
 import Clouds from '@C/activity/mini/treasure-hunt/Clouds';
+import Answer from '@C/activity/mini/treasure-hunt/Answer';
 import * as S from './styles';
 
 function TreasureHunt() {
@@ -35,6 +36,8 @@ function TreasureHunt() {
         <Rule />
         <Balloons />
         <S.Button>Start</S.Button>
+        <div style={{ height: '3rem' }} />
+        <Answer />
       </S.Body>
     </S.StyledTreasureHunt>
   );
