@@ -64,7 +64,7 @@ export const SignButton = styled.div`
   cursor: pointer;
   
   p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     color: white;
   }
