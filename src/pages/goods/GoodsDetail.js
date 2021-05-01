@@ -25,7 +25,7 @@ function GoodsDetail({
     </>
   );
 }
-export default withMountEvent(GoodsDetail);
+export default GoodsDetail;
 
 GoodsDetail.propTypes = {
   formUrl: PropTypes.string.isRequired,
@@ -38,35 +38,29 @@ GoodsDetail.propTypes = {
   longImage: PropTypes.string.isRequired,
 };
 
-export function Glass() {
-  return (
-    <GoodsDetail
-      formUrl="https://naver.com"
-      information={{ name: '축제이즈백 소주잔', price: 7000, description: '한줄설명' }}
-      image={GlassImage}
-      longImage={GlassDetail}
-    />
-  );
-}
+export const Glass = withMountEvent(() => (
+  <GoodsDetail
+    formUrl="https://naver.com"
+    information={{ name: '축제이즈백 소주잔', price: 7000, description: '한줄설명' }}
+    image={GlassImage}
+    longImage={GlassDetail}
+  />
+));
 
-export function SealSticker() {
-  return (
-    <GoodsDetail
-      formUrl="https://naver.com"
-      information={{ name: '씰스티커', price: 1500, description: '한줄설명' }}
-      image={SealStickerImage}
-      longImage={SealStickerDetail}
-    />
-  );
-}
+export const SealSticker = withMountEvent(() => (
+  <GoodsDetail
+    formUrl="https://naver.com"
+    information={{ name: '씰스티커', price: 1500, description: '한줄설명' }}
+    image={SealStickerImage}
+    longImage={SealStickerDetail}
+  />
+));
 
-export function Calendar() {
-  return (
-    <GoodsDetail
-      formUrl="https://naver.com"
-      information={{ name: '사계절 엽서 세트', price: 2000, description: '한줄설명' }}
-      image={CalendarImage}
-      longImage={CalendarDetail}
-    />
-  );
-}
+export const Calendar = withMountEvent(() => (
+  <GoodsDetail
+    formUrl="https://naver.com"
+    information={{ name: '사계절 엽서 세트', price: 2000, description: '한줄설명' }}
+    image={CalendarImage}
+    longImage={CalendarDetail}
+  />
+));
