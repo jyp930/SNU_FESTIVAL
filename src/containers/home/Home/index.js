@@ -1,6 +1,5 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { HeaderContent } from '@F/layout/Header';
 import Island from '@I/home/island.png';
 import Competition from '@I/home/competition.png';
 import GuestBook from '@I/home/guest-book.png';
@@ -15,6 +14,8 @@ import Background from '@F/layout/Background';
 import { useHistory } from 'react-router';
 import { getRandomElementFromArray } from '@C/activity/mini/guess-the-song/functions';
 import Loading from '@I/home/loading.png';
+import Title from '@C/home/Title';
+import Notice from '@C/home/Notice';
 import * as S from './styles';
 
 function Home({ theme }) {
@@ -24,7 +25,7 @@ function Home({ theme }) {
     if (theme.windowWidth >= 1700) return 1;
     if (theme.windowWidth >= 1600) return 1600 / 1700;
     if (theme.windowWidth >= 1440) return 1440 / 1700;
-    if (theme.windowWidth >= 1170) return 1170 / 1700;
+    if (theme.windowWidth >= 1024) return 1024 / 1700;
     return 768 / 1700;
   }, [theme.windowWidth]);
 
@@ -36,17 +37,10 @@ function Home({ theme }) {
   return (
     <>
       <S.StyledHome height={1700 * ratio * 0.527}>
-        <HeaderContent
-          backgroundColor="transparent"
-          fixed
-        >
-          <S.Title>
-            <p>서울대학교 2021 봄축제</p>
-            <p>페스월드</p>
-          </S.Title>
-        </HeaderContent>
+        <Title />
         <S.IslandWrapper width={1700 * ratio} height={1700 * ratio * 0.527}>
           <S.Island src={Island} width={1700 * ratio} height={1700 * ratio * 0.527} alt="" onLoad={() => setIsLoading(false)} />
+          <Notice />
           <S.Landmark src={Competition} alt="공모전" top={11} right={29} width={150 * ratio} onClick={() => goToPage('/activity/competition')} />
           <S.Landmark src={GuestBook} alt="방명록" top={24} right={13} width={188 * ratio} onClick={() => goToPage('/guest-book')} />
           <S.Landmark src={Introduction} alt="소개" top={32} right={28} width={168 * ratio} onClick={() => goToPage('/introduction')} />
