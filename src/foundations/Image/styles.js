@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Image = styled.img`
   width: 100%;
-  height: ${({ isLoading }) => (isLoading ? 0 : 100)}%;
+  height: ${({ isLoading }) => (isLoading ? 0 : '100%')};
   object-fit: cover;
 `;
 
@@ -12,4 +12,5 @@ export const Skeleton = styled.img`
   ${props => props.circle && css`
     border-radius: 50%;
   `};
+  object-fit: cover;
 `;

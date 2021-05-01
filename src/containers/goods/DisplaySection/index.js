@@ -4,6 +4,7 @@ import SealSticker from '@I/goods/seal-sticker.png';
 import Calendar from '@I/goods/calendar.png';
 import StickerPack from '@I/goods/sticker-pack.png';
 import { useHistory } from 'react-router';
+import Image from '@F/Image';
 import * as S from './styles';
 
 function DisplaySection() {
@@ -11,7 +12,7 @@ function DisplaySection() {
 
   const Item = (url, image, name, price) => (
     <S.Item onClick={() => history.push(`/goods/${url}`)}>
-      <S.Window src={image} alt="창" />
+      <S.Window><Image src={image} alt="창" /></S.Window>
       <S.Texts>
         <p>{name}</p>
         <p>{price}</p>

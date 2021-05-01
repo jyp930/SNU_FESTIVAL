@@ -30,8 +30,9 @@ export const Item = styled.div`
   }
 `;
 
-export const Window = styled.img`
+export const Window = styled.div`
   width: 100%;
+  height: auto;
 `;
 
 export const Texts = styled.div`
