@@ -11,6 +11,7 @@ import { actions } from '@/redux/performance/state';
 import { actions as missionActions } from '@/redux/mission/state';
 
 import { toast } from 'react-toastify';
+import withUser from '@U/hoc/withUser';
 import useAuth, { useUser } from '@U/hooks/useAuth';
 import useMission from '@U/hooks/useMission';
 import useModal from '@U/hooks/useModal';
@@ -83,7 +84,7 @@ function MascotForMission({ performance }) {
     </>
   );
 }
-export default MascotForMission;
+export default withUser(MascotForMission);
 
 MascotForMission.propTypes = {
   performance: PropTypes.string.isRequired,
