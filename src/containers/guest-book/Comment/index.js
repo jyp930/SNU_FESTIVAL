@@ -50,13 +50,15 @@ export function Comment({ user, comments, mission }) {
   }, [user, isAuthorized, comments]);
 
   // 내가 쓴 방명록 목록
-  const myComments = useMemo(() => comments.filter(comment => comment.author === user.uid), [comments, user.uid]);
+  const myComments = useMemo(() => (
+    comments.filter(comment => comment.author === user.uid)
+  ), [comments, user.uid]);
 
   // 방명록 미션
   const dispatch = useDispatch();
   useEffect(() => {
     if (isAuthorized && mission.isLoaded && !mission.guestBook) {
-      if (myLikesForComment.length >= 3 && myComments.length > 0) {
+      if (myLikesForComment.length >= 3 && myComments.length >= 1) {
         dispatch(actions.setFirestoreMission(user, 'guestBook', true));
         setIsMissionModalOpen(true);
       }
