@@ -24,10 +24,16 @@ import { useUser } from '@U/hooks/useAuth';
 import useMission from '@U/hooks/useMission';
 import { useDispatch } from 'react-redux';
 import { actions } from '@/redux/mission/state';
+import MissionGuide from '@F/modal/content/MissionGuide';
+import GuestBookStamp from '@I/icon/stamp/guest-book-stamp.png';
 import * as S from './styles';
 
 export function Comment({ user, comments, mission }) {
-  const { modalComponent, setIsModalOpen } = useModal(SignInGuide);
+  const { modalComponent: signInModalComponent, setIsModalOpen: setIsSignInModalOpen } = useModal(SignInGuide);
+  const { modalComponent: missionModalComponent, setIsModalOpen: setIsMissionModalOpen } = useModal(MissionGuide, {
+    name: '방명록',
+    stamp: GuestBookStamp,
+  });
   const { isAuthorized } = useUser();
 
   // 내가 좋아하는 방명록 목록
@@ -43,16 +49,19 @@ export function Comment({ user, comments, mission }) {
     return () => setMyLikesForComment([]);
   }, [user, isAuthorized, comments]);
 
+  // 내가 쓴 방명록 목록
+  const myComments = useMemo(() => comments.filter(comment => comment.author === user.uid), [comments, user.uid]);
+
   // 방명록 미션
   const dispatch = useDispatch();
   useEffect(() => {
     if (isAuthorized && mission.isLoaded && !mission.guestBook) {
-      if (myLikesForComment.length >= 3) {
-        toast('방명록 미션 클리어!');
+      if (myLikesForComment.length >= 3 && myComments.length > 0) {
         dispatch(actions.setFirestoreMission(user, 'guestBook', true));
+        setIsMissionModalOpen(true);
       }
     }
-  }, [myLikesForComment, mission, dispatch, user, isAuthorized]);
+  }, [myLikesForComment, myComments, mission, user, isAuthorized, setIsMissionModalOpen, dispatch]);
 
   const deleteComment = useCallback((commentId) => {
     guestBookCollectionRef.doc(commentId)
@@ -62,7 +71,7 @@ export function Comment({ user, comments, mission }) {
 
   const toggleLikeForComment = useCallback((commentId, isLiked) => {
     if (!isAuthorized) {
-      setIsModalOpen(true);
+      setIsSignInModalOpen(true);
       return;
     }
 
@@ -73,7 +82,7 @@ export function Comment({ user, comments, mission }) {
           : firebase.firestore.FieldValue.arrayUnion(user.uid),
       })
       .then(() => toast(isLiked ? '좋아요를 취소하였습니다.' : '이 방명록 글을 좋아합니다.'));
-  }, [user.uid, isAuthorized, setIsModalOpen]);
+  }, [user.uid, isAuthorized, setIsSignInModalOpen]);
 
   return (
     <S.StyledComment>
@@ -118,7 +127,8 @@ export function Comment({ user, comments, mission }) {
         );
       })}
 
-      {modalComponent}
+      {signInModalComponent}
+      {missionModalComponent}
     </S.StyledComment>
   );
 }

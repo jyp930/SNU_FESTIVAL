@@ -27,7 +27,7 @@ const useAuth = () => {
     dispatch(actions.setLoading(true));
     try {
       await auth.signInWithRedirect(provider);
-    } catch {
+    } finally {
       dispatch(actions.setLoading(false));
     }
   }, [dispatch]);
@@ -36,7 +36,7 @@ const useAuth = () => {
     dispatch(actions.setLoading(true));
     try {
       await auth.signOut();
-    } catch {
+    } finally {
       dispatch(actions.setLoading(false));
     }
   }, [dispatch]);

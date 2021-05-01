@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PopupModal from '@F/modal/PopupModal';
 
-const useModal = (ContentComponent) => {
+const useModal = (ContentComponent, props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const modalComponent = (
     <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} closeOnDocumentClick>
-      <ContentComponent setIsModalOpen={setIsModalOpen} />
+      <ContentComponent setIsModalOpen={setIsModalOpen} {...props} />
     </PopupModal>
   );
 
