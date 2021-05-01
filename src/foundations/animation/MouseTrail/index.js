@@ -1,25 +1,12 @@
 import { useEffect } from 'react';
-import Mascot1 from '@I/svg/mascot/1.svg';
-import Mascot2 from '@I/svg/mascot/2.svg';
-import Mascot3 from '@I/svg/mascot/3.svg';
-import Mascot4 from '@I/svg/mascot/4.svg';
-import Mascot5 from '@I/svg/mascot/5.svg';
-import Mascot18 from '@I/svg/mascot/18.svg';
-import Mascot19 from '@I/svg/mascot/19.svg';
-import Mascot20 from '@I/svg/mascot/20.svg';
-import Mascot9 from '@I/svg/mascot/9.svg';
-import Mascot10 from '@I/svg/mascot/10.svg';
-import Mascot11 from '@I/svg/mascot/11.svg';
-import Mascot12 from '@I/svg/mascot/12.svg';
-import Mascot13 from '@I/svg/mascot/13.svg';
-import Mascot14 from '@I/svg/mascot/14.svg';
-import Mascot15 from '@I/svg/mascot/15.svg';
+import BlueMascot from '@I/mascot/blue.png';
+import SkyblueMascot from '@I/mascot/skyblue.png';
+import PinkMascot from '@I/mascot/pink.png';
+import Rio from '@I/mascot/rio.png';
 import { zIndex } from '@S/index';
 
 const mascots = [
-  Mascot1, Mascot3, Mascot2, Mascot5, Mascot10,
-  Mascot18, Mascot19, Mascot20, Mascot9, Mascot4,
-  Mascot11, Mascot12, Mascot13, Mascot14, Mascot15,
+  SkyblueMascot, BlueMascot, PinkMascot, Rio,
 ];
 
 function MouseTrail() {
@@ -53,7 +40,7 @@ export function triggerMouseTrail() {
       n.src = mascots[i];
       n.className = 'mouseTrailElement';
       n.setAttribute('style',
-        `position: absolute; height: 15px; width: 15px; pointer-events: none; z-index: ${zIndex.mouseTrail}`);
+        `position: absolute; height: ${i === 3 ? 20 : 14}px; width: auto; pointer-events: none; z-index: ${zIndex.mouseTrail}`);
       document.body.appendChild(n);
       return n;
     }());
