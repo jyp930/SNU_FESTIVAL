@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
+import { FlexCenterStyle } from '@S/responsive/display';
 
 export const StyledPageLoading = styled.div`
   position: fixed;
@@ -22,6 +23,7 @@ export const Animation = styled.div`
   max-height: 280px;
   width: 50vw;
   height: 50vw;
+  ${FlexCenterStyle};
 `;
 
 export const Message = styled.span`

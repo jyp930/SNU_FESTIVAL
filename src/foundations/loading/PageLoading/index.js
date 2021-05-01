@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
+import LoadingMascot from '@F/loading/LoadingMascot';
 import * as S from './styles';
 
 function PageLoading({ message }) {
   return (
     <S.StyledPageLoading>
-      <S.Animation><LottieLoadingPacMan /></S.Animation>
+      <S.Animation><LoadingMascot /></S.Animation>
       <S.Message>{message}</S.Message>
     </S.StyledPageLoading>
   );

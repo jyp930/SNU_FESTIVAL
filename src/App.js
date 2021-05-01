@@ -4,12 +4,13 @@ import routes from '@/routes';
 import GaAnalytics from '@/UserAnalytics';
 import { GA_TRACKING_KEY } from '@/config';
 import { GlobalStyle, theme } from '@S/index';
-import LottieLoadingPacMan from '@F/lottie/LottieLoadingPackman';
 import Lottie404 from '@F/lottie/Lottie404';
 import MouseTrail from '@F/animation/MouseTrail';
 import Toast from '@F/Toast';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import useResize from '@U/hooks/useResize';
+import LoadingMascot from '@F/loading/LoadingMascot';
+import { FlexCenterStyle } from '@S/responsive/display';
 
 function App() {
   useEffect(() => {
@@ -26,7 +27,7 @@ function App() {
       <Toast />
 
       <Router>
-        <Suspense fallback={<LottieLoadingPacMan width={280} height={280} />}>
+        <Suspense fallback={<LoadingWrapper><LoadingMascot /></LoadingWrapper>}>
           <Switch>
             { routes.map((route) => (
               <Route
@@ -46,3 +47,9 @@ function App() {
   );
 }
 export default App;
+
+const LoadingWrapper = styled.div`
+  width: 100%;
+  height: 100vh;
+  ${FlexCenterStyle};
+`;
