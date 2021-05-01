@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 import { FlexCenterStyle } from '@S/responsive/display';
 
 export const StyledGoodsDetail = styled.div`
@@ -51,6 +52,9 @@ export const BasicSection = styled.div`
 
 export const Image = styled.img`
   width: 100%;
+  ${media.lessThan('medium')`
+    margin-bottom: 1rem;
+  `};
 `;
 
 export const Hr = styled.hr`

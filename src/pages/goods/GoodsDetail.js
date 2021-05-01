@@ -7,6 +7,8 @@ import SealStickerImage from '@I/goods/seal-sticker.png';
 import SealStickerDetail from '@I/goods/seal-sticker-detail.png';
 import CalendarImage from '@I/goods/calendar.png';
 import CalendarDetail from '@I/goods/calendar-detail.png';
+import StickerPackImage from '@I/goods/sticker-pack.png';
+import StickerPackDetail from '@I/goods/sticker-pack-detail.png';
 import GoodsDetailContainer from '@C/goods/GoodsDetail';
 import Header from '@F/layout/Header';
 
@@ -41,7 +43,7 @@ GoodsDetail.propTypes = {
 export const Glass = withMountEvent(() => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '축제이즈백 소주잔', price: 7000, description: '한줄설명' }}
+    information={{ name: '축제이즈백 소주잔', price: 7000, description: '' }}
     image={GlassImage}
     longImage={GlassDetail}
   />
@@ -50,7 +52,7 @@ export const Glass = withMountEvent(() => (
 export const SealSticker = withMountEvent(() => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '씰스티커', price: 1500, description: '한줄설명' }}
+    information={{ name: '씰스티커', price: 1500, description: '' }}
     image={SealStickerImage}
     longImage={SealStickerDetail}
   />
@@ -59,8 +61,17 @@ export const SealSticker = withMountEvent(() => (
 export const Calendar = withMountEvent(() => (
   <GoodsDetail
     formUrl="https://naver.com"
-    information={{ name: '사계절 엽서 세트', price: 2000, description: '한줄설명' }}
+    information={{ name: '사계절 엽서 세트', price: 2000, description: '' }}
     image={CalendarImage}
     longImage={CalendarDetail}
+  />
+));
+
+export const StickerPack = withMountEvent(() => (
+  <GoodsDetail
+    formUrl="https://naver.com"
+    information={{ name: '스티커팩', price: 1500, description: '' }}
+    image={StickerPackImage}
+    longImage={StickerPackDetail}
   />
 ));

@@ -44,6 +44,7 @@ const Goods = lazy(() => import('@/pages/goods/Goods'));
 const Glass = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.Glass })));
 const SealSticker = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.SealSticker })));
 const Calendar = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.Calendar })));
+const StickerPack = lazy(() => import('@/pages/goods/GoodsDetail').then(module => ({ default: module.StickerPack })));
 
 const goodsRoutes = [
   {
@@ -61,6 +62,10 @@ const goodsRoutes = [
       {
         path: '/calendar',
         component: Calendar,
+      },
+      {
+        path: '/sticker-pack',
+        component: StickerPack,
       },
     ],
   },

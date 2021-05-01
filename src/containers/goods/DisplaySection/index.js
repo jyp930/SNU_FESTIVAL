@@ -1,8 +1,8 @@
 import React from 'react';
 import Glass from '@I/goods/glass.jpg';
-import StickerOne from '@I/goods/sticker-1.png';
-import StickerTwo from '@I/goods/seal-sticker.png';
+import SealSticker from '@I/goods/seal-sticker.png';
 import Calendar from '@I/goods/calendar.png';
+import StickerPack from '@I/goods/sticker-pack.png';
 import { useHistory } from 'react-router';
 import * as S from './styles';
 
@@ -22,9 +22,9 @@ function DisplaySection() {
   return (
     <S.StyledDisplaySection>
       {Item('glass', Glass, '축제이즈백 소주잔', 7000)}
-      {Item('seal-sticker', StickerTwo, '씰스티커', 1500)}
+      {Item('seal-sticker', SealSticker, '씰스티커', 1500)}
       {Item('calendar', Calendar, '사계절 엽서 세트', 2000)}
-      {Item('stickerOne', StickerOne, '씰스티커', 1500)}
+      {Item('sticker-pack', StickerPack, '스티커팩', 1500)}
     </S.StyledDisplaySection>
   );
 }
