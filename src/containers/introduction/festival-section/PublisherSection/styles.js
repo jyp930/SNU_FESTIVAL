@@ -7,6 +7,10 @@ export const StyledPublisherSection = styled.div`
   color: white;
   font-size: 0.9rem;
   
+  span {
+    cursor: pointer;
+  }
+  
   & > p {
     line-height: 1.8;
     align-self: flex-start;
