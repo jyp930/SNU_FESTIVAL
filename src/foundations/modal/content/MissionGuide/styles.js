@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
 
-export const SignInGuideBox = styled.div`
+export const MissionGuideBox = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -27,11 +27,38 @@ export const ContentBox = styled.div`
   width: 100%;
   height: 100%;
   
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   box-sizing: border-box;
 
   background-color: ${rgba('#faf8fb', 0.95)};
   border: 1px solid ${({ theme }) => theme.palette.PURPLE80};
+  
+  p {
+    margin: 0;
+    line-height: 1.74;
+  }
+
+  p:nth-of-type(1) {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: ${({ theme }) => theme.palette.GRAY80};
+  }
+  
+  p:nth-of-type(2) {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: ${({ theme }) => theme.palette.PURPLE50};
+  }
+  
+  p:nth-of-type(3) {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: ${({ theme }) => rgba(theme.palette.GRAY80, 0.45)};
+    margin-bottom: 0.5rem;
+  }
 `;
 
 export const Image = styled.img`
@@ -42,37 +69,24 @@ export const Image = styled.img`
   cursor: pointer;
 `;
 
-export const MainSpan = styled.span`
-  text-align: center;
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1.43;
-  color: ${({ theme }) => theme.palette.GRAY80};
-`;
-
-export const SubSpan = styled.span`
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-  color: ${({ theme }) => rgba(theme.palette.GRAY80, 0.55)};
-  line-height: 1.43;
-  
-  &:nth-of-type(3) {
-    color: ${({ theme }) => rgba(theme.palette.ORANGE_NEWTRO, 0.55)};
-  }
+export const Stamp = styled.img`
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  margin: 0.5rem 0;
 `;
 
 export const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
   
   width: 164px;
   height: 36px;
   border-radius: 18px;
   background-color: ${rgba('#aeb0cc', 0.4)};
   color: ${({ theme }) => theme.palette.GRAY80};
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
 `;
