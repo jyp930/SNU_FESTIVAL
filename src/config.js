@@ -1,5 +1,6 @@
 export const GA_TRACKING_KEY = process.env.REACT_APP_GA_TRACKING_ID;
 
+// TODO: 보안
 export const FIREBASE_CONFIG = {
   apiKey: 'AIzaSyDzcvb0fBHugRX1jQ3itHV2j7nC7eiLe0c',
   authDomain: 'snu-festival.firebaseapp.com',

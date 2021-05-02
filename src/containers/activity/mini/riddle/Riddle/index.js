@@ -27,7 +27,13 @@ function Riddle() {
           </S.Opening>
         </S.OpeningWrapper>
         <S.Texts>
-          둘 중 하나의 테마를 골라 미궁을 탈출~~
+          <span>내가 어디로 가야 하는지 길을 알려 줄래?</span>
+          <br />
+          <span>그건 네가 어디로 가고 싶은가에 달렸지.</span>
+          <br />
+          <span>난 어디든 상관 없어.</span>
+          <br />
+          <span>그렇다면 어느 길로 가든 상관없잖아?</span>
         </S.Texts>
       </S.Body>
 

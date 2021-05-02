@@ -63,8 +63,24 @@ export const Title = styled.div`
 `;
 
 export const Texts = styled.div`
-  margin-top: 1rem;
-  font-size: 1.3rem;
+  width: 70%;
+  max-width: 350px;
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: ${({ theme }) => theme.palette.PURPLE50};
+  
+  span {
+    display: inline-block;
+    width: 100%;
+    line-height: 2;
+  }
+  span:nth-of-type(1), span:nth-of-type(3) {
+    text-align: left;
+    color: ${({ theme }) => theme.palette.ORANGE_NEWTRO};
+  }
+  span:nth-of-type(2), span:nth-of-type(4) {
+    text-align: right;
+    color: ${({ theme }) => theme.palette.PURPLE70};
+  }
 `;
