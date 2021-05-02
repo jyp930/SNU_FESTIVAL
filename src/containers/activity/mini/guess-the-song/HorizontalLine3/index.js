@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { withTheme } from 'styled-components';
 import useAudio from '@U/hooks/useAudio';
-import Celebrity from '@/static/audio/iu_celebrity.mp3';
+import SongFourThird from '@/static/audio/song-4-3.mp3';
 import * as S from './styles';
 import { startAnimation } from '../functions';
 import { basePropTypes } from '../values';
@@ -9,7 +9,7 @@ import { basePropTypes } from '../values';
 HorizontalLine3.propTypes = basePropTypes;
 
 function HorizontalLine3({ trigger, dispatch, theme }) {
-  const [, playAudio] = useAudio(Celebrity);
+  const [, playAudio] = useAudio(SongFourThird);
 
   const svgHeight = useMemo(() => theme.windowHeight / 2, [theme.windowHeight]);
   const rectHeight = useMemo(() => (

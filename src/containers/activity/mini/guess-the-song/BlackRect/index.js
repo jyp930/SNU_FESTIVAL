@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useAudio from '@U/hooks/useAudio';
-import TwentyThree2 from '@/static/audio/iu_twenty_three_2.mp3';
+import SongThreeSecond from '@/static/audio/song-3-2.mp3';
 import * as S from './styles';
 import { startAnimation } from '../functions';
 import { basePropTypes } from '../values';
@@ -8,7 +8,7 @@ import { basePropTypes } from '../values';
 BlackRect.propTypes = basePropTypes;
 
 function BlackRect({ trigger, dispatch }) {
-  const [, playAudio] = useAudio(TwentyThree2);
+  const [, playAudio] = useAudio(SongThreeSecond);
 
   useEffect(() => {
     blackRect = document.querySelector('.BlackRect');

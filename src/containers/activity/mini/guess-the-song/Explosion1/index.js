@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react';
 import useAudio from '@U/hooks/useAudio';
-import Dynamite2 from '@/static/audio/bts_dynamite_2.mp3';
+import SongFiveFirst from '@/static/audio/song-5-1.mp3';
 import * as S from './styles';
 import { startAnimations } from '../functions';
 import { basePropTypes } from '../values';
@@ -8,7 +8,7 @@ import { basePropTypes } from '../values';
 Explosion1.propTypes = basePropTypes;
 
 function Explosion1({ trigger, dispatch }) {
-  const [, playAudio] = useAudio(Dynamite2);
+  const [, playAudio] = useAudio(SongFiveFirst);
   const rotate = Math.random() * 360;
 
   useEffect(() => {

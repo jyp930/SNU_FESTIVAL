@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useAudio from '@U/hooks/useAudio';
-import TwentyThree from '@/static/audio/iu_twenty_three.mp3';
+import SongThreeThird from '@/static/audio/song-3-3.mp3';
 import * as S from './styles';
 import { startAnimation } from '../functions';
 import { basePropTypes } from '../values';
@@ -8,7 +8,7 @@ import { basePropTypes } from '../values';
 BlackHexagon.propTypes = basePropTypes;
 
 function BlackHexagon({ trigger, dispatch }) {
-  const [, playAudio] = useAudio(TwentyThree);
+  const [, playAudio] = useAudio(SongThreeThird);
 
   useEffect(() => {
     blackHexagon = document.querySelector('.BlackHexagon');
