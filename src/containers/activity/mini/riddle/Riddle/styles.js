@@ -65,7 +65,7 @@ export const Title = styled.div`
 export const Texts = styled.div`
   width: 70%;
   max-width: 350px;
-  margin: 1rem 0 2rem;
+  margin: 2rem 0 4rem;
   font-size: 1.1rem;
   font-weight: 500;
   color: ${({ theme }) => theme.palette.PURPLE50};

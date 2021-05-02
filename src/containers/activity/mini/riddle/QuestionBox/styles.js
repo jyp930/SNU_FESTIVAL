@@ -30,6 +30,14 @@ export const Question = styled.div`
     width: 80vw;
     height: 80vw;
   `};
+  
+  @keyframes appear {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  animation-name: appear;
+  animation-duration: 2s;
 `;
 
 export const Answer = styled.div`

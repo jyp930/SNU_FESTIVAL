@@ -17,6 +17,11 @@ function QuestionBox({ answerColor }) {
 
   const goToNextStep = () => {
     setStep(step + 1);
+
+    const element = document.querySelector('.QuestionImage');
+    element.style.display = 'none';
+    const triggerReflow = element.offsetWidth;
+    element.style.display = 'block';
   };
 
   const clear = () => {
@@ -26,6 +31,7 @@ function QuestionBox({ answerColor }) {
   const submit = () => {
     if (sha256(value) === answers[step]) {
       if (step < 2) {
+        toast('정답입니다🎉');
         goToNextStep();
       } else {
         clear();
@@ -37,7 +43,7 @@ function QuestionBox({ answerColor }) {
 
   return (
     <S.Content>
-      <S.Question />
+      <S.Question className="QuestionImage" />
       <S.Answer>
         <S.InputBox value={value} onChange={onChange} color={answerColor} placeholder="힌트는 내일 공개됩니다." />
         <S.Button onClick={submit}>등록</S.Button>
