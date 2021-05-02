@@ -1,7 +1,11 @@
 import { miniGameCollectionRef } from '@U/initializer/firebase';
 
-export function createNewMiniGameInFirestore(user) {
+export function fetchMiniGameFromFirestore(user) {
+  return miniGameCollectionRef.doc(user.uid).get().then((doc) => (doc.exists ? doc.data() : null));
+}
+
+export function setStageInFirestore(user, stage, isCompleted) {
   miniGameCollectionRef.doc(user.uid).set({
-    stage1: false, stage2: false, stage3: false, stage4: false,
-  }).then();
+    [stage]: isCompleted,
+  }, { merge: true }).then();
 }
