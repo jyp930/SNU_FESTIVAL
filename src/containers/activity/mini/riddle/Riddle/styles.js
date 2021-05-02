@@ -74,13 +74,12 @@ export const Texts = styled.div`
     display: inline-block;
     width: 100%;
     line-height: 2;
+    text-align: center;
   }
   span:nth-of-type(1), span:nth-of-type(3) {
-    text-align: left;
-    color: ${({ theme }) => theme.palette.ORANGE_NEWTRO};
+    color: ${({ theme }) => theme.palette.PINK20};
   }
   span:nth-of-type(2), span:nth-of-type(4) {
-    text-align: right;
-    color: ${({ theme }) => theme.palette.PURPLE70};
+    color: ${({ theme }) => theme.palette.PURPLE50};
   }
 `;
