@@ -12,7 +12,7 @@ function DisplaySection() {
 
   const Item = (url, image, name, price) => (
     <S.Item onClick={() => history.push(`/goods/${url}`)}>
-      <S.Window><Image src={image} alt="창" /></S.Window>
+      <S.Window><Image src={image} alt="창" borderRadius="15px" /></S.Window>
       <S.Texts>
         <p>{name}</p>
         <p>{price}</p>

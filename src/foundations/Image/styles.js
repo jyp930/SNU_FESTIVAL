@@ -6,6 +6,9 @@ export const Image = styled.img`
   ${props => props.objectFit && css`
     object-fit: ${props.objectFit};
   `}
+  ${props => props.borderRadius && css`
+    border-radius: ${props.borderRadius};
+  `}
 `;
 
 export const Skeleton = styled.img`

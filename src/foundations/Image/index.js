@@ -4,7 +4,7 @@ import Skeleton from '@I/skeleton/skeleton.png';
 import * as S from './styles';
 
 function Image({
-  src, alt, circle, objectFit,
+  src, alt, circle, objectFit, borderRadius,
 }) {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,6 +21,7 @@ function Image({
         src={src}
         alt={alt}
         objectFit={objectFit}
+        borderRadius={borderRadius}
         isLoading={isLoading}
         onLoad={() => setIsLoading(false)}
       />
@@ -34,9 +35,11 @@ Image.propTypes = {
   alt: PropTypes.string.isRequired,
   circle: PropTypes.bool,
   objectFit: PropTypes.string,
+  borderRadius: PropTypes.string,
 };
 
 Image.defaultProps = {
   circle: false,
   objectFit: null,
+  borderRadius: null,
 };
