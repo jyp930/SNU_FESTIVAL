@@ -21,6 +21,7 @@ export const GameWrapper = styled.div`
 `;
 
 export const Game = styled.div`
+  position: relative;
   width: 25%;
   ${HoverStyle};
   align-self: flex-end;
@@ -30,9 +31,17 @@ export const Game = styled.div`
     max-width: 150px;
   `};
   
-  img {
+  img:first-of-type {
     width: 100%;
   }
+`;
+
+export const Complete = styled.img`
+  position: absolute;
+  right: 0;
+  bottom: 5%;
+  width: 10rem;
+  height: 7.5rem;
 `;
 
 export const ClearButton = styled.div`

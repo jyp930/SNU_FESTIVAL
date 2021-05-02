@@ -39,7 +39,7 @@ export function Answer({ user, isAuthorized, isNotCompleted }) {
         dispatch(actions.setFirestoreStage(user, 'stage1', true));
         setIsMiniGameModalOpen(true);
       } else {
-        toast('이미 클리어하셨습니다😇');
+        toast('이미 클리어하셨습니다 😇');
       }
     } else {
       setIsSignInModalOpen(true);
