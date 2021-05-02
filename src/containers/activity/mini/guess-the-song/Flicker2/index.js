@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useAudio from '@U/hooks/useAudio';
-import Dynamite from '@/static/audio/bts_dynamite.mp3';
+import SongTwoSecond from '@/static/audio/song-2-2.mp3';
 import * as S from './styles';
 import { startAnimation } from '../functions';
 import { basePropTypes } from '../values';
@@ -8,7 +8,7 @@ import { basePropTypes } from '../values';
 Flicker2.propTypes = basePropTypes;
 
 function Flicker2({ trigger, dispatch }) {
-  const [, playAudio] = useAudio(Dynamite);
+  const [, playAudio] = useAudio(SongTwoSecond);
 
   useEffect(() => {
     flickerRect = document.querySelector('.Flicker2');

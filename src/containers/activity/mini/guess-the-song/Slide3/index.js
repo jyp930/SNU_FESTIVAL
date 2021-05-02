@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import useAudio from '@U/hooks/useAudio';
-import Blueming from '@/static/audio/iu_blueming.mp3';
+import SongOneFirst from '@/static/audio/song-1-1.mp3';
 import * as S from './styles';
 import { startAnimation } from '../functions';
 import { basePropTypes } from '../values';
@@ -8,7 +8,7 @@ import { basePropTypes } from '../values';
 Slide3.propTypes = basePropTypes;
 
 function Slide3({ trigger, dispatch }) {
-  const [, playAudio] = useAudio(Blueming);
+  const [, playAudio] = useAudio(SongOneFirst);
   const reverse = Math.random() > 0.5;
 
   useEffect(() => {

@@ -1,7 +1,6 @@
 import React, {
   useReducer, useEffect, useMemo, useState,
 } from 'react';
-import PropTypes from 'prop-types';
 import Flicker1 from '@C/activity/mini/guess-the-song/Flicker1';
 import { ThemeProvider } from 'styled-components';
 import { themeBasic } from '@C/activity/mini/guess-the-song/theme';
@@ -157,12 +156,12 @@ function reducer(state, action) {
 }
 
 const lyricsList = {
-  A: '세상의 모서리 구부정하게 커버린',
-  B: '잊지마 이 오랜 겨울 사이',
-  C: '언 틈으로 피울 꽃 하나',
-  D: '보이니 하루 뒤 봄이 얼마나',
-  E: 'like dynamite',
-  F: '눈물이 고여도 꾹 참을래',
+  A: '아무',
+  B: '오늘',
+  C: '영원',
+  D: '???',
+  E: '겨울',
+  F: '보고',
   G: '영원히 되감을 순간이니까',
   H: '어느 작별이 이보다 완벽할까',
   I: '이런 결말이 어울려',
