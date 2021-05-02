@@ -96,7 +96,10 @@ function Menus({ setMenuIsOpen }) {
           {smallNaviButton('- 관악게임토너먼트', '/performance/game-tournament', 300)}
         </>
       )}
-      {DropDownButton('행사', 'activity', 350)}
+      <S.InlineMenu>
+        {DropDownButton('행사', 'activity', 350)}
+        {inlineStamp(350, 3)}
+      </S.InlineMenu>
       {(openedTab === 'activity') && (
         <>
           <S.InlineMenu>
