@@ -57,8 +57,8 @@ function Home({ theme }) {
             width={258 * ratio}
             onClick={() => goToPage(getRandomElementFromArray(['/performance/phone-cert', '/performance/sing-stealer', '/performance/hit-the-stage']))}
           />
+          {isLoading && <S.Island width={1700 * ratio} height={1700 * ratio * 0.527} src={Loading} alt="" />}
         </S.IslandWrapper>
-        {isLoading && <S.Island width={1700 * ratio} height={1700 * ratio * 0.527} src={Loading} alt="" />}
       </S.StyledHome>
       <Background />
     </>

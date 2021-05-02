@@ -51,8 +51,8 @@ function MobileHome({ theme }) {
             width={230 * mobileRatio * ratio}
             onClick={() => goToPage(getRandomElementFromArray(['/performance/phone-cert', '/performance/sing-stealer', '/performance/hit-the-stage']))}
           />
+          {isLoading && <S.Island src={MobileLoading} alt="" />}
         </S.IslandWrapper>
-        {isLoading && <S.Island src={MobileLoading} alt="" />}
       </S.StyledMobileHome>
       <S.Background />
     </>

@@ -15,7 +15,7 @@ export const NoticeWrapper = styled.div`
   height: 36px;
   
   ${FlexCenterStyle};
-  z-index: 1;
+  z-index: ${({ theme }) => theme.zIndex.base};
   font-size: 12px;
 `;
 
