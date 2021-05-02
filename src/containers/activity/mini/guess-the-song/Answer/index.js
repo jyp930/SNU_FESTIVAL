@@ -10,9 +10,16 @@ import SignInGuide from '@F/modal/content/SignInGuide';
 import { actions } from '@/redux/mini-game/state';
 import useMiniGame from '@U/hooks/useMiniGame';
 import MiniGameGuide from '@F/modal/content/MiniGameGuide';
+import { sha256 } from 'js-sha256';
 import * as S from './styles';
 
-const answers = ['삐딱하게', '봄날', '2002', '오랜날오랜밤', '라일락'];
+const answers = [
+  '37a1638a11ff785623522efc5c319fc72e00d933fefebdfa13dd37584305fbba',
+  'd0a5cf495a1ea4c47693c0faa9c18d33718ae3e4e5fdd415d3d7d14f0ae9c558',
+  '6c94e35ccc352d4e9ef0b99562cff995a5741ce8de8ad11b568892934daee366',
+  '2c61dbb46d929bf7688981601c656aa88dcdf92b7edb007e26df561a69cfc299',
+  'd96d004f47c5206a4511b96545ead7f00c5003b1afb2bad3576b0806bd4b23a7',
+];
 
 export function Answer({ user, isAuthorized, isNotCompleted }) {
   const { value: first, onChange: onChangeFirst } = useInput('', answerConstraint);
@@ -20,7 +27,7 @@ export function Answer({ user, isAuthorized, isNotCompleted }) {
   const { value: third, onChange: onChangeThird } = useInput('', answerConstraint);
 
   const correctAnswers = useMemo(() => (
-    new Set([first, second, third].filter(answer => answers.includes(answer)))
+    new Set([first, second, third].map(answer => sha256(answer)).filter(answer => answers.includes(answer)))
   ), [first, second, third]);
 
   const dispatch = useDispatch();
