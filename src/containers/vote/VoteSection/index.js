@@ -230,7 +230,7 @@ VoteSection.propTypes = {
   isSingStealerLoaded: PropTypes.bool.isRequired,
 };
 
-const VoteSectionParent = withUser((props) => {
+function VoteSectionParent(props) {
   const isAuthorized = useMemo(() => !!(props.user.uid && !props.user.isLoading), [props.user]);
   const [phoneCertListIHaveVoted, setPhoneCertListIHaveVoted] = useState([]);
   const [singStealerListIHaveVoted, setSingStealerListIHaveVoted] = useState([]);
@@ -274,5 +274,5 @@ const VoteSectionParent = withUser((props) => {
       isSingStealerLoaded={isSingStealerLoaded}
     />
   );
-});
-export default VoteSectionParent;
+}
+export default withUser(VoteSectionParent);
