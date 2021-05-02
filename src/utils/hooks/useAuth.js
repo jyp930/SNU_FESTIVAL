@@ -3,6 +3,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { auth } from '@U/initializer/firebase';
 import { actions } from '@/redux/user/state';
 import { actions as missionActions } from '@/redux/mission/state';
+import { actions as miniGameActions } from '@/redux/mini-game/state';
 import { actions as performanceActions } from '@/redux/performance/state';
 import firebase from 'firebase/app';
 import { toast } from 'react-toastify';
@@ -42,6 +43,7 @@ const useAuth = () => {
     try {
       await auth.signOut();
     } finally {
+      dispatch(miniGameActions.reset());
       dispatch(missionActions.reset());
       dispatch(performanceActions.reset());
       dispatch(actions.setLoading(false));
