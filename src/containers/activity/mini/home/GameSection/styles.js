@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 import { FlexCenterStyle } from '@S/responsive/display';
 import { HoverStyle } from '@S/responsive/mouse';
+import { VibrateAnimation } from '@S/responsive/animation';
 
 export const StyledGameSection = styled.div`
   display: flex;
@@ -48,6 +49,7 @@ export const ClearButton = styled.div`
   width: 35%;
   max-width: 300px;
   ${HoverStyle};
+  ${VibrateAnimation};
 
   img {
     width: 100%;
