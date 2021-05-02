@@ -9,6 +9,7 @@ import useModal from '@U/hooks/useModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
 import { actions } from '@/redux/mini-game/state';
 import useMiniGame from '@U/hooks/useMiniGame';
+import MiniGameGuide from '@F/modal/content/MiniGameGuide';
 import * as S from './styles';
 
 const answers = ['삐딱하게', '봄날', '2002', '오랜날오랜밤', '라일락'];
@@ -24,6 +25,7 @@ export function Answer({ user, isAuthorized, isNotCompleted }) {
 
   const dispatch = useDispatch();
   const { modalComponent: signInModalComponent, setIsModalOpen: setIsSignInModalOpen } = useModal(SignInGuide);
+  const { modalComponent: miniGameModalComponent, setIsModalOpen: setIsMiniGameModalOpen } = useModal(MiniGameGuide);
 
   const submit = () => {
     const correctCount = correctAnswers.size;
@@ -34,8 +36,8 @@ export function Answer({ user, isAuthorized, isNotCompleted }) {
 
     if (isAuthorized) {
       if (isNotCompleted) {
-        toast('성공 모달 띄우기!!');
         dispatch(actions.setFirestoreStage(user, 'stage1', true));
+        setIsMiniGameModalOpen(true);
       } else {
         toast('이미 클리어하셨습니다😇');
       }
@@ -55,6 +57,7 @@ export function Answer({ user, isAuthorized, isNotCompleted }) {
         <S.Button onClick={submit}>정답!</S.Button>
       </S.StyledAnswer>
       {signInModalComponent}
+      {miniGameModalComponent}
     </>
   );
 }
