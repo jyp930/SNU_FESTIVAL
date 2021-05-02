@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Skeleton from '@I/skeleton/skeleton.png';
 import * as S from './styles';
 
-function Image({ src, alt, circle }) {
+function Image({
+  src, alt, circle, objectFit,
+}) {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -18,6 +20,7 @@ function Image({ src, alt, circle }) {
       <S.Image
         src={src}
         alt={alt}
+        objectFit={objectFit}
         isLoading={isLoading}
         onLoad={() => setIsLoading(false)}
       />
@@ -30,8 +33,10 @@ Image.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   circle: PropTypes.bool,
+  objectFit: PropTypes.string,
 };
 
 Image.defaultProps = {
   circle: false,
+  objectFit: null,
 };

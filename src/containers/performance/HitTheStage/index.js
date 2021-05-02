@@ -13,7 +13,7 @@ function HitTheStage({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
 
   const title = <Title decorationOne="무대를 가득 채우는 설렘!" decorationTwo="심장을 뛰게 하는 관악 최고의 댄스 무대" title="힛더스테이지" />;
-  const image = <S.Image><Image src={Window} alt="" /></S.Image>;
+  const image = <S.Image><Image src={Window} alt="" objectFit="scale-down" /></S.Image>;
   const guide = <Guide youtubeUrl="https://naver.com" date="5월 11일" times={['18:00~20:00']} />;
 
   return (

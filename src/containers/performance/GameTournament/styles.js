@@ -101,8 +101,4 @@ export const Image = styled.div`
     height: auto;
     margin: 0;
   `};
-  
-  ${media.between('medium', 'large')`
-    object-fit: scale-down;
-  `};
 `;

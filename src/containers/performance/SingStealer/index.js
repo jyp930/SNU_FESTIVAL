@@ -13,7 +13,7 @@ function SingStealer({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
 
   const title = <Title decorationOne="RnB, 힙합, 발라드 장르 불문!" decorationTwo="매력적인 목소리들로 채워가는" title="씽스틸러" />;
-  const image = <S.Image><Image src={Window} alt="" /></S.Image>;
+  const image = <S.Image><Image src={Window} alt="" objectFit="scale-down" /></S.Image>;
   const guide = <Guide youtubeUrl="https://naver.com" date="5월 11일" times={['14:00~16:00']} />;
 
   return (
