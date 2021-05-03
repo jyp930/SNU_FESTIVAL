@@ -9,12 +9,13 @@ import * as S from './styles';
 
 function Clouds({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+  const isIPad = useMemo(() => theme.windowWidth >= 768 && theme.windowWidth < 1170, [theme.windowWidth]);
 
   return (
     <S.Clouds>
       <S.Cloud src={CloudOne} alt="" top={50} left={isMobile ? -50 : -5} width={isMobile ? 350 : 750} duration={18} />
-      <S.Cloud src={CloudTwo} alt="" top={50} right={isMobile ? -30 : 15} width={isMobile ? 250 : 550} duration={17} />
-      <S.Cloud src={CloudThree} alt="" top={100} left={isMobile ? -40 : 10} width={isMobile ? 300 : 600} duration={20} />
+      {!isIPad && <S.Cloud src={CloudTwo} alt="" top={50} right={isMobile ? -30 : 15} width={isMobile ? 250 : 550} duration={17} />}
+      {!isIPad && <S.Cloud src={CloudThree} alt="" top={100} left={isMobile ? -40 : 10} width={isMobile ? 300 : 600} duration={20} />}
       <S.Cloud src={CloudFour} alt="" top={100} right={isMobile ? -10 : 18} width={isMobile ? 300 : 600} duration={18} />
     </S.Clouds>
   );
