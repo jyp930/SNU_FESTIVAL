@@ -12,7 +12,7 @@ import * as S from '../common/styles';
 import * as SS from './styles';
 
 function GameTournament({ theme }) {
-  const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+  const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
 
   const title = (
     <SS.Title>

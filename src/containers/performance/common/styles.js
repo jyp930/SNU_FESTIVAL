@@ -52,7 +52,7 @@ export const Image = styled.div`
   height: 100%;
   margin: 1rem 0 1.5rem;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('large')`
     width: 47%;
     height: auto;
     margin: 0;

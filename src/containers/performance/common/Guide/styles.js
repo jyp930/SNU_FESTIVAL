@@ -7,7 +7,7 @@ export const StyledGuide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  ${media.lessThan('medium')`
+  ${media.lessThan('large')`
     align-items: center;
   `};
 `;
@@ -15,7 +15,7 @@ export const StyledGuide = styled.div`
 export const Texts = styled.div`
   display: flex;
   flex-direction: column;
-  ${media.lessThan('medium')`
+  ${media.lessThan('large')`
     text-align: center;
   `};
   

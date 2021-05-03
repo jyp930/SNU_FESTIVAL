@@ -10,7 +10,7 @@ import Image from '@F/Image';
 import * as S from '../common/styles';
 
 function SingStealer({ theme }) {
-  const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+  const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
 
   const title = <Title decorationOne="RnB, 힙합, 발라드 장르 불문!" decorationTwo="매력적인 목소리들로 채워가는" title="씽스틸러" />;
   const image = <S.Image><Image src={Window} alt="" objectFit="scale-down" /></S.Image>;

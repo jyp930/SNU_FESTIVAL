@@ -32,7 +32,7 @@ export const Title = styled.div`
     font-size: 1.5rem;
     font-weight: 500;
     padding-bottom: 1rem;
-    ${media.greaterThan('medium')`
+    ${media.greaterThan('large')`
       margin-top: -2rem;
     `};
   }
@@ -58,7 +58,7 @@ export const Teams = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${media.lessThan('medium')`
+  ${media.lessThan('large')`
     margin: 1rem 0 3rem;
   `};
   
@@ -96,7 +96,7 @@ export const Image = styled.div`
   height: 100%;
   margin: 1rem 0 1.5rem;
   
-  ${media.greaterThan('medium')`
+  ${media.greaterThan('large')`
     width: 47%;
     height: auto;
     margin: 0;

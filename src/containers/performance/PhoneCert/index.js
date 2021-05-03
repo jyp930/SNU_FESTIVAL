@@ -10,7 +10,7 @@ import Image from '@F/Image';
 import * as S from '../common/styles';
 
 function PhoneCert({ theme }) {
-  const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+  const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
 
   const title = <Title decorationOne="자작곡부터 커버곡까지!" decorationTwo="관악의 밴드 실력자들과 함께하는" title="폰서트 LIVE" />;
   const image = <S.Image><Image src={Window} alt="" objectFit="scale-down" /></S.Image>;
