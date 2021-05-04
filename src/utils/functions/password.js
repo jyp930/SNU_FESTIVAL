@@ -1,4 +1,5 @@
-export function getPasswordFromEmail(email = 'test123@snu.ac.kr', password = 1, length = 5) {
+export function getPasswordFromEmail(email, password = 1, length = 5) {
+  if (!email) return 'KJHSRH';
   const asciiFromEmail = email.split('').map(char => char.charCodeAt(0));
   const salt = asciiFromEmail[0] + asciiFromEmail[3] + asciiFromEmail[5] + password;
   const passwordNumbers = [

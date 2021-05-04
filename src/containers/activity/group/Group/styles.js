@@ -68,6 +68,7 @@ export const Balloon = styled.img`
   position: absolute;
   width: ${({ width }) => width}px;
   height: auto;
+  ${props => props.top && css`top: ${props.top}%`};
   ${props => props.bottom && css`bottom: ${props.bottom}%`};
   ${props => props.left && css`left: ${props.left}%`};
   ${props => props.right && css`right: ${props.right}%`};

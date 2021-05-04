@@ -4,10 +4,10 @@ import Treasure from '@I/activity/treasure-hunt/treasure.png';
 import { useHistory } from 'react-router';
 import * as S from './styles';
 
-function TreasureGuide({ password }) {
+function TreasureGuide({ password, url }) {
   const history = useHistory();
   const goToPage = useCallback(() => {
-    history.push('/goods');
+    history.push(url);
   }, [history]);
 
   return (
@@ -22,4 +22,5 @@ export default TreasureGuide;
 
 TreasureGuide.propTypes = {
   password: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };

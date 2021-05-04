@@ -29,7 +29,7 @@ function Group({ theme }) {
   const { user, isAuthorized } = useUser();
   const password = useMemo(() => getPasswordFromEmail(user.email, 2, 3)[0], [user]);
   const { modalComponent: signInModalComponent, setIsModalOpen: setIsSignInModalOpen } = useModal(SignInGuide);
-  const { modalComponent: treasureModalComponent, setIsModalOpen: setIsTreasureModalOpen } = useModal(TreasureGuide, { password });
+  const { modalComponent: treasureModalComponent, setIsModalOpen: setIsTreasureModalOpen } = useModal(TreasureGuide, { password, url: '/goods' });
 
   const findTreasure = () => {
     if (isAuthorized) {
