@@ -1,7 +1,7 @@
 import React from 'react';
 import Bell from '@I/icon/bell.svg';
 import useModal from '@U/hooks/useModal';
-import Poster21Spring from '@I/poster/21spring.png';
+import TimeTableImage from '@I/home/time-table.png';
 import * as S from './styles';
 
 function Notice() {
@@ -27,6 +27,6 @@ Notice.propTypes = {
 
 function TimeTable() {
   return (
-    <S.TimeTable src={Poster21Spring} alt="타임테이블" />
+    <S.TimeTable src={TimeTableImage} alt="타임테이블" />
   );
 }

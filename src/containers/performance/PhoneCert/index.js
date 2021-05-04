@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
-import Window from '@I/goods/window.png';
+import PhoneCertImage from '@I/performance/phone-cert.png';
 import { HeaderContent } from '@F/layout/Header';
 import Title from '@C/performance/common/Title';
 import Guide from '@C/performance/common/Guide';
@@ -13,7 +13,7 @@ function PhoneCert({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
 
   const title = <Title decorationOne="자작곡부터 커버곡까지!" decorationTwo="관악의 밴드 실력자들과 함께하는" title="폰서트 LIVE" />;
-  const image = <S.Image><Image src={Window} alt="" objectFit="scale-down" /></S.Image>;
+  const image = <S.Image><Image src={PhoneCertImage} alt="" objectFit="scale-down" /></S.Image>;
   const guide = <Guide youtubeUrl="https://naver.com" date="5월 13일" times={['1부 14:00~16:00', '2부 18:00~20:00']} />;
 
   return (
