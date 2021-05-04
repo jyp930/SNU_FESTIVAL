@@ -66,7 +66,5 @@ function Goods() {
 export default withUser(Goods);
 
 Goods.propTypes = {
-  theme: PropTypes.shape({
-    windowWidth: PropTypes.number,
-  }).isRequired,
+
 };
