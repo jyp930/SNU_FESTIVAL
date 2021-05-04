@@ -14,6 +14,7 @@ export const StyledPolaroidGuide = styled.div`
     color: white;
     text-align: center;
     font-weight: 500;
+    font-size: 0.8rem;
     line-height: 1.6;
   }
 `;
@@ -36,11 +37,14 @@ export const Polaroid = styled.div`
     `};
     
     left: 10%;
-    font-size: 1rem;
+    font-size: 0.8rem;
+    word-break: keep-all;
+    
+    width: 15rem;
     height: 3rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     
     span:first-of-type {
       color: #e671de;

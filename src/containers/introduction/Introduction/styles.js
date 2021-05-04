@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const StyledIntroduction = styled.div`
   height: ${({ theme }) => theme.windowHeight}px;
