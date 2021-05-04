@@ -5,7 +5,7 @@ import * as S from './styles';
 function LiveSection() {
   return (
     <S.Wrapper>
-      <p>단체게임 실시간 LIVE</p>
+      <S.Title>단체게임 실시간 LIVE</S.Title>
       <S.VideoWrapper
         heights={[750 / 1.77, 750 / 1.77, 500 / 1.77]}
       >
