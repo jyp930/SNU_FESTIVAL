@@ -8,12 +8,13 @@ import MobileHomeContainer from '@C/home/MobileHome';
 
 function Home({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+  const isLoaded = useMemo(() => theme.windowWidth > 0, [theme.windowWidth]);
 
   return (
     <>
       <Header hamburgerColor={theme.palette.PURPLE50} />
-      {!isMobile && <HomeContainer theme={theme} />}
-      {isMobile && <MobileHomeContainer theme={theme} />}
+      {isLoaded && !isMobile && <HomeContainer theme={theme} />}
+      {isLoaded && isMobile && <MobileHomeContainer theme={theme} />}
     </>
   );
 }
