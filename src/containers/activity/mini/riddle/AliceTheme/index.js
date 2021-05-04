@@ -16,6 +16,8 @@ import Pot from '@I/activity/riddle/alice/confetti/pot.svg';
 import Rabbit from '@I/activity/riddle/alice/confetti/rabbit.svg';
 import SpaceAce from '@I/activity/riddle/alice/confetti/space-ace.svg';
 import HeartAce from '@I/activity/riddle/alice/confetti/heart-ace.svg';
+import AliceOne from '@I/activity/riddle/alice/alice-1.jpg';
+import AliceTwo from '@I/activity/riddle/alice/alice-2.jpg';
 import * as S from './styles';
 
 const svgSet = [
@@ -34,6 +36,17 @@ const svgSet = [
 ];
 const svgs = [...svgSet, ...svgSet];
 
+const answers = [
+  '07436abdfc015b3d6e7f6236e4817639b24bfb77e68adfb779ace94e8d08c047',
+  '4ea140588150773ce3aace786aeef7f4049ce100fa649c94fbbddb960f1da942',
+  'e1e025805cd63af3eaf1de7c010a537df1fa24009c5d332f3a068cd382e46ca7',
+];
+const questions = [
+  AliceOne,
+  AliceTwo,
+  AliceTwo,
+];
+
 function AliceTheme() {
   return (
     <S.StyledAliceTheme>
@@ -41,7 +54,7 @@ function AliceTheme() {
       <S.ConfettiWrapper>
         <Confetti svgs={svgs} />
       </S.ConfettiWrapper>
-      <QuestionBox />
+      <QuestionBox questions={questions} answers={answers} />
     </S.StyledAliceTheme>
   );
 }

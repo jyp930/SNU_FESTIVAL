@@ -40,6 +40,13 @@ export const Question = styled.div`
   animation-duration: 2s;
 `;
 
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  border-radius: 15px;
+`;
+
 export const Answer = styled.div`
   display: flex;
   align-items: center;
