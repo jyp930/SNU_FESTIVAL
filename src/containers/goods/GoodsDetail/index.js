@@ -7,6 +7,10 @@ import * as S from './styles';
 function GoodsDetail({
   formUrl, information, image, longImage,
 }) {
+  const goToForm = () => {
+    window.open('https://forms.gle/AwDogQChMh9sZN6T7', '_blank');
+  };
+
   return (
     <S.StyledGoodsDetail>
       <HeaderContent>굿즈</HeaderContent>
@@ -21,7 +25,7 @@ function GoodsDetail({
         <S.Hr />
         <S.Image><Image src={longImage} alt="굿즈" /></S.Image>
 
-        <S.Button>굿즈 신청하러 가기</S.Button>
+        <S.Button onClick={goToForm}>굿즈 신청하러 가기</S.Button>
       </S.Body>
     </S.StyledGoodsDetail>
   );

@@ -46,6 +46,9 @@ export const Polaroid = styled.div`
     flex-direction: column;
     justify-content: space-around;
     
+    font-family: 'PFStardust', sans-serif;
+    line-height: 1.2;
+
     span:first-of-type {
       color: #e671de;
     }
