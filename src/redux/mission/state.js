@@ -9,6 +9,8 @@ const INITIAL_STATE = {
   isLoaded: false,
   guestBook: false,
   performance: false,
+  miniOne: false,
+  miniTwo: false,
 };
 
 /** type */
@@ -42,9 +44,14 @@ const reducer = createReducer(INITIAL_STATE, {
   [types.SET_MISSIONS]: (draft, action) => {
     draft.guestBook = action.missions.guestBook;
     draft.performance = action.missions.performance;
+    draft.miniOne = action.missions.miniOne;
+    draft.miniTwo = action.missions.miniTwo;
   },
   [types.SET_MISSION]: (draft, action) => { draft[action.mission] = action.isCompleted; },
-  [types.RESET]: (draft) => { draft.isLoaded = false; draft.guestBook = false; draft.performance = false; },
+  [types.RESET]: (draft) => {
+    draft.isLoaded = false; draft.guestBook = false; draft.performance = false;
+    draft.miniOne = false; draft.miniTwo = false;
+  },
 });
 export default reducer;
 

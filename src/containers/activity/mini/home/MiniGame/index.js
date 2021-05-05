@@ -4,6 +4,7 @@ import { HeaderContent } from '@F/layout/Header';
 import Background from '@F/layout/Background';
 import Rule from '@C/activity/mini/home/Rule';
 import GameSection from '@C/activity/mini/home/GameSection';
+import Mission from '@C/activity/mini/home/Mission';
 import * as S from './styles';
 
 function MiniGame({ theme }) {
@@ -17,6 +18,7 @@ function MiniGame({ theme }) {
         </S.Body>
       </S.StyledMiniGame>
       <Background />
+      <Mission />
     </>
   );
 }
