@@ -57,7 +57,7 @@ export const TimeTable = styled.img`
   min-width: 264px;
 
   @media (orientation: landscape) {
-    width: auto;
+    width: 100%;
     height: 100%;
   }
   

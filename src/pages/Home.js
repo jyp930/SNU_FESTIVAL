@@ -16,6 +16,7 @@ import Riddle from '@I/activity/home/riddle.png';
 import TreasureHunt from '@I/activity/home/treasure-hunt.png';
 import BlackAndWhite from '@I/activity/home/black-and-white.png';
 import Event from '@I/activity/home/event.png';
+import TimeTableImage from '@I/home/time-table.png';
 
 import { preloadImage } from '@U/functions/preload';
 
@@ -25,7 +26,7 @@ function Home({ theme }) {
 
   useEffect(() => {
     [Skeleton, FestivalBackground, Poster21SpringCastle, Poster21Spring, Title, Guests,
-      GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event,
+      GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event, TimeTableImage,
     ].forEach(preloadImage);
   }, []);
 
