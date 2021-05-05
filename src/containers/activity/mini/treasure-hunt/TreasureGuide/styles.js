@@ -21,7 +21,7 @@ export const StyledTreasureGuide = styled.div`
     transform: translate(-5%, 0);
   }
   
-  p {
+  span {
     position: absolute;
     transform: translate(0, -30%);
     font-weight: bold;

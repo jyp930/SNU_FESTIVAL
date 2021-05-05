@@ -13,7 +13,7 @@ function TreasureGuide({ password, url }) {
   return (
     <S.StyledTreasureGuide>
       <img src={Treasure} alt="보물" />
-      <p>{password}</p>
+      <span>{password}</span>
       <S.Button onClick={goToPage}>다음 장소로 가기</S.Button>
     </S.StyledTreasureGuide>
   );
