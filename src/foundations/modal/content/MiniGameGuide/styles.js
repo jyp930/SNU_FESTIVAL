@@ -35,7 +35,6 @@ export const ContentBox = styled.div`
   
   p {
     margin: 0;
-    line-height: 1.74;
   }
 
   p:nth-of-type(1) {
@@ -43,13 +42,14 @@ export const ContentBox = styled.div`
     font-size: 1rem;
     font-weight: 500;
     color: ${({ theme }) => theme.palette.GRAY80};
+    margin-bottom: 0.5rem;
   }
   
   p:nth-of-type(2) {
     text-align: center;
     font-size: 1rem;
-    font-weight: bold;
     color: ${({ theme }) => theme.palette.PURPLE50};
+    line-height: 1.4;
   }
 `;
 
