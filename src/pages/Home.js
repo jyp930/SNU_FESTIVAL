@@ -11,6 +11,11 @@ import Poster21Spring from '@I/poster/21spring.png';
 import Skeleton from '@I/skeleton/skeleton.png';
 import Title from '@I/activity/radio/title.png';
 import Guests from '@I/activity/radio/guests.png';
+import GuessTheSong from '@I/activity/home/guess-the-song.png';
+import Riddle from '@I/activity/home/riddle.png';
+import TreasureHunt from '@I/activity/home/treasure-hunt.png';
+import BlackAndWhite from '@I/activity/home/black-and-white.png';
+import Event from '@I/activity/home/event.png';
 
 import { preloadImage } from '@U/functions/preload';
 
@@ -19,7 +24,9 @@ function Home({ theme }) {
   const isLoaded = useMemo(() => theme.windowWidth > 0, [theme.windowWidth]);
 
   useEffect(() => {
-    [Skeleton, FestivalBackground, Poster21SpringCastle, Poster21Spring, Title, Guests].forEach(preloadImage);
+    [Skeleton, FestivalBackground, Poster21SpringCastle, Poster21Spring, Title, Guests,
+      GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event,
+    ].forEach(preloadImage);
   }, []);
 
   return (

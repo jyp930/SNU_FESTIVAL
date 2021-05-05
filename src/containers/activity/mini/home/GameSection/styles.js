@@ -46,8 +46,8 @@ export const Complete = styled.img`
 `;
 
 export const ClearButton = styled.div`
-  width: 35%;
-  max-width: 300px;
+  width: 40%;
+  max-width: 250px;
   ${HoverStyle};
   ${VibrateAnimation};
 

@@ -5,7 +5,7 @@ import GuessTheSong from '@I/activity/home/guess-the-song.png';
 import Riddle from '@I/activity/home/riddle.png';
 import TreasureHunt from '@I/activity/home/treasure-hunt.png';
 import BlackAndWhite from '@I/activity/home/black-and-white.png';
-import Clear from '@I/activity/home/clear.png';
+import Event from '@I/activity/home/event.png';
 import Complete from '@I/activity/home/complete.png';
 import { useHistory } from 'react-router';
 import useMiniGame from '@U/hooks/useMiniGame';
@@ -43,7 +43,7 @@ function GameSection() {
           </S.Game>
         </S.GameWrapper>
         <S.ClearButton onClick={() => setPolaroidModalOpen(true)}>
-          <img src={Clear} alt="클리어" />
+          <img src={Event} alt="클리어" />
         </S.ClearButton>
       </S.StyledGameSection>
       {PolaroidModalComponent}
