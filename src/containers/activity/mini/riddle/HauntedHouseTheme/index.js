@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import HauntedHouseBackground from '@I/activity/riddle/hounted-house/haunted-house-background.jpg';
@@ -14,6 +14,7 @@ import GhostThree from '@I/activity/riddle/hounted-house/ghost-3.png';
 import QuestionBox from '@C/activity/mini/riddle/QuestionBox';
 import HauntedHouseOne from '@I/activity/riddle/hounted-house/haunted-house-1.jpg';
 import HauntedHouseTwo from '@I/activity/riddle/hounted-house/haunted-house-2.jpg';
+import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
 const answers = [
@@ -29,6 +30,10 @@ const questions = [
 
 function HauntedHouseTheme({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+
+  useEffect(() => {
+    [HauntedHouseOne, HauntedHouseTwo].forEach(preloadImage);
+  }, []);
 
   return (
     <S.StyledHauntedHouseTheme>

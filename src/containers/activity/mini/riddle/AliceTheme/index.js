@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AliceBackground from '@I/activity/riddle/alice/alice-background.jpg';
 import Confetti from '@F/animation/Confetti';
@@ -18,6 +18,7 @@ import SpaceAce from '@I/activity/riddle/alice/confetti/space-ace.svg';
 import HeartAce from '@I/activity/riddle/alice/confetti/heart-ace.svg';
 import AliceOne from '@I/activity/riddle/alice/alice-1.jpg';
 import AliceTwo from '@I/activity/riddle/alice/alice-2.jpg';
+import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
 const svgSet = [
@@ -48,6 +49,10 @@ const questions = [
 ];
 
 function AliceTheme() {
+  useEffect(() => {
+    [AliceOne, AliceTwo].forEach(preloadImage);
+  }, []);
+
   return (
     <S.StyledAliceTheme>
       <S.Background src={AliceBackground} alt="앨리스 배경" />

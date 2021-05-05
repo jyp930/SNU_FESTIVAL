@@ -8,7 +8,7 @@ function TreasureGuide({ password, url }) {
   const history = useHistory();
   const goToPage = useCallback(() => {
     history.push(url);
-  }, [history]);
+  }, [history, url]);
 
   return (
     <S.StyledTreasureGuide>
