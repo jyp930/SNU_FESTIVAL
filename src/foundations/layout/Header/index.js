@@ -1,12 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import MascotInFolder from '@I/svg/mascot/mascot-in-folder.svg';
 import Fade from 'react-reveal/Fade';
-import { preloadImage } from '@U/functions/preload';
-import FestivalBackground from '@I/introduction/festival-background.jpg';
-import Poster21Spring from '@I/poster/21spring.png';
-import Poster21SpringCastle from '@I/poster/21springCastle.png';
 import Menus from '@F/layout/Menus';
 import styled, { css } from 'styled-components';
 import * as S from './styles';
@@ -14,12 +10,6 @@ import * as S from './styles';
 function Header({ hamburgerColor }) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const history = useHistory();
-
-  useEffect(() => {
-    if (menuIsOpen) {
-      [FestivalBackground, Poster21SpringCastle, Poster21Spring].forEach(preloadImage);
-    }
-  }, [menuIsOpen]);
 
   const goToPage = useCallback((route) => {
     history.push(route);
