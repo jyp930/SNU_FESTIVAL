@@ -5,7 +5,7 @@ import Image from '@F/Image';
 import * as S from './styles';
 
 function GoodsDetail({
-  formUrl, information, image, longImage,
+  information, image, longImage,
 }) {
   const goToForm = () => {
     window.open('https://forms.gle/AwDogQChMh9sZN6T7', '_blank');
@@ -33,7 +33,6 @@ function GoodsDetail({
 export default GoodsDetail;
 
 GoodsDetail.propTypes = {
-  formUrl: PropTypes.string.isRequired,
   information: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,

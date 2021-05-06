@@ -13,13 +13,12 @@ import GoodsDetailContainer from '@C/goods/GoodsDetail';
 import Header from '@F/layout/Header';
 
 function GoodsDetail({
-  formUrl, information, image, longImage,
+  information, image, longImage,
 }) {
   return (
     <>
       <Header />
       <GoodsDetailContainer
-        formUrl={formUrl}
         information={information}
         image={image}
         longImage={longImage}
@@ -30,7 +29,6 @@ function GoodsDetail({
 export default GoodsDetail;
 
 GoodsDetail.propTypes = {
-  formUrl: PropTypes.string.isRequired,
   information: PropTypes.shape({
     name: PropTypes.string,
     price: PropTypes.number,
@@ -41,7 +39,6 @@ GoodsDetail.propTypes = {
 
 export const Glass = withMountEvent(() => (
   <GoodsDetail
-    formUrl="https://naver.com"
     information={{ name: '축제이즈백 소주잔', price: 7000 }}
     image={GlassImage}
     longImage={GlassDetail}
@@ -50,7 +47,6 @@ export const Glass = withMountEvent(() => (
 
 export const SealSticker = withMountEvent(() => (
   <GoodsDetail
-    formUrl="https://naver.com"
     information={{ name: '씰스티커', price: 1500 }}
     image={SealStickerImage}
     longImage={SealStickerDetail}
@@ -59,7 +55,6 @@ export const SealSticker = withMountEvent(() => (
 
 export const Calendar = withMountEvent(() => (
   <GoodsDetail
-    formUrl="https://naver.com"
     information={{ name: '사계절 엽서 세트', price: 2000 }}
     image={CalendarImage}
     longImage={CalendarDetail}
@@ -68,7 +63,6 @@ export const Calendar = withMountEvent(() => (
 
 export const StickerPack = withMountEvent(() => (
   <GoodsDetail
-    formUrl="https://naver.com"
     information={{ name: '스티커팩', price: 1500 }}
     image={StickerPackImage}
     longImage={StickerPackDetail}

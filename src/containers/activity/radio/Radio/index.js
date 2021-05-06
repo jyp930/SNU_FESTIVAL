@@ -1,19 +1,39 @@
-import React, { useCallback, useMemo } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
 import Title from '@I/activity/radio/title.png';
 import Guests from '@I/activity/radio/guests.png';
 import { EventBehavior } from '@U/initializer/googleAnalytics';
+import { linkCollectionRef } from '@U/initializer/firebase';
+import { toast } from 'react-toastify';
 import * as S from './styles';
 
 function Radio({ theme }) {
-  const youtubeUrl = 'https://naver.com';
   const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
-  const goToYoutube = useCallback(() => {
-    EventBehavior('Performance', `Click Youtube Link: ${youtubeUrl}`, `go to ${youtubeUrl} by performance page`);
-    window.open(youtubeUrl, '_blank');
+
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    linkCollectionRef.doc('radio').get()
+      .then((doc) => {
+        setUrl(doc.data().url);
+      })
+      .catch(() => (
+        toast('인터넷이 불안정합니다. 다시 시도해주세요.')));
   }, []);
+
+  const goToYoutube = useCallback(() => {
+    if (url !== null && url.length > 0) {
+      EventBehavior('Activity', `Click Youtube Link: ${url}`, `go to ${url} by activity page`);
+      window.open(url, '_blank');
+    } else if (url !== null && url.length === 0) {
+      toast('행사 준비 중입니다😇');
+    } else {
+      toast('다시 클릭해주세요!');
+    }
+  }, [url]);
 
   const texts = useCallback((name, date, textAlign) => (
     <S.Texts textAlign={isMobile ? 'center' : textAlign}>

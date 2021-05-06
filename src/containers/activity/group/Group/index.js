@@ -1,4 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
@@ -15,6 +17,9 @@ import SignInGuide from '@F/modal/content/SignInGuide';
 import withUser from '@U/hoc/withUser';
 import TreasureGuide from '@C/activity/mini/treasure-hunt/TreasureGuide';
 import { actions } from '@/redux/mini-game/state';
+import { linkCollectionRef } from '@U/initializer/firebase';
+import { toast } from 'react-toastify';
+import { EventBehavior } from '@U/initializer/googleAnalytics';
 import * as S from './styles';
 
 function Group({ theme }) {
@@ -41,6 +46,28 @@ function Group({ theme }) {
     }
   };
 
+  // 링크
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    linkCollectionRef.doc('group-game').get()
+      .then((doc) => {
+        setUrl(doc.data().url);
+      })
+      .catch(() => (
+        toast('인터넷이 불안정합니다. 다시 시도해주세요.')));
+  }, []);
+
+  const goToZoom = useCallback(() => {
+    if (url !== null && url.length > 0) {
+      EventBehavior('Activity', `Click Youtube Link: ${url}`, `go to ${url} by activity page`);
+      window.open(url, '_blank');
+    } else if (url !== null && url.length === 0) {
+      toast('행사 준비 중입니다😇');
+    } else {
+      toast('다시 클릭해주세요!');
+    }
+  }, [url]);
+
   return (
     <S.StyledGroup>
       <HeaderContent>단체게임</HeaderContent>
@@ -60,7 +87,7 @@ function Group({ theme }) {
         <LiveSection />
         <RankingSection />
       </S.Body>
-      <S.Button>줌 링크 바로가기</S.Button>
+      <S.Button onClick={goToZoom}>줌 링크 바로가기</S.Button>
     </S.StyledGroup>
   );
 }
