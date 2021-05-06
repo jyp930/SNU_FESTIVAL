@@ -15,10 +15,10 @@ export const Cloud = styled.img`
   ${props => props.right && css`right: ${props.right}%`};
   
   @keyframes float-2 {
-    0%{ transform: translateY(300%) translateX(0); }
-    100%{ transform: translateY(-800%) translateX(50%); }
+    0%{ transform: translate(0, 300%); }
+    100%{ transform: translate(50%, -800%); }
   }
-  transform: translateY(300%) translateX(0);
+  transform: translate(0, 300%);
   animation-name: float-2;
   animation-iteration-count: infinite;
   animation-timing-function: linear;

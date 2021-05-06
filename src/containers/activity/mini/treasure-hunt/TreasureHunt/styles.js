@@ -32,7 +32,7 @@ export const Background = styled.div`
   animation-name: background-sky;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-duration: 20s;
+  animation-duration: 15s;
 `;
 
 export const Body = styled.div`
