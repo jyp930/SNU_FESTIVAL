@@ -9,6 +9,7 @@ const INITIAL_STATE = {
   isLoaded: false,
   guestBook: false,
   performance: false,
+  competition: false,
   miniOne: false,
   miniTwo: false,
 };
