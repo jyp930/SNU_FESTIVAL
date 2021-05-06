@@ -1,12 +1,19 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { EventBehavior } from '@U/initializer/googleAnalytics';
+import { toast } from 'react-toastify';
 import * as S from './styles';
 
 function Guide({ date, times, youtubeUrl }) {
   const goToYoutube = useCallback(() => {
-    EventBehavior('Performance', `Click Youtube Link: ${youtubeUrl}`, `go to ${youtubeUrl} by performance page`);
-    window.open(youtubeUrl, '_blank');
+    if (youtubeUrl !== null && youtubeUrl.length > 0) {
+      EventBehavior('Performance', `Click Youtube Link: ${youtubeUrl}`, `go to ${youtubeUrl} by performance page`);
+      window.open(youtubeUrl, '_blank');
+    } else if (youtubeUrl !== null && youtubeUrl.length === 0) {
+      toast('공연 준비 중입니다😇');
+    } else {
+      toast('다시 클릭해주세요!');
+    }
   }, [youtubeUrl]);
 
   return (

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
@@ -8,6 +8,8 @@ import Guide from '@C/performance/common/Guide';
 import Bubble from '@C/introduction/staff-section/Bubble';
 import MascotForMission from '@C/performance/common/MascotForMission';
 import Image from '@F/Image';
+import { linkCollectionRef } from '@U/initializer/firebase';
+import { toast } from 'react-toastify';
 import * as S from '../common/styles';
 import * as SS from './styles';
 
@@ -42,7 +44,18 @@ function GameTournament({ theme }) {
       </div>
     </SS.Teams>
   );
-  const guide = <Guide youtubeUrl="https://naver.com" date="5월 12일" times={['15:00~']} />;
+
+  const [url, setUrl] = useState(null);
+  useEffect(() => {
+    linkCollectionRef.doc('game-tournament').get()
+      .then((doc) => {
+        setUrl(doc.data().url);
+      })
+      .catch(() => (
+        toast('인터넷이 불안정합니다. 다시 시도해주세요.')));
+  }, []);
+
+  const guide = <Guide youtubeUrl={url} date="5월 12일" times={['15:00~18:00']} />;
 
   return (
     <SS.StyledGameTournament>
