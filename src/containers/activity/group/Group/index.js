@@ -18,12 +18,13 @@ import { actions } from '@/redux/mini-game/state';
 import * as S from './styles';
 
 function Group({ theme }) {
+  // TODO: 미션 분리
   const [hideImage, setHideImage] = useState(false);
   const treasureHunt = useSelector(state => state.miniGame.treasureHunt);
   const dispatch = useDispatch();
   const isPlaying = useMemo(() => (
     treasureHunt !== null && !treasureHunt.includes(1)
-  ), [treasureHunt]);
+  ), []);
 
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
   const { user, isAuthorized } = useUser();

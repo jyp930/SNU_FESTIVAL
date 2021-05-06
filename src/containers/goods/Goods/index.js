@@ -23,7 +23,7 @@ function Goods() {
   const dispatch = useDispatch();
   const isPlaying = useMemo(() => (
     treasureHunt !== null && !treasureHunt.includes(2)
-  ), [treasureHunt]);
+  ), []);
 
   const { user, isAuthorized } = useUser();
   const password = useMemo(() => getPasswordFromEmail(user.email, 2, 3)[1], [user]);

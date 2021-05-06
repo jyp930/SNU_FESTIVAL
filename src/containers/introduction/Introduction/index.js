@@ -22,7 +22,7 @@ function Introduction({ theme }) {
   const dispatch = useDispatch();
   const isPlaying = useMemo(() => (
     treasureHunt !== null && !treasureHunt.includes(3)
-  ), [treasureHunt]);
+  ), []);
 
   const { user, isAuthorized } = useUser();
   const password = useMemo(() => getPasswordFromEmail(user.email, 2, 3)[2], [user]);
