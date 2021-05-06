@@ -18,6 +18,19 @@ import Title from '@C/home/Title';
 import Notice from '@C/home/Notice';
 import useModal from '@U/hooks/useModal';
 import MissionCard from '@C/home/MissionCard';
+import Skeleton from '@I/skeleton/skeleton.png';
+import FestivalBackground from '@I/introduction/festival-background.jpg';
+import Poster21SpringCastle from '@I/poster/21springCastle.png';
+import Poster21Spring from '@I/poster/21spring.png';
+import Guests from '@I/activity/radio/guests.png';
+import GuessTheSong from '@I/activity/home/guess-the-song.png';
+import Riddle from '@I/activity/home/riddle.png';
+import TreasureHunt from '@I/activity/home/treasure-hunt.png';
+import BlackAndWhite from '@I/activity/home/black-and-white.png';
+import Event from '@I/activity/home/event.png';
+import TimeTableImage from '@I/home/time-table.png';
+import Envelope from '@I/icon/stamp/envelope.gif';
+import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
 function Home({ theme }) {
@@ -37,13 +50,19 @@ function Home({ theme }) {
   }, [history]);
 
   const { modalComponent: missionComponent, setIsModalOpen: setIsMissionModalOpen } = useModal(MissionCard);
+  const onLoadIsland = useCallback(() => {
+    setIsLoading(false);
+    [Skeleton, FestivalBackground, Poster21SpringCastle, Poster21Spring, Title, Guests,
+      GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event, TimeTableImage, Envelope,
+    ].forEach(preloadImage);
+  }, []);
 
   return (
     <>
       <S.StyledHome height={1700 * ratio * 0.527}>
         <Title />
         <S.IslandWrapper width={1700 * ratio} height={1700 * ratio * 0.527}>
-          <S.Island src={Island} width={1700 * ratio} height={1700 * ratio * 0.527} alt="" onLoad={() => setIsLoading(false)} />
+          <S.Island src={Island} width={1700 * ratio} height={1700 * ratio * 0.527} alt="" onLoad={onLoadIsland} />
           <Notice />
           <S.Landmark src={Competition} alt="공모전" top={11} right={29} width={150 * ratio} onClick={() => goToPage('/activity/competition')} />
           <S.Landmark src={GuestBook} alt="방명록" top={24} right={13} width={188 * ratio} onClick={() => goToPage('/guest-book')} />

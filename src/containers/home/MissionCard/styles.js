@@ -1,4 +1,29 @@
 import styled, { css } from 'styled-components';
+import media from 'styled-media-query';
+
+const disappear = css`
+  @keyframes disappear {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  } 
+`;
+
+export const Envelope = styled.img`
+  position: absolute;
+  width: 60%;
+  ${media.lessThan('medium')`
+      width: 80%;
+  `};
+  z-index: ${({ theme }) => theme.zIndex.base};
+  
+  ${disappear};
+  opacity: 1;
+  animation-name: disappear;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+`;
 
 export const StyledMissionCard = styled.div`
   position: relative;
@@ -15,6 +40,15 @@ export const StyledMissionCard = styled.div`
     width: 100%;
     height: auto;
   }
+  
+  ${disappear};
+  opacity: 0;
+  animation-name: disappear;
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 `;
 
 export const Card = styled.img`
