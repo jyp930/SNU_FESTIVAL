@@ -15,12 +15,21 @@ export const Envelope = styled.img`
       width: 80%;
   `};
   z-index: ${({ theme }) => theme.zIndex.base};
+`;
+
+export const EnvelopeImage = styled.img`
+  position: absolute;
+  width: 60%;
+  ${media.lessThan('medium')`
+      width: 80%;
+  `};
+  z-index: ${({ theme }) => theme.zIndex.base + 1};
   
   ${disappear};
-  opacity: 1;
+  opacity: 0;
   animation-name: disappear;
   animation-delay: 1s;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 `;
@@ -44,7 +53,7 @@ export const StyledMissionCard = styled.div`
   ${disappear};
   opacity: 0;
   animation-name: disappear;
-  animation-delay: 3s;
+  animation-delay: 2.5s;
   animation-duration: 1s;
   animation-direction: reverse;
   animation-timing-function: linear;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '@I/icon/stamp/card.png';
 import GuestBookStamp from '@I/icon/stamp/guest-book-stamp.png';
 import PerformanceMascot from '@I/icon/stamp/performance-stamp.png';
@@ -6,6 +6,7 @@ import CompetitionStamp from '@I/icon/stamp/competition-stamp.png';
 import ActivityStampOne from '@I/icon/stamp/activity-stamp-1.png';
 import ActivityStampTwo from '@I/icon/stamp/activity-stamp-2.png';
 import Envelope from '@I/icon/stamp/envelope.gif';
+import EnvelopeImage from '@I/icon/stamp/envelope.png';
 import useMission from '@U/hooks/useMission';
 import useAuth from '@U/hooks/useAuth';
 import * as S from './styles';
@@ -14,9 +15,15 @@ function MissionCard() {
   useAuth();
   const mission = useMission();
 
+  const [hideGif, setHideGif] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setHideGif(true), 1050);
+  }, []);
+
   return (
     <>
-      <S.Envelope src={Envelope} alt="미션 봉투" />
+      {!hideGif && <S.Envelope src={Envelope} alt="미션 봉투" />}
+      <S.EnvelopeImage src={EnvelopeImage} alt="미션 봉투" />
       <S.StyledMissionCard>
         <S.Card src={Card} alt="미션 카드" />
         {mission.guestBook && <S.Stamp src={GuestBookStamp} alt="방명록 도장" width={16.3} top={17.7} left={12.3} />}
