@@ -29,6 +29,7 @@ import BlackAndWhite from '@I/activity/home/black-and-white.png';
 import Event from '@I/activity/home/event.png';
 import TimeTableImage from '@I/home/time-table.png';
 import Envelope from '@I/icon/stamp/envelope.gif';
+import EnvelopeImage from '@I/icon/stamp/envelope.png';
 import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
@@ -47,7 +48,7 @@ function MobileHome({ theme }) {
   const onLoadIsland = useCallback(() => {
     setIsLoading(false);
     [Skeleton, FestivalBackground, Poster21SpringCastle, Poster21Spring, Title, Guests,
-      GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event, TimeTableImage, Envelope,
+      GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event, TimeTableImage, Envelope, EnvelopeImage,
     ].forEach(preloadImage);
   }, []);
 
