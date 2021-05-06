@@ -46,7 +46,7 @@ export const StyledMissionCard = styled.div`
   }
   
   @media (orientation: portrait) {
-    width: 100%;
+    width: 80%;
     height: auto;
   }
   
