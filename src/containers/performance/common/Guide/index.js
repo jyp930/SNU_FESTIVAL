@@ -32,5 +32,9 @@ export default Guide;
 Guide.propTypes = {
   date: PropTypes.string.isRequired,
   times: PropTypes.arrayOf(PropTypes.string).isRequired,
-  youtubeUrl: PropTypes.string.isRequired,
+  youtubeUrl: PropTypes.string,
+};
+
+Guide.defaultProps = {
+  youtubeUrl: null,
 };
