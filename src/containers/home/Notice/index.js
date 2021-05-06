@@ -5,7 +5,7 @@ import TimeTableImage from '@I/home/time-table.png';
 import * as S from './styles';
 
 function Notice() {
-  const { modalComponent, setIsModalOpen } = useModal(TimeTable);
+  const { modalComponent, setIsModalOpen } = useModal(TimeTable, { width: '80%' });
 
   return (
     <>

@@ -16,6 +16,8 @@ import { getRandomElementFromArray } from '@C/activity/mini/guess-the-song/funct
 import Loading from '@I/home/loading.png';
 import Title from '@C/home/Title';
 import Notice from '@C/home/Notice';
+import useModal from '@U/hooks/useModal';
+import MissionCard from '@C/home/MissionCard';
 import * as S from './styles';
 
 function Home({ theme }) {
@@ -34,6 +36,8 @@ function Home({ theme }) {
     history.push(route);
   }, [history]);
 
+  const { modalComponent: missionComponent, setIsModalOpen: setIsMissionModalOpen } = useModal(MissionCard);
+
   return (
     <>
       <S.StyledHome height={1700 * ratio * 0.527}>
@@ -48,7 +52,8 @@ function Home({ theme }) {
           <S.Landmark src={Mini} alt="미니게임" top={52} right={24} width={381 * ratio} onClick={() => goToPage('/activity/mini')} />
           <S.Landmark src={Radio} alt="보이는라디오" top={37} left={12.5} width={262 * ratio} onClick={() => goToPage('/activity/radio')} />
           <S.Landmark src={Goods} alt="굿즈" top={12.5} left={24} width={234 * ratio} onClick={() => goToPage('/goods')} />
-          <S.Landmark src={Mission} alt="미션" top={25} left={45} width={225 * ratio} vibrate />
+          <S.Landmark src={Mission} alt="미션" top={25} left={45} width={225 * ratio} vibrate onClick={() => setIsMissionModalOpen(true)} />
+          {missionComponent}
           <S.Landmark
             src={Performance}
             alt="공연"

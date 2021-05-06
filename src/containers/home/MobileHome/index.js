@@ -15,6 +15,8 @@ import { useHistory } from 'react-router';
 import { getRandomElementFromArray } from '@C/activity/mini/guess-the-song/functions';
 import Title from '@C/home/Title';
 import Notice from '@C/home/Notice';
+import useModal from '@U/hooks/useModal';
+import MissionCard from '@C/home/MissionCard';
 import * as S from './styles';
 
 function MobileHome({ theme }) {
@@ -27,6 +29,8 @@ function MobileHome({ theme }) {
   const goToPage = useCallback((route) => {
     history.push(route);
   }, [history]);
+
+  const { modalComponent: missionComponent, setIsModalOpen: setIsMissionModalOpen } = useModal(MissionCard, { width: '95%' });
 
   return (
     <>
@@ -42,7 +46,8 @@ function MobileHome({ theme }) {
           <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={381 * mobileRatio * ratio} onClick={() => goToPage('/activity/mini')} />
           <S.Landmark src={Radio} alt="보이는라디오" top={72} left={0.1} width={262 * mobileRatio * ratio} onClick={() => goToPage('/activity/radio')} />
           <S.Landmark src={Goods} alt="굿즈" top={16} left={7} width={234 * mobileRatio * ratio} onClick={() => goToPage('/goods')} />
-          <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} vibrate />
+          <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} vibrate onClick={() => setIsMissionModalOpen(true)} />
+          {missionComponent}
           <S.Landmark
             src={Performance}
             alt="공연"

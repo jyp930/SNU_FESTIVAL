@@ -55,6 +55,7 @@ export const Notice = styled.div`
 
 export const TimeTable = styled.img`
   min-width: 264px;
+  max-width: 800px;
 
   @media (orientation: landscape) {
     width: 100%;

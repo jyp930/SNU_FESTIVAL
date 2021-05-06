@@ -5,7 +5,7 @@ const useModal = (ContentComponent, props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const modalComponent = (
-    <PopupModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} closeOnDocumentClick>
+    <PopupModal width={props?.width} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} closeOnDocumentClick>
       <ContentComponent setIsModalOpen={setIsModalOpen} {...props} />
     </PopupModal>
   );
