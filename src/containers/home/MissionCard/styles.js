@@ -1,13 +1,8 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledMissionCard = styled.div`
   position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-`;
 
-export const Card = styled.img`
   min-width: 264px;
   max-width: 500px;
 
@@ -20,4 +15,20 @@ export const Card = styled.img`
     width: 100%;
     height: auto;
   }
+`;
+
+export const Card = styled.img`
+  min-width: 264px;
+  max-width: 500px;
+  
+  width: 100%;
+  height: 100%;
+`;
+
+export const Stamp = styled.img`
+  position: absolute;
+  width: ${props => props.width}%;
+  ${props => props.top && css`top: ${props.top}%`};
+  ${props => props.left && css`left: ${props.left}%`};
+  ${props => props.right && css`right: ${props.right}%`};
 `;
