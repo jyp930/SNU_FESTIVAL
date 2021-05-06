@@ -30,7 +30,7 @@ export const TileContainer = styled.div`
   border-bottom: 1px solid white;
   
   width: 100%;
-  height: 50%;
+  height: 40%;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
