@@ -60,12 +60,10 @@ export const Button = styled.div`
 export const Links = styled.div`
   display: flex;
   
-  div {
+  img {
     width: 5rem;
     height: 5rem;
     margin: 0.5rem;
-    background-color: white;
-    border-radius: 50%;
     ${HoverStyle};
   }
 `;

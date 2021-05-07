@@ -5,9 +5,11 @@ import Universe from '@I/tarot/universe.jpg';
 import { useHistory } from 'react-router';
 import ClipboardJS from 'clipboard';
 import { toast } from 'react-toastify';
+import KakaoIcon from '@I/icon/kakao.svg';
+import LinkIcon from '@I/icon/link.svg';
 import * as S from './styles';
 
-function TarotDetail({ resultImage, url }) {
+function TarotDetail({ resultImage, result }) {
   const history = useHistory();
   const goToTarot = useCallback(() => {
     history.push('/tarot');
@@ -18,35 +20,14 @@ function TarotDetail({ resultImage, url }) {
   }, []);
 
   const shareThroughKakao = useCallback(() => {
-    window.Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '오늘의 타로:서울대학교 2021 봄축제',
-        description: '오늘 나의 하루는 어떨까?',
+    window.Kakao.Link.sendCustom({
+      templateId: 53192,
+      templateArgs: {
+        result,
         imageUrl: 'https://snufestival.com/mascot.jpg',
-        link: {
-          webUrl: url,
-          mobileWebUrl: url,
-        },
       },
-      buttons: [
-        {
-          title: '친구 타로 결과보기',
-          link: {
-            webUrl: url,
-            mobileWebUrl: url,
-          },
-        },
-        {
-          title: '나도 타로 보러가기',
-          link: {
-            webUrl: 'https://snu-festival-staging.web.app/tarot',
-            mobileWebUrl: 'https://snu-festival-staging.web.app/tarot',
-          },
-        },
-      ],
     });
-  }, [url]);
+  }, [result]);
 
   return (
     <>
@@ -57,8 +38,8 @@ function TarotDetail({ resultImage, url }) {
           <img src={resultImage} alt="" />
           <p>결과 공유하기</p>
           <S.Links>
-            <div className="clipboard" data-clipboard-text={url} onClick={() => toast('클립보드에 복사되었습니다')} />
-            <div onClick={shareThroughKakao} />
+            <img src={LinkIcon} alt="링크 공유" className="clipboard" data-clipboard-text={`https://snu-festival-staging.web.app/tarot/${result}`} onClick={() => toast('클립보드에 복사되었습니다')} />
+            <img src={KakaoIcon} alt="카카오 공유" onClick={shareThroughKakao} />
           </S.Links>
           <S.Button onClick={goToTarot}>타로 다시보기</S.Button>
         </S.Body>
@@ -70,5 +51,5 @@ export default TarotDetail;
 
 TarotDetail.propTypes = {
   resultImage: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  result: PropTypes.string.isRequired,
 };

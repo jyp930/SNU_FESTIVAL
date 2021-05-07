@@ -11,7 +11,7 @@ function TarotDetail({ resultImage, result }) {
       <Header />
       <TarotDetailContainer
         resultImage={resultImage}
-        url={`https://snu-festival-staging.web.app/tarot/${result}`}
+        result={result}
       />
     </>
   );
