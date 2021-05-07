@@ -51,9 +51,9 @@ function Goods() {
       )}
 
       {isPlaying && (
-        <div onClickCapture={(e) => { setShowTreasure(true); e.stopPropagation(); }}>
+        <S.FakeButton onClickCapture={(e) => { setShowTreasure(true); e.stopPropagation(); }}>
           <ScrollTopButton />
-        </div>
+        </S.FakeButton>
       )}
       {showTreasure && isPlaying && (
         <Balloon src={GreenBalloon} alt="" top={20} duration={2} onClick={findTreasure} />
