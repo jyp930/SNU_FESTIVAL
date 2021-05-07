@@ -12,8 +12,10 @@ import { initializeGA } from '@U/initializer/googleAnalytics';
 import reduxRoot from '@/redux/common/store';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { initializeKakao } from '@U/initializer/kakao';
 
 initializeGA();
+initializeKakao();
 
 // noinspection JSCheckFunctionSignatures
 ReactDOM.render(

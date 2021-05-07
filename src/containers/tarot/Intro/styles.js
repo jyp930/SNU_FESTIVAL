@@ -22,6 +22,7 @@ export const Bottoms = styled.div`
 
   p {
     color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.75);
     font-size: 1.3rem;
     font-weight: 500;
     margin: 0.5rem 0;

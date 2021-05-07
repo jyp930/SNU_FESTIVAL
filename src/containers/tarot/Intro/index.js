@@ -29,9 +29,8 @@ function Intro({ isMobile, onButtonClick }) {
           <S.Image src={Ball} alt="" width={isMobile ? 63 : 25} top={isMobile ? 30 : 20} />
         </S.Images>
         <SS.Bottoms>
-          <p>오늘의 행운은 어떨까?</p>
-          <p>오늘의 행운은 어떨까?</p>
-          <SS.Button onClick={showReady}>시작하기</SS.Button>
+          <p>오늘 나의 하루는 어떨까?</p>
+          <SS.Button onClick={showReady}>타로 보러가기</SS.Button>
         </SS.Bottoms>
       </SS.IntroWrapper>
       {isReady && <Ready />}

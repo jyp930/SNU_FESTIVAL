@@ -17,6 +17,37 @@ function TarotDetail({ resultImage, url }) {
     new ClipboardJS('.clipboard');
   }, []);
 
+  const shareThroughKakao = useCallback(() => {
+    window.Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '오늘의 타로:서울대학교 2021 봄축제',
+        description: '오늘 나의 하루는 어떨까?',
+        imageUrl: 'https://snufestival.com/mascot.jpg',
+        link: {
+          webUrl: url,
+          mobileWebUrl: url,
+        },
+      },
+      buttons: [
+        {
+          title: '친구 타로 결과보기',
+          link: {
+            webUrl: url,
+            mobileWebUrl: url,
+          },
+        },
+        {
+          title: '나도 타로 보러가기',
+          link: {
+            webUrl: 'https://snu-festival-staging.web.app/tarot',
+            mobileWebUrl: 'https://snu-festival-staging.web.app/tarot',
+          },
+        },
+      ],
+    });
+  }, [url]);
+
   return (
     <>
       <S.Background src={Universe} alt="" />
@@ -27,7 +58,7 @@ function TarotDetail({ resultImage, url }) {
           <p>결과 공유하기</p>
           <S.Links>
             <div className="clipboard" data-clipboard-text={url} onClick={() => toast('클립보드에 복사되었습니다')} />
-            <div />
+            <div onClick={shareThroughKakao} />
           </S.Links>
           <S.Button onClick={goToTarot}>타로 다시보기</S.Button>
         </S.Body>
