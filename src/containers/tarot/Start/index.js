@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FortuneTeller from '@I/tarot/fortune-teller.png';
 import Glow from '@I/tarot/glow.png';
 import Ball from '@I/tarot/ball.png';
+import BackFace from '@I/tarot/backface.svg';
+import { preloadImage } from '@U/functions/preload';
 import * as S from '../Tarot/styles';
 import * as SS from './styles';
 
 function Start({ isMobile, onButtonClick }) {
+  useEffect(() => {
+    preloadImage(BackFace);
+  }, []);
+
   return (
     <>
       <S.Images>

@@ -31,6 +31,9 @@ import TimeTableImage from '@I/home/time-table.png';
 import Envelope from '@I/icon/stamp/envelope.gif';
 import EnvelopeImage from '@I/icon/stamp/envelope.png';
 import { preloadImage } from '@U/functions/preload';
+import Universe from '@I/tarot/universe.jpg';
+import Ball from '@I/tarot/ball.png';
+import FortuneTeller from '@I/tarot/fortune-teller.png';
 import * as S from './styles';
 
 function MobileHome({ theme }) {
@@ -49,6 +52,7 @@ function MobileHome({ theme }) {
     setIsLoading(false);
     [Skeleton, FestivalBackground, Poster21SpringCastle, Poster21Spring, Title, Guests,
       GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event, TimeTableImage, Envelope, EnvelopeImage,
+      Universe, Ball, FortuneTeller,
     ].forEach(preloadImage);
   }, []);
 

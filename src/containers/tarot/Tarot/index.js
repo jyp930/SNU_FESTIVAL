@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
-import Background from '@I/tarot/universe.jpg';
+import Universe from '@I/tarot/universe.jpg';
 import StarCluster from '@I/tarot/start-cluster.png';
 import ConstellationOne from '@I/tarot/constellation-1.png';
 import ConstellationTwo from '@I/tarot/constellation-2.png';
@@ -24,7 +24,7 @@ function Tarot({ theme }) {
   return (
     <S.StyledTarot>
       <HeaderContent backgroundColor="transparent" color="black">오늘의 타로</HeaderContent>
-      <S.Background src={Background} alt="" />
+      <S.Background src={Universe} alt="" />
       <S.Body>
         <S.Images position="fixed">
           <S.Image src={StarCluster} alt="" width={isMobile ? 80 : 40} top={10} flicker duration={5} />
