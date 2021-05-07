@@ -21,7 +21,8 @@ export const StyledReady = styled.div`
   }
 
   img {
-    width: 100%;
+    margin: 0.5rem 0;
+    width: 70%;
     min-width: 260px;
     max-width: 400px;
     
