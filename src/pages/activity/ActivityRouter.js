@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
-import Lottie404 from '@F/lottie/Lottie404';
+import NotFound from '@/pages/NotFound';
 
 function ActivityRouter({ match }) {
   // TODO: router 버그 있음
@@ -37,7 +37,7 @@ function ActivityRouter({ match }) {
           path={`${match.path}${activityRoutes[3].path}`}
           component={activityRoutes[3].component}
         />
-        <Route component={Lottie404} />
+        <Route component={NotFound} />
       </Switch>
       {/* { activityRoutes.map((route, index) => ( */}
       {/*  <React.Fragment key={route.path}> */}

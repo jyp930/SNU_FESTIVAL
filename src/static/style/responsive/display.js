@@ -30,3 +30,27 @@ export const ResponsiveHeightStyle = css`
     height: ${props => props.heights[2]}px;
   `};
 `;
+
+export const ResponsiveWidthStyleTwo = css`
+  ${media.greaterThan('large')`
+    width: ${props => props.widths[0]}px;
+  `};
+  ${media.lessThan('medium')`
+    width: ${props => props.widths[2]}px;
+  `};
+  ${media.between('medium', 'large')`
+    width: ${props => props.widths[1]}px;
+  `};
+`;
+
+export const ResponsiveHeightStyleTwo = css`
+  ${media.greaterThan('large')`
+    height: ${props => props.heights[0]}px;
+  `};
+  ${media.lessThan('medium')`
+    height: ${props => props.heights[2]}px;
+  `};
+  ${media.between('medium', 'large')`
+    height: ${props => props.heights[1]}px;
+  `};
+`;

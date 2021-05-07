@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { FlexCenterStyle, ResponsiveWidthStyle, ResponsiveHeightStyle } from '@S/responsive/display';
+import {
+  FlexCenterStyle, ResponsiveWidthStyleTwo, ResponsiveHeightStyleTwo,
+} from '@S/responsive/display';
 
 export const StyledPromotionVideoSection = styled.div`
   ${FlexCenterStyle};
@@ -13,8 +15,8 @@ export const StyledPromotionVideoSection = styled.div`
 `;
 
 export const VideoWrapper = styled.div`
-  ${ResponsiveWidthStyle};
-  ${ResponsiveHeightStyle};
+  ${ResponsiveWidthStyleTwo};
+  ${ResponsiveHeightStyleTwo};
 `;
 
 export const Text = styled.p`

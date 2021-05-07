@@ -69,7 +69,7 @@ export const BasicInfo = styled.div`
   & > div {
     display: flex;
     flex-direction: column;
-    margin-left: 7%;
+    margin: 0 2%;
   }
 `;
 
