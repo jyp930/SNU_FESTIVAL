@@ -21,12 +21,26 @@ const width = css`
   max-width: 500px;
 `;
 
+const appear = css`
+  @keyframes appear-2 {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  animation-name: appear-2;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+`;
+
 export const Body = styled.div`
   ${FlexCenterStyle};
   flex-direction: column;
   
   padding: 2rem 0 10rem;
   box-sizing: border-box;
+  
+  ${appear};
+  opacity: 0;
   
   img {
     ${width};
@@ -66,4 +80,13 @@ export const Links = styled.div`
     margin: 0.5rem;
     ${HoverStyle};
   }
+`;
+
+export const LoadingWrapper = styled.div`
+  width: 100%;
+  height: ${({ theme }) => theme.windowHeight * 0.85}px;
+  ${appear};
+  opacity: 1;
+  animation-delay: 2s;
+  animation-direction: reverse;
 `;
