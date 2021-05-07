@@ -12,7 +12,7 @@ export const StyledRadio = styled.div`
 
 export const Body = styled.div`
   position: relative;
-  
+
   width: 100%;
   min-height: calc(100vh - 65px);
   overflow: hidden;
@@ -24,6 +24,10 @@ export const Body = styled.div`
     ${({ theme }) => rgba(theme.palette.PURPLE50, 0.65)},
     white
   );
+  
+  @media (orientation: landscape) {
+    padding: 1rem 0;
+  }
 `;
 
 export const Title = styled.div`

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 
 export const StyledBlackAndWhite = styled.div`
-  height: ${({ theme }) => theme.windowHeight}px;
+  min-height: ${({ theme }) => theme.windowHeight}px;
 
   display: flex;
   flex-direction: column;

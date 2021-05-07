@@ -13,9 +13,13 @@ export const StyledRiddle = styled.div`
 
 export const Body = styled.div`
   width: 100%;
-  height: 100%;
   ${FlexCenterStyle};
   flex-direction: column;
+  
+  @media (orientation: landscape) {
+    height: 100%;
+    padding: 2rem 0;
+  }
 `;
 
 export const OpeningWrapper = styled.div`
