@@ -1,10 +1,11 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import Polaroid from '@I/activity/home/polaroid.png';
 import MobilePolaroid from '@I/activity/home/polariod-mobile.png';
 import { useUser } from '@U/hooks/useAuth';
 import { getRandomElementFromArray } from '@U/functions/array';
+import { EventBehavior } from '@U/initializer/googleAnalytics';
 import * as S from './styles';
 
 const phrases = [
@@ -30,6 +31,10 @@ const phrases = [
 function PolaroidGuide({ theme }) {
   const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
   const { user, isAuthorized } = useUser();
+
+  useEffect(() => {
+    EventBehavior('Mission', 'Click Polaroid Card', 'Click Polaroid Card');
+  }, []);
 
   return (
     <S.StyledPolaroidGuide>

@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
 import Image from '@F/Image';
+import { EventBehavior } from '@U/initializer/googleAnalytics';
 import * as S from './styles';
 
 function GoodsDetail({
   information, image, longImage,
 }) {
   const goToForm = () => {
+    EventBehavior('Goods', 'Click Goods Form', 'Click Goods Form');
     window.open('https://forms.gle/AwDogQChMh9sZN6T7', '_blank');
   };
 

@@ -9,6 +9,7 @@ import Envelope from '@I/icon/stamp/envelope.gif';
 import EnvelopeImage from '@I/icon/stamp/envelope.png';
 import useMission from '@U/hooks/useMission';
 import useAuth from '@U/hooks/useAuth';
+import { EventBehavior } from '@U/initializer/googleAnalytics';
 import * as S from './styles';
 
 function MissionCard() {
@@ -17,6 +18,7 @@ function MissionCard() {
 
   const [hideGif, setHideGif] = useState(false);
   useEffect(() => {
+    EventBehavior('Mission', 'Click Mission Card', 'Click Mission Card');
     setTimeout(() => setHideGif(true), 1050);
   }, []);
 

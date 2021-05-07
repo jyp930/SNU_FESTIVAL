@@ -8,6 +8,7 @@ import { toast } from 'react-toastify';
 import KakaoIcon from '@I/icon/kakao.svg';
 import LinkIcon from '@I/icon/link.svg';
 import Loading from '@C/tarot/Loading';
+import { EventBehavior } from '@U/initializer/googleAnalytics';
 import * as S from './styles';
 
 function TarotDetail({ resultImage, result }) {
@@ -24,6 +25,11 @@ function TarotDetail({ resultImage, result }) {
     setTimeout(() => setIsLoading(false), 3000);
   }, []);
 
+  const shareThroughUrl = useCallback(() => {
+    toast('클립보드에 복사되었습니다');
+    EventBehavior('Tarot', 'Click Tarot Link Share', `share ${result} by clipboard`);
+  }, [result]);
+
   const shareThroughKakao = useCallback(() => {
     window.Kakao.Link.sendCustom({
       templateId: 53192,
@@ -32,6 +38,7 @@ function TarotDetail({ resultImage, result }) {
         imageUrl: 'https://snufestival.com/mascot.jpg',
       },
     });
+    EventBehavior('Tarot', 'Click Tarot Kakao Share', `share ${result} by kakao`);
   }, [result]);
 
   return (
@@ -44,7 +51,7 @@ function TarotDetail({ resultImage, result }) {
             <img src={resultImage} alt="" />
             <p>결과 공유하기</p>
             <S.Links>
-              <img src={LinkIcon} alt="링크 공유" className="clipboard" data-clipboard-text={`https://snu-festival-staging.web.app/tarot/${result}`} onClick={() => toast('클립보드에 복사되었습니다')} />
+              <img src={LinkIcon} alt="링크 공유" className="clipboard" data-clipboard-text={`https://snu-festival-staging.web.app/tarot/${result}`} onClick={shareThroughUrl} />
               <img src={KakaoIcon} alt="카카오 공유" onClick={shareThroughKakao} />
             </S.Links>
             <S.Button onClick={goToTarot}>타로 다시보기</S.Button>
