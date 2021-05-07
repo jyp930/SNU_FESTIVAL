@@ -22,7 +22,7 @@ export const Image = styled.img`
   ${HoverStyle};
   
   @keyframes move-${({ index }) => index} {
-    0% { top: 95%; left: 40%; }
+    0% { top: 95%; left: ${({ left }) => left}%; }
     100% { top: ${({ translate }) => translate.top}%; left: ${({ translate }) => translate.left}%; }
   }
   

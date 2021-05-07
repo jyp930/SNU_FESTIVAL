@@ -15,7 +15,7 @@ function Tarot({ theme }) {
   const isLoaded = useMemo(() => theme.windowWidth > 0, [theme.windowWidth]);
   const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
   const isIPad = useMemo(() => theme.windowWidth >= 768 && theme.windowWidth < 1170, [theme.windowWidth]);
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
 
   const nextStep = useCallback(() => {
     setStep(state => state + 1);
