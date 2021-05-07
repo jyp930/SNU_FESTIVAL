@@ -12,7 +12,7 @@ function Cards({ isMobile, isIPad }) {
 
   const tops = useMemo(() => {
     if (isIPad) return [10, 30, 50, 70];
-    if (isMobile) return [15, 35, 55, 75];
+    if (isMobile) return [13, 33, 53, 73];
     return [5, 28, 51, 74];
   }, [isIPad, isMobile]);
 

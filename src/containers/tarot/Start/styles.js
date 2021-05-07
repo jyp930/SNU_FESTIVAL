@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { HoverStyle } from '@S/responsive/mouse';
+import media from 'styled-media-query';
 
 export const Bottoms = styled.div`
   position: relative;
@@ -8,7 +9,12 @@ export const Bottoms = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+    
+  ${media.between('medium', 'large')`
+    padding-top: 1rem;
+    box-sizing: border-box;
+  `};
+
   p {
     color: white;
     font-size: 1.3rem;
