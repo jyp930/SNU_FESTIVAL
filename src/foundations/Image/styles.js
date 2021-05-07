@@ -18,4 +18,7 @@ export const Skeleton = styled.img`
   ${props => props.circle && css`
     border-radius: 50%;
   `};
+  ${props => props.borderRadius && css`
+    border-radius: ${props.borderRadius};
+  `}
 `;

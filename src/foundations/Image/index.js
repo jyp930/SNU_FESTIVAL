@@ -15,6 +15,7 @@ function Image({
           src={Skeleton}
           alt=""
           circle={circle}
+          borderRadius={borderRadius}
         />
       )}
       <S.Image
