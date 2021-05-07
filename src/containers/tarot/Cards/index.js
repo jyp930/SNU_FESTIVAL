@@ -33,7 +33,7 @@ function Cards({ isMobile, isIPad }) {
           width={width}
           top={95}
           left={isMobile ? 40 : 45}
-          delay={(index + 1) * 0.3}
+          delay={index * 0.3}
           translate={{ top: tops[Math.floor(index / 3)], left: lefts[index % 3] }}
         />
       ))}

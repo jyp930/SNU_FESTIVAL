@@ -1,5 +1,4 @@
-import styled, { css } from 'styled-components';
-import { HoverStyle } from '@S/responsive/mouse';
+import styled from 'styled-components';
 
 export const StyledCards = styled.div`
   position: fixed;
@@ -12,21 +11,19 @@ export const StyledCards = styled.div`
   justify-content: center;
 `;
 
-export const Image = styled.img`
+export const Image = styled.img`  
   position: absolute;
   width: ${props => props.width}%;
-  ${props => props.top && css`top: ${props.top}%`};
-  ${props => props.left && css`left: ${props.left}%`};
-  ${props => props.right && css`right: ${props.right}%`};
-  ${props => props.bottom && css`bottom: ${props.bottom}%`};
-  ${HoverStyle};
-  
+  top: 0;
+  left: 0;
+  cursor: pointer;
+
   @keyframes move-${({ index }) => index} {
-    0% { top: 95%; left: ${({ left }) => left}%; }
-    100% { top: ${({ translate }) => translate.top}%; left: ${({ translate }) => translate.left}%; }
+    0% { transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`}; }
+    100% { transform: ${props => `translate(${props.theme.windowWidth * (props.translate.left / 100)}px, ${props.theme.windowHeight * (props.translate.top / 100)}px)`}; }
   }
-  
-  transform: translate(0, 0);
+
+  transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`};
   animation-name: move-${({ index }) => index};
   animation-delay: ${({ delay }) => delay}s;
   animation-duration: 1s;
