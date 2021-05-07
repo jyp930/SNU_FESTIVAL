@@ -1,7 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const StyledTarot = styled.div`
-
+  position: relative;
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
 export const Background = styled.img`

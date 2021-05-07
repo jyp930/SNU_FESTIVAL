@@ -1,6 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import BackFace from '@I/tarot/backface.svg';
+import { useHistory } from 'react-router';
+import { getRandomElementFromArray } from '@U/functions/array';
 import * as S from './styles';
 
 function Cards({ isMobile, isIPad }) {
@@ -22,6 +24,11 @@ function Cards({ isMobile, isIPad }) {
     return [38, 46, 54];
   }, [isIPad, isMobile]);
 
+  const history = useHistory();
+  const goToResult = useCallback(() => {
+    history.push(`/tarot/${getRandomElementFromArray(['example'])}`);
+  }, [history]);
+
   return (
     <S.StyledCards>
       {Array(12).fill(null).map((_, index) => (
@@ -35,6 +42,7 @@ function Cards({ isMobile, isIPad }) {
           left={isMobile ? 40 : 45}
           delay={index * 0.3}
           translate={{ top: tops[Math.floor(index / 3)], left: lefts[index % 3] }}
+          onClick={goToResult}
         />
       ))}
     </S.StyledCards>

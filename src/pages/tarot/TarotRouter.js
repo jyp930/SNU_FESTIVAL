@@ -2,11 +2,12 @@ import React, { lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Lottie404 from '@F/lottie/Lottie404';
 import PropTypes from 'prop-types';
+import { Example } from '@/pages/tarot/TarotDetail';
 
 function TarotRouter({ match }) {
   return (
     <>
-      { goodsRoutes.map((route) => (
+      { tarotRoutes.map((route) => (
         <React.Fragment key={route.path}>
           <Switch>
             <Route
@@ -42,10 +43,15 @@ TarotRouter.propTypes = {
 
 const Tarot = lazy(() => import('@/pages/tarot/Tarot'));
 
-const goodsRoutes = [
+const tarotRoutes = [
   {
     path: '',
     component: Tarot,
-    children: [],
+    children: [
+      {
+        path: '/example',
+        component: Example,
+      },
+    ],
   },
 ];
