@@ -120,6 +120,7 @@ function Menus({ setMenuIsOpen }) {
         {inlineStamp(450)}
       </S.InlineMenu>
       {NaviButton('소개', '/introduction', 500)}
+      {NaviButton('오늘의 타로', '/tarot', 550)}
     </S.OpenedMenu>
   );
 

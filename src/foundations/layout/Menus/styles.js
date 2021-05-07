@@ -32,6 +32,7 @@ export const NaviText = styled.p`
   margin: 1rem 0;
   font-size: 1.6em;
   max-width: 5rem;
+  white-space: nowrap;
   
   color: white;
   cursor: pointer;
