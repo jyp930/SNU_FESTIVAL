@@ -27,7 +27,7 @@ function Tarot({ theme }) {
       <S.Background src={Universe} alt="" />
       <S.Body>
         <S.Images position="fixed">
-          <S.Image src={StarCluster} alt="" width={isMobile ? 80 : 40} top={10} flicker duration={5} />
+          <S.Image src={StarCluster} alt="" width={isMobile ? 80 : 40} top={10} flicker duration={3} />
           <S.Image src={ConstellationOne} alt="" width={isMobile ? 30 : 15} top={isMobile ? 8 : 10} right={30} flicker duration={2} />
           <S.Image src={ConstellationTwo} alt="" width={isMobile ? 30 : 15} top={isMobile ? 20 : 30} right={isMobile ? 10 : 25} flicker duration={7} />
           <S.Image src={ConstellationThree} alt="" width={isMobile ? 30 : 15} top={isMobile ? 20 : 20} left={isMobile ? 5 : 20} flicker duration={3.5} />

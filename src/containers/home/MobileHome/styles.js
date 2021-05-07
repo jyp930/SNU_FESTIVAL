@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { HoverStyle } from '@S/responsive/mouse';
-import { VibrateAnimation } from '@S/responsive/animation';
+import { FluctuationAnimation, VibrateAnimation } from '@S/responsive/animation';
 
 export const StyledMobileHome = styled.div`
   position: relative;
@@ -43,4 +43,9 @@ export const Landmark = styled.img`
   }
   
   ${props => props.vibrate && VibrateAnimation};
+  
+  ${props => props.glow && css`
+    pointer-events: none;
+    ${FluctuationAnimation};
+  `};
 `;

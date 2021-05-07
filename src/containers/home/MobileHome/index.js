@@ -10,6 +10,8 @@ import Mini from '@I/home/mini.png';
 import Performance from '@I/home/performance.png';
 import Radio from '@I/home/radio.png';
 import Goods from '@I/home/goods.png';
+import Tarot from '@I/home/tarot.png';
+import TarotGlow from '@I/home/tarot-glow.png';
 import Mission from '@I/home/mission.png';
 import { useHistory } from 'react-router';
 import { getRandomElementFromArray } from '@C/activity/mini/guess-the-song/functions';
@@ -67,9 +69,11 @@ function MobileHome({ theme }) {
           <S.Landmark src={GuestBook} alt="방명록" top={87} left={20} width={188 * mobileRatio * ratio} onClick={() => goToPage('/guest-book')} />
           <S.Landmark src={Introduction} alt="소개" top={42} right={1} width={148 * mobileRatio * ratio} onClick={() => goToPage('/introduction')} />
           <S.Landmark src={GameTournament} alt="관악게임토너먼트" top={72} right={1} width={230 * mobileRatio * ratio} onClick={() => goToPage('/performance/game-tournament')} />
-          <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={381 * mobileRatio * ratio} onClick={() => goToPage('/activity/mini')} />
+          <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={361 * mobileRatio * ratio} onClick={() => goToPage('/activity/mini')} />
           <S.Landmark src={Radio} alt="보이는라디오" top={72} left={0.1} width={262 * mobileRatio * ratio} onClick={() => goToPage('/activity/radio')} />
           <S.Landmark src={Goods} alt="굿즈" top={16} left={7} width={234 * mobileRatio * ratio} onClick={() => goToPage('/goods')} />
+          <S.Landmark src={TarotGlow} alt="타로" top={47.7} right={0.01} width={158 * ratio} glow />
+          <S.Landmark src={Tarot} alt="타로" top={53} right={7.5} width={97 * ratio} onClick={() => goToPage('/tarot')} />
           <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} vibrate onClick={() => setIsMissionModalOpen(true)} />
           {missionComponent}
           <S.Landmark

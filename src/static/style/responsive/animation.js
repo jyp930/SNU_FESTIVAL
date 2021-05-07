@@ -15,3 +15,17 @@ export const VibrateAnimation = css`
   animation-direction: alternate;
   animation-timing-function: linear;
 `;
+
+export const FluctuationAnimation = css`
+  @keyframes fluctuation-2 {
+    from { transform: scale(0.6); }
+    to { transform: scale(0.9); }
+  }
+  
+  transform: scale(1);
+  animation-name: fluctuation-2;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+`;

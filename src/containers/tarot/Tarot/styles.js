@@ -37,7 +37,7 @@ export const Image = styled.img`
   
   ${props => props.flicker && css`
     opacity: 0.3;
-    
+
     ${flicker};
     animation-name: flicker;
     animation-iteration-count: infinite;

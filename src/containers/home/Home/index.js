@@ -9,6 +9,8 @@ import Mini from '@I/home/mini.png';
 import Performance from '@I/home/performance.png';
 import Radio from '@I/home/radio.png';
 import Goods from '@I/home/goods.png';
+import Tarot from '@I/home/tarot.png';
+import TarotGlow from '@I/home/tarot-glow.png';
 import Mission from '@I/home/mission.png';
 import Background from '@F/layout/Background';
 import { useHistory } from 'react-router';
@@ -76,6 +78,8 @@ function Home({ theme }) {
           <S.Landmark src={Mini} alt="미니게임" top={52} right={24} width={381 * ratio} onClick={() => goToPage('/activity/mini')} />
           <S.Landmark src={Radio} alt="보이는라디오" top={37} left={12.5} width={262 * ratio} onClick={() => goToPage('/activity/radio')} />
           <S.Landmark src={Goods} alt="굿즈" top={12.5} left={24} width={234 * ratio} onClick={() => goToPage('/goods')} />
+          <S.Landmark src={TarotGlow} alt="타로" top={46.5} left={1.3} width={260 * ratio} glow />
+          <S.Landmark src={Tarot} alt="타로" top={54} left={4} width={174 * ratio} onClick={() => goToPage('/tarot')} />
           <S.Landmark src={Mission} alt="미션" top={25} left={45} width={225 * ratio} vibrate onClick={() => setIsMissionModalOpen(true)} />
           {missionComponent}
           <S.Landmark
