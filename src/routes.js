@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/Home'));
-const Tarot = lazy(() => import('@/pages/Tarot'));
+const TarotRouter = lazy(() => import('@/pages/tarot/TarotRouter'));
 const ActivityRouter = lazy(() => import('@/pages/activity/ActivityRouter'));
 const PerformanceRouter = lazy(() => import('@/pages/performance/PerformanceRouter'));
 const Apply = lazy(() => import('@/pages/Apply'));
@@ -18,8 +18,7 @@ const routes = [
   },
   {
     path: '/tarot',
-    component: Tarot,
-    exact: true,
+    component: TarotRouter,
   },
   {
     path: '/activity',
