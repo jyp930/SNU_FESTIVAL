@@ -5,8 +5,8 @@ export const StyledReady = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: ${({ theme }) => theme.windowWidth}px;
+  height: ${({ theme }) => theme.windowHeight}px;
 
   div {
     width: 100%;
