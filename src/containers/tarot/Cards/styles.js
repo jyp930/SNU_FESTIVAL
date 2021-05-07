@@ -22,7 +22,8 @@ export const Image = styled.img`
     0% { transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`}; }
     100% { transform: ${props => `translate(${props.theme.windowWidth * (props.translate.left / 100)}px, ${props.theme.windowHeight * (props.translate.top / 100)}px)`}; }
   }
-
+  
+  will-change: transform;
   transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`};
   animation-name: move-${({ index }) => index};
   animation-delay: ${({ delay }) => delay}s;
