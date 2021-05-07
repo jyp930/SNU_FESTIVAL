@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import { HoverStyle } from '@S/responsive/mouse';
 import media from 'styled-media-query';
 
+export const IntroWrapper = styled.div`
+  opacity: ${props => props.opacity};
+  transition: opacity 1s;
+`;
+
 export const Bottoms = styled.div`
   position: relative;
   width: 100%;

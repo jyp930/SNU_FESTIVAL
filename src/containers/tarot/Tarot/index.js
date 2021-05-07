@@ -7,7 +7,7 @@ import StarCluster from '@I/tarot/start-cluster.png';
 import ConstellationOne from '@I/tarot/constellation-1.png';
 import ConstellationTwo from '@I/tarot/constellation-2.png';
 import ConstellationThree from '@I/tarot/constellation-3.png';
-import Start from '@C/tarot/Start';
+import Intro from '@C/tarot/Intro';
 import Cards from '@C/tarot/Cards';
 import * as S from './styles';
 
@@ -32,7 +32,7 @@ function Tarot({ theme }) {
           <S.Image src={ConstellationTwo} alt="" width={isMobile ? 30 : 15} top={isMobile ? 20 : 30} right={isMobile ? 10 : 25} flicker duration={7} />
           <S.Image src={ConstellationThree} alt="" width={isMobile ? 30 : 15} top={isMobile ? 20 : 20} left={isMobile ? 5 : 20} flicker duration={3.5} />
         </S.Images>
-        {(step === 1) && isLoaded && <Start isMobile={isMobile} onButtonClick={nextStep} />}
+        {(step === 1) && isLoaded && <Intro isMobile={isMobile} onButtonClick={nextStep} />}
         {(step === 2) && isLoaded && <Cards isMobile={isMobile} isIPad={isIPad} />}
       </S.Body>
     </S.StyledTarot>
