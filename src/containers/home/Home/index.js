@@ -37,6 +37,7 @@ import { preloadImage } from '@U/functions/preload';
 import Universe from '@I/tarot/universe.jpg';
 import FortuneTeller from '@I/tarot/fortune-teller.png';
 import Ball from '@I/tarot/ball.png';
+import Glow from '@I/tarot/glow.png';
 import * as S from './styles';
 
 function Home({ theme }) {
@@ -60,7 +61,7 @@ function Home({ theme }) {
     setIsLoading(false);
     [Skeleton, FestivalBackground, Poster21SpringCastle, Poster21Spring, Title, Guests,
       GuessTheSong, Riddle, TreasureHunt, BlackAndWhite, Event, TimeTableImage, Envelope, EnvelopeImage,
-      Universe, Ball, FortuneTeller,
+      Universe, Ball, Glow, FortuneTeller,
     ].forEach(preloadImage);
   }, []);
 
