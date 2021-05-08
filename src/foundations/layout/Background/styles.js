@@ -5,6 +5,6 @@ export const Background = styled.img`
   top: 0;
   left: 0;
   width: 100%;
-  height: ${({ theme }) => theme.windowHeight}px;
+  height: ${({ theme }) => theme.windowHeight * 1.2}px;
   object-fit: cover;
 `;
