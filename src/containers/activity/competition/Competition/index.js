@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
 import TextSection from '@C/activity/competition/TextSection';
 import VoteSection from '@C/activity/competition/VoteSection';
-import ArchiveSection from '@C/activity/competition/ArchiveSection';
 import * as S from './styles';
 
 const CARTOON = 0;
@@ -35,7 +34,6 @@ function Competition() {
         </S.Tab>
 
         <VoteSection field={currentField} />
-        <ArchiveSection fieldName={REVERSED_FIELDS[currentField]} />
       </S.Body>
     </S.StyledCompetition>
   );
