@@ -40,7 +40,7 @@ const svgs = [...svgSet, ...svgSet];
 const answers = [
   '07436abdfc015b3d6e7f6236e4817639b24bfb77e68adfb779ace94e8d08c047',
   '4ea140588150773ce3aace786aeef7f4049ce100fa649c94fbbddb960f1da942',
-  'e1e025805cd63af3eaf1de7c010a537df1fa24009c5d332f3a068cd382e46ca7',
+  'a27db16581bce5f90e4e7d08e10f861d0c6986a01d80babea22f6af4e5774ff1',
 ];
 const questions = [
   AliceOne,
