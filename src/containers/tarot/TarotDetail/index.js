@@ -39,7 +39,7 @@ function TarotDetail({ resultImage, result, theme }) {
       templateId: 53192,
       templateArgs: {
         result,
-        imageUrl: 'https://snufestival.com/mascot.jpg',
+        imageUrl: `https://snufestival.com/images/${result}-card.png`,
       },
     });
     EventBehavior('Tarot', 'Click Tarot Kakao Share', `share ${result} by kakao`);
@@ -55,7 +55,7 @@ function TarotDetail({ resultImage, result, theme }) {
             <img src={resultImage} alt="" />
             <p>결과 공유하기</p>
             <S.Links>
-              <img src={LinkIcon} alt="링크 공유" className="clipboard" data-clipboard-text={`https://snu-festival-staging.web.app/tarot/${result}`} onClick={shareThroughUrl} />
+              <img src={LinkIcon} alt="링크 공유" className="clipboard" data-clipboard-text={`https://snufestival.com/tarot/${result}`} onClick={shareThroughUrl} />
               <img src={KakaoIcon} alt="카카오 공유" onClick={shareThroughKakao} />
             </S.Links>
             <S.Button onClick={goToTarot}>타로 다시보기</S.Button>
@@ -71,4 +71,7 @@ export default withTheme(TarotDetail);
 TarotDetail.propTypes = {
   resultImage: PropTypes.string.isRequired,
   result: PropTypes.string.isRequired,
+  theme: PropTypes.shape({
+    windowWidth: PropTypes.number,
+  }).isRequired,
 };

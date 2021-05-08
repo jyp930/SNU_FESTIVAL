@@ -20,9 +20,10 @@ export const Image = styled.img`
 
   @keyframes move-${({ index }) => index} {
     0% { transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`}; }
-    100% { transform: ${props => `translate(${props.theme.windowWidth * (props.translate.left / 100)}px, ${props.theme.windowHeight * (props.translate.top / 100)}px)`}; }
+    100% { transform: ${props => `translate(${props.theme.windowWidth * (props.translate.left / 100)}px, ${props.theme.windowHeight * (props.translate.top / 100)}px)`}; pointer-events: auto; }
   }
   
+  pointer-events: none;
   will-change: transform;
   transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`};
   animation-name: move-${({ index }) => index};

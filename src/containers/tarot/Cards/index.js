@@ -26,7 +26,10 @@ function Cards({ isMobile, isIPad }) {
 
   const history = useHistory();
   const goToResult = useCallback(() => {
-    history.push(`/tarot/${getRandomElementFromArray(['example'])}`);
+    history.push(`/tarot/${getRandomElementFromArray([
+      'achieve', 'calm', 'delight', 'harmony', 'improvement', 'passion',
+      'pleasure', 'precious', 'refresh', 'romance', 'stress-free', 'sympathy',
+    ])}`);
   }, [history]);
 
   return (
