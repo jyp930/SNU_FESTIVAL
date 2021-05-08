@@ -7,6 +7,8 @@ export const StyledCards = styled.div`
   width: 100%;
   height: ${({ theme }) => theme.windowHeight}px;
   
+  pointer-events: ${props => props.pointerEvents || 'auto'};
+  
   display: flex;
   justify-content: center;
 `;
@@ -20,10 +22,9 @@ export const Image = styled.img`
 
   @keyframes move-${({ index }) => index} {
     0% { transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`}; }
-    100% { transform: ${props => `translate(${props.theme.windowWidth * (props.translate.left / 100)}px, ${props.theme.windowHeight * (props.translate.top / 100)}px)`}; pointer-events: auto; }
+    100% { transform: ${props => `translate(${props.theme.windowWidth * (props.translate.left / 100)}px, ${props.theme.windowHeight * (props.translate.top / 100)}px)`}; }
   }
-  
-  pointer-events: none;
+
   will-change: transform;
   transform: ${props => `translate(${props.theme.windowWidth * (props.left / 100)}px, ${props.theme.windowHeight * (props.top / 100)}px)`};
   animation-name: move-${({ index }) => index};

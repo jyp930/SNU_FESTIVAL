@@ -1,4 +1,6 @@
-import React, { useCallback, useMemo } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import BackFace from '@I/tarot/backface.svg';
 import { useHistory } from 'react-router';
@@ -32,8 +34,14 @@ function Cards({ isMobile, isIPad }) {
     ])}`);
   }, [history]);
 
+  // 마우스 클릭 막기
+  const [isReady, setIsReady] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setIsReady(true), 3300);
+  }, []);
+
   return (
-    <S.StyledCards>
+    <S.StyledCards pointerEvents={isReady ? 'auto' : 'none'}>
       {Array(12).fill(null).map((_, index) => (
         <S.Image
           src={BackFace}
