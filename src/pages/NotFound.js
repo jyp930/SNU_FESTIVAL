@@ -12,10 +12,12 @@ const Body = styled.div`
   flex-direction: column;
   
   p {
-    margin-top: 4rem;
+    margin: 3rem 0 0;
+    text-align: center;
+    line-height: 2;
     color: ${({ theme }) => theme.palette.PURPLE70};
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;
 
@@ -44,7 +46,11 @@ function NotFound() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           />
         </VideoWrapper>
-        <p>축제는 5월 11일에 시작합니다.</p>
+        <p>
+          페스월드, 축제의 세계로 당신을 초대합니다.
+          <br />
+          5월 11일에 만나요!
+        </p>
       </Body>
     </>
   );
