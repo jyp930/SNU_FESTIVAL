@@ -73,8 +73,8 @@ function MobileHome({ theme }) {
           <S.Landmark src={Mini} alt="미니게임" top={50} left={0} width={361 * mobileRatio * ratio} onClick={() => goToPage('/activity/mini')} />
           <S.Landmark src={Radio} alt="보이는라디오" top={72} left={0.1} width={262 * mobileRatio * ratio} onClick={() => goToPage('/activity/radio')} />
           <S.Landmark src={Goods} alt="굿즈" top={16} left={7} width={234 * mobileRatio * ratio} onClick={() => goToPage('/goods')} />
-          <S.Landmark src={TarotGlow} alt="타로" top={47.7} right={0.01} width={158 * ratio} glow />
-          <S.Landmark src={Tarot} alt="타로" top={53} right={7.5} width={97 * ratio} onClick={() => goToPage('/tarot')} />
+          <S.Landmark src={TarotGlow} alt="타로" top={46.3} right={-4.5} width={260 * mobileRatio * ratio} glow />
+          <S.Landmark src={Tarot} alt="타로" top={52} right={4} width={164 * mobileRatio * ratio} onClick={() => goToPage('/tarot')} />
           <S.Landmark src={Mission} alt="미션" top={35} left={35} width={195 * mobileRatio * ratio} vibrate onClick={() => setIsMissionModalOpen(true)} />
           {missionComponent}
           <S.Landmark
