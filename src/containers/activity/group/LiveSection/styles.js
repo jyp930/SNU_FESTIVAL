@@ -4,6 +4,11 @@ import { ResponsiveHeightStyle } from '@S/responsive/display';
 export const Wrapper = styled.div`
   width: 100%;
   margin: 2rem 0;
+  
+  p {
+    font-size: 1.2rem;
+    color: ${({ theme }) => theme.palette.PURPLE50};
+  }
 `;
 
 export const Title = styled.p`
