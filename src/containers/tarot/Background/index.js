@@ -5,13 +5,13 @@ import StarCluster from '@I/tarot/start-cluster.png';
 import ConstellationOne from '@I/tarot/constellation-1.png';
 import ConstellationTwo from '@I/tarot/constellation-2.png';
 import ConstellationThree from '@I/tarot/constellation-3.png';
-import * as SS from './styles';
+import FBackground from '@F/layout/Background';
 import * as S from '../Tarot/styles';
 
 function Background({ isMobile }) {
   return (
     <>
-      <SS.Background src={Universe} alt="" />
+      <FBackground image={Universe} alt="" />
       <S.Images position="fixed">
         <S.Image src={StarCluster} alt="" width={isMobile ? 80 : 40} top={21} flicker duration={3} />
         <S.Image src={ConstellationOne} alt="" width={isMobile ? 30 : 15} top={isMobile ? 15 : 17} right={35} flicker duration={2} />
