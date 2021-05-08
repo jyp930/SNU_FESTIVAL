@@ -5,15 +5,6 @@ export const StyledTarot = styled.div`
   z-index: ${({ theme }) => theme.zIndex.base};
 `;
 
-export const Background = styled.img`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
 const flicker = css`
   @keyframes flicker {
     from { opacity: 0.3; }
@@ -35,6 +26,8 @@ export const Image = styled.img`
   ${props => props.left && css`left: ${props.left}%`};
   ${props => props.right && css`right: ${props.right}%`};
   ${props => props.bottom && css`bottom: ${props.bottom}%`};
+  
+  ${props => props.reverse && css`transform: rotate(180deg)`};
   
   ${props => props.flicker && css`
     opacity: 0.3;

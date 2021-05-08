@@ -1,7 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useState,
+} from 'react';
+import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import { HeaderContent } from '@F/layout/Header';
-import Universe from '@I/tarot/universe.jpg';
 import { useHistory } from 'react-router';
 import ClipboardJS from 'clipboard';
 import { toast } from 'react-toastify';
@@ -9,9 +11,11 @@ import KakaoIcon from '@I/icon/kakao.svg';
 import LinkIcon from '@I/icon/link.svg';
 import Loading from '@C/tarot/Loading';
 import { EventBehavior } from '@U/initializer/googleAnalytics';
+import Background from '@C/tarot/Background';
 import * as S from './styles';
 
-function TarotDetail({ resultImage, result }) {
+function TarotDetail({ resultImage, result, theme }) {
+  const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
   const [isLoading, setIsLoading] = useState(false);
 
   const history = useHistory();
@@ -43,7 +47,7 @@ function TarotDetail({ resultImage, result }) {
 
   return (
     <>
-      <S.Background src={Universe} alt="" />
+      <Background isMobile={isMobile} />
       <S.StyledTarotDetail>
         <HeaderContent backgroundColor="transparent" color="white">오늘의 타로</HeaderContent>
         {!isLoading && (
@@ -62,7 +66,7 @@ function TarotDetail({ resultImage, result }) {
     </>
   );
 }
-export default TarotDetail;
+export default withTheme(TarotDetail);
 
 TarotDetail.propTypes = {
   resultImage: PropTypes.string.isRequired,
