@@ -20,37 +20,37 @@ const routes = [
     path: '/tarot',
     component: TarotRouter,
   },
-  // {
-  //   path: '/activity',
-  //   component: ActivityRouter,
-  // },
-  // {
-  //   path: '/performance',
-  //   component: PerformanceRouter,
-  // },
+  {
+    path: '/activity',
+    component: ActivityRouter,
+  },
+  {
+    path: '/performance',
+    component: PerformanceRouter,
+  },
   // {
   //   path: '/apply',
   //   component: Apply,
   //   exact: true,
   // },
-  // {
-  //   path: '/introduction',
-  //   component: Introduction,
-  //   exact: true,
-  // },
-  // {
-  //   path: '/guest-book',
-  //   component: GuestBook,
-  //   exact: true,
-  // },
-  // {
-  //   path: '/vote',
-  //   component: Vote,
-  //   exact: true,
-  // },
-  // {
-  //   path: '/goods',
-  //   component: GoodsRouter,
-  // },
+  {
+    path: '/introduction',
+    component: Introduction,
+    exact: true,
+  },
+  {
+    path: '/guest-book',
+    component: GuestBook,
+    exact: true,
+  },
+  {
+    path: '/vote',
+    component: Vote,
+    exact: true,
+  },
+  {
+    path: '/goods',
+    component: GoodsRouter,
+  },
 ];
 export default routes;
