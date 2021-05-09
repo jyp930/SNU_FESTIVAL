@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
+import { withTheme } from 'styled-components';
 import PropTypes from 'prop-types';
 import Window from '@I/goods/window.png';
-import SimpleSlider from '@F/react-slick/SimpleSlider';
 import FilledHeart from '@I/icon/filled-heart.svg';
 import EmptyHeart from '@I/icon/empty-heart.svg';
+import PopupModal from '@F/modal/PopupModal';
 import * as S from './styles';
 
 const items = [
@@ -21,15 +22,18 @@ const items = [
   },
 ];
 
-function VoteSection({ field }) {
+function VoteSection({ field, theme }) {
+  const isMobile = useMemo(() => theme.windowWidth < 768, [theme.windowWidth]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <S.StyledVoteSection>
-      <S.SliderSection>
-        <SimpleSlider items={items.map(item => (
+      <S.ItemSection>
+        {items.map(item => (
           <S.Item>
             <S.ImageWrapper>
-              <img src={item.image} alt="작품" />
-              <S.LikeButton>
+              <img src={item.image} alt="작품" onClick={() => setIsModalOpen(true)} />
+              <S.LikeButton onClick={() => alert(1)}>
                 <img src={EmptyHeart} alt="like" />
               </S.LikeButton>
             </S.ImageWrapper>
@@ -43,8 +47,23 @@ function VoteSection({ field }) {
             <p>{item.description}</p>
           </S.Item>
         ))}
+      </S.ItemSection>
+
+      <PopupModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        closeOnDocumentClick
+        width={`${isMobile ? theme.windowWidth : theme.windowWidth * (2 / 3)}px`}
+      >
+        <iframe
+          width={isMobile ? theme.windowWidth : theme.windowWidth * (2 / 3)}
+          height={isMobile ? theme.windowWidth / 1.77 : (theme.windowWidth * (2 / 3)) / 1.77}
+          src="https://www.youtube.com/embed/7Gu_K3iuBow"
+          title="타이틀"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
-      </S.SliderSection>
+      </PopupModal>
 
       <S.SubmitSection>
         <S.SubmitButton>제출하기</S.SubmitButton>
@@ -53,8 +72,11 @@ function VoteSection({ field }) {
     </S.StyledVoteSection>
   );
 }
-export default VoteSection;
+export default withTheme(VoteSection);
 
 VoteSection.propTypes = {
   field: PropTypes.number.isRequired,
+  theme: PropTypes.shape({
+    windowWidth: PropTypes.number,
+  }).isRequired,
 };

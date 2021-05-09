@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 import { FlexCenterStyle } from '@S/responsive/display';
+import media from 'styled-media-query';
+import { HoverStyle } from '@S/responsive/mouse';
 
 export const StyledVoteSection = styled.div`
   width: 100%;
@@ -9,12 +11,23 @@ export const StyledVoteSection = styled.div`
   flex-direction: column;
 `;
 
-export const SliderSection = styled.div`
+export const ItemSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   margin: 2rem 0;
 `;
 
 export const Item = styled.div`
-  margin: 1rem 1rem 2rem;
+  width: 50%;
+  height: 50%;
+  
+  ${media.lessThan('medium')`
+    width: 100%;
+    height: 100%;
+  `};
+
+  padding: 1rem 1rem 2rem;
+  box-sizing: border-box;
   
   p {
     font-size: 1rem;
@@ -37,6 +50,9 @@ export const ImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   margin-bottom: 1rem;
+  
+  ${HoverStyle};
+  cursor: default;
   
   img {
     width: 100%;
