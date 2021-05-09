@@ -41,6 +41,7 @@ export function QuestionBox({
         toast('이미 클리어하셨습니다 😇');
       }
     } else {
+      toast('정답입니다🎉');
       setIsSignInModalOpen(true);
     }
   };
