@@ -63,13 +63,14 @@ function VoteSection({
   ), [isAuthorized, listIHaveVoted, isLoaded]);
   const submit = () => {
     const { uid, email } = user;
-    if (!email.endsWith('@snu.ac.kr')) {
-      toast('SNU 계정만 투표 가능합니다.');
+    if (myLikesForCompetition.length === 0) {
+      toast('하트를 눌러 투표를 진행해 주세요.');
       return;
     }
 
-    if (myLikesForCompetition.length === 0) {
-      toast('하트를 눌러 투표를 진행해 주세요.');
+    if (!email.endsWith('@snu.ac.kr')) {
+      toast('SNU 계정만 투표에 반영됩니다.');
+      onVoteForField(field, myLikesForCompetition);
       return;
     }
 

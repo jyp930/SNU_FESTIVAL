@@ -41,4 +41,5 @@ export const Evaluation = styled.p`
   margin-bottom: 0.8rem;
   font-size: 0.9rem;
   color: ${({ theme }) => theme.palette.GRAY60};
+  line-height: 1.5;
 `;

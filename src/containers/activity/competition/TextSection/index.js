@@ -11,7 +11,7 @@ function TextSection() {
         1.
         {' '}
         <S.PurpleText>구글 연동된 SNU 계정</S.PurpleText>
-        만 투표 가능합니다.
+        만 투표에 반영됩니다.
         {' '}
         <br />
         2. 각
@@ -26,6 +26,8 @@ function TextSection() {
       </S.Notice>
       <S.Evaluation>
         * 사진을 누르면 해당 작품을 볼 수 있습니다.
+        <br />
+        * 제출하기를 누르면 스탬프 1개 지급!
       </S.Evaluation>
     </S.TextSection>
   );
