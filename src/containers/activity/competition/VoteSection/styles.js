@@ -51,9 +51,6 @@ export const ImageWrapper = styled.div`
   height: 100%;
   margin-bottom: 1rem;
   
-  ${HoverStyle};
-  cursor: default;
-  
   img {
     width: 100%;
     height: 100%;
@@ -62,8 +59,8 @@ export const ImageWrapper = styled.div`
 
 export const LikeButton = styled.div`
   position: absolute;
-  bottom: 1%;
-  right: 1%;
+  bottom: 2%;
+  right: 2%;
 
   display: flex;
   align-items: center;

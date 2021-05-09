@@ -80,6 +80,7 @@ Answer.propTypes = {
 };
 
 function AnswerParent() {
+  // TODO: withUser 의 user, isAuthorized prop 활용
   const { user, isAuthorized } = useUser();
   const miniGame = useMiniGame();
   const isNotCompleted = useMemo(() => (
