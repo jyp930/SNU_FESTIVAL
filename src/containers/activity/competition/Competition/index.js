@@ -16,6 +16,12 @@ import {
 import { shuffleArray } from '@U/functions/array';
 import PropTypes from 'prop-types';
 import { competitionCollectionRef } from '@U/initializer/firebase';
+import { actions } from '@/redux/mission/state';
+import useMission from '@U/hooks/useMission';
+import { useDispatch } from 'react-redux';
+import useModal from '@U/hooks/useModal';
+import MissionGuide from '@F/modal/content/MissionGuide';
+import CompetitionStamp from '@I/icon/stamp/competition-stamp.png';
 import * as S from './styles';
 
 function Competition({ user, isAuthorized }) {
@@ -83,9 +89,25 @@ function Competition({ user, isAuthorized }) {
   // 새로 투표했을 때
   const setHaveVotedForNewVote = useCallback((field, newLikes) => {
     if (field === CARTOON) setCartoonListIHaveVoted(newLikes);
-    if (field === LITERATURE) setLiteratureListIHaveVoted(newLikes);
-    return setVideoListIHaveVoted(newLikes);
+    else if (field === LITERATURE) setLiteratureListIHaveVoted(newLikes);
+    else setVideoListIHaveVoted(newLikes);
   }, []);
+
+  // 미션
+  const mission = useMission();
+  const dispatch = useDispatch();
+  const { modalComponent: missionModalComponent, setIsModalOpen: setIsMissionModalOpen } = useModal(MissionGuide, {
+    name: '공모전',
+    stamp: CompetitionStamp,
+  });
+  useEffect(() => {
+    if (isAuthorized && mission.isLoaded && !mission.competition) {
+      if (currentListIHaveVoted.length > 0) {
+        dispatch(actions.setFirestoreMission(user, 'competition', true));
+        setIsMissionModalOpen(true);
+      }
+    }
+  }, [isAuthorized, mission.isLoaded, mission.competition, currentListIHaveVoted, dispatch]);
 
   return (
     <S.StyledCompetition>
@@ -116,6 +138,8 @@ function Competition({ user, isAuthorized }) {
           onVoteForField={setHaveVotedForNewVote}
         />
       </S.Body>
+
+      {missionModalComponent}
     </S.StyledCompetition>
   );
 }
