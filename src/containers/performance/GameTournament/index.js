@@ -35,12 +35,12 @@ function GameTournament({ theme }) {
     <SS.Teams>
       <div>
         <p>Team</p>
-        <p>이수경최고다</p>
+        <p>정글차이</p>
       </div>
       <div>vs</div>
       <div>
         <p>Team</p>
-        <p>박용주최고다</p>
+        <p>입이커서악어</p>
       </div>
     </SS.Teams>
   );

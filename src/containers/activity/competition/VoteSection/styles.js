@@ -103,3 +103,22 @@ export const SubmitButton = styled.div`
     cursor: not-allowed;
   `};
 `;
+
+export const Pagination = styled.p`
+  ${FlexCenterStyle};
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  
+  span:first-of-type {
+    padding-right: 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+  
+  span:last-of-type {
+    padding-left: 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+  }
+`;
