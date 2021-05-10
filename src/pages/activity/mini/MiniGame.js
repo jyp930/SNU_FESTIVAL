@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import MiniGameContainer from '@C/activity/mini/home/MiniGame';
 import Header from '@F/layout/Header';
 import { withTheme } from 'styled-components';
+import withMountEvent from '@U/hoc/withMountEvent';
 import PropTypes from 'prop-types';
 import Swirl from '@I/activity/black-and-white/swirl.svg';
 import RedBalloon from '@I/activity/treasure-hunt/balloon-red.png';
@@ -26,7 +27,7 @@ function MiniGame({ theme }) {
     </>
   );
 }
-export default withTheme(MiniGame);
+export default withTheme(withMountEvent(MiniGame));
 
 MiniGame.propTypes = {
   theme: PropTypes.shape({

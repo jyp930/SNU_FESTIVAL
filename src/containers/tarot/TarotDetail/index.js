@@ -14,7 +14,9 @@ import { EventBehavior } from '@U/initializer/googleAnalytics';
 import Background from '@C/tarot/Background';
 import * as S from './styles';
 
-function TarotDetail({ resultImage, result, theme }) {
+function TarotDetail({
+  resultImage, result, theme, links,
+}) {
   const isMobile = useMemo(() => theme.windowWidth < 1170, [theme.windowWidth]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,6 +24,13 @@ function TarotDetail({ resultImage, result, theme }) {
   const goToTarot = useCallback(() => {
     history.push('/tarot');
   }, [history]);
+  const goToLink = useCallback(() => {
+    if (links?.url === 'instagram') {
+      window.open('https://www.instagram.com/snufestival', '_blank');
+    } else {
+      history.push(links?.url);
+    }
+  }, [history, links?.url]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -53,6 +62,11 @@ function TarotDetail({ resultImage, result, theme }) {
         {!isLoading && (
           <S.Body>
             <img src={resultImage} alt="" />
+            <S.Button onClick={goToLink}>
+              {links?.name}
+              {' '}
+              연결하기
+            </S.Button>
             <p>결과 공유하기</p>
             <S.Links>
               <img src={LinkIcon} alt="링크 공유" className="clipboard" data-clipboard-text={`https://snufestival.com/tarot/${result}`} onClick={shareThroughUrl} />
@@ -73,5 +87,9 @@ TarotDetail.propTypes = {
   result: PropTypes.string.isRequired,
   theme: PropTypes.shape({
     windowWidth: PropTypes.number,
+  }).isRequired,
+  links: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
   }).isRequired,
 };

@@ -48,7 +48,7 @@ export const Body = styled.div`
 export const Button = styled.div`
   ${width};
 
-  margin-top: 5rem;
+  margin-top: 6rem;
   border-radius: 5px;
   padding: 1.5rem 0;
   box-sizing: border-box;
