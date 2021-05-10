@@ -16,8 +16,9 @@ import Pot from '@I/activity/riddle/alice/confetti/pot.svg';
 import Rabbit from '@I/activity/riddle/alice/confetti/rabbit.svg';
 import SpaceAce from '@I/activity/riddle/alice/confetti/space-ace.svg';
 import HeartAce from '@I/activity/riddle/alice/confetti/heart-ace.svg';
-import AliceOne from '@I/activity/riddle/alice/alice-1.jpg';
-import AliceTwo from '@I/activity/riddle/alice/alice-2.jpg';
+import AliceOne from '@I/activity/riddle/alice/alice-1.png';
+import AliceTwo from '@I/activity/riddle/alice/alice-2.png';
+import AliceThree from '@I/activity/riddle/alice/alice-3.png';
 import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
@@ -45,7 +46,7 @@ const answers = [
 const questions = [
   AliceOne,
   AliceTwo,
-  AliceTwo,
+  AliceThree,
 ];
 
 function AliceTheme() {

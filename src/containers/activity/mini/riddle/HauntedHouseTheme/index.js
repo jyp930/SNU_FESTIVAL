@@ -12,20 +12,21 @@ import GhostTwo from '@I/activity/riddle/hounted-house/ghost-2.png';
 import GhostThree from '@I/activity/riddle/hounted-house/ghost-3.png';
 
 import QuestionBox from '@C/activity/mini/riddle/QuestionBox';
-import HauntedHouseOne from '@I/activity/riddle/hounted-house/haunted-house-1.jpg';
-import HauntedHouseTwo from '@I/activity/riddle/hounted-house/haunted-house-2.jpg';
+import HauntedHouseOne from '@I/activity/riddle/hounted-house/haunted-house-1.png';
+import HauntedHouseTwo from '@I/activity/riddle/hounted-house/haunted-house-2.png';
+import HauntedHouseThree from '@I/activity/riddle/hounted-house/haunted-house-3.png';
 import { preloadImage } from '@U/functions/preload';
 import * as S from './styles';
 
 const answers = [
   'a18b869b2e81c0c529552a3c4fa5c92ed08b98a4e146aed778d71d27517f83ac',
   '83fa74e70278e5b9ff3fa7995a40d04db8a0868b7b70695bc3dd7e4f96251451',
-  '83fa74e70278e5b9ff3fa7995a40d04db8a0868b7b70695bc3dd7e4f96251451',
+  'c195d2d8756234367242ba7616c5c60369bc25ced2dcb5b92808d31b58ef217a',
 ];
 const questions = [
   HauntedHouseOne,
   HauntedHouseTwo,
-  HauntedHouseTwo,
+  HauntedHouseThree,
 ];
 
 function HauntedHouseTheme({ theme }) {
