@@ -1,12 +1,12 @@
-import LiteratureOnePdf from '@/static/pdfs/literature-1.pdf';
+import LiteratureOnePdf from '@/static/pdf/literature-1.pdf';
 import LiteratureOneImage from '@I/activity/competition/literature-1.png';
-import CartoonOnePdf from '@/static/pdfs/cartoon-1.pdf';
+import CartoonOnePdf from '@/static/pdf/cartoon-1.pdf';
 import CartoonOneImage from '@I/activity/competition/cartoon-1.png';
-import CartoonTwoPdf from '@/static/pdfs/cartoon-2.pdf';
+import CartoonTwoPdf from '@/static/pdf/cartoon-2.pdf';
 import CartoonTwoImage from '@I/activity/competition/cartoon-2.png';
-import CartoonThreePdf from '@/static/pdfs/cartoon-3.pdf';
+import CartoonThreePdf from '@/static/pdf/cartoon-3.pdf';
 import CartoonThreeImage from '@I/activity/competition/cartoon-3.png';
-import CartoonFourPdf from '@/static/pdfs/cartoon-4.pdf';
+import CartoonFourPdf from '@/static/pdf/cartoon-4.pdf';
 import CartoonFourImage from '@I/activity/competition/cartoon-4.png';
 
 export const CARTOON = 0;
