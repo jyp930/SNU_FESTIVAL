@@ -18,22 +18,22 @@ export const REVERSED_FIELDS = { [CARTOON]: '만화', [LITERATURE]: '문학', [V
 
 export const CARTOON_LIST = [
   {
-    competitionId: 1, title: '마스크랑 김태우', author: '유혜인', description: '태우가 짱인 이유!', type: 'pdf', file: CartoonOnePdf, thumbnail: CartoonOneImage, thumbnailSmall: CartoonOneImage,
+    competitionId: 1, title: '마스크랑 김태우', author: '유혜인', description: '태우가 짱인 이유!', type: 'pdf', file: CartoonOnePdf, thumbnail: CartoonOneImage, thumbnailSmall: CartoonOneImage, scale: 0.8,
   },
   {
-    competitionId: 2, title: '누군가의 노래', author: '이나경', description: '줌에서의 예상하지 못한 고막 힐링 썰!', type: 'pdf', file: CartoonTwoPdf, thumbnail: CartoonTwoImage, thumbnailSmall: CartoonTwoImage,
+    competitionId: 2, title: '누군가의 노래', author: '이나경', description: '줌에서의 예상하지 못한 고막 힐링 썰!', type: 'pdf', file: CartoonTwoPdf, thumbnail: CartoonTwoImage, thumbnailSmall: CartoonTwoImage, scale: 1.1,
   },
   {
-    competitionId: 3, title: '원데이클래스 강사체험기', author: '이나경', description: '비대면 원데이크래스 강사로 겪은 웃픈 코시국 이야기!', type: 'pdf', file: CartoonThreePdf, thumbnail: CartoonThreeImage, thumbnailSmall: CartoonThreeImage,
+    competitionId: 3, title: '원데이클래스 강사체험기', author: '이나경', description: '비대면 원데이크래스 강사로 겪은 웃픈 코시국 이야기!', type: 'pdf', file: CartoonThreePdf, thumbnail: CartoonThreeImage, thumbnailSmall: CartoonThreeImage, scale: 1.1,
   },
   {
-    competitionId: 4, title: '비대면수업에 대한 간단한 고찰', author: '한지인', description: '코시국 대학생 훔쳐보기, 무한 공감 썰!', type: 'pdf', file: CartoonFourPdf, thumbnail: CartoonFourImage, thumbnailSmall: CartoonFourImage,
+    competitionId: 4, title: '비대면수업에 대한 간단한 고찰', author: '한지인', description: '코시국 대학생 훔쳐보기, 무한 공감 썰!', type: 'pdf', file: CartoonFourPdf, thumbnail: CartoonFourImage, thumbnailSmall: CartoonFourImage, scale: 0.85,
   },
 ];
 
 export const LITERATURE_LIST = [
   {
-    competitionId: 1, title: '오공일몽', author: '박현수', description: '즐기다 오, 어리석을 공, 오공일몽!', type: 'pdf', file: LiteratureOnePdf, thumbnail: LiteratureOneImage, thumbnailSmall: LiteratureOneImage,
+    competitionId: 1, title: '오공일몽', author: '박현수', description: '즐기다 오, 어리석을 공, 오공일몽!', type: 'pdf', file: LiteratureOnePdf, thumbnail: LiteratureOneImage, thumbnailSmall: LiteratureOneImage, scale: 1.15,
   },
 ];
 

@@ -129,7 +129,7 @@ function VoteSection({
             file={clickedItem?.file}
             onLoadSuccess={onDocumentLoadSuccess}
           >
-            <Page pageNumber={pageNumber} scale={isMobile ? 0.5 : 1} />
+            <Page pageNumber={pageNumber} scale={(isMobile ? 0.5 : 1) * clickedItem?.scale} />
             <S.Pagination>
               <span onClick={() => (pageNumber > 1 ? setPageNumber(pageNumber - 1) : null)}>&lt;</span>
               <span>{`Page ${pageNumber} of ${numPages}`}</span>
