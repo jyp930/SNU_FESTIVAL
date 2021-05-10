@@ -4,8 +4,6 @@ import media from 'styled-media-query';
 import { HoverStyle } from '@S/responsive/mouse';
 
 export const StyledRiddle = styled.div`
-  height: ${({ theme }) => theme.windowHeight}px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +11,7 @@ export const StyledRiddle = styled.div`
 
 export const Body = styled.div`
   width: 100%;
+  min-height: ${({ theme }) => theme.windowHeight}px;
   ${FlexCenterStyle};
   flex-direction: column;
   
