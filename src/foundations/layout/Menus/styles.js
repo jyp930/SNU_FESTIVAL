@@ -20,7 +20,7 @@ export const OpenedMenu = styled.div`
   
   width: 100%;
   height: ${({ theme }) => theme.windowHeight * (7.5 / 10)}px;
-  overflow-y: hidden;
+  overflow-y: scroll;
 `;
 
 export const InlineMenu = styled.div`
@@ -30,7 +30,7 @@ export const InlineMenu = styled.div`
 
 export const NaviText = styled.p`
   margin: 1rem 0;
-  font-size: 1.6em;
+  font-size: 1.4rem;
   max-width: 5rem;
   white-space: nowrap;
   
@@ -38,7 +38,7 @@ export const NaviText = styled.p`
   cursor: pointer;
   transition: transform 0.5s;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 `;
 
