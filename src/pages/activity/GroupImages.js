@@ -8,6 +8,7 @@ const Images = styled.div`
   
   img {
     width: 50%;
+    height: 50%;
   }
 `;
 
