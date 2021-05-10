@@ -8,6 +8,7 @@ import CartoonThreePdf from '@/static/pdf/cartoon-3.pdf';
 import CartoonThreeImage from '@I/activity/competition/cartoon-3.png';
 import CartoonFourPdf from '@/static/pdf/cartoon-4.pdf';
 import CartoonFourImage from '@I/activity/competition/cartoon-4.png';
+import VideoOneImage from '@I/activity/competition/video-1.png';
 
 export const CARTOON = 0;
 export const LITERATURE = 1;
@@ -38,7 +39,7 @@ export const LITERATURE_LIST = [
 ];
 
 export const VIDEO_LIST = [
-  // {
-  //   competitionId: 1, title: 'V작품 타이틀1', author: '참가자명1', description: '작품 한 줄 설명1', type: 'youtube', youtubeUrl: 'https://www.youtube.com/embed/F20yngfwQQg', thumbnail: PhoneCert1, thumbnailSmall: PhoneCert1Small,
-  // },
+  {
+    competitionId: 1, title: '코로나 금사빠', author: '익명', description: '마스크 낀 그의 모습과 사랑에 빠진 나! 과연 내 짝사랑의 결말은?', type: 'youtube', youtubeUrl: 'https://www.youtube.com/embed/ox2cR8IlwwY', thumbnail: VideoOneImage, thumbnailSmall: VideoOneImage,
+  },
 ];

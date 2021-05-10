@@ -115,7 +115,7 @@ function Competition({ user, isAuthorized }) {
       <S.Body>
         <TextSection />
         <S.Tab>
-          {Object.keys(FIELDS).slice(0, 2).map(fieldName => (
+          {Object.keys(FIELDS).map(fieldName => (
             <React.Fragment key={fieldName}>
               <S.TabItem
                 onClick={() => setCurrentField(FIELDS[fieldName])}
@@ -123,7 +123,7 @@ function Competition({ user, isAuthorized }) {
               >
                 {fieldName}
               </S.TabItem>
-              {FIELDS[fieldName] !== 1 && <p>|</p>}
+              {FIELDS[fieldName] !== 2 && <p>|</p>}
             </React.Fragment>
           ))}
         </S.Tab>
