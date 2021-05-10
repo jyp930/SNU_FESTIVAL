@@ -69,7 +69,7 @@ export const Teams = styled.div`
     p {
       margin: 0.5rem 2rem;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       
       &:first-of-type {
         color: ${({ theme }) => theme.palette.GRAY80};

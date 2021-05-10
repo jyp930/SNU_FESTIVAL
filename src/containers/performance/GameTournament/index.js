@@ -35,7 +35,11 @@ function GameTournament({ theme }) {
     <SS.Teams>
       <div>
         <p>Team</p>
-        <p>정글차이</p>
+        <p>
+          <span style={{ visibility: 'hidden' }}>정</span>
+          정글차이
+          <span style={{ visibility: 'hidden' }}>어</span>
+        </p>
       </div>
       <div>vs</div>
       <div>
