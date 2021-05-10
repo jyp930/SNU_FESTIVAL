@@ -16,7 +16,6 @@ import useModal from '@U/hooks/useModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
 import { competitionCollectionRef } from '@U/initializer/firebase';
 import firebase from 'firebase';
-import TestPdf from '../pdfs/test.pdf';
 import * as S from './styles';
 
 function VoteSection({
@@ -127,7 +126,7 @@ function VoteSection({
         <>
           { clickedItem?.type === 'pdf' && (
           <Document
-            file={TestPdf}
+            file={clickedItem?.file}
             onLoadSuccess={onDocumentLoadSuccess}
           >
             <Page pageNumber={pageNumber} scale={isMobile ? 0.5 : 1} />
