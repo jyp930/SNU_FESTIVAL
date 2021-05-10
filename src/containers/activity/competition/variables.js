@@ -33,7 +33,7 @@ export const CARTOON_LIST = [
 
 export const LITERATURE_LIST = [
   {
-    competitionId: 1, title: '오공일몽', author: '박현수', description: '즐기다 오, 어리석을 공, 오공일몽!', type: 'pdf', file: LiteratureOnePdf, thumbnail: LiteratureOneImage, thumbnailSmall: LiteratureOneImage, scale: 1.15,
+    competitionId: 1, title: '오공일몽', author: '박현수', description: '즐기다 오, 어리석을 공, 오공일몽!', type: 'pdf', file: LiteratureOnePdf, thumbnail: LiteratureOneImage, thumbnailSmall: LiteratureOneImage, scale: 1,
   },
 ];
 

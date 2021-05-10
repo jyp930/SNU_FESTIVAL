@@ -13,7 +13,10 @@ function PopupModal({
       open={isModalOpen}
       closeOnDocumentClick={closeOnDocumentClick}
       onClose={() => setIsModalOpen(false)}
-      overlayStyle={{ background: rgba(0, 0, 0, 0.7) }}
+      overlayStyle={{
+        background: rgba(0, 0, 0, 0.7),
+        overflow: 'auto',
+      }}
       contentStyle={{
         width,
         margin: 'auto',

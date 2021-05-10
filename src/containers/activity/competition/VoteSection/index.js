@@ -16,6 +16,7 @@ import useModal from '@U/hooks/useModal';
 import SignInGuide from '@F/modal/content/SignInGuide';
 import { competitionCollectionRef } from '@U/initializer/firebase';
 import firebase from 'firebase';
+import LoadingMascot from '@F/loading/LoadingMascot';
 import * as S from './styles';
 
 function VoteSection({
@@ -128,6 +129,7 @@ function VoteSection({
           <Document
             file={clickedItem?.file}
             onLoadSuccess={onDocumentLoadSuccess}
+            loading={<LoadingMascot />}
           >
             <Page pageNumber={pageNumber} scale={(isMobile ? 0.5 : 1) * clickedItem?.scale} />
             <S.Pagination>
