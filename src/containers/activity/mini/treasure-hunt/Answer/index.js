@@ -26,6 +26,7 @@ export function Answer({ user, isAuthorized, isNotCompleted }) {
         if (isNotCompleted) {
           dispatch(actions.setFirestoreStage(user, 'stage2', true));
           setIsMiniGameModalOpen(true);
+          dispatch(actions.endTreasureHunt());
         } else {
           toast('이미 클리어하셨습니다 😇');
         }
