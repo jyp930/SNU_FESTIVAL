@@ -61,4 +61,5 @@ export const Button = styled.div`
   box-shadow: 0 0 20px 0 white;
   
   ${HoverStyle};
+  z-index: ${({ theme }) => theme.zIndex.base};
 `;
