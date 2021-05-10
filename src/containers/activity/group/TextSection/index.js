@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router';
+import { theme } from '@S/index';
 import * as S from './styles';
 
 function TextSection() {
+  const history = useHistory();
+  const goToPage = useCallback(() => {
+    history.push('/activity/group/images');
+  }, [history]);
+
   return (
     <S.StyledTextSection>
       <S.Texts>
@@ -35,6 +42,18 @@ function TextSection() {
           1. 수요일 19시에 시작하며 18시 30분부터 입장 가능합니다.
           <br />
           2. 약 20분마다 탈락자가 발생할 수 있습니다.
+        </p>
+      </S.Texts>
+      <S.Texts>
+        <p>가상 배경 꾸미기</p>
+        <p>
+          - 원하시는 분은 아래 페이지에서 이미지를 다운받은 후
+          <br />
+          <span style={{ visibility: 'hidden' }}>- </span>
+          가상 배경으로 설정해주세요!
+          <br />
+          -
+          <span style={{ color: theme.palette.PURPLE50, textDecoration: 'underline', cursor: 'pointer' }} onClick={goToPage}> 가상 배경 다운받으러 가기</span>
         </p>
       </S.Texts>
     </S.StyledTextSection>

@@ -37,6 +37,11 @@ function ActivityRouter({ match }) {
           path={`${match.path}${activityRoutes[3].path}`}
           component={activityRoutes[3].component}
         />
+        <Route
+          exact
+          path={`${match.path}${activityRoutes[4].path}`}
+          component={activityRoutes[4].component}
+        />
         <Route component={NotFound} />
       </Switch>
       {/* { activityRoutes.map((route, index) => ( */}
@@ -78,6 +83,7 @@ const BlackAndWhite = lazy(() => import('@/pages/activity/mini/BlackAndWhite'));
 const Radio = lazy(() => import('@/pages/activity/Radio'));
 const Competition = lazy(() => import('@/pages/activity/Competition'));
 const Group = lazy(() => import('@/pages/activity/Group'));
+const GroupImages = lazy(() => import('@/pages/activity/GroupImages'));
 
 const activityRoutes = [
   {
@@ -113,5 +119,9 @@ const activityRoutes = [
   {
     path: '/group',
     component: Group,
+  },
+  {
+    path: '/group/images',
+    component: GroupImages,
   },
 ];
