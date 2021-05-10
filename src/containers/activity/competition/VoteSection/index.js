@@ -17,6 +17,7 @@ import SignInGuide from '@F/modal/content/SignInGuide';
 import { competitionCollectionRef } from '@U/initializer/firebase';
 import firebase from 'firebase';
 import LoadingMascot from '@F/loading/LoadingMascot';
+import Image from '@F/Image';
 import * as S from './styles';
 
 function VoteSection({
@@ -101,7 +102,7 @@ function VoteSection({
         {items.map(item => (
           <S.Item key={item.title}>
             <S.ImageWrapper>
-              <img src={item.thumbnail} alt="작품" onClick={() => onClickItem(item)} />
+              <div onClick={() => onClickItem(item)}><Image src={item.thumbnail} alt="작품" /></div>
               <S.LikeButton onClick={() => onClickLikeButton(item.competitionId)}>
                 <img src={myLikesForCompetition.includes(item.competitionId) ? FilledHeart : EmptyHeart} alt="like" />
               </S.LikeButton>
