@@ -36,4 +36,8 @@ export const Texts = styled.div`
       font-size: 0.9rem;
     `};
   }
+  span {
+    font-size: 1rem;
+    font-weight: bold;
+  }
 `;
