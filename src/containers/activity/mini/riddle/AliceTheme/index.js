@@ -43,6 +43,11 @@ const answers = [
   '4ea140588150773ce3aace786aeef7f4049ce100fa649c94fbbddb960f1da942',
   'a27db16581bce5f90e4e7d08e10f861d0c6986a01d80babea22f6af4e5774ff1',
 ];
+const hints = [
+  '힌트: 7',
+  '힌트: 선',
+  '힌트: 어린이',
+];
 const questions = [
   AliceOne,
   AliceTwo,
@@ -60,7 +65,7 @@ function AliceTheme() {
       <S.ConfettiWrapper>
         <Confetti svgs={svgs} />
       </S.ConfettiWrapper>
-      <QuestionBox questions={questions} answers={answers} />
+      <QuestionBox questions={questions} answers={answers} hints={hints} />
     </S.StyledAliceTheme>
   );
 }

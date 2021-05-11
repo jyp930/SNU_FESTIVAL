@@ -23,6 +23,11 @@ const answers = [
   '83fa74e70278e5b9ff3fa7995a40d04db8a0868b7b70695bc3dd7e4f96251451',
   'c195d2d8756234367242ba7616c5c60369bc25ced2dcb5b92808d31b58ef217a',
 ];
+const hints = [
+  '힌트: 25',
+  '힌트: 시간',
+  '힌트: 6',
+];
 const questions = [
   HauntedHouseOne,
   HauntedHouseTwo,
@@ -53,7 +58,7 @@ function HauntedHouseTheme({ theme }) {
       <S.Bat src={BatDark} alt="박쥐" width={200} top={35} left={13} duration={1.2} />
       <S.Bat src={BatDark} alt="박쥐" width={isMobile ? 80 : 120} top={isMobile ? 3 : 8} right={10} duration={1.1} />
 
-      <QuestionBox answerColor="white" questions={questions} answers={answers} />
+      <QuestionBox answerColor="white" questions={questions} answers={answers} hints={hints} />
     </S.StyledHauntedHouseTheme>
   );
 }

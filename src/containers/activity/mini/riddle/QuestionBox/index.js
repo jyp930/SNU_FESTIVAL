@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux';
 import * as S from './styles';
 
 export function QuestionBox({
-  answerColor, questions, answers, user, isAuthorized, isNotCompleted,
+  answerColor, questions, answers, user, isAuthorized, isNotCompleted, hints,
 }) {
   const [step, setStep] = useState(0);
   const { value, onChange, setValue } = useInput('');
@@ -66,7 +66,7 @@ export function QuestionBox({
           <S.Image src={questions[step]} alt="문제" />
         </S.Question>
         <S.Answer>
-          <S.InputBox value={value} onChange={onChange} color={answerColor} placeholder="힌트는 내일 공개됩니다." />
+          <S.InputBox value={value} onChange={onChange} color={answerColor} placeholder={hints[step]} />
           <S.Button onClick={submit}>등록</S.Button>
         </S.Answer>
       </S.Content>
@@ -87,6 +87,7 @@ QuestionBox.propTypes = {
   }).isRequired,
   isAuthorized: PropTypes.bool.isRequired,
   isNotCompleted: PropTypes.bool.isRequired,
+  hints: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 QuestionBox.defaultProps = {
