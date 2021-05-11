@@ -28,7 +28,7 @@ export const CARTOON_LIST = [
     competitionId: 3, title: '원데이클래스 강사체험기', author: '이나경', description: '비대면 원데이크래스 강사로 겪은 웃픈 코시국 이야기!', type: 'pdf', file: CartoonThreePdf, thumbnail: CartoonThreeImage, thumbnailSmall: CartoonThreeImage, scale: 1.1,
   },
   {
-    competitionId: 4, title: '비대면수업에 대한 간단한 고찰', author: '한지인', description: '코시국 대학생 훔쳐보기, 무한 공감 썰!', type: 'pdf', file: CartoonFourPdf, thumbnail: CartoonFourImage, thumbnailSmall: CartoonFourImage, scale: 0.85,
+    competitionId: 4, title: '비대면수업에 대한 간단한 고찰', author: '익명', description: '코시국 대학생 훔쳐보기, 무한 공감 썰!', type: 'pdf', file: CartoonFourPdf, thumbnail: CartoonFourImage, thumbnailSmall: CartoonFourImage, scale: 0.85,
   },
 ];
 
