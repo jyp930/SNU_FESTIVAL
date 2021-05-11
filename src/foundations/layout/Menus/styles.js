@@ -58,7 +58,7 @@ export const SmallNaviText = styled.p`
 export const SignButton = styled.div`
   position: absolute;
   bottom: 5vw;
-  left: 10vw;
+  right: 10vw;
   
   display: flex;
   flex-direction: column;
