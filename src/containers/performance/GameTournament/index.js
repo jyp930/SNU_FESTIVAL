@@ -85,6 +85,21 @@ function GameTournament({ theme }) {
           </S.Body>
         </S.BodyWrapper>
         )}
+        {url && (
+          <SS.VideoWrapper
+            widths={[850, 700, 300]}
+            heights={[850 / 1.77, 700 / 1.77, 300 / 1.77]}
+          >
+            <iframe
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/${url.split('/').pop()}`}
+              title="관악게임토너먼트 라이브"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </SS.VideoWrapper>
+        )}
       </SS.Body>
       <Bubble theme={theme} />
       <MascotForMission

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { rgba } from 'polished';
 import media from 'styled-media-query';
+import { ResponsiveHeightStyleTwo, ResponsiveWidthStyleTwo } from '@S/responsive/display';
 
 export const StyledGameTournament = styled.div`
   position: relative;
@@ -101,4 +102,12 @@ export const Image = styled.div`
     height: auto;
     margin: 0;
   `};
+`;
+
+export const VideoWrapper = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  ${ResponsiveWidthStyleTwo};
+  ${ResponsiveHeightStyleTwo};
 `;
