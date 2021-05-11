@@ -48,10 +48,12 @@ function Group({ theme }) {
 
   // 링크
   const [url, setUrl] = useState(null);
+  const [youtubeUrl, setYoutubeUrl] = useState(null);
   useEffect(() => {
     linkCollectionRef.doc('group-game').get()
       .then((doc) => {
         setUrl(doc.data().url);
+        setYoutubeUrl(doc.data().youtubeUrl);
       })
       .catch(() => (
         toast('인터넷이 불안정합니다. 다시 시도해주세요.')));
@@ -84,8 +86,8 @@ function Group({ theme }) {
           {signInModalComponent}
           {treasureModalComponent}
         </S.ImageWrapper>
-        <LiveSection />
-        <RankingSection />
+        <LiveSection url={youtubeUrl} />
+        <RankingSection url={url} />
       </S.Body>
       <S.Button onClick={goToZoom}>줌 링크 바로가기</S.Button>
     </S.StyledGroup>
