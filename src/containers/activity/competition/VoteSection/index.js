@@ -32,6 +32,7 @@ function VoteSection({
   const onClickItem = useCallback((item) => {
     setClickedItem(item);
     setIsModalOpen(true);
+    setPageNumber(1);
   }, []);
 
   // likes
@@ -90,7 +91,6 @@ function VoteSection({
   const [pageNumber, setPageNumber] = useState(1);
   const onDocumentLoadSuccess = useCallback(({ numPages: newPages }) => {
     setNumPages(newPages);
-    setPageNumber(1);
   }, []);
   useEffect(() => {
     pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
