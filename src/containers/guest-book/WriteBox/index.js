@@ -67,7 +67,7 @@ WriteBox.propTypes = {
 };
 
 function nameConstraint(value) {
-  const regex = /^[ㄱ-ㅎ가-힣a-zA-Z0-9_ ]*$/;
+  const regex = /^[ㄱ-ㅎ가-힣a-zA-Z0-9_ ㆍ]*$/;
   return value.length <= 20 && regex.test(value);
 }
 
