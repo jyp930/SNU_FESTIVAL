@@ -27,5 +27,9 @@ function LiveSection({ url }) {
 export default LiveSection;
 
 LiveSection.propTypes = {
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
+};
+
+LiveSection.defaultProps = {
+  url: null,
 };

@@ -15,5 +15,6 @@ export const linkCollectionRef = firestore.collection('link');
 export const votePhoneCertCollectionRef = firestore.collection('vote-phone-cert');
 export const voteSingStealerCollectionRef = firestore.collection('vote-sing-stealer');
 export const competitionCollectionRef = firestore.collection('competition');
+export const groupRankingCollectionRef = firestore.collection('group-ranking');
 
 export const auth = firebase.auth();
