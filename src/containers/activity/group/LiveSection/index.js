@@ -14,7 +14,7 @@ function LiveSection({ url }) {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/86BST8NIpNM?start=30"
+            src={url}
             title="2021 봄축제 홍보영상"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
