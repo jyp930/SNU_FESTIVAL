@@ -67,7 +67,7 @@ export const Delight = () => (
     result="delight"
     links={{
       name: '공연',
-      url: '/performance/hit-the-stage',
+      url: '/performance/phone-cert',
     }}
   />
 );
@@ -122,7 +122,7 @@ export const Precious = () => (
     result="precious"
     links={{
       name: '공연',
-      url: '/performance/sing-stealer',
+      url: '/performance/phone-cert',
     }}
   />
 );
