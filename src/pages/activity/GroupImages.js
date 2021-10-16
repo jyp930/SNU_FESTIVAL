@@ -24,7 +24,7 @@ function GroupImages() {
       <HeaderContent>단체게임</HeaderContent>
       <Images>
         {results.map(result => (
-          <img src={`https://snufestival.com/images/${result}-card.png`} alt="" key={result} />
+          <img src={`https://snu-festival.web.app/images/${result}-card.png`} alt="" key={result} />
         ))}
       </Images>
     </>
