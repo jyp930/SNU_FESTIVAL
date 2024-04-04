@@ -16,7 +16,7 @@ function Rule() {
           <br />
           3. 노래 제목 3가지를 적고 정답 버튼을 누른다.
         </p>
-        <p>@inspired by palatab</p>
+        <p>inspired by @patatap</p>
       </S.Texts>
     </S.StyledRule>
   );
